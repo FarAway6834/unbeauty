@@ -36,3 +36,5 @@ idx = cacher[1](λx,i,b._self__getitem_(shr)(_self__getitem_(shl)(x, i, b), b))
 _bpucc_ = cacher(λx,x,y,b._self__getitem_(lpu)(cod, _self__getitem_(idx)(x, i, b), _self__getitem_(idx)(y, i, b)) * (2^i))
 bpu = cacher[1](λcod,x,y,b.~)
 ```
+
+## [coding plan 24.02.24 ~ ...](./plan)
