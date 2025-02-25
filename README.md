@@ -4,6 +4,8 @@ unbeauty esolang
 
 ## example
 
+[tip (lang=ko)](https://FarAway6834.github.io/LAFTF1.1)
+
 ```unbeauty
 sqrt = cacher[1](λx. x**0.5)
 abs = cacher[1](λx. this.sqrt(x**2))
