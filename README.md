@@ -6,6 +6,7 @@ unbeauty esolang
 
 [tip (lang=ko)](https://FarAway6834.github.io/LAFTF1.1)
 
+ex1.unbe
 ```unbeauty
 sqrt = cacher[1](λx. x**0.5)
 abs = cacher[1](λx. this.sqrt(x**2))
@@ -55,6 +56,12 @@ idx = cacher[1](λx,i,b.this.shr(this.shl(x, i, b), b))
 _bpucc_ = cacher[1](λcod,i,x,y,b.this.lpu(cod, this.idx)(x, i, b), this.idx)(y, i, b)) * (2^i))
 _bpuc_ = cacher[1](λcod,i,x,y,b.this._bpucc_(i,x,y,b) + this.bits2bool(i)×this._bpuc_(i-1,x,y,b))
 bpu = cacher[1](λcod,x,y,b.this._bpuc_(cod,b-1,x,y,b))
+```
+
+ex2.unbe - extend not base cls, ex1 cls.
+```
+:ex1
+fibo = cacher[1](λx.this.conditionalidx(this.beq0(x, b), 0, this.conditionalidx(this.beq(x, 1, b), 1, this.fibo(x - 1) × this.fibo(x - 2))))
 ```
 
 ## [coding plan 24.02.24 ~ ...](./plan)
