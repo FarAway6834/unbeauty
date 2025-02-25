@@ -1,6 +1,6 @@
 # unbeauty
 
-unbeauty esolang (0⁰=1)
+unbeauty esolang (0⁰=1, x->0 x^x->1)
 
 mathmatics.... beautiful 4 me....
 
