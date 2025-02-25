@@ -19,9 +19,10 @@ it sucks
      - [super super                    final] *.operator() : template user
      - [protected super virtual 2      final] *.cache()    : user implements
      - by mecro (sucks)
-         - template <__supert__<T> this>
+         - PROMISSERN is mecro, not defed
+           template <__supert__<T> this>
            struct __MANGELED_NAME__ : idxof<T, subclstyps, __typechekced_super__> {
-               template <__VA_ARGS__, T V = __SRC__>
+               template <__VA_ARGS__, promiss<T> V = PROMISSER(__SRC__)>
                using __TMP__ = V; //well it's real name
            }
  - corcls<typ T, subclstyp<T>... subclstyps>
