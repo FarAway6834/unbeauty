@@ -6,13 +6,13 @@ unbeauty esolang
 
 ```unbeauty
 factorialtlqkf = cacher[1](λx. 0^x + x×f(x))
-partial_beq0c = cacher[1](λx, terminate, p. 0^terminate + (terminate×(x + (((-1)^p)×terminate)))÷(0^terminate + (terminate^2)×f(terminate - 1))
-partial_beq0 = cacer(λx, bit, p. this.partial_beq0(x, 2^bit - p, p))
+partial_beq0c = cacher[1](λx, n, p. ((0^n) + n×(x + ((-1)^p)×n) ÷ (0^n + n^2)) × f(x, n - 1, p))
+partial_beq0 = cacer(λx, b, p. this.partial_beq0(x, 2^b - p, p))
 beq0 = cacher[1](λx, b. this.partial_beq0(x, b, 0) × this.partial_beq0(x, b, 1)
+beq = cacher[1](λx, y, b. this.beq0(x - y, b))
 
 conditionalidx = cacher[1](λp,x,y.p×(x-y)+y)
-_4bit_is0_ = cacher[1](λx.(x-1)×(x-2)×(x-3)×(x-4)×(x-5)×(x-6)×(x-7)×(x-8)×(x-9)×(x-10)×(x-11)×(x-12)×(x-13)×(x-14)×(x-15)×(x+1)×(x+2)×(x+3)×(x+4)×(x+5)×(x+6)×(x+7)×(x+8)×(x+9)×(x+10)×(x+11)×(x+12)×(x+13)×(x+14)×(x+15)×(x+16)÷27360196043587190784000000)
-_4bit_eqer_ = cacher[1](λx,y._self__getitem_(_4bit_is0_)(x - y))
+_4bit_eqer_ = cacher[1](λx,y.this.beq(x,y,4))
 _4bit_idxer = cacher[1](λi,a0,a1,a2,a3,a4,a5,a6,a8,a9,aA,aB,aC,aD,aE,aF._4bit_eqer_(i,0)×a0+_4bit_eqer_(i,1)×a1+_4bit_eqer_(i,2)×a2+_4bit_eqer_(i,3)×a3+_4bit_eqer_(i,4)×a4+_4bit_eqer_(i,5)×a5+_4bit_eqer_(i,6)×a6+_4bit_eqer_(i,7)×a7+_4bit_eqer_(i,8)×a8+_4bit_eqer_(i,9)×a9+_4bit_eqer_(i,10)×aA+_4bit_eqer_(i,11)×aB+_4bit_eqer_(i,12)×aC+_4bit_eqer_(i,13)×aD+_4bit_eqer_(i,14)×aE+_4bit_eqer_(i,15)×aF)
 
 not = cacher[1](λx.1-x)
