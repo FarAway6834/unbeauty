@@ -12,8 +12,9 @@ partial_beq0c = cacher[1](λx, n, p. ((0^n) + n×(x + ((-1)^p)×n) ÷ (0^n + n^2
 partial_beq0 = cacer(λx, b, p. this.partial_beq0(x, 2^b - p, p))
 beq0 = cacher[1](λx, b. this.partial_beq0(x, b, 0) × this.partial_beq0(x, b, 1)
 beq = cacher[1](λx, y, b. this.beq0(this.abs(x - y), b))
-dose_it_positive = cacher[1](λx.this.beq0(this.abs(x - this.abs(x))))
-__cmp__ = cacher[1](λx. this.beq(x) + (-1)^(dose_it_positive(x)+1))
+dose_it_positive = cacher[1](λx, b. this.beq0(this.abs(x - this.abs(x)), b))
+__cmp__ = cacher[1](λx, b. this.beq(x, b) + (-1)^(this.dose_it_positive(x, b)+1))
+__le__ = cacher[1](λx, y, b. this.dose_it_positive(x - y, b))
 
 conditionalidx = cacher[1](λp,x,y.p×(x-y)+y)
 _4bit_eqer_ = cacher[1](λx,y.this.beq(x,y,4))
@@ -39,7 +40,11 @@ logicalerr = cacher[1](λx,y.0)
 alwaystruth = cacher[1](λx,y.1)
 lpu = cacher[1](λcod,x,y.this._4bit_idxer(cod,this.logicalerr(x,y), this.and(x,y), this.sub(x,y), this.b(x,y), this.rsub(x,y), this.a(x,y), this.xor(x,y), this.or(x,y), this.nor(x,y), this.nxor(x,y), this.nota(x,y), this.rimp(x,y), this.notb(x,y), this.imp(x,y), this.nand(x,y), this.alwaystruth(x,y)))
 
-bne = cacher[0](λx, y, b. this.not(this.beq(x, y, b)))
+__gt__ = cacher[1](λx, y, b. this.not(this.__le__(x, y, b)))
+__lt__ = cacher[1](λx, y, b, this.__gt__(y, x, b))
+__ge__ = cacher[1](λx, y, b. this.__le__(y, x, b))
+
+bne = cacher[1](λx, y, b. this.not(this.beq(x, y, b)))
 bits2bool = cacher[1](λb, x. this.not(this.beq0(x, b)))
 
 shr = cacher[1](λx,n.x÷(2^n))
