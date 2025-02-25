@@ -5,6 +5,11 @@ unbeauty esolang
 ## example
 
 ```unbeauty
+factorialtlqkf = cacher[1](λx. 0^x + x×f(x))
+partial_beq0c = cacher[1](λx, terminate, p. 0^terminate + (terminate×(x + (((-1)^p)×terminate)))÷(0^terminate + (terminate^2)×f(terminate - 1))
+partial_beq0 = cacer(λx, bit, p. this.partial_beq0(x, 2^bit - p, p))
+beq0 = cacher[1](λx, b. this.partial_beq0(x, b, 0) × this.partial_beq0(x, b, 1)
+
 conditionalidx = cacher[1](λp,x,y.p×(x-y)+y)
 _4bit_is0_ = cacher[1](λx.(x-1)×(x-2)×(x-3)×(x-4)×(x-5)×(x-6)×(x-7)×(x-8)×(x-9)×(x-10)×(x-11)×(x-12)×(x-13)×(x-14)×(x-15)×(x+1)×(x+2)×(x+3)×(x+4)×(x+5)×(x+6)×(x+7)×(x+8)×(x+9)×(x+10)×(x+11)×(x+12)×(x+13)×(x+14)×(x+15)×(x+16)÷27360196043587190784000000)
 _4bit_eqer_ = cacher[1](λx,y._self__getitem_(_4bit_is0_)(x - y))
