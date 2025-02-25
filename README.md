@@ -12,6 +12,8 @@ partial_beq0c = cacher[1](λx, n, p. ((0^n) + n×(x + ((-1)^p)×n) ÷ (0^n + n^2
 partial_beq0 = cacer(λx, b, p. this.partial_beq0(x, 2^b - p, p))
 beq0 = cacher[1](λx, b. this.partial_beq0(x, b, 0) × this.partial_beq0(x, b, 1)
 beq = cacher[1](λx, y, b. this.beq0(this.abs(x - y), b))
+dose_it_positive = cacher[1](λx.this.beq0(this.abs(x - this.abs(x))))
+__cmp__ = cacher[1](λx. this.beq(x) + (-1)^(dose_it_positive(x)+1))
 
 conditionalidx = cacher[1](λp,x,y.p×(x-y)+y)
 _4bit_eqer_ = cacher[1](λx,y.this.beq(x,y,4))
