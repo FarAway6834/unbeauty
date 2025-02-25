@@ -37,4 +37,9 @@ it sucks
 
 `<f> = cacher[<num>](λ<argv>.<src>)` as parse argv and set `T` or consexpr const
 also it can use `main = ~` to set `operator()`
+
+-----
+
+base struct (default super cls)
+`:filename` to can extend
 ```
