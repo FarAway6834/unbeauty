@@ -2,6 +2,8 @@
 
 unbeauty esolang
 
+mathmatics.... beautiful 4 me....
+
 ## example
 
 [tip (lang=ko)](https://FarAway6834.github.io/LAFTF1.1)
