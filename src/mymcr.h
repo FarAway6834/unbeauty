@@ -28,6 +28,7 @@
 #define PO protected
 #define OP operator
 #define SG signed
+#define AU auto
 //hehehehehehehehe
 #define UG C_(un, SG)
 #define PF PR:
