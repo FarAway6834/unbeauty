@@ -25,6 +25,7 @@ it sucks
                template <__VA_ARGS__, promiss<T> V = PROMISSER(__SRC__)>
                using __TMP__ = V; //well it's real name
            }
+           inline auto __NAME__(void) { return __MANGELED_NAME__<T>(); } // `a×this->__NAME__(~)` ≡ `(a × this->__NAME__)(~)`
  - corcls<typ T, subclstyp<T>... subclstyps>
      - by mecro
      - cls attr by mecro `THISOBJTER <- _self__getattr__` => `THISOBJTER(ob, attr) ob::attr<ob>()`
