@@ -13,9 +13,9 @@ ex1.unbe
 sqrt = cacher[1](λx. x**0.5)
 abs = cacher[1](λx. this.sqrt(x**2))
 partial_beq0c = cacher[1](λx, n, p. ((0^this.abs(n)) + n×(x + ((-1)^p)×n) ÷ (0^this.abs(n) + n^2)) × f(x, n - 1, p))
-partial_beq0 = cacer(λx, b, p. this.partial_beq0(x, 2^b - p, p))
-beq0 = cacher[1](λb, x. this.partial_beq0(x, b, 0) × this.partial_beq0(x, b, 1)
-beq = cacher[1](λb, x, y. this.beq0(this.abs(x - y), b))
+partial_beq0 = cacer(λb, x, p. this.partial_beq0(x, 2^b - p, p))
+beq0 = cacher[1](λb, x. this.partial_beq0(b, x, 0) × this.partial_beq0(b, x, 1)
+beq = cacher[1](λb, x, y. this.beq0(b, this.abs(x - y)))
 dose_it_positive = cacher[1](λb, x. this.beq0(b, this.abs(b, x - this.abs(x))))
 __cmp__ = cacher[1](λb, x. this.beq(b, x) + (-1)^(this.dose_it_positive(b, x)+1))
 __le__ = cacher[1](λb, x, y. this.dose_it_positive(b, x - y))
@@ -47,7 +47,7 @@ lpu = cacher[1](λcod,x,y.this._4bit_idxer(cod,this.logicalerr(x,y), this.and(x,
 
 __gt__ = cacher[1](λb, x, y. this.not(this.__le__(b, x, y)))
 __lt__ = cacher[1](λb, x, y. this.__gt__(b, y, x))
-__ge__ = cacher[1](λb, x, y. this.__le__(b,;y, x))
+__ge__ = cacher[1](λb, x, y. this.__le__(b, y, x))
 
 __ne__ = cacher[1](λb, x, y. this.not(this.beq(b, x, y)))
 bits2bool = cacher[1](λb, x. this.not(this.beq0(b,,x)))
