@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\in_hu\\source\\repos\\FarAway6834\\unbeauty\\src\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{581EC743-BC21-460E-9E94-D96C9F4606E7}|unbeauty.vcxproj|C:\\Users\\in_hu\\source\\repos\\FarAway6834\\unbeauty\\src\\libeautyfwcpkg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{581EC743-BC21-460E-9E94-D96C9F4606E7}|unbeauty.vcxproj|solutionrelative:libeautyfwcpkg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "libeautyfwcpkg.h",
+              "DocumentMoniker": "C:\\Users\\in_hu\\source\\repos\\FarAway6834\\unbeauty\\src\\libeautyfwcpkg.h",
+              "RelativeDocumentMoniker": "libeautyfwcpkg.h",
+              "ToolTip": "C:\\Users\\in_hu\\source\\repos\\FarAway6834\\unbeauty\\src\\libeautyfwcpkg.h",
+              "RelativeToolTip": "libeautyfwcpkg.h",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAQwCMAAAB0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-26T05:09:32.26Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
