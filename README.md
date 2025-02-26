@@ -13,7 +13,7 @@ ex1.unbe
 sqrt = cacher[1](λx. x**0.5)
 abs = cacher[1](λx. this.sqrt(x**2))
 factorialtlqkf = cacher[1](λx. 0^x + x×f(x))
-partial_beq0c = cacher[1](λx, n, p. ((0^n) + n×(x + ((-1)^p)×n) ÷ (0^n + n^2)) × f(x, n - 1, p))
+partial_beq0c = cacher[1](λx, n, p. ((0^this.abs(n)) + n×(x + ((-1)^p)×n) ÷ (0^this.abs(n) + n^2)) × f(x, n - 1, p))
 partial_beq0 = cacer(λx, b, p. this.partial_beq0(x, 2^b - p, p))
 beq0 = cacher[1](λx, b. this.partial_beq0(x, b, 0) × this.partial_beq0(x, b, 1)
 beq = cacher[1](λx, y, b. this.beq0(this.abs(x - y), b))
