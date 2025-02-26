@@ -32,8 +32,6 @@
 #define SUPADOPA(OPS) SRA(AUOP, OPS)
 /* temp sucks way fix */
 #define IAMPIUNGSIN TBit<autynum, autynum, V>
-ST autynum{
-	SUPADOPA(+); SUPADOPA(-); SUPADOPA(*); SUPADOPA(/); SUPADOPA(^); TV(TN, __optlib_handle__, IAMPIUNGSIN, autynum V);
-};
+ST autynum{SUPADOPA(+); SUPADOPA(-); SUPADOPA(*); SUPADOPA(/); SUPADOPA(^); TV(TN, __optlib_handle__, IAMPIUNGSIN, autynum V);};
 
 #endif
