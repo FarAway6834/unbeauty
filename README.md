@@ -8,7 +8,7 @@ mathmatics.... beautiful 4 me....
 
 [tip (lang=ko)](https://FarAway6834.github.io/LAFTF1.1)
 
-ex1.unbe
+noptlib.unbe
 ```unbeauty
 sqrt = cacher[1](λx. x**0.5)
 abs = cacher[1](λx. this.sqrt(x**2))
@@ -62,7 +62,7 @@ bpu = cacher[1](λb,cod,x,y.this._bpuc_(b,cod,b-1,x,y))
 
 ex2.ubt - extend not base cls, ex1 cls.
 ```
-:ex1
+:noptlib
 fibo = cacher[1](λb, x.this.conditional(this.beq0(b, x), 0, this.conditionalidx(this.beq(b, x, 1), 1, this.fibo(b, x - 1) + this.fibo(b, x - 2))))
 ```
 
