@@ -60,7 +60,7 @@ _bpuc_ = cacher[1](λb, cod,i,x,y.this._bpucc_(b, i,x,y) + this.bits2bool(i)×th
 bpu = cacher[1](λb,cod,x,y.this._bpuc_(b,cod,b-1,x,y))
 ```
 
-ex2.unbe - extend not base cls, ex1 cls.
+ex2.ubt - extend not base cls, ex1 cls.
 ```
 :ex1
 fibo = cacher[1](λb, x.this.conditional(this.beq0(b, x), 0, this.conditionalidx(this.beq(b, x, 1), 1, this.fibo(b, x - 1) + this.fibo(b, x - 2))))
