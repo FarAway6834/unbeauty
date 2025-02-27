@@ -11,6 +11,7 @@ it sucks
      - *.operator* : this auto& morphism
      - *.operator/ : this auto& morphism
      - *.operator^ : this auto& morphism
+     - additional : ==,!=,>,<,>=,=<,&,|,^,&&,||
 
 data must placed before the function or fixing __optlib_handle__ using alias to fix optlib bit type give using
 
