@@ -4,6 +4,11 @@ unbeauty esolang (0⁰=1, x->0 x^x->1)
 
 mathmatics.... beautiful 4 me....
 
+`sementically-recursive-defined-recurrence-formular based` programming language
+
+actually, I didn't finished this work, because of my high school exam.
+~~Fucking Korea~~
+
 ## example
 
 [tip (lang=ko)](https://FarAway6834.github.io/LAFTF1.1)
