@@ -1,1 +1,17 @@
+lbdc
+setuptools
+wheel
+martialaw
+YoonSuckYall
+martialLaw
+subpr
+twine
+owopkg
+clro
+edprompt
+sympy
+numpy
+tensorflow
+pandas
+ipitin
 akatool
