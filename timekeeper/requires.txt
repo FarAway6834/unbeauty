@@ -9,12 +9,15 @@ six
 more-itertools
 zipp
 importlib_metadata
-
+mpmath
+python-dateutil
+pytz
+tzdata
 urllib3
 charset-normalizer
 idna
 certifi
-ca-certificates
+packaging
 chardet
 pysocks
 requests
@@ -28,7 +31,7 @@ hunter
 pytest
 pytest-cov
 pkginfo
-
+keyring
 Pillow
 Pygments
 pycmark
