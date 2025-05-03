@@ -30,6 +30,12 @@ Pygments
 cmarkgfm
 readme_renderer
 ---
+tqdm
+---
+six
+more-itertools
+zipp
+importlib_metadata
 twine
 ---
 owopkg
