@@ -9,6 +9,7 @@ six
 more-itertools
 zipp
 importlib_metadata
+---
 urllib3
 charset-normalizer
 idna
@@ -27,6 +28,7 @@ hunter
 pytest
 pytest-cov
 pkginfo
+---
 Pillow
 Pygments
 pycmark
