@@ -9,7 +9,6 @@ six
 more-itertools
 zipp
 importlib_metadata
----
 urllib3
 charset-normalizer
 idna
@@ -19,7 +18,6 @@ chardet
 pysocks
 requests
 requests-toolbelt
----
 coverage
 pytest-xdist
 virtualenv
@@ -50,7 +48,6 @@ more-itertools
 zipp
 importlib_metadata
 twine
----
 owopkg
 clro
 edprompt
