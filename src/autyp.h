@@ -3,7 +3,9 @@
 # define _AUTYP_H
 
 namespace AUTYP {
-	struct
+	struct coretyp {
+		s
+	}
 }
 
 #endif
