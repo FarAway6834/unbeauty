@@ -1,0 +1,7 @@
+#!/bin/sh
+
+chmod u+x ./make_download
+
+echo "#!/bin/sh" > download
+(cat ./download.pipox | ./mypipox) >> download
+chmod u+x ./download
