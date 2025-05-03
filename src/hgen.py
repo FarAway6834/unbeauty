@@ -18,6 +18,45 @@ def core():
 
 def pipe():
     target = argv[1]
+    if target = '-h':
+        print('''
+# personal `hgen.py`
+
+```shell
+$ python hgen.py
+inputfilename.h
+#pragma once
+#ifndef _INPUTFILENAME_H
+# define _INPUTFILENAME_H
+
+
+
+#endif
+$ python hgen.py argvfilename.h
+#pragma once
+#ifndef _ARGVFILENAME_H
+# define _ARGVFILENAME_H
+
+
+
+#endif
+$ ls
+hgen.py
+$ python hgen.py -h argvfilename.h
+$ ls
+hgen.py    argvfilename.h
+$ cat argvfilename.h
+#pragma once
+#ifndef _ARGVFILENAME_H
+# define _ARGVFILENAME_H
+
+
+
+
+#endif
+$ 
+```
+''')
     shell(f'echo "{target}" | python hgen.py')
 
 def hgen():
