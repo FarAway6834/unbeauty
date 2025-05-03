@@ -18,7 +18,7 @@ def core():
 
 def pipe():
     target = argv[1]
-    if target = '-h':
+    if target == '-h':
         print('''
 # personal `hgen.py`
 
@@ -57,6 +57,7 @@ $ cat argvfilename.h
 $ 
 ```
 ''')
+        return
     shell(f'echo "{target}" | python hgen.py')
 
 def hgen():
