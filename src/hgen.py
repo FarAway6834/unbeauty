@@ -1,7 +1,7 @@
 from sys import argv
 from os import system as shell
 
-def main():
+def core():
     print(f'''\
 {
 """
@@ -15,5 +15,16 @@ def main():
 """.format(input().replace(".", "_").upper()).strip()
 }\
 ''')
+
+def pipe():
+    target = argv[1]
+    shell(f'echo "{target}" | python hgen.py')
+
+def hgen():
+    target = argv[2]
+    shell(f'python hgen.py {target} > {target}')
+
+def main(L = len(argv)):
+    [core, pipe, hgen][L - 1]()
 
 if __name__ == "__main__": main()
