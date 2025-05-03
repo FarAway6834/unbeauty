@@ -5,6 +5,11 @@ martialaw
 YoonSuckYall
 martialLaw
 subpr
+six
+more-itertools
+zipp
+importlib_metadata
+---
 twine
 owopkg
 clro
