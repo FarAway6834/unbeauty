@@ -24,9 +24,16 @@ pytest
 pytest-cov
 pkginfo
 ---
+Pillow
+Pygments
+pycmark
+myst
+recommonmark
+---
 docutils
 nh3
 Pygments
+cffi
 cmarkgfm
 readme_renderer
 ---
