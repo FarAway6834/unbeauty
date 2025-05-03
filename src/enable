@@ -1,0 +1,7 @@
+#!/bin/bash
+
+chmod u+x ./enable
+chmod u+x ./hgen
+
+alias hgen="./hgen"
+alias disable="unalias hgen disable"

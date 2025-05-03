@@ -1,5 +1,7 @@
 #!/bin/sh
 
 chmod u+x ./hgen
+chmod u+x ./enable
+. enable
 
 python hgen.py $@
