@@ -4,4 +4,5 @@ chmod u+x ./enable
 chmod u+x ./hgen
 
 alias hgen="./hgen"
-alias disable="unalias hgen disable"
+alias pyshell="clear&&python&&clear"
+alias disable="unalias hgen disable pyshell"
