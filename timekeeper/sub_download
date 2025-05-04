@@ -1,0 +1,2 @@
+#!/bin/sh
+pip download -r sub_req.txt  --extra-index-url=https://pypi.org/simple
