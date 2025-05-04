@@ -14,3 +14,4 @@ ERROR: No matching distribution found for cmark-gfm
 ERROR: Could not find a version that satisfies the requirement dbus (from versions: none)
 ERROR: No matching distribution found for dbus
 ```
+ - cryptography

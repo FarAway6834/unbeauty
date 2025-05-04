@@ -43,9 +43,7 @@ cffi
 cmarkgfm
 readme_renderer
 tqdm
-dbus
 jeepney
-cryptography
 six
 more-itertools
 zipp

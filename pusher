@@ -1,0 +1,5 @@
+#!/bin/sh
+
+chmod u+x ./pusher
+
+python pusher.py
