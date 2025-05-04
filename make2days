@@ -1,0 +1,5 @@
+#!/bin/sh
+
+chmod u+x ./make2days
+
+git config --global credential.helper 'cache --timeout=172800'
