@@ -38,7 +38,6 @@ pycmark
 myst
 recommonmark
 docutils
-cmark-gfm
 Pygments
 cffi
 cmarkgfm
