@@ -40,7 +40,6 @@ docutils
 Pygments
 cffi
 cmarkgfm
-readme_renderer
 tqdm
 jeepney
 six
