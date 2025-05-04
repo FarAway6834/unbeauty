@@ -3,5 +3,8 @@
 chmod u+x ./make_download
 
 echo "#!/bin/sh" > download
+echo "#!/bin/sh" > sub_download
 (cat ./download.pipox | ./mypipox) >> download
+(cat ./sub_download.pipox | ./mypipox) >> sub_download
 chmod u+x ./download
+chmod u+x ./sub_download
