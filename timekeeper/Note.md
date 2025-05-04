@@ -16,3 +16,11 @@ ERROR: No matching distribution found for dbus
 ```
  - cryptography
  - readme_renderer (fucking this make my time wasting sucessful)
+
+SUCESS
+
+note : install fucking rust
+
+# fast install
+
+`pip install ./*.whl --no-deps`
