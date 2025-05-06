@@ -59,4 +59,5 @@ and _self__getattr__macro to acess huh?
 
 # problem
 
-using `[]` when using `cache` with `()` then s
+ - in cacher : using `[]` when using `cache` with `()`
+ - in fclass : using `[]` 2 call
