@@ -51,4 +51,4 @@ base struct (default super cls)
 # wtf?
 
 so the method is just work as acess indexing...
-and s
+and _self__getattr__macro to acess huh?
