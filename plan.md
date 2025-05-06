@@ -53,3 +53,10 @@ base struct (default super cls)
 so the method is just work as acess indexing...
 
 and _self__getattr__macro to acess huh?
+
+
+---
+
+# problem
+
+using `[]` when using `cache` with `()` then s
