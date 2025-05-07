@@ -61,3 +61,7 @@ and _self__getattr__macro to acess huh?
 
  - in cacher : using `[]` when using `cache` with `()`
  - in fclass : using `[]` 2 call
+
+# plan changes
+
+compile this.method(...) into clsname::method(clsname, ...)
