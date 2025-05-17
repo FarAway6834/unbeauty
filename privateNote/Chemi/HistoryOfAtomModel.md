@@ -16,7 +16,7 @@ Thomson Model(Plum Pudding Model)은,
 
 ---
 
-## 1. 음극선 실험으로 전자(by Joseph John Thomson; 발견됨.)와, Thomson Model(Plum Pudding Model)을 마련한 Joseph John Thomson경의 수제자 Ernest Rutherford(1st Baron Rutherford of Nelson)와 그 대학원생(사실상 ~~노예~~실험인력)의 **「α입자 산란실험 (1911)」**
+## 1. 『음극선 실험으로 전자(by Joseph John Thomson; 발견됨.)와, Thomson Model(Plum Pudding Model)을 마련한 Joseph John Thomson경』의 수제자 Ernest Rutherford(1st Baron Rutherford of Nelson)와 그 대학원생(사실상 ~~노예~~실험인력)의 **「α입자 산란실험 (1911)」**이 진행됨
 
  > 목적 : Thomson Model(Plum Pudding Model)의 실험적 검증
  > 
