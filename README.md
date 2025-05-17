@@ -101,4 +101,4 @@ example.auty (jsonic)
 
 ### plan change
 
-not using macro, will use PCRL
+not using macro, will use PCRE
