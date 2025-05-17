@@ -76,3 +76,5 @@ fibo = cacher[1](λb, x.this.conditional(this.beq0(b, x), 0, this.conditionalidx
 ### lazy evil optimizing
 
 `[○×]this.__NAME__(□)` -> `([○×]this.__NAME__)(□)`
+
+ > also as `conditional` too.
