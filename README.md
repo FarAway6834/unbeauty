@@ -90,6 +90,7 @@ main = cacher[0](λx. this.temp(x) + 1)
 example.auty
 ```fuior
 {
-
+	"temp" : [0, "x", "2 × x"],
+	"main" : [0, "x", "this.temp(x) + 1"]
 }
 ```
