@@ -80,3 +80,16 @@ fibo = cacher[1](λb, x.this.conditional(this.beq0(b, x), 0, this.conditionalidx
  > also as `conditional` too. (when it is arguemnt, not return)
 
 ## FUOIR Unbeauty Optimize IR
+
+example.unbe
+```unbeauty
+temp = cacher[0](λx. 2 × x)
+main = cacher[0](λx. this.temp(x) + 1)
+```
+
+example.auty
+```fuior
+{
+
+}
+```
