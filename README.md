@@ -15,7 +15,7 @@ actually, I didn't finished this work, because of my high school exam.
 
 noptlib.unbe
 ```unbeauty
-sqrt = cacher[1](λx. x&0.5)
+sqrt = cacher[1](λx. x^0.5)
 abs = cacher[1](λx. this.sqrt(x^2))
 partial_beq0c = cacher[1](λx, n, p. ((0^this.abs(n)) + n×(x + ((-1)^p)×n) ÷ (0^this.abs(n) + n^2)) × f(x, n - 1, p))
 partial_beq0 = cacer(λb, x, p. this.partial_beq0(x, 2^b - p, p))
