@@ -102,3 +102,10 @@ example.auty (jsonic)
 ### plan change
 
 not using macro, will use PCRE
+
+#### symopt
+
+just add optimizer at ir,
+that sympy optimizer.
+
+`this.□(○)` -> `base64(hash(□(○)))` to symbolize (like-lexing)
