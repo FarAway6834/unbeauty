@@ -73,7 +73,7 @@ fibo = cacher[1](λb, x.this.conditional(this.beq0(b, x), 0, this.conditionalidx
 
 ## [coding plan 24.02.24 ~ ...](./plan)
 
-### lazy evil optimizing
+### compile time lazy evil optimizing
 
 `[○×]this.__NAME__(□)` -> `([○×]this.__NAME__)(□)`
 
