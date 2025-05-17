@@ -60,7 +60,7 @@ bits2bool = cacher[1](λb, x. this.not(this.beq0(b,,x)))
 shr = cacher[1](λx, n.x÷(2^n))
 shl = cacher[1](λb, x, n.(2^b)×x-(2^b)×(x÷(2^(b-n))))
 idx = cacher[1](λb, x,i.this.shr(this.shl(b, x, i), b))
-_bpucc_ = cacher[1](λb, cod,i,x,y.this.lpu(cod, this.idx)(b, x, i), this.idx)(b, y, i)) * (2^i))
+_bpucc_ = cacher[1](λb, cod,i,x,y.this.lpu(cod, this.idx)(b, x, i), this.idx)(b, y, i)) × (2^i))
 _bpuc_ = cacher[1](λb, cod,i,x,y.this._bpucc_(b, i,x,y) + this.bits2bool(i)×this._bpuc_(b,i-1,x,y))
 bpu = cacher[1](λb,cod,x,y.this._bpuc_(b,cod,b-1,x,y))
 ```
