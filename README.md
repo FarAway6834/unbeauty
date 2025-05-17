@@ -87,10 +87,18 @@ temp = cacher[0](λx. 2 × x)
 main = cacher[0](λx. this.temp(x) + 1)
 ```
 
-example.auty
+example.auty (jsonic)
 ```fuior
-{
-	"temp" : [0, "x", "2 × x"],
-	"main" : [0, "x", "this.temp(x) + 1"]
-}
+[
+	0,
+	"x",
+	"this.temp(x) + 1",
+	{
+		"temp" : [0, "x", "2 × x"],
+	}
+]
 ```
+
+### plan change
+
+not using macro, will use PCRL
