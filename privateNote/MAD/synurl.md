@@ -5,14 +5,24 @@
 # SYNURL : Syntax on url, synurlc로 처리되는 그 정의역 형식언어 (보통 synurlc함수 안에 문자열로 작성한다)
 
 SYNURL은 URL형식의 구문을 튜링기계를 통해 컴파일하여 구성하는, 전처리기 오토마타 형식전처리부호 겸 형식언어용 플러그인이다.
+
 언어 L에 대해서, 컴파일러인 acessor(걍 synurlc(L)라고도 하는 함수다, 정확히는 그 명칭을 써야한나)를 통해서,
+
 acessor : SYNURL-L -> L인 함수 acessor가 컴파일러인것이다.
+
+
 
 그때, 언어 SYNURL-L가 존재한다.
 
+
+
 SYNURL-L의 뜻은 L로 전처리되어 생성된 값의 의미이다.
 
+
+
 그러니까 의미론적인 부분은 synurlc함수에 넣은값이라는거다.
+
+
 
 ## synurlc
 
@@ -23,25 +33,35 @@ synurlc L """
 멀티 라인 문자열
 """
 ```
+
 식의 방식으로 표현할수 있으며,
+
 이를 통해 synurlc L의 의미를 확정한다.
 
 따라서, synurlc함수가 정의된다는것은, synurlc L의 의미를 표준적으로 작성 • 해석할수 있다는 뜻이다.
 
 ## project SYNURL
-▪︎make online firsf
+
+▪︎make online first
+
 ▪︎then type it reak physical typer
+
 ▪︎copy to save
+
+
 PROFIT!
 
 ## synurl 규격 : 책 상품
 
 1권 제목 : synurl-book「총동봉상품」
+
 1책 MIT라이선스 / 타이틀 : corefile.pdf
  - corefile.pdf 에 적힌 글 (문자 행렬)
  - snap설치되며, apt설치되고, curl • wget등지 지원, docker지원, pip지원, pypy지원
+
 2책 GPL라이선스 / 타이틀 : mathessolinux
  - 자체 최소화 acessor 런타임용 아름다운 C코드 OS인 mathessolinux
+
 3책 MIT라이선스 / 타이틀 : about.tex
 
 ## SW on github by arcaived by yipl(yaml-included pytoml lang) docr txt : corefile.pdf ; installer (also selenium (명목목적, turing machine s.t. chrome) + urllib + cython + pypy + C code 2 acess it; acessor; pillow를 이용한 pdf파일의 3d printing용 플라스틱 인쇄판 DIY인쇄물 페키지, clay edition및 babilonian edition제작용 RPI 로봇 제어시스템)
