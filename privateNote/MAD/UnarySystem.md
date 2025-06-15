@@ -97,7 +97,6 @@ L은 pictogram 언어이다.
 
 ### 센다는 것(算)은 pictogram을 새는것으로 정의된다.
 
-`(∃UnarySystem(F) s.t. ⊢ ℙ₁)( ⊢ T)`
-
 수를 세는 함자 "산자 System"를 정의하겠다.
-`算子システム ≡ [算 := λx. RF(x)⁻¹ [R := λf.λx.λy.fyx]]`
+
+`算子システム ≡ [算 := λx. RF(x)⁻¹ [R := λf.λx.λy.fyx]] (단. (∃UnarySystem(F) s.t. ⊢ ℙ₁)( ⊢ T))`
