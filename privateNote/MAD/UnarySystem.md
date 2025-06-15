@@ -99,4 +99,4 @@ L은 pictogram 언어이다.
 
 `(∃UnarySystem(F) s.t. ⊢ ℙ₁)( ⊢ T)`
 
-RF(x)
+[算 := λx. RF(x)⁻¹ [R := λf.λx.λy.fyx]]
