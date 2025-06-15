@@ -1,6 +1,8 @@
-# Unary and PlasticArrow
+# 보존개념
 
-## Defination of Unary
+## Unary and PlasticArrow
+
+### Defination of Unary
 
 ```
 표기 Unary ≡ [UnarySystem := λF. [Char := λx. "x is charactor"][
@@ -49,7 +51,7 @@ Fₘ(x) ← Fₙ(x) ≡ F(n ← m)(x)
 
 즉 문자열의 정의와 표기법을 허용하면 참, 그러지 아니하면 거짓이지. 따라서, `s.t. ⊢ ℙ₁`이라고 하면, F에 대해, ℙ₁이 참이라고 강제하는 뜻인것이다.
 
-## 상수 "PlasticArrow" 정의
+### 상수 "PlasticArrow" 정의
 
 ℝ²나 ℝ³범위에서 다음을 정의한다
 
@@ -85,3 +87,5 @@ O를 원점으로 잡고, 반직선인, 시초선 OX, 동경 OP의 X, P를 좌�
 > 
 > "실현" ㅋㅋㅋㅋ... 개연성도 없거니나와, 웃긴다. ㅋㅋ
 > 
+
+## 감각적 언어 `L`을 가정하자.
