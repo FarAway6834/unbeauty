@@ -1,6 +1,7 @@
 # Defination of Unary
 
-표게 Unary ≡ [UnarySystem := λF. [Char := λx. "x is charactor"][
+```
+표기 Unary ≡ [UnarySystem := λF. [Char := λx. "x is charactor"][
 String := λx. x ∈ {c | Char(c)}ᵗ [t := |x|]
 ][
 F := λn:ℕ₀.λx:Char. ∀y (단. y ∈ {S}ⁿ)
@@ -34,3 +35,10 @@ Fₘ(x) ↓ᵏ Fₙ(x) ≡ Fₘ(x)『「▾」』₍₂₊ₖ₎「Fₙ(x)」
 Fₘ(x) → Fₙ(x) ≡ F(n → m)(x)
 Fₘ(x) ← Fₙ(x) ≡ F(n ← m)(x)
 ︸]]
+```
+
+---
+
+사용법 : 
+
+> `(∃UnarySystem(F))(⊢ ℙ₁)`
