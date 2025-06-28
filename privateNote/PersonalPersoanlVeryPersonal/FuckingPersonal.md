@@ -1,6 +1,8 @@
 # 개인용 요약본
 
-## [CSFB대수](https://faraway6834.github.io/unbeauty/privateNote/Proof/CSFBAlgebra)
+## Web Files 
+
+### [CSFB대수](https://faraway6834.github.io/unbeauty/privateNote/Proof/CSFBAlgebra)
 
 ````markdown
 "계산 -(공리계로 확장) -> 수학"형태로 계획된, 수학체계 겸 형식증명 시스템
@@ -17,7 +19,7 @@
 
 (Rid는 의도적으로 정의하지 않음, 따로 계산을 따지지 않겠다는거임. 따라서 행렬로 구성되지만, 그 행렬을 알기 힘듬, 대신에, `∈`를 집합론 없이 선행대수만으로 정의하고, `∈`함수를 이용할수 있음)
 
-## Proofmood-CSFBA
+### Proofmood-CSFBA
 
 CSFBA (Calculus Shorized Formular Bind Axiom)에 따라서, 
 
@@ -163,7 +165,7 @@ P. `Fractions Solution is (□)` : 해 명시
 (그럼에도 해당 html뷰는 아직 형식증명 검토가 안돌아갔으므로, 컴파일 상태인거지, 실행 상태가 아니다. 실행은 실행기에 돌려야, 문서 내부를 파싱해서, 부가적으로 제공된, [labare](https://faraway6834.github.io/unbeauty/privateNote/Proof/labare)•[unbare](https://faraway6834.github.io/unbeauty/privateNote/Proof/unbare) 코드와 함깨 해석하여(labare•unbare는 인터프리터 언어가 아니고, 정형 대이터 겸 사용자 편의 대이터 겸 Low Level 컴파일 언어다.), 검토된다; 이제보니 실행기보다는, 형식증명 검토기라는 명칭이 더 적합하다, 프로그래밍 언어는 하나도 실행하지 않고, 추론규칙을 재대로 활용했는지만 검사하여 검토작업(오류나 로그나 상태 표시)만 하기 때문이다.)
 ````
 
-## [labare언어 계획](https://faraway6834.github.io/unbeauty/privateNote/Proof/labare)
+### [labare언어 계획](https://faraway6834.github.io/unbeauty/privateNote/Proof/labare)
 ```markdown
 # labare 언어 계획
 
@@ -182,7 +184,7 @@ Proofmood 모드에서만 쓰는 기능이다
 음...
 ```
 
-## [LinearUnbeauty 언어 계획](https://faraway6834.github.io/unbeauty/privateNote/Proof/LinearUnbeauty)
+### [LinearUnbeauty 언어 계획](https://faraway6834.github.io/unbeauty/privateNote/Proof/LinearUnbeauty)
 
 ```markdown
 # LinearUnbeauty 계획
@@ -193,7 +195,7 @@ Proofmood 모드에서만 쓰는 기능이다
 ```
 
 
-## [unbare언어 계획](https://faraway6834.github.io/unbeauty/privateNote/Proof/unbare)
+### [unbare언어 계획](https://faraway6834.github.io/unbeauty/privateNote/Proof/unbare)
 
 ```markdown
 # unbare 언어 계획
@@ -213,7 +215,7 @@ output laber code의 구조 :
 그러니까, 수학적인 Subrootine-Relationship 코드를 만드는게 목적이다.
 ```
 
-## [Unbeauty 언어](https://faraway6834.github.io/unbeauty)
+### [Unbeauty 언어](https://faraway6834.github.io/unbeauty)
 
 ````markdown
 # unbeauty
@@ -329,7 +331,7 @@ that sympy optimizer.
 `this.□(○)` -> `base64(hash(□(○)))` to symbolize (like-lexing)
 ````
 
-## LAFTF1.1말고 다른이론으로 갈아탔기에, 그 이론을 적겠음. [주장](https://faraway6834.github.io/unbeauty/privateNote/MAD/%EC%A3%BC%EC%9E%A5)
+### LAFTF1.1말고 다른이론으로 갈아탔기에, 그 이론을 적겠음. [주장](https://faraway6834.github.io/unbeauty/privateNote/MAD/%EC%A3%BC%EC%9E%A5)
 
 ````markdown
 # 주장
@@ -755,3 +757,7 @@ Mod(¬P) = U 이면이 ∀¬P(x) 이면이 ⊨ ¬P
 
 따라서, 픽토그램으로 우리가 새상을 받아들인다 쳐도, 픽토그램 새상에서도 수, 수학, 보존개념은 요구되지 않으며, 해당 개념들은 언어를 통한 부가적인 개념일 뿐이지, 비물질적 실체가 아니다.
 ````
+
+## 본론
+
+내가 「주장」에서 언급한것과는 별개로, 「CSFB대수」를 계획하고 있으며, 대수만을 이용한 연산으로 충분히 논리연산을 만들수 있음은 「주장」에서 미리 언급함.
