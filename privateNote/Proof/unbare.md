@@ -2,7 +2,7 @@
 
 형식증명용 언어이다.
 
-실행 목적이 아닌 labare코드를 뱉는 용도이다.
+실행 목적이 아닌 [labare](https://github.com/FarAway6834/unbeauty/blob/main/privateNote%2FProof%2Flabare.md)코드를 뱉는 용도이다.
 
 output laber code의 구조 :
  - virtual pararel scadular
