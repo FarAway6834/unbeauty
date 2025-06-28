@@ -1,6 +1,6 @@
 # labare 언어 계획
 
-Linear Unbeauty의 확장이며, 람다 산술이 지원된다.
+[Linear Unbeauty](https://github.com/FarAway6834/unbeauty/blob/main/privateNote%2FProof%2FLinearUnbeauty.md)의 확장이며, 람다 산술이 지원된다.
 구체적 구현은 미룰 예정이며,
 성능대신 생산성이 높아보이는데, 실제로는 내 성격상 성능쪽으로 갈것같다.
 
