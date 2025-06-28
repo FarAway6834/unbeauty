@@ -182,6 +182,17 @@ Proofmood 모드에서만 쓰는 기능이다
 음...
 ```
 
+## [LinearUnbeauty 언어 계획](https://faraway6834.github.io/unbeauty/privateNote/Proof/LinearUnbeauty)
+
+```markdown
+# LinearUnbeauty 계획
+
+선형대수를 지원하는 [Unbeauty](https://faraway6834.github.io/unbeauty)
+
+... 가 끝임
+```
+
+
 ## [unbare언어 계획](https://faraway6834.github.io/unbeauty/privateNote/Proof/unbare)
 
 ```markdown
