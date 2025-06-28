@@ -167,6 +167,8 @@ P. `Fractions Solution is (□)` : 해 명시
 ---
 
 CSFBAlgebra 호환 공리계 : 대수(선형대수학 포함)와 람다(λ) 산술을 기술할수 있으며, `x = y ↔ (Φ ↔ (Φ [x := y])))`가 참인 공리계
+
+주의 : AoI-Rid-Empty SetTheory Axiom에서 말하는 집합 체계는 집합을 쓰지 않고 함수화겠다(`f(S)(x) = (x ∈ S)`로 집합을 활용하겠다)는 소리라서, 선형대수를 사용할수 있으면, AoI-Rid-Empty SetTheory를 모델링 가능하므로, AoI-Rid-Empty SetTheory Axiom은 고려할 필요조차 없다.
 ````
 
 ### [labare언어 계획](https://faraway6834.github.io/unbeauty/privateNote/Proof/labare)
