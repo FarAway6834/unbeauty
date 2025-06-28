@@ -163,6 +163,10 @@ P. `Fractions Solution is (□)` : 해 명시
 마지막으로 그렇게 html화되어 정리된 렌더링 뷰는, LaTeX 표기 기능을 추가해야만 할것이다.
 
 (그럼에도 해당 html뷰는 아직 형식증명 검토가 안돌아갔으므로, 컴파일 상태인거지, 실행 상태가 아니다. 실행은 실행기에 돌려야, 문서 내부를 파싱해서, 부가적으로 제공된, [labare](https://faraway6834.github.io/unbeauty/privateNote/Proof/labare)•[unbare](https://faraway6834.github.io/unbeauty/privateNote/Proof/unbare) 코드와 함깨 해석하여(labare•unbare는 인터프리터 언어가 아니고, 정형 대이터 겸 사용자 편의 대이터 겸 Low Level 컴파일 언어다.), 검토된다; 이제보니 실행기보다는, 형식증명 검토기라는 명칭이 더 적합하다, 프로그래밍 언어는 하나도 실행하지 않고, 추론규칙을 재대로 활용했는지만 검사하여 검토작업(오류나 로그나 상태 표시)만 하기 때문이다.)
+
+---
+
+CSFBAlgebra 호환 공리계 : 대수(선형대수학 포함)와 람다(λ) 산술을 기술할수 있으며, `x = y ↔ (Φ ↔ (Φ [x := y])))`가 참인 공리계
 ````
 
 ### [labare언어 계획](https://faraway6834.github.io/unbeauty/privateNote/Proof/labare)
@@ -761,3 +765,5 @@ Mod(¬P) = U 이면이 ∀¬P(x) 이면이 ⊨ ¬P
 ## 본론
 
 내가 「주장」에서 언급한것과는 별개로, 「CSFB대수」를 계획하고 있으며, 대수만을 이용한 연산으로 충분히 논리연산을 만들수 있음은 「주장」에서 미리 언급함.
+
+현제의 수학(ZFC, Peano, ZF, Gödel Encoding, 표준 해석학과 비표준 해석학등등)이 CSFBAlgebra 호환 공리계일까?
