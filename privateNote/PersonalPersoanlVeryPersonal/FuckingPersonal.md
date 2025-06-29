@@ -1,5 +1,7 @@
 # 개인용 요약본
 
+(총 1233line 35326 자)
+
 ## Web Files 
 
 ### [CSFB대수](https://faraway6834.github.io/unbeauty/privateNote/Proof/CSFBAlgebra)
