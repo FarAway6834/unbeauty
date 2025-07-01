@@ -1,6 +1,6 @@
 # 개인용 요약본
 
-(총 1596 line 44799 자)
+(총 1600 line 44887 자)
 
 ## Web Files 
 
@@ -1594,3 +1594,7 @@ Mod(¬P) = U 이면이 ∀¬P(x) 이면이 ⊨ ¬P
 
 따라서, 방정식은 기본적으로 특칭 술어로써, 사용할수 있음
 ````
+
+# 그러면
+
+「Alkali Mathmatics with easy explanation by SIOT, CMD, FAN and LAFTF1.1」의 난이도는?
