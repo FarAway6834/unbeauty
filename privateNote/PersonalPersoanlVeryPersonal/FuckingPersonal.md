@@ -1339,9 +1339,9 @@ KönigsbergAxiom 에 따라서,
 
 ### HAPA Theorem (Hyper Alkalic-Proofmood Theorem)
 
-Proof CSFBA nonHyperVersion 형식증명의 근거.
+Alkalic-Proofmood nonHyperVersion 형식증명의 근거.
 
-동시에 유일한 Proof CSFBA HyperVersion에서의 형식증명
+동시에 유일한 Alkalic-Proofmood HyperVersion에서의 형식증명
 
 `y = x`, `y = z`가 가설일때,
 
