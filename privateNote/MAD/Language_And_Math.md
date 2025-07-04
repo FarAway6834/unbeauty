@@ -1,5 +1,7 @@
 # Language And Math
 
+(총  line 14309 자)
+
 목차:
  - 수학과 언어
  - 수란 무엇인가
