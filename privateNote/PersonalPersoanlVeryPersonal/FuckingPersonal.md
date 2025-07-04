@@ -235,7 +235,7 @@ mathmatics.... beautiful 4 me....
 `sementically-recursive-defined-recurrence-formular based` programming language
 
 actually, I didn't finished this work, because of my high school exam.
-~~Fucking Korea~~
+~~■■■■ing Korea~~
 
 ## example
 
@@ -1183,9 +1183,9 @@ Trinity 1 12 21
  - FAN (Function AbbreviatedNaming)
  - CMD 대수
  ````
- 
+
  ### [수학이론 구버전, LAFTF1.1; 현제는 쉬운 설명용으로 준 폐기](https://faraway6834.github.io/LAFTF1.1)
- 
+
  ```markdown
 ol{margin:0;padding:0}table td,table th{padding:0}.c0{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}.c11{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:26pt;font-family:"Arial";font-style:normal}.c3{padding-top:0pt;padding-bottom:3pt;line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.c6{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:center}.c1{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c5{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:right}.c12{text-decoration-skip-ink:none;-webkit-text-decoration-skip:none;color:#1155cc;text-decoration:underline}.c10{background-color:#ffffff;max-width:451.4pt;padding:72pt 72pt 72pt 72pt}.c4{margin-left:36pt;text-indent:36pt}.c7{color:inherit;text-decoration:inherit}.c2{height:11pt}.c8{margin-left:36pt}.c9{color:#202122}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}
 
@@ -1243,7 +1243,7 @@ def) bool ≡ int⁻¹
 
         ∴ f(x) = (0-1)/(1-0) x + 1 = 1 - x 로, 그래프 위애서 점을 찍을떄, 우리가 보고자 하는 점의 위치를 f(0)에서 f(1)로 수를 바꿔보면, 감소하는 수는 1을 얻으니 당연하다.
 
-(아니 생략이 ㄹㅇ ㄹㅈㄷ, 어짜피 요약본이긴 한데 띠겁네)
+(아니 생략이 ㄹㅇ ㄹㅈㄷ, 어짜피 요약본이긴 한데 ■겁네)
 
 * * *
 
@@ -1279,19 +1279,19 @@ def) bool ≡ int⁻¹
 
 —------------------------------------------------------------------------------------------------------------------------
 
-대충 프랑스에서 아이디어 떠올려서 영적인 힘을 줘서 고맙다는 뻘소리가 적힐 칸이었는데…
+대충 프랑스에서 아이디어 떠올려서 영적인 힘을 줘서 고맙다는 ■소리가 적힐 칸이었는데…
 
-씨발이런또라이같은인생아지랄난개가타서존나못참아죽겠네미친어떻게씨발내가개고생해서얻은LAFTF1.0이씨발이미있냐위키백과에서xor기호얻으려고씨발들어가봤더니나중에찾는건다른곳에서했고씨벌아진짜개같이영문위키백과에씨벌아니거기를먼저들어갔더니얻은기호가아니진짜개얼탱이가없어가지고하아 제칼킨 식이라고 ㅈㄴ좋은 이론이 선행으로 있었는데 이거 모르고 위에 내용 씨발 혼자 하나하나 유도한 내가 병신이지 병신이야 존나 인생 절반 손해봤네 ㅋㅋㅋ 미친 뭐 앞으로 서술할 비트연산도 마찬가지겠지 뭐 하 시발 인생.
+■■이런또■이같은인생아지■난■가타서■나못참아죽■네■친어떻게■■내가■고생해서얻은LAFTF1.0이■■이미있냐위키백과에서xor기호얻으려고■■들어가봤더니나중에찾는건다른곳에서했고■벌아진짜■같이영문위키백과에■■아니거기를먼저들어갔더니얻은기호가아니진짜■얼탱이가없어가지고하아 제칼킨 식이라고 ■ㄴ좋은 이론이 선행으로 있었는데 이거 모르고 위에 내용 ■■ 혼자 하나하나 유도한 내가 ■■이지 ■■이야 ■나 ■생 ■반 ■해봤네 ㅋㅋㅋ ■친 뭐 앞으로 서술할 비트연산도 마찬가지겠지 뭐 하 ■발 인생.
 
-shlᵦ(x) = shlᵦ(2ᴮ⁻¹ + x) (β = B (Bits) 동일하게, 기호의 한계, 참고로 겹쳐가시고 씨벌 한번 더 a서 β로 수정함. 아이고야 ㅠㅠ)
+shlᵦ(x) = shlᵦ(2ᴮ⁻¹ + x) (β = B (Bits) 동일하게, 기호의 한계, 참고로 겹쳐가시고 ■벌 한번 더 a서 β로 수정함. 아이고야 ㅠㅠ)
 
 (shlᵦ)ₗₘ (Λ ≡ lm, 동일한 한계로 이런식으로 표기하겠음, ⁽\*⁾)
 
-(shlᵦ)ₐ (아랫첨자 a가 없는 관계로… 씨벌 ⁽\*⁾)
+(shlᵦ)ₐ (아랫첨자 a가 없는 관계로… ■벌 ⁽\*⁾)
 
 * * *
 
-원래는 (=필기 원문대로 쓰면은) “그런대 아름다운 사실,” 이라고 써야하는데 ㅈ같네 기분이 아직도 ㅋㅋ 이런 씨발 아름다운 새상
+원래는 (=필기 원문대로 쓰면은) “그런대 아름다운 사실,” 이라고 써야하는데 ■같네 기분이 아직도 ㅋㅋ 이런 ■■ 아■다운 새상
 
 f(x) = x - ⌊x⌋
 
@@ -1313,7 +1313,7 @@ gₗₘ = k, gₐ =2k (k = fₓ)
 
 shlᵦ(x) = k g(x/k)
 
-또한, 동일하게 그래프나 함수 버전, 방금전 버전 유도도 있지만, 단순하게도, shl = ⌊x/2⌋ 다. x ÷ 2  = y … r, x ≡ y (mod. 2)고, ⌊x/2⌋ = (x-r)/2 다.  (아 아래로 …화되는거 ㅈㄴ 띄껍내 개씨발 (딥빡))
+또한, 동일하게 그래프나 함수 버전, 방금전 버전 유도도 있지만, 단순하게도, shl = ⌊x/2⌋ 다. x ÷ 2  = y … r, x ≡ y (mod. 2)고, ⌊x/2⌋ = (x-r)/2 다.  (아 아래로 …화되는거 ■ㄴ 띄껍내 개■■ (딥■))
 
 시프팅시 일부 비트의 정보 손실(?) 을 이용하여
 
@@ -1351,7 +1351,7 @@ bitwise fᵦ(x, y) = Σ f(idxᵦ(B - i, x), idxᵦ(B - i, y))2ⁱ⁻¹ (i = 1~B)
 
 산술연산으로 다 1초컷 ㅋㅋ
 
-참고 : f(x) = x - ⌊x⌋ 는 톱늬파의 일종으로, actan(tan(x/π))도 톱늬파의 일종으로, 가우스 함수는 ㄹㅇ로 그냥 ㅈㄴ 초딩도 이해가능한 ㅈㄴ 자명한 산술연산이라고 ㅋㅋㅋ
+참고 : f(x) = x - ⌊x⌋ 는 톱늬파의 일종으로, actan(tan(x/π))도 톱늬파의 일종으로, 가우스 함수는 ㄹㅇ로 그냥 ■ㄴ 초딩도 이해가능한 ■ㄴ 자명한 산술연산이라고 ㅋㅋㅋ
 
 —------------------------------------------------------------------------------------------------------------------------
 
@@ -1369,7 +1369,7 @@ Laftf 1.1 (이거)를 쓰는 튜링 머신에서 작동하는 명제 p는
 
 산술, 논리, 비트연산에 대한 명제일 수 있고, setize(p)는 집합이고, 결국에 집합은 S = {a₁, …, aₙ} 일시 x = a₁ ∨ … ∨ x = aₙ  일 수도 있어 모든 집합 S는 boolf(S)로 p로 환원가능함으로, 집합은 여기서 말한 전체 집합의 모임의 집합에 한정해서 다룰수 있다.
 
-사실상 명제 =(= 방정식)임으로 말 다헀음, 그냥 ㅆㄱㄴ
+사실상 명제 =(= 방정식)임으로 말 다헀음, 그냥 ■ㄱㄴ
 
 여기까지가 LAFTF 1.1이었다
 
@@ -1759,9 +1759,9 @@ Mod(¬P) = U 이면이 ∀¬P(x) 이면이 ⊨ ¬P
 
 내가 Alkalic이 쉽다 생각하는 이유는 단순하지.
 
-Alkalic을 방정식 존나 잘하는 사람이 와서 푼다 가정하자. 정수론 올림피아드정도 나간 학생한태, 태입이 뭔지 설교한 후에 가르치면, 논리를 대수로 바꿔줘서 고맙다 할껄?
+Alkalic을 방정식 ■나 잘하는 사람이 와서 푼다 가정하자. 정수론 올림피아드정도 나간 학생한태, 태입이 뭔지 설교한 후에 가르치면, 논리를 대수로 바꿔줘서 고맙다 할껄?
 
-근데 사실은 정수론 올림피아드 나간 사람들 특징은 방정식이나 함수를 존나 쉽게 풀어낸다는거야, 그말은 즉슨, 우리는 단순히 추상적인 연산과정인 함수 f, g, h에 대해, f(x) = g(x)나 h(x) = const. 꼴의 방정식 문제를 내는것으로 연산의 계산에 대한 서술 (두 계산이 같거나, 어떤 계산이 상수화됨)으로 방정식을 표현할수 있고, 이는 방정식이 본질적으로 함수(연산)에 대한 서술임를 나타냄, 그래서 이 FAN의 빈칸인 인자를, 단순히 연산해주는걸 가르쳐 주는거라서, 초등학생한태도 잘 설명할수 있는 중학고 수준으로 설명할수 있다는거지.
+근데 사실은 정수론 올림피아드 나간 사람들 특징은 방정식이나 함수를 ■나 쉽게 풀어낸다는거야, 그말은 즉슨, 우리는 단순히 추상적인 연산과정인 함수 f, g, h에 대해, f(x) = g(x)나 h(x) = const. 꼴의 방정식 문제를 내는것으로 연산의 계산에 대한 서술 (두 계산이 같거나, 어떤 계산이 상수화됨)으로 방정식을 표현할수 있고, 이는 방정식이 본질적으로 함수(연산)에 대한 서술임를 나타냄, 그래서 이 FAN의 빈칸인 인자를, 단순히 연산해주는걸 가르쳐 주는거라서, 초등학생한태도 잘 설명할수 있는 중학고 수준으로 설명할수 있다는거지.
 
 끝, 쉽지.
 
@@ -1781,3 +1781,5 @@ Alkalic을 방정식 존나 잘하는 사람이 와서 푼다 가정하자. 정�
  - 언어 사상을 언어 재능이 결핍된 이들이나 속뜻 해석 능력이 결핍된 이들도 이해할수 있게 한다.
  - 재능을 당연시하는 기존 방식보다는 기본적 사고 재능이 떨어지는 인간이 배울수 있는 방식을 쓴다
  - 근거없는 멸시; 무재능자에 대한 멸시; 이•문과의 근거없는 비합리적 배타를 구축해 없엔다.
+ 
+ Edit : This is filtered version; I didn't know that I use too many f-words s.t. like this oh...
