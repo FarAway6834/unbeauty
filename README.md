@@ -79,6 +79,8 @@ fibo = cacher[1](λb, x.this.conditional(this.beq0(b, x), 0, this.conditionalidx
 
  > also as `conditional` too. (when function is in arguemnt, not return, make lazy)
 
+(when mulitypling and when arguemnt value)
+
 ## FUOIR Unbeauty Optimize IR
 
 example.unbe
