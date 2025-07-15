@@ -21,7 +21,7 @@ Alkalic Algbra서 AlkalicVectorSpace나 oidfield = Σᵢ ObjectID eᵢ에 대해
 
 ### Königsberg Axiom
 
-⊢ KönigsbergAxiom(x, y, Φ) := (x = y ↔ (Φ ↔ (Φ [x := y])))
+⊢ KönigsbergAxiom(x, y, Φ) := (x = y → (Φ ↔ (Φ [x := y])))
 
 ## About
 
@@ -50,7 +50,7 @@ KönigsbergAxiom 에 따라서,
  > 
  > 규칙 `using x = y → (Φ ↔ (Φ [x := y])))`
  > 
- > 원리 : `x = y ↔ (Φ ↔ (Φ [x := y])))`서 `x = y`가 결론 (5번 라인)과 같음을 보임
+ > 원리 : `x = y → (Φ ↔ (Φ [x := y])))`서 `x = y`가 결론 (5번 라인)과 같음을 보임
  > 
  > ```Alkalic-Proofmood
  > □.1. using x = y → (Φ ↔ (Φ [x := y])))
@@ -60,19 +60,7 @@ KönigsbergAxiom 에 따라서,
  > □.5. Φ ↔ (Φ [x := y])
  > ```
 
- > 
- > 규칙 `using (Φ ↔ (Φ [x := y]))) → x = y `
- > 
- > 원리 : `x = y ↔ (Φ ↔ (Φ [x := y])))`서 `Φ ↔ (Φ [x := y]))`이며, 그것이 결론 (5번 라인)과 같음을 보임
- > 
- > ```Alkalic-Proofmood
- > □.1. using (Φ ↔ (Φ [x := y]))) → x = y
- > □.2. Φ
- > □.3. Φ [x := y]
- > □.4. Φ ↔ (Φ [x := y])
- > □.5. x = y
- > ```
- > 
+(전건부정의 오류 하나 있어서 삭제함)
 
 내부적으로 결론(5번 라인)이 참일때만 계속 동작함, 또한 결론은 리스트에 쌓이면서, 마지막 줄인 Theorem에 도달할때까지 Lemma가 리스트업되서, 문장이 참인지는 Lemma로 보임.
 
@@ -111,9 +99,11 @@ Alkalic-Proofmood nonHyperVersion 형식증명의 근거.
 
 규칙 `using x = y → (Φ ↔ (Φ [x := y])))`를 통하여, `y = z ↔ x = z`를 보인다, 즉,
 
-문법상, `y = z ↔ (y = z ↔ (y = z [y := x]))` = `y = z ↔ (y = z ↔ x = z)`이므로, 
+문법상, `y = z → (y = z ↔ (y = z [y := x]))` = `y = z ↔ (y = z ↔ x = z)`이므로, 
 
 y = z ↔ (y = z ↔ x = z)를 표현하기 위한 잉여적인 체계다.
+
+(그치만 이전에 있었던 전건부정 오류때문에 또 고쳐야함 ㅠㅠ)
 
 ## Alkalic-Proofmood (Power Up - Version)
 
