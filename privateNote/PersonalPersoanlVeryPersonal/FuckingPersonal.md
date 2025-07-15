@@ -1417,6 +1417,8 @@ Alkalic Algbra서 AlkalicVectorSpace나 oidfield = Σᵢ ObjectID eᵢ에 대해
 
 ⊢ KönigsbergAxiom(x, y, Φ) := (x = y → (Φ ↔ (Φ [x := y])))
 
+이때 [x := y]는 단순히 의미론적 대입 연산자.
+
 ## About
 
 이전에 나온 CSFBAlgebra에서 모델론이 안먹히나 했는데 먹힘, 그래서 아이 새로 CSFBAlgebra를 정리(바꿈), 그게 Alkalic.
