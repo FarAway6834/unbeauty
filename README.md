@@ -77,7 +77,7 @@ fibo = cacher[1](λb, x.this.conditional(this.beq0(b, x), 0, this.conditionalidx
 
 `[○×]this.__NAME__(□)` -> `([○×]this.__NAME__)(□)`
 
- > also as `conditional` too. (when it is arguemnt, not return)
+ > also as `conditional` too. (when function is in arguemnt, not return, just process)
 
 ## FUOIR Unbeauty Optimize IR
 
