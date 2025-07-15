@@ -62,6 +62,8 @@ KönigsbergAxiom 에 따라서,
  > □.5. Φ ↔ (Φ [x := y])
  > ```
 
+모든 추론은 규칙 `using x = y → (Φ ↔ (Φ [x := y])))`에서 시작되며, 규칙 `using x = y → (Φ ↔ (Φ [x := y])))`는 기본적으로 modus ponens 추론 규칙을 따르기에 타당 (valid)하다. (심지어 Königsberg Axiom이 항진인데, Königsberg Axiom을 제외하고는 대수 연산밖에 활용하지 않기에, alkalic은 건전하다)
+
 (전건부정의 오류 하나 있어서 삭제함)
 
 내부적으로 결론(5번 라인)이 참일때만 계속 동작함, 또한 결론은 리스트에 쌓이면서, 마지막 줄인 Theorem에 도달할때까지 Lemma가 리스트업되서, 문장이 참인지는 Lemma로 보임.
