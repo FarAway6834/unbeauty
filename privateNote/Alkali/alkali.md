@@ -17,11 +17,13 @@
 
 Alkalic Algbra서 AlkalicVectorSpace나 oidfield = Σᵢ ObjectID eᵢ에 대해, 입력받는 Tensor입력으로 람다, 대수함수, Alkalic Algbra서 다가함수를 포함한 함수 구현.
 
-변항은 이론에 인자로 설멸 가능
+변항은 이론에 인자로 설명 가능
 
 ### Königsberg Axiom
 
 ⊢ KönigsbergAxiom(x, y, Φ) := (x = y → (Φ ↔ (Φ [x := y])))
+
+⊢ VectorAxiom : "모든 벡터 공간은 기저를 가진다"
 
 이때 [x := y]는 단순히 의미론적 대입 연산자.
 
