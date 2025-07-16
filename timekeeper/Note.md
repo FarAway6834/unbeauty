@@ -23,4 +23,4 @@ note : install fucking rust
 
 # fast install
 
-`pip install ./*.whl --no-deps`
+`pip install ./*.whl --no-deps`cd
