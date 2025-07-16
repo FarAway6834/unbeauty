@@ -23,7 +23,7 @@ Alkalic Algbra서 AlkalicVectorSpace나 oidfield = Σᵢ ObjectID eᵢ에 대해
 
 변항은 이론에 인자로 설명 가능
 
-### Königsberg Axiom
+### Königsberg Axiom, VectorAxiom, InaccessibleCardinalExistanceAxiom
 
 ⊢ KönigsbergAxiom(x, y, Φ) := (x = y → (Φ ↔ (Φ [x := y])))
 
