@@ -4,7 +4,7 @@
 
 거의 됬네 기분좋다.
 
-## DEFINIRION : Alkalic : Alkalic Linear-algebra + Königsberg Axiom + Lambda Incoding Calculate
+## DEFINIRION : Alkalic : Alkalic Linear-algebra + Königsberg Axiom + Lambda Incoding Calculate (구문론적 문제로 lambda형식만 유지하고, 폐지, 람다 지분은 없음)
 
 ### Alkalic Algbra
 
@@ -17,9 +17,22 @@
 
 Alkalraum은 여기서, Scala가 객체의 집합으로 확장되어서, |Scala| = κ가 된다.
 
-### Lambda Including Calculate
+### Lambda Including Calculate (구문론적 문제로 lambda형식만 유지하고, 폐지, 람다 지분은 없음)
 
-Alkalic Algbra서 AlkalicVectorSpace나 oidfield = Σᵢ ObjectID eᵢ에 대해, 입력받는 Tensor입력으로 람다, 대수함수, Alkalic Algbra서 다가함수를 포함한 함수 구현.
+Alkalic Algbra서 AlkalicVectorSpace나 oidfield = Σᵢ ObjectID eᵢ에 대해, 입력받는 Tensor입력으로 ~~람다~~, 대수함수, Alkalic Algbra서 다가함수를 포함한 함수 구현.
+
+---
+
+
+폐지되었기 때문에
+
+Alkalic Algbra서 AlkalicVectorSpace나 oidfield = Σᵢ ObjectID eᵢ에 대해, 입력받는 Tensor입력으로 대수함수, Alkalic Algbra서 다가함수를 포함한 함수 구현.
+
+하는 체계로 바뀜.
+
+연산 괴정이다.
+
+모든 미지수는 이 람다 체계에서 함수 내부변항으로 고정되어서, 두 함수의 합성에서 초기화되어 창출되거나, 아니면 인자로 된다. 따라서, 어떤 수학 이론은 인자를 가지며, 모델이나 진리값배정은 그 값을 넣는다.
 
 변항은 이론에 인자로 설명 가능
 
