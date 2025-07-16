@@ -1411,11 +1411,13 @@ instagram @leenuxmathno7e
 
 Alkalic Algbra서 AlkalicVectorSpace나 oidfield = Σᵢ ObjectID eᵢ에 대해, 입력받는 Tensor입력으로 람다, 대수함수, Alkalic Algbra서 다가함수를 포함한 함수 구현.
 
-변항은 이론에 인자로 설멸 가능
+변항은 이론에 인자로 설명 가능
 
 ### Königsberg Axiom
 
 ⊢ KönigsbergAxiom(x, y, Φ) := (x = y → (Φ ↔ (Φ [x := y])))
+
+⊢ VectorAxiom : "모든 벡터 공간은 기저를 가진다"
 
 이때 [x := y]는 단순히 의미론적 대입 연산자.
 
@@ -1455,6 +1457,8 @@ KönigsbergAxiom 에 따라서,
  > □.4. Φ [x := y]
  > □.5. Φ ↔ (Φ [x := y])
  > ```
+
+모든 추론은 규칙 `using x = y → (Φ ↔ (Φ [x := y])))`에서 시작되며, 규칙 `using x = y → (Φ ↔ (Φ [x := y])))`는 기본적으로 modus ponens 추론 규칙을 따르기에 타당 (valid)하다. (심지어 Königsberg Axiom이 항진인데, Königsberg Axiom을 제외하고는 대수 연산밖에 활용하지 않기에, alkalic은 건전하다)
 
 (전건부정의 오류 하나 있어서 삭제함)
 
