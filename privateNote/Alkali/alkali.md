@@ -99,7 +99,7 @@ VectorAxiom은 AC와 동치이다, 따라서 Königsberg Axiom + VectorAxiom은 
 
 이때 κ가 Alkalraum의 구성에 쓰인다.
 
-Alkalraum은 Grothendieck 우주가 존재하는 ZFC이다.
+Alkalraum은 κ로 그 크기가 확장된 Alkalic-LinearAlgebra의 객체를 Scala에 포함하는 Hilbertraum같은 (((Scala^κ)^κ)^....)^κ식으로 구성된 κ Rank Covector공간이며, 복소수나 분발복소수/이원수나 2ⁿ원수 등의 행렬표현에서 그 원래 집합의 원소 역할을 하는 객체로의 대응된것 등이 있을수 있는 실수 및 함수 및 객체들로 된 선형대수 텐서공간인데, κ크기를 보장하기에, Grothendieck 우주가 존재하는 ZFC를 표현할수 있어, 여기서 SetTheorem은 자동으로 Grothendieck 우주가 존재하는 ZFC로, 범주론이 서술된다.
 
 ## About
 
