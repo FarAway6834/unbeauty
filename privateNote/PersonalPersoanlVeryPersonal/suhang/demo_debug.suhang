@@ -1,0 +1,6 @@
+#syntaxial demo_debug_runtime
+
+abs = λx. (x^2)^(1÷2)
+C = λn. (n mod 2) × ((3 × n + 1) - (n ÷ 2)) + (n ÷ 2)
+H = infinite(λx. ((1 - 0^abs(x - 1)) * H)(C(x)))
+main = λx. H(x)
