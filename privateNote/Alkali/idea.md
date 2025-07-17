@@ -31,6 +31,4 @@
 
 요약이 무슨 문서의 대부분이 되면 안되니까 미친짓이니까, 추가함.
 
-예정 (편의기능 탑제) :
- - Unicode2TeX Preprocessor
- - Markdown2TeX
+예정 : 이걸 Quatro에서
