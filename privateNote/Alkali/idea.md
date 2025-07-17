@@ -1,0 +1,17 @@
+# 수학할 때 개인 규칙을 정하자.
+
+정의를 synurl로 때울수 있음은 장점이지만, synurl개발과 문서화가 쉽지 않다.
+
+## Algebric Form of ZFC (AFZFC = Alkalic) 증명시에
+
+### 1. 정의는 [synurl](https://pinanot.github.io)을 이용한다.
+### 2. 증명은 [Proofmood](https://proofmood.mindconnect.cc/index.php)를 이용한다.
+### 3. 계산은 [Geogebra](https://www.geogebra.org)나 [Wolfram|Alpha](https://www.wolframalpha.com)를 이용한다.
+
+## AFZFC로 증명시에
+
+### 1. 정의는 [synurl](https://pinanot.github.io)을 이용한다.
+### 2. 증명은 [AlkalicProofmood - PowerUpVersion]을 이용한다
+### 3. 계산은 `Web Graphic Linear Unbeauty Calculater & Extension Toolkit`라는 곧 만들 정보에 대한 명세에 적힌 사이트로 한다. 아직 명세도 안만들었지만
+
+잠시만 synurl이 pinanot이네...?
