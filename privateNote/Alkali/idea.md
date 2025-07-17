@@ -21,27 +21,15 @@
 
 (Colab Capsule Markdown)라는 타입을 만들어서,
 
-<br>
-
 `<?Conclusion=**요약*>`하는 시스템 만들기 (`\<?Conclusion=**요약*>`로 이스케이프)
-
-<br>
 
 거기에
 
-<br>
-
 `<?Abstract=**요약*>`하는 시스템 만들기 (`\<?Abstract=**요약*>`로 이스케이프)
-
-<br>
 
 하는 시스템도 추가.
 
-<br>
-
 요약이 무슨 문서의 대부분이 되면 안되니까 미친짓이니까, 추가함.
-
-<br>
 
 예정 (편의기능 탑제) :
  - Unicode2TeX Preprocessor
