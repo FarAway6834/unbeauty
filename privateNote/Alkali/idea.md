@@ -18,6 +18,19 @@
 
 ## 정리하여 쓸 떄
 
-CCMD(Conclusion Colab Markdown)라는 타입을 만들어서,
+(Colab Capsule Markdown)라는 타입을 만들어서,
 
-<?Conclusion=한줄요약>하는 시스템 만들기 (`\<?Conclusion=한줄요약>`로 이스케이프)
+<?Conclusion=**요약*>하는 시스템 만들기 (`\<?Conclusion=**요약*>`로 이스케이프)
+
+거기에
+
+
+<?Abstract=**요약*>하는 시스템 만들기 (`\<?Abstract=**요약*>`로 이스케이프)
+
+하는 시스템도 추가.
+
+요약이 무슨 문서의 대부분이 되면 안되니까 미친짓이니까, 추가함.
+
+예정 (편의기능 탑제) :
+ - Unicode2TeX Preprocessor
+ - Markdown2TeX
