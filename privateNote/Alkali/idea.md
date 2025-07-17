@@ -15,3 +15,9 @@
 ### 3. 계산은 `Web Graphic Linear Unbeauty Calculater & Extension Toolkit`라는 곧 만들 정보에 대한 명세에 적힌 사이트로 한다. 아직 명세도 안만들었지만
 
 잠시만 synurl이 pinanot이네...?
+
+## 정리하여 쓸 떄
+
+CCMD(Conclusion Colab Markdown)라는 타입을 만들어서,
+
+<?Conclusion=한줄요약>하는 시스템 만들기 (`\<?Conclusion=한줄요약>`로 이스케이프)
