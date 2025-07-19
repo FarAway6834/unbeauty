@@ -2,13 +2,13 @@
 
 정의를 synurl로 때울수 있음은 장점이지만, synurl개발과 문서화가 쉽지 않다.
 
-## Algebric Form of ZFC (AFZFC = Alkalic) 증명시에
+## Algebric Form of ZFC (AFZFC = Alkalic) 체계에 대란 증명을 할땨
 
 ### 1. 정의는 [synurl](https://pinanot.github.io)을 이용한다.
 ### 2. 증명은 [Proofmood](https://proofmood.mindconnect.cc/index.php)를 이용한다.
 ### 3. 계산은 [Geogebra](https://www.geogebra.org)나 [Wolfram|Alpha](https://www.wolframalpha.com)를 이용한다.
 
-## AFZFC로 증명시에
+## AFZFC로 증명시(실사용, AFZFC를 증명하는것 이외는 AFZFC를 쓴다, 정확히는 AlkalicProofmood자체를 증명할때 이외에 사용)에
 
 ### 1. 정의는 [synurl](https://pinanot.github.io)을 이용한다.
 ### 2. 증명은 [AlkalicProofmood - PowerUpVersion]을 이용한다
