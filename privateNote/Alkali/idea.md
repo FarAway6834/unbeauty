@@ -8,7 +8,7 @@
 ### 2. 증명은 [Proofmood](https://proofmood.mindconnect.cc/index.php)를 이용한다.
 ### 3. 계산은 [Geogebra](https://www.geogebra.org)나 [Wolfram|Alpha](https://www.wolframalpha.com)를 이용한다.
 
-## AFZFC로 증명시(실사용, AFZFC를 증명하는것 이외는 AFZFC를 쓴다, 정확히는 AlkalicProofmood자체를 증명할때 이외에 사용)에
+## AFZFC로 증명시(실사용, AFZFC를 증명하는것 이외는 AFZFC를 쓴다, 정확히는 AlkalicProofmood자체를 증명할때 이외에 사용, 여기 항목이 전부 기본)에
 
 ### 1. 정의는 [synurl](https://pinanot.github.io)을 이용한다.
 ### 2. 증명은 [AlkalicProofmood - PowerUpVersion]을 이용한다
