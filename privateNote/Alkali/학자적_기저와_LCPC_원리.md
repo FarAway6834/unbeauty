@@ -947,3 +947,20 @@ Q. 왜 만들었는가?
  - LCPC preprint : Archaive용으로 객관적 평가(peer-review)를 거친 LCPC Proceedings
  - LCPC book : 엄밀한 체계적 검증(LCPC book sertification protocal)을 거친 LCPC preprint
  - LCPC book sertification protocal : LCPC book sertificater의 LCPC book sertification을 진행하는 protocal로, 해당 LCPC book sertificater의 검사 방식을 말한다. LCPC book sertificater는 LCPC book이 될 LCPC preprint이 왔을때, 정해진 절차 (LCPC book sertification protocal)에 따라, 검증만 하고, 인증서 (LCPC book sertification)를 주어주는 기관.
+
+아래 입장은, 실제 탐구가 비효율적이라고 봐서 썼다.
+```
+# 임시적 입장 : 실제로 지지하지 않는다. 문외한인 상태로 쓴거라 내가 곧 배우고 오겠다.
+
+LCPC proceedings는 학술 서적과 논문의 역할을 동시에 하고, 효율적이고 빠른 속도를 가진다.
+
+아래 두가지 비효율의 폐지 사례를 제시한다.
+
+기존 학술 매체 대비 자유로운 측면
+ - Hypothesis같은 역할을 이용해, 자료를 넣을수 있다. (LCPCAlkalic-Proofmood PowerUp Hypothata 기능) [활용 예 : 정형 데이터 제시 • 사례 연구]
+ - 말투에 있어 표준 lojban어면, 자유롭게 서술 가능하다. [활용 예 : 학술 발표 자료 서적]
+
+학술 학문 분야를 두가지 제시함
+ - LCPC Reivew Philosophy : 리뷰는 과학철학적 탐구 방법이고, 메타적이다.
+ - 학문 응용 실험학 : 학문을 응용하는 방법으로써, 백서나 매뉴얼을 쓸수 있다. 거의 모든 학문에는 응용실험학이 붙어있다 본다.
+```
