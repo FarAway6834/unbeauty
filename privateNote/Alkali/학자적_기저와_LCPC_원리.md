@@ -33,6 +33,7 @@ Q. 학자는 왜 「학자적 기저」를 가지는가? (= 왜 알고자 하는
 
 ## 형식탐구에 대한 생각 로드맵
 
+주의 : synurl은 de facto standard (사실상 표준인 현재의 웹을 말함) url이 아닌, 표준 uri입니다
 ### [synurl](https://faraway6834.github.io/unbeauty/privateNote/MAD/synurl)
 ````
 헌정하는 말 : 「읽어보기 전에」부분을 표기법을 싫어하는 "꼰"님께 헌정합니다. 걍 존나 귀찮아서 내가 상수 몇개 정의하고 형식언어로 돌리겠다는데 뭐가문제야오3ㅕ188ㅋ82ㅕ2ㅓ랴9쟈2ㅑ너ㅑ뱢9
@@ -185,6 +186,7 @@ booktyp
 
 synurl은 다소 옛날에 만들었다, synurl문서에 서술된 일부 스노비즘스러운 발언들은 읽기 마라. 나쁜말이다.
 
+주의 : Alkalic의 공리계중 일부 공리는 도입 안해도 좋습니다, 강제법처럼 수학의 본질에 공리를 선택할 기능이 있습니다. 에초에 수학은 정해지지 않았거든요. 수학에서 공리를 제한하려면, 코헨의 강제법도 좆무시하시는게 맞습니다.
 ### [Alkali](https://faraway6834.github.io/unbeauty/privateNote/Alkali/alkali)
 ````
 # Alalic Preview
