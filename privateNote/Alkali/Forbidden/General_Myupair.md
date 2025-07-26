@@ -128,6 +128,8 @@ General-Myupair는 증명•반증의 증명•계산을 다 할수 있는 종�
 
 한마디로, General-Myupair라는 수학적•기계적•언어적으로 동시애 해석가능한 언어의 구성이 쟁점이다.
 
+ + 제갈킨 다항식은 이니까... 따라서, LFHS는 최종적으로 해석에서 군론을 도구로 쓰는거다. Alkalic + Zhegalkin + 
+
 ## HLLA FORM
 
 HLLA FORM은 정규형이나 논리식의 형식에 관련된 논리-다항식 형식임.
