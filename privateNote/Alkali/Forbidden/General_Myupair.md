@@ -1,4 +1,8 @@
-# LFHS (Linear and Functuoanl HLLA System)
+# CRRS & LFHS & Alkalic-Proofmood
+
+CRRS와 LFHS는 Alkalic-Proofmood에서 각각 증명 가능하며, 
+
+## LFHS (Linear and Functuoanl HLLA System)
 
 어쩌다가 나무위키에 있는 파일시스템 이름이랑 겹치는것 같아 불안하지만, HLLA를 이용한 논리식의 해석 체계인 LFHS는 다음 두가지를 중점으로 다룬다.
 
@@ -12,7 +16,7 @@ HLLA FORM에서 추론한 논리식은 논리회로로 구현되기 좋다.
 순수 수학이다. 프로그래밍 중점이 아니다.
 내가 옛날에 개발자 하려는 흑역사 있어서 사고가 좀 그쪽으로 흘렀지만
 
-## General_Myupair
+### General_Myupair
 
 Myupair Language
 
@@ -130,7 +134,7 @@ General-Myupair는 증명•반증의 증명•계산을 다 할수 있는 종�
 
  + 제갈킨 다항식은 이니까... 따라서, LFHS는 최종적으로 해석에서 군론을 도구로 쓰는거다. Alkalic + Zhegalkin + 
 
-## HLLA FORM
+### HLLA FORM
 
 HLLA FORM은 정규형이나 논리식의 형식에 관련된 논리-다항식 형식임.
 
@@ -156,7 +160,7 @@ CNF : 완전히 인수분해된 POS
 PCNF (그 단순 형태) : maxterm의 곱 (CNF임)
 maxterm (그 단순 형태) : 모든 변수에 부정을 하거나 말거나 해서 합해서 만든 합-항. 정규형식 번호의 한 거짓인 비트. 해당 상황시, 진리값배정에서 1이되는 변수는 부정해주고, 아닌건 그냥 놔둬서 곱한다.
 
-# OHFE와 CRRS(CompletenessRuleRegisterSystem)
+## OHFE와 CRRS(CompletenessRuleRegisterSystem)
 
 아니 약한 체계 A와 강한 체계 B가 있고, B는 A의상위호환일때, B가 `apop, apush, bpop, bpush, cpop, cpush, dpop, dpush, ruleApush, ruleApop, ruleBpush, ruleBpop, swapASswapreginf, SwapRegInfDiffCount, SwapRegInfBaseCount, SelectedRegIdCount, CancelPanic, CanclePanicMode, NotCanclePainic, NorCanclePanicMode, LoadTheoremInHere, CancelLoadTheoremInHere, DumpTheoremInHere, CancleDumpTheoremInHere, CheckIsTheorem, ..."등으로 스택 10개 레지스터 8개 그 래지스터에 대한 선택 카운터로 동작시키며, Select된곳에 현제 증명된 명제를 불러오는거지. 튜링 기계도 쓰고
 
