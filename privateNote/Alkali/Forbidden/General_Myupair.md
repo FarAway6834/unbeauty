@@ -153,3 +153,38 @@ POS : 다항식같은 해석에서 합-인수들의 곱
 CNF : 완전히 인수분해된 POS
 PCNF (그 단순 형태) : maxterm의 곱 (CNF임)
 maxterm (그 단순 형태) : 모든 변수에 부정을 하거나 말거나 해서 합해서 만든 합-항. 정규형식 번호의 한 거짓인 비트. 해당 상황시, 진리값배정에서 1이되는 변수는 부정해주고, 아닌건 그냥 놔둬서 곱한다.
+
+# OHFE와 CRRS(CompletenessRuleRegisterSystem)
+
+아니 약한 체계 A와 강한 체계 B가 있고, B는 A의상위호환일때, B가 `apop, apush, bpop, bpush, cpop, cpush, dpop, dpush, ruleApush, ruleApop, ruleBpush, ruleBpop, swapASswapreginf, SwapRegInfDiffCount, SwapRegInfBaseCount, SelectedRegIdCount, CancelPanic, CanclePanicMode, NotCanclePainic, NorCanclePanicMode, LoadTheoremInHere, CancelLoadTheoremInHere, DumpTheoremInHere, CancleDumpTheoremInHere, CheckIsTheorem, ..."등으로 스택 10개 레지스터 8개 그 래지스터에 대한 선택 카운터로 동작시키며, Select된곳에 현제 증명된 명제를 불러오는거지. 튜링 기계도 쓰고
+
+=> 가능하다네;; 이름을 CompletenessRuleRegisterSystem이라 하겠음, 그리고 곧 탐구한 OHFE를 논법용 함수로 내장하겠음.
+
+명제에 대한 조건제시법(혹은 원소나열)으로 쓴 명제들의 유한•무한집합 Φ_1, Φ_2에 대해 `Φ_1 ⊨ Φ_2`는 증명을 적고, 그것을 검증하는 체계가 항상 존재하나여?
+ => 아뇨. 표현이 유한하지 않아서 검증이 안되는 경우가 생겨요, 특히 원소나열로 구성했다면 음.... 안되죠.
+
+1계논리의 귀결관계는 논리도해나 진리표로 참이나 거짓임을 보일수 있나요?
+ => 아니죠 ㅋㅋ, 그건 명제논리에서요.
+
+아뇨 제말은 명제논리에서 원소나열법으로 된 명제의 유한집합 Φ에 대해 그것에 대해 논리도해를 그려 구한 유한집합 Θ를 구하는 알고리즘의 존재, 즉 논리도해를 작성하는 알고리즘이 존재하는지요
+ => 네. 존나 오래걸려요, 근데 증명이 자동으로 가능해요.
+
+정주희 저 수리논리와 집합론 입문에 나왔던 논리도해는 {A and B, B or C} ⊨ Φ 에서 Φ를 도출하는 식으로 작동하는 수형도방식이자, 형식증명마냥 번호로도 나열이 됬으며, 항진인 논리식 변환규칙 몇개랑 논리합에 대한 (수형도로 하는) 분기처리는 가지치기라는 이름으로, 다른건 쌓아놓기라 했는데요 이런 논리도해 말입니다.
+ => 아주 잘 만들수 있습니다.
+
+제가 보니까 명제논리 추론규칙에서 "자동 논리도해 생성"이나 "검증할 논리도해 나열"이나 "검증시 각 과정에 대한 논리적 귀결관계 설명 진리표 생성 및 총 진리표 생성을 인간이 하고 기계가 검증", "검증시 각 과정에 대한 논리적 귀결관계 설명 진리표 생성 및 총 진리표 생성"이라는 네가지 규칙을 만들수 있네요. 물론 인자로 파일을 주면 일 안하고 파일 받아먹겠죠. "자동 논리도해 생성"은 파일을 제시해서 생성대신 파일로 때운다면 "검증할 논리도해 나열"을 하고, "검증할 논리도해 나열"을 파일을 제시해서 검증 절차를  "검증시 각 과정에 대한 논리적 귀결관계 설명 진리표 생성 및 총 진리표 생성"을 해서, 각 과정을 검증하고, "검증시 각 과정에 대한 논리적 귀결관계 설명 진리표 생성 및 총 진리표 생성"이 제시됬다면, 진리표 검증을 하며, 그 과정이 사실상 "검증시 각 과정에 대한 논리적 귀결관계 설명 진리표 생성 및 총 진리표 생성하고 기계가 검증"이고, 그 기계가 검증하는 파트는, 기계가 알아서 노가다. 파일제시가 소용이 없어짐 ㅋㅋ
+
+아 논리도해가 Semantic Tableaux라네요
+피치(Fitch)증명은 자연 연역 (Natural Deduction)이라고 하구요.
+
+그러면 걍 이름을 
+
+"자동 논리도해 생성" : "Gen Semantic Tableaux with allow cachefiles"
+"검증할 논리도해 나열" : "Start or End Semantic Tableaux with allow cachefiles"
+"검증시 각 과정에 대한 논리적 귀결관계 설명 진리표 생성 및 총 진리표 생성을 인간이 하고 기계가 검증" : "Start or End Logic Tableau with allow cachefiles"
+"검증시 각 과정에 대한 논리적 귀결관계 설명 진리표 생성 및 총 진리표 생성" : "Gen Logic Tableau with allow cachefiles"
+로 하고 검증법은 "논리도해 자체 검증 로그", "논리도해에 대한 진리표 해설 검증", "진리표 검증"이렇게 새가지 검증 형식으로 두면 되겠제. 그러면 첨부하는 cachefiles 중에서 바이너리 파일 외에 논리도해 포함해서 네가지.
+
+음... 이거 그러면 이걸 Haskell로 구현하고 그 함수가 제 기능을 하는건 Fitch에서 검증하며, 이름은 "Haskell Function Expension Package"라고 하고, HFEP형식의 증명은, Fitch증명들을 담은 Markdown에 수록되어, 논리도해 (Semantic Tableaux) 및 진리표 (Logic Tableau)와 같이 제공되어 자연 연역 (Natural Deduction)용으로 완성할수 있겠네 ㅋㅋ 물론 논리도해랑 진리표는 그 입출력이 명제논리로 구성되지. 그리고 진리표로 검증항꺼면 유보하는 "pass"를 이용해서, 논리도해가 아닌 진리표를 다이렉트로 이용하는걸 쓸수도 있게.
+
+아, 그리고 "Over HFEP Fitch Extension" OHFE라고 명명해서, 귀결을 다이렉트로 진리표로 구성하는 키워드는 "form"으로 하도록 하지.
