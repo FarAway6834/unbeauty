@@ -162,6 +162,7 @@ maxterm (그 단순 형태) : 모든 변수에 부정을 하거나 말거나 해
 
 => 가능하다네;; 이름을 CompletenessRuleRegisterSystem이라 하겠음, 그리고 곧 탐구한 OHFE를 논법용 함수로 내장하겠음.
 
+```
 명제에 대한 조건제시법(혹은 원소나열)으로 쓴 명제들의 유한•무한집합 Φ_1, Φ_2에 대해 `Φ_1 ⊨ Φ_2`는 증명을 적고, 그것을 검증하는 체계가 항상 존재하나여?
  => 아뇨. 표현이 유한하지 않아서 검증이 안되는 경우가 생겨요, 특히 원소나열로 구성했다면 음.... 안되죠.
 
@@ -180,6 +181,7 @@ maxterm (그 단순 형태) : 모든 변수에 부정을 하거나 말거나 해
 피치(Fitch)증명은 자연 연역 (Natural Deduction)이라고 하구요.
 
 그러면 걍 이름을 
+```
 
 "자동 논리도해 생성" : "Gen Semantic Tableaux with allow cachefiles"
 "검증할 논리도해 나열" : "Start or End Semantic Tableaux with allow cachefiles"
