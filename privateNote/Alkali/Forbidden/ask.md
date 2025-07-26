@@ -1,0 +1,1 @@
+# [ask 4 잼민이](https://g.co/gemini/share/2cdf515618d3)
