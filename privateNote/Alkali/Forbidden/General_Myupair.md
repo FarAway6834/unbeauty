@@ -1,6 +1,6 @@
 # CRRS & LFHS & Alkalic-Proofmood
 
-CRRS와 LFHS는 Alkalic-Proofmood에서 각각 증명 가능하며, 각각 논리 체계의 증명과, 다항식 체계의 증명이다.
+CRRS와 LFHS는 [Alkalic-Proofmood](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/LCPC4AI)에서 각각 증명 가능하며, 각각 논리 체계의 증명과, 다항식 체계의 증명이다.
 
 그런 방식으로 Alkalic-Proofmood에 CRRS & LFHS를 통합하는 이론 FW를 CaLE(CRRS and LFHS Expension)라고 한다.
 
