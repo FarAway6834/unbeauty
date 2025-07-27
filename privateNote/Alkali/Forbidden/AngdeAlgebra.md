@@ -2,7 +2,7 @@
 
 앙대-대수에 대해 설명할께...
 
-앙대-대수는 결국 칼래(CaLE)로 평가되는데... 뭐... [CaLE](
+앙대-대수는 결국 칼래(CaLE)로 평가되는데... 뭐... [CaLE](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/General_Myupair)에 대해 읽어봤으니 페스할께.
 
 절대게임, 상대게임, 앙대게임을 만들어왔어
 
