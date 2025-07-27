@@ -1,4 +1,4 @@
-# Not Forbidden
+# Not [Forbidden](https://github.com/FarAway6834/unbeauty/tree/main/privateNote%2FAlkali%2FForbidden)
 
 ## [ask](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/ask)
 
