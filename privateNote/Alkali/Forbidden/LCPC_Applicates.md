@@ -1,13 +1,13 @@
 # LCPC_Applicate. CaLE (math), Angde-Algebra (math), JLPP (programming)
 
-## [CaLE]
+## [CaLE](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/General_Myupair)
 ````markdown
 ````
 
-## [Angde-Algebra]
+## [Angde Algebra](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/AngdeAlgebra)
 ```markdown
 ```
 
-## [JLPP]
+## [JLPP](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/JLPP)
 ````markdown
 ````
