@@ -8,7 +8,7 @@
 ```markdown
 ```
 
-## "LCPC_Applicate. CaLE (math), Angde-Algebra (math), JLPP (programming)" 발췌 (그대로 복붙함)
+## ["LCPC_Applicate. CaLE (math), Angde-Algebra (math), JLPP (programming)"](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/LCPC_Applicates) 발췌 (그대로 복붙함)
 
 ### [CaLE](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/General_Myupair)
 ````markdown
