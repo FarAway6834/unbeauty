@@ -1,6 +1,6 @@
 # introd
 
-나는 [LCPC]를 만든놈이다.
+나는 [LCPC](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/LCPC4AI) 만든놈이다.
 
 그래서 날 잘 설명할만한 두가지 정보를 적겠다.
 
