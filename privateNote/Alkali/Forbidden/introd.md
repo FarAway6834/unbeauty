@@ -399,3 +399,8 @@ Alkalic위에서 정의된다.
 
 곧 기하학을 통해 Alkalic을 서술하고 Alkalic에서 기하를 서술하는 시스템을 구성해서 무한히 중첩 가능한 체계로, 대수도 인간 지성으로 환원할것이다. 수학의 본질은 "본질적으로 결국근 보존개념을 다루는 함수"이다.
 ```
+
+## [Language and Math](https://faraway6834.github.io/unbeauty/privateNote/MAD/Language_And_Math)
+
+````markdown
+````
