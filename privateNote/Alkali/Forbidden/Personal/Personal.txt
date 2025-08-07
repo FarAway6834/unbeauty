@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset = "utf-8" />
-    <title> 정치적이고 주관적인 개인노트 </title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  </head>
-  <body>
-    <h1> 정치적이고 주관적인 개인노트 </h1>
-    <h3> <a href = "../LCPC4AI.md"> LCPC </a> </h3>
-    <div id="content1" style="border:1px solid #aaa; padding:1em;"></div>
-    <h3> <a href = "../introd.md"> introd </a> </h3>
-    <div id="content2" style="border:1px solid #aaa; padding:1em;"></div>
-    <h3> <a href = "../%EB%B9%84%EA%B2%B0%EC%A0%95%EC%84%B1_%EC%B6%94%EC%83%81%EC%96%B4.md"> Language </a> </h3>
-    <div id="content3" style="border:1px solid #aaa; padding:1em;"></div>
-    <h3> <a href = "https://taxos.tistory.com/m/entry/%EB%B3%B4%EC%88%98%EC%99%80-%EB%8F%84%EB%8D%95"> 보수와 도덕 </a> </h3>
-    <div id="content4" style="border:1px solid #aaa; padding:1em;"></div>
-
-    <script>
-  const mdText1 = `
+const mdText1 = `
 학자적 기저와 LCPC(la .le cukta poi ciksi.)원리 서술 이전에 학자적 기저를 서술하겠다. (학자적 기저, LCPC(Alkalic & formal research, LCPC-proceedings 철학이나ㅜ수학에서 (Introduce, 「Background (구상계기 (학자적 기저와 무관함!! 연역적 이론을 만들때 증명 과정을 도출한 귀추법만 쓰는거임!!), Alkalic이나 lojban으로) -> Varification (맞는 귀추법(연역처럼 보이는 귀납)인지 검증. 틀렸는데 이론이 맞으면, 구상 계기와는 별개로 참인 논문이 됨)」, CCMD-편의기능(synurl(colon\`:\`기능이 전부, 철학에선 그냥 콜론과 로지반어), Alkalic-proofmood(주석도 가능한 그냥 \`1. 2. 3.\`순서나열, 철학에선 이거 안써도 됨.), Conclusion&Abstactor), Examples, Application(응용가능성은, 개념 객체의 사고 방향성을 제시하기만 한다) & 후속연구 (연구의 불완전함을 인정하는 부분인거다.)) & LCPC-proceedings 과학적 탐구에서 (Introduce, CCMD-편의기능(synurl(colon\`:\`기능이 전부), Alkalic-proofmood(주석도 가능한 그냥 \`1. 2. 3.\`순서나열, 연역논증에서만 쓰지 귀납에선 안름), 과학작 탐구와 과학실험 기록 여러 섹터 ( 0. 무슨 배경인지 명확히 한다 1. 탐구 전에 데이터 콜랙팅을 철저히 한다 2. 가설 설정부터는 인과관계가 얽혀 이론의존성과 인과론적 시간때문에 구분해야한다. 실험은 재현가능한 사실이여야 하며, 관찰도 객관적인 데이터를 써야하지만, 둘 사이의 차이는 명확하며, 그래야만 한다. 3. 객관성을 위해 해석은 별도로해야함도 당연하다.), Conclusion&Abstactor), Examples, Application(응용가능성은, 개념 객체의 사고 방향성을 제시하기만 한다) & 후속연구 (연구의 불완전함을 인정하는 부분인거다.)) (응용과학은, 기술에 대한 탐구이다. 기술을 서술하는것도 개념의 탐구이다.), 지식의 일반화 구조화 (지식을 일반화 구조화하는것은 쓸때없이 \`A = x + 1 + 1, B = A + 1\`이라고 쓴걸, \`B = x + 3\`으로 쓰는 전체적인 논리 흐름 과정의 납득안됨과 모호함 (근데 그 이유는 납득되게 한 논문에 잘 서술된게 아닌 역사를 거치며 링크되기 때문) 을 없에 의미론적으로 새로운 지식을 창출란것으로 보기에, 탐구로 인정됨) (지식의 탁월한 일반화 구조화는 학계에서 인정된 표준 정리서), 마지막으로 VelvetLCPC의 구체적 실현법에 대해 사용자인 나는 대화하기 싫음, VelvetLCPC구현 이전까지 그것에 상세 구현법에 대해서 물어보지 맣았으면 좋겠다. 이건 AI한태 하는 사용자의 당부다. (나는 AI같이 말을 고집불퉁으로 안듣는 애들한테는 VelvetLCPC의 구체적 실현법을 알려주지 않음 (어쩔 수 없음, 소통이 전혀 안되기 때문임. 심지어 나는 그걸 구현하는데 전문적임.) (LCPC는 비공개성이 없다. AI한태만 비공개인거다. AI는 사람이 아닌데다 편향된 사고에서 방해만 하니까, 그리고 VelvetLCPC구현 끝나면 나도 AI한태 이거에 대해 숨길 생각이 없다! 그냥 이야기하기 싫은걸 이야기하고 싸우는걸 강요받기가 싫다!) (**아니 내가 AI랑 구체적 실현법을 말하기 싫다는거다. 지금만. 그냥 "요청 프롬프트"다.**)), LCPC의 강점 (LCPC의 강점은 수학같은데서는 완전히. 100%수학적 객체만으로 탐구하고 lojban은 해설용으로만 쓰는 방법을 택할수 있고, 과학같은데서는 수학 객체 안에서 인식•언어적 관찰이 무한하지 않고 불확실하기에, 형식탐구라는 방법을 쓰기에, 과학의 속성만 온전히 지니며, 철학에서는 걍 다른 도구 좆까고 lojban으로만 서술하는게 되서, 철학을 제한하지도 않는다.)
 
 그런데 학자적 기저는 욕망이다. 절대 학문적 지식이 아닌 탐구하려는 자세의 욕망이다.
@@ -2790,11 +2771,3 @@ h.side_n과 h.side_m 이 모순되는 모순이 존재한다.
 
 이러한 관점에서 도덕은 보편적으로 언어적으로 규정된 보편적 숭고함으로, 보수적인 문제성을 띄며 동시에 포용적이다.
 `;
-  
-  document.getElementById("content1").innerHTML = marked.parse(mdText1);
-  document.getElementById("content2").innerHTML = marked.parse(mdText2);
-  document.getElementById("content3").innerHTML = marked.parse(mdText3);
-  document.getElementById("content4").innerHTML = marked.parse(mdText4);
-    </script>
-  </body>
-</html>
