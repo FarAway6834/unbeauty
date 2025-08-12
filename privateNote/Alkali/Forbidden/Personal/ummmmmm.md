@@ -64,3 +64,8 @@ useipa"x [y](z)" ↔ (L_up"[y](z)" : L"x")
 
 언어(=생각) 빼면 시체다.
 사냥당해서 시체일수도 있고 ㅋㅋ
+
+theorem : brokalang)
+
+brokalang : broca가 broke된 사람도 쓸수 있는 언어.
+대표적으로. 표음
