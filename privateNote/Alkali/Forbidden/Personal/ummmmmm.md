@@ -68,4 +68,6 @@ useipa"x [y](z)" ↔ (L_up"[y](z)" : L"x")
 theorem : brokalang)
 
 brokalang : broca가 broke된 사람도 쓸수 있는 언어.
-대표적으로. 표음
+대표적으로, 조어-의태-초단순언어나 조어-의성-초단순언어가 있다.
+
+이상.
