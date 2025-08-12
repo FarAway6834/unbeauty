@@ -796,5 +796,7 @@ Wernicke's area = Area that Semmentic Value of Voca인 셈이지 않나? 거의 
 
 일단 베르니케 실어증과 브로카 실어증을 쌍으로 걸린 사람을 SP(Semmetic Patient)라 하겠다.
 
+NOTE : SP라 할 필요가 없갰다! 알고보니 전체(Global) 실어증이라고 동일한 뜻의 용어가 있다! 조어를 만들 필요가 없다 크하핫!
+
 작성중...
 ```
