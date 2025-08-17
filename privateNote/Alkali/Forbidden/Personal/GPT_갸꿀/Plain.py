@@ -32,7 +32,7 @@ def complex_color_plot(T_func, k=5, d=0.1):
     plt.imshow(RGB, extent=[-k,k,-k,k], origin='lower')
     plt.xlabel('Re')
     plt.ylabel('Im')
-    plt.title('Complex Function Color Plot')
+    plt.title('plot of T(x) = x(1 + e^{iπx}) + 2(1 - e^{iπx})(3x + 1)/4 = `(n%2)?3n+1):(n/2)`')
     plt.show()
 
 # 예시: 주어진 함수
@@ -40,4 +40,4 @@ def T(Z):
     return Z * (1 + np.exp(1j * np.pi * Z)) + 2 * (1 - np.exp(1j * np.pi * Z)) * (3*Z + 1)/4
 
 # 실행
-complex_color_plot(T, k=100, d=0.001)
+complex_color_plot(T, k=10, d=0.01)
