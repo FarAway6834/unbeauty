@@ -6,6 +6,7 @@
 
 『Geokalic - Geometry』구성 : 
 Base : Euclid 기하학 원론, Isacc Newton - Philosophiæ Naturalis Principia Mathematica, Aristotle - Organon, Descartes -《기하학 (La Géométrie)》
+베이스는 아니고 참고만 했다 인용하는 서적 : George Boole - An Investigation of the Laws of Thought, Russell & Alfred North Whitehead - Principia Mathematica
 구성 : 아까전애 나온 수학에 대한 고찰을 바탕으로 기하학을 해설한다.
 구성 2 : 플러스 강좌에서, 좌표기하(해석기하)적 관점 • 선형대수적 관점을, 정독 후 읽는 용도로 적어놓음
 구성 3 : 모든 정언명제 방식의 명제는, 기호논리로 재서술됨
