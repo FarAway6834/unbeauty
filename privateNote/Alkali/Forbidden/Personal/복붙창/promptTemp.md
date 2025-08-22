@@ -1,10 +1,148 @@
-# 비결정성 추상어 담론
+# 의외성 정리
 
-## 비결정성 추상어 논의와 재설명
+## 용어 정의
 
-원래 비결정성 추상어에 대한 발표자료가 있었는데 너무 읽기 ㅈ같다는 사실을 깨닫고 리메이크 중이다.
+ - True Mean (참뜻) : 의외성(속뜻)
+ - Shell Mean (껍대기 뜻; 쉘 민) : 겉뜻
+ - 속뜻 없음 (Exceptless) : Shell Mean = True Mean
+ - 초완전성 (Hyper-Completeness) : "This sentence is False"를 허용하는것.
+ - Black and White Proposol : ⊢ (¬Hyper-Completeness)
+ - Simply Mean Proposol : ⊢ Exceptless
+ - 단순언어 : Simply Mean Proposol이 항진인 언어
 
-### 리메이크 전
+### 흑백논리와 형식언어의 정체에 대한 고찰
+
+Black and White Proposol를 공리로 하는 논리를 흑백논리라고 부를수 있음이 당연하다
+
+또한 흑백논리중 단순언어인것이 형식언어인것이라도 보면 된다.
+
+#### 정리 문단에 따른 보조설명
+
+우리 언어는 보이는대로 해석해야하는것과 아닌것이 있어,
+
+보이는대로 해석해야하는것을 단순언어 (이 경우 언어 해석에 예외가 없이 보이는대로 닥치고 그뜻이다)
+
+그리고 단순 언어가 아닌 언어 (이 경우, 언어 해석에 여러 의외성이 끼어들기에, 단순히 보이는 뜻을 뜻으로 단정할수 없다)가 있다
+
+또한 논리는 장자철학처럼 "갓나서 죽은 아기보다 오래 산 사람은 없으니 팽조(760살이 넘게 살았다는 전설 상의 신선)도 일찍 요절한 사람이다"가 맞을수 도 있지만,
+
+흑백논리에서는, Black and White Proposol을 참으로 하여, x이면서 동시에 x가 아닌것은 불가능하다. (Fun Fact : 흑백논리이면 단순언어임이 논리적 귀결이다)
+
+## 공리
+
+1. 말의 뜻은 True Mean과 Shell Mean이 있다
+
+## 정리
+
+### TrueMean Theroem
+
+Hyper-Completeness 일때도 "말의 뜻 ≠ True Mean"마저 True Mean으로 True Mean(결국 전제로 한 참인 문장에서 연역(이때는 초완전땜에 가능)으로 "말의 뜻 = True Mean")이고 (Hyper-TrueMean Lemma)
+
+Hyper-Completeness 가 아닐때도, "말의 뜻 = True Mean"이므로, 말의 뜻 = True Mean으로 (Formal-TrueMean Lemma)
+
+말의 뜻은 True Mean을 말한다. (TrueMean Theroem)
+
+A. Formal-TrueMean Lemma
+ - ¬Hyper-Completeness, ⊭ 말의 뜻 ≠ True Mean ⊢ 말의 뜻 = True Mean
+
+B. Hyper-TrueMean Lemma
+ - Hyper-Completeness, 말의 뜻 ≠ True Mean ⊢ 말의 뜻 = True Mean
+
+C. TrueMean Theroem
+ - 말의 뜻 = True Mean
+
+Proof)
+
+1. 말의 뜻 ≠ True Mean [Hyp]
+2. Hyper-Completeness [Hyp]
+3. "말의 뜻 ≠ True Mean"라는 점도 True Mean임
+[Paradoxic Lemma]
+3. "말의 뜻 ≠ True Mean"라는 점도 True Mean이고 참이기에, 말의 뜻 = True Mean임
+4. 말의 뜻 = True Mean
+
+이하에서,
+
+말의 뜻 ≠ True Mean, Hyper-Completeness ⊢ 말의 뜻 = True Mean ⋯ (1)
+
+1. 말의 뜻 ≠ True Mean [Hyp]
+2. ¬Hyper-Completeness [Hyp]
+3. "말의 뜻 ≠ True Mean"라는 점도 True Mean임 [Paradoxic Lemma]
+4. 모순
+
+이하에서, ⊭ 말의 뜻 ≠ True Mean ⊢ 말의 뜻 = True Mean
+
+(1), (2) ⊢ 말의 뜻 = True Mean
+
+Q.E.D.
+
+#### 해설
+
+항상 True Mean만 말의 뜻임을 증명하자,
+
+True Mean이 뜻이 아닌 말이 있다고 가정하자,
+그렇다면 그 말은 True Mean이 뜻이 아니라는 뜻이 True Mean이 된다
+
+이것이 Paradoxic Lemma다
+
+이하에서 Hyper-Completeness에 따라 참인 경우와 거짓인 경우로 나누어 논증하자.
+
+
+
+상황 1. Paradoxic Lemma에서, Hyper-Completeness인 상황
+
+Paradoxic Lemma가 참이될수 있으므로, Hyper-TrueMean Lemma가 참이다
+
+상황 1 종료
+
+
+
+상황 2. Paradoxic Lemma에서, 비 Hyper-Completeness인 상황
+
+Paradoxic Lemma이 모순이므로, 전재인 "말의 뜻 ≠ True Mean"이 거짓이다.
+
+따라서, Formal-TrueMean Lemma가 참이다
+
+상황 2 종료
+
+
+
+이하에서,
+
+상황 1, 상황2에 따라, 연역,
+항상 True Mean이 말의 뜻이 된다.
+
+따라서, TrueMean Theroem이 참이다
+
+Q.E.D.
+
+### Exceptless Thorem
+
+Exceptless ⊢ 말의 뜻 = Shell Mean
+
+Proof)
+
+1. Exceptless [Hyp]
+2. 말의 뜻 = True Mean [TrueMean Theroem]
+3. Shell Mean = True Mean
+4. 말의 뜻 = Shell Mean [결론]
+
+이하에서, `Exceptless ⊢ 말의 뜻 = Shell Mean`임이 당연하다.
+
+#### 해설
+
+앞서 증명한 TrueMean Theroem에 따라,
+
+말의 뜻 = True Mean
+
+Shell Mean = True Mean 이면, 그리고 이때만 Shell Mean = True Mean이다
+
+(쉽게말해 A = B = C니 A = C)
+
+# 비결정성 추상어
+
+## 비결정성 추상어 논의
+
+### 초기
 
 ```
 # 어떤 언어에서 존재론적 언질의 응용가능성은 비결정성 추상의 활용가능성을 불러일으킨다.
@@ -260,7 +398,7 @@ sentence에 대해서 L에 원소중에 '□'도 있으면 매우 모호해져�
 \`\`\`
 ```
 
-### 리메이크 중
+### 현
 
 ```
 ## 1. 비-예외 논리의 확장성과 그 원리
@@ -801,6 +939,93 @@ NOTE : SP라 할 필요가 없갰다! 알고보니 전체(Global) 실어증이�
 작성중...
 ```
 
----
+## 보편-개연론
 
-질문 : 나는 전체 실어증에 대해 문외한이다. 전체 실어증이 궁금하다. 전체 실어증에 대해 이야기해보자.
+```
+# 보편-개연론 (U-P(Universality - Plausibility) System)
+
+앞으로 말하고자 할 개연성은
+
+Logical Coherence (논리적 일관성(Logical Consistance) • 논리적 맥락성 • 논리적 개연성)
+
+도 어느정도 맞고
+
+Likelihood도 어느정도 맞다
+
+그러나 Logical한 측면의 plausibility로 번역하는개 옳다.
+
+귀납 추론을 합리화시키기 때문이다.
+
+두 람다성 우연술어의 정의)
+
+L♡x : L"x의 개연성이 타당하다 할만하다."
+
+L○x : L"x는 보편적이다."
+
+그리고 해당 언어 L은 논의 대상인 언어로써 생략하여 다음과 같이 적을수 있다.
+
+♡x : "x의 개연성이 타당하다 할만하다."
+
+○x : "x는 보편적이다."
+
+개연성의 보편 원리)
+
+"O○(♡x)"
+
+(단. 양상논리에서 당위논리의 경우에는 `□`기호 대신 `O`기호를 쓴다는점을 기억하자.)
+
+당위적으로, 마땅히, x 개연성이 타당하다 할만하다는 판단은 보편적이다.
+
+즉, 개연성은 보편성을 가진다.
+
+## 보편성
+
+보편성은 그 언어에 속성이다.
+
+언어가 변하므로, 보편성이 변한다.
+
+그 사실을 알면 얼마나 언어가 많이 변하는지 세삼 체감하게 된다.
+
+일상•사회생활을 하다보면 정말 보편이 그토록 짧은시간에 많이 변한다는걸 느끼게 된다.
+
+다음 문장을 보자.
+
+Φ(x) : "x는 논리적이다."
+
+논리라는것의 실체는 x s.t. Φ(x)이다.
+
+논리 = x s.t. Φ(x)다.
+
+당연하다. 동명사꼴로 만들었으니까.
+
+따라서, 논리가 성립하기 위해서는
+
+다음 문장
+
+"Φ(Φ(x))는 옳다"
+
+이 옳다고 말한대로여야 한다.
+
+즉, 언어는 논리를 가지기에, 다음이 되는거다.
+
+Φ(x) : "x는 보편적이다"
+
+보편 = x s.t. Φ(x)
+
+이때,
+
+"보편은 논리적이다"는 보편논리적으로 참이다.
+
+즉, **논리적이라는것의 어감에 모두가 이치에 맞는것으로 동의할만한것이다**는 어감이 있다.
+
+그게 왜 참인가?
+
+논리 : "말이나 글에서 사고나 추리 따위를 이치에 맞게 이끌어 가는 과정이나 원리."
+
+그렇다. 논리적이라는것이 이치에 맞으니까 그런 어감이 드는거다.
+
+따라서, 보편이 논리적이라는것은
+아오~~~ 욕나오도록
+진짜 욕나와서 지우고 다시쓸정도로
+아오~~ 너무 당연한 소리다.
+```
