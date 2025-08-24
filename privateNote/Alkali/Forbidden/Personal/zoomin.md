@@ -6,3 +6,5 @@ EulersEquation(x) : eix(x) = cis(x)
 [cis := cos + i sin]
 [wave := λx. x mod 1]
 [zoomin := λz. λf. λx. zf(x/z)]
+
+(a + bi)(c + di) = ac - bd)
