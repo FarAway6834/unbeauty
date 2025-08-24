@@ -41,3 +41,12 @@ p.f.
 >  = cis θ cis φ
 
 즉, cis는 주기함수이자 지수 함수임
+
+(sin, cos, tan) = sct
+[sct := (sin, cos, tan)
+  [tan := sin/cos]
+  [cos := λx. sin(½π - θ)]
+  s.t.
+    sin θ = √(1 - (cos θ)²)
+]
+에서 sin의 부호가 아주 잘 결정되므로, 
