@@ -38,4 +38,6 @@ p.f.
 > 
 >  = (cos θ + i sin θ)(cos φ + i sin φ)
 > 
->  = cis θ cis φ 
+>  = cis θ cis φ
+
+즉, cis는 주기함수이자 지수 함수임
