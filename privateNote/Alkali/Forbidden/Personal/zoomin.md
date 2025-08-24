@@ -1,3 +1,7 @@
+# characteristic log
+
+
+
 # zoomin
 
 EulersEquation(x) : eix(x) = cis(x)
@@ -7,7 +11,19 @@ EulersEquation(x) : eix(x) = cis(x)
 [wave := λx. x mod 1]
 [zoomin := λz. λf. λx. zf(x/z)]
 
-(a + bi)(c + di) = (ac - bd) + (bc + ad)i
-[a := cos θ]
-[b := sin θ]
-[c :=
+
+cis(θ + φ) = cis θ cis φ
+
+p.f.
+
+> cis(θ + φ)
+> 
+>  = cos(θ ± φ) + i sin(θ ± φ)
+> 
+>  = cos θ cos φ - sin θ sin φ + i (sin θ cos φ + cos θ sin φ)
+> 
+>  = cos θ cos φ + i² sin θ sin φ + i (sin θ cos φ + cos θ sin φ)
+> 
+>  = (cos θ + i sin θ)(cos φ + i sin φ)
+> 
+>  = cis θ cis φ
