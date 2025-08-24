@@ -8,5 +8,6 @@ EulersEquation(x) : eix(x) = cis(x)
 [zoomin := λz. λf. λx. zf(x/z)]
 
 (a + bi)(c + di) = (ac - bd) + (bc + ad)i
-a = cos θ
-b = sin θ
+[a := cos θ]
+[b := sin θ]
+[c :=
