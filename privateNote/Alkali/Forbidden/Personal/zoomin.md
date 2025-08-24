@@ -1,6 +1,10 @@
 # characteristic log
 
+f(xy) ≜ f(x) + f(y)
 
+f(z) = f(x) + f(y) ↔ f(z) - f(x) = f(y)
+
+y = z/x
 
 # zoomin
 
