@@ -1,3 +1,10 @@
+# 성분 선택기
+
+실수성분 re(z)와 허수성분 im(z)를 다음과 같이 놓겠음.
+
+[re := λz. (z + z̄)/2]
+[im := λz. (z - z̄)/2]
+
 # characteristic log
 
 ## f s.t. characteristic log
