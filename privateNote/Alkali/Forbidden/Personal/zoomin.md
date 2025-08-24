@@ -1,10 +1,18 @@
 # characteristic log
 
+## f s.t. characteristic log
+
 f(xy) ≜ f(x) + f(y)
 
-f(z) = f(x) + f(y) ↔ f(z) - f(x) = f(y)
+f(y/x) + f(x) = f(y) ↔ f(y/x) = f(y) - f(x)
 
-y = z/x
+[g := λk. λx. Σ f(x) [i := 1 ~ k]]
+
+g(x) = kf(x) = f(xᵏ)
+
+## f s.t. peano-style exponention
+
+기가 빨리고 시간이 딸려서 미룸.
 
 # zoomin
 
@@ -30,4 +38,4 @@ p.f.
 > 
 >  = (cos θ + i sin θ)(cos φ + i sin φ)
 > 
->  = cis θ cis φ
+>  = cis θ cis φ 
