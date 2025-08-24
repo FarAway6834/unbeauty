@@ -91,4 +91,6 @@ cis(½π - θ) = sin θ + i cos θ = t̄ [t := -z̄]임.
 > 
 >  = sin(½π - θ) + i sin θ
 > 
->  = cos θ + i sin(½π - θ)
+>  = cos θ + i cos(½π - θ)
+> 
+>  = tan(½π - θ)
