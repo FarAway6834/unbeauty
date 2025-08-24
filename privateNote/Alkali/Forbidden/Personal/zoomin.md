@@ -7,4 +7,6 @@ EulersEquation(x) : eix(x) = cis(x)
 [wave := λx. x mod 1]
 [zoomin := λz. λf. λx. zf(x/z)]
 
-(a + bi)(c + di) = ac - bd)
+(a + bi)(c + di) = (ac - bd) + (bc + ad)i
+a = cos θ
+b = sin θ
