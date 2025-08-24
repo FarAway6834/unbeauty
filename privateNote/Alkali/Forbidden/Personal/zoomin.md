@@ -14,6 +14,21 @@ g(x) = kf(x) = f(xᵏ)
 
 기가 빨리고 시간이 딸려서 미룸.
 
+# sct function tuple
+
+(sin, cos, tan) ≜ sct
+[sct := (sin, cos, tan)
+  [tan := sin/cos]
+  [cos := λx. sin(½π - θ)]
+  s.t.
+    sin θ = √(1 - (cos θ)²)
+]
+
+에서 sin의 부호가 아주 잘 결정되므로,
+이것이 삼각비의 핵심 성질이라고 단언할 수 있음.
+
+단위원 위에서 삼각비는 더 큰 삼각형에 대햐 닮으므로, 그냥 단위원 위에서 파악해도 무방하디 때문에 x² + y² = r²을 응용할 수 있음.
+
 # zoomin
 
 EulersEquation(x) : eix(x) = cis(x)
@@ -41,15 +56,3 @@ p.f.
 >  = cis θ cis φ
 
 즉, cis는 주기함수이자 지수 함수임
-
-(sin, cos, tan) = sct
-[sct := (sin, cos, tan)
-  [tan := sin/cos]
-  [cos := λx. sin(½π - θ)]
-  s.t.
-    sin θ = √(1 - (cos θ)²)
-]
-에서 sin의 부호가 아주 잘 결정되므로,
-이것이 삼각비의 핵심 성질이라고 단언할 수 있음.
-
-단위원 위에서 삼각비는 더 큰 삼각형에 대햐 닮으므로, 그냥 단위원 위에서 파악해도 무방하디 때문에 x² + y² = r²을 응용할 수 있음.
