@@ -110,11 +110,11 @@ b isInverseOf a : isInverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), tunalIs
 
 #### 가역원임-가술어 (tunal cheking-dose-it invertible-element Predicate)
 
-가역원임 가술어 isInvertibleAs는 방금전에 내가 만든 가술어로,
+가역원임 가술어 isInvertibleAs는 방금전에 내가 만든 가성질로,
 
 역원 판별논리식 Φ에 대해,
 
-x isInvertibleAs 
+x isInvertibleAs Φ : isInvertibleAs(x, Φ) : ∃y
 
 ### 심볼 목록
 
