@@ -50,6 +50,12 @@ Associative : "(a * b) * c = a * (b * c)"
 
 Medial : "(m * n) * (p * q) = (m * p) * (n * q)"
 
+#### 교환법칙 (commutative property), 혹은 가환(commutative)
+
+교환법칙 Commutative는 다음과 같은 법칙성질(참성질)이다.
+
+Commutative : "a * b = b * a"
+
 ### 심볼 목록
 
 아래 심볼은, Volcano에서 사용 목적이 정해진 특수한 심볼이다
@@ -91,3 +97,5 @@ Volcano₁,₁(D, e, `*`) ⊨ 이항연산 `*`가 (D, `*`, e)를 이룸
 를 만족하면, 즉, 항등원을 가진다면,
 
 이를 단위 마그마라고 부른다
+
+#### 1. 2. 
