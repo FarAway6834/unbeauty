@@ -104,7 +104,7 @@ tunalIsInverseOf(e, a, b) : tunalIsLeftinversOf(e, a, b), tunalIsRightinversOf(e
 
 역원임-술어 isInverseOf는 내가 방금전에 명명한 가성질이다.
 
-b isInverseOf a : isInverseOf(a, b) : 
+b isInverseOf a : isInverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), 
 
 ### 심볼 목록
 
