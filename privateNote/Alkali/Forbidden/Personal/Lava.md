@@ -272,7 +272,7 @@ UnitMagma(Volcano₁,₁(D, e, `*`)), Semigroup(Volcano₁,₁(D, e, `*`)) ⊨ "
 
 Laval 대수구조 명칭은 Monoid 이다.
 
-#### 2. 3. 군 (Groop)
+#### 2. 3. 군 (Group)
 
 이항연산 `*`가
 
@@ -284,7 +284,7 @@ Laval 대수구조 명칭은 Monoid 이다.
 
 이를, 군이라 한다.
 
-Laval 대수구조 명칭은 Groop 이다.
+Laval 대수구조 명칭은 Group 이다.
 
 #### 2. 4. 아벨 군 (Abelian Group) • 가환군 (Commutative Group)
 
@@ -292,7 +292,7 @@ Laval 대수구조 명칭은 Groop 이다.
 
 이항연산 `*`가
 
-CommutativeMagma(Volcano₁,₁(D, e, `*`)), Groop(Volcano₁,₁(D, e, `*`)) ⊨ "이항연산 `*`가 <D, `*`>를 이룸"
+CommutativeMagma(Volcano₁,₁(D, e, `*`)), Group(Volcano₁,₁(D, e, `*`)) ⊨ "이항연산 `*`가 <D, `*`>를 이룸"
 
 인 `*`라면,
 
@@ -300,11 +300,19 @@ CommutativeMagma(Volcano₁,₁(D, e, `*`)), Groop(Volcano₁,₁(D, e, `*`)) �
 
 이를, 가환군 • 아벨군 이라고 하며,
 
-(또한, AbelianGroop = CommutativeGroop 이고)
+(또한, AbelianGroup = CommutativeGroup 이고)
 
-Laval 대수구조 명칭을 CommutativeGroop로 한다.
+Laval 대수구조 명칭을 CommutativeGroup로 한다.
 
-(당연히 AbelianGroop = CommutativeGroop이므로, AbelianGroop로 해도 된다. 왜 대입이 되는지는 Laval명칭의 정의 참고. (술어임))
+(당연히 AbelianGroup = CommutativeGroup이므로, AbelianGroop로 해도 된다. 왜 대입이 되는지는 Laval명칭의 정의 참고. (술어임))
+
+#### 2. 5. 자명군 (trivial group)
+
+이항연산 `*`가 
+
+Group(Volcano₁,₁(D, e, `*`)) s.t. D = {e} ⊨ "이항연산 `*`가 <{e}, `*`>를 이룸"
+
+일때, 이를 자명군이라고 하고, Laval 대수구조 명칭을 TrivialGroup 이라 한다
 
 ### 성질, 예약 심볼, 대수구조에 대한 해설
 
