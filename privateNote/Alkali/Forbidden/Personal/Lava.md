@@ -56,11 +56,19 @@ Medial : "(m * n) * (p * q) = (m * p) * (n * q)"
 
 Commutative : "a * b = b * a"
 
-#### 역원임-술어 (is-invers-of Predicate)
+#### 좌역원임-가술어 (tunal is-leftinvers-of Predicate)
 
-역원임-술어 isInversOf는 내가 방금전에 명명한 가성질이다.
+좌역원임-가술어 isLeftinversOf는 내가 방금전에 명명한 가성질이다.
 
-b isInversOf a : isInversOf(b, a) : "a * b = e"
+tunalIsLeftinversOf(e, b, a) : "b * a = e"
+
+e = 
+
+#### 우역원임-가술어 (tunal is-rightinvers-of Predicate)
+
+우역원임-가술어 isRightinversOf는 내가 방금전에 명명한 가성질이다.
+
+tunalIsRightinversOf(e, b, a) : "a * b = e"
 
 ### 심볼 목록
 
