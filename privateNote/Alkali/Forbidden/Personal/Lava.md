@@ -108,6 +108,10 @@ b isInverseOf a : isInverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), tunalIs
 
 로, 좌항등원과 우항등원이 같은 경우의 역원임-가술어이다.
 
+#### 가역원임-가술어 (tunal its-invertible-element Predicate)
+
+가역원임 가술어 tunalInvertibleElement(
+
 ### 심볼 목록
 
 아래 심볼은, Volcano에서 사용 목적이 정해진 특수한 심볼이다
