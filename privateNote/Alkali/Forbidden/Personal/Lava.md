@@ -322,6 +322,8 @@ Quasigroup(Volcano₁,₁(D, e, `*`)), UnitMagma(Volcano₁,₁(D, e, `*`)) ⊨ 
 
 일때, 이를 고리라고 하고, Laval 대수구조 명칭으로 Loop 이라 한다.
 
+Quasigroup에 대해서는 최하단 탬구 예정 노트 참고
+
 ### 성질, 예약 심볼, 대수구조에 대한 해설
 
 #### 결합법칙에 대해 해설하며 ; Associatival Extension과 반군
