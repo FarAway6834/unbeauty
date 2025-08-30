@@ -264,7 +264,7 @@ Laval 대수구조 명칭은 Monoid 이다.
 
 이항연산 `*`가
 
-(⊨ Monoid(Volcano₁,₁(D, e, `*`)) ⊨ EntireInvertiblity) ⊨ "이항연산 `*`가 <D, `*`>을 이룸"
+(⊨ Monoid(Volcano₁,₁(D, e, `*`)) ⊨ EntireInvertiblity) ⊨ "이항연산 `*`가 <D, `*`>를 이룸"
 
 인 `*`라면,
 
@@ -280,7 +280,19 @@ Laval 대수구조 명칭은 Groop 이다.
 
 이항연산 `*`가
 
-CommutativeMagma(Volcano₁,₁(D, e, `*`)), 
+CommutativeMagma(Volcano₁,₁(D, e, `*`)), Groop(Volcano₁,₁(D, e, `*`)) ⊨ "이항연산 `*`가 <D, `*`>를 이룸"
+
+인 `*`라면,
+
+즉, 이항연산 `*`가 군을 이루는 동시에 가환 마그마를 이룬다면,
+
+이를, 가환군 • 아벨군 이라고 하며,
+
+(또한, AbelianGroop = CommutativeGroop 이고)
+
+Laval 대수구조 명칭을 CommutativeGroop로 한다.
+
+(당연히 AbelianGroop = CommutativeGroop이므로, AbelianGroop로 해도 된다. 왜 대입이 되는지는 Laval명칭의 정의 참고. (술어임))
 
 ### 성질, 예약 심볼, 대수구조에 대한 해설
 
