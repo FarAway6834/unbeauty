@@ -114,7 +114,15 @@ b isInverseOf a : isInverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), tunalIs
 
 역원 판별논리식 Φ에 대해,
 
-x isInvertibleAs Φ : isInvertibleAs(x, Φ) : ∃y
+x isInvertibleAs Φ : isInvertibleAs(x, Φ) : ∃y s.t. Φ(x, y)
+
+인 isInvertibleAs로, FOL에서는 술어가 아닌 성질꼴로, 여러가지 성질의 접두사로 동작하며, 그 경우 Φ과 isInvertibleAs를 붙여쓴다.
+
+그러나 권장사항은 SOL에서의 사용이다.
+
+왜냐하면, 내가 FOL로 만들기 디껍고 귀찮기 때문이다.
+
+다만 한가지 주의하기 위해 참고할 점은, ∃y라는 y는 해당 구조의 도메인 위에 있어야 하므로, 닫여있는 원소인 조건이라는것이고, 따라서, 
 
 ### 심볼 목록
 
