@@ -1,16 +1,18 @@
 # Lava
 닫힌형태의 대수구조를 폐구조라고 명명하고, Lava라고 부르겠음.
 
-관계가 주어지지 않은 n개의 함수를 가진 Structure
+관계가 주어지지 않은 n개의 함수와 m개의 심볼을 가진 Structure
 
-M = <D, fun₁, ..., funₙ>를 n-Lava라고 하겠음
+M = <D, Sym₁, ..., Symₘ, fun₁, ..., funₙ>를 (m, n)-Lava라고 하겠음
 
-0-Lava는 집합인 기본적인 대수구조이다.
+(m, 0)-Lava는 (심볼을 정의한, 즉 정의용) 집합인 기본적인 대수구조이다.
 
 참고로, 1-Lava이상은, 각 연산이 전부 D와 마그마를 이룬다.
 
-Volcanoₙ(D, fun₁, ..., funₙ) ≜ <D, fun₁, ..., funₙ>
+Volcanoₘ,ₙ(D, Sym₁, ..., Symₘ, fun₁, ..., funₙ) ≜ <D, Sym₁, ..., Symₘ, fun₁, ..., funₙ>
 
 라 하겠다.
 
-Volcano는 n-Lava를 생성하는 함수열이다.
+Volcano는 (m, n)-Lava를 생성하는 무한 차원의 (= 행과 열의 총 길이가 자연수 기수 길이인) 함수행열이다.
+
+예컨데, Volcano₂,₀(𝔹, F, T)는 부울-도메인으로 유명하다.
