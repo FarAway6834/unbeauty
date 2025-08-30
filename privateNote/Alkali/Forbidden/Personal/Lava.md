@@ -58,17 +58,23 @@ Commutative : "a * b = b * a"
 
 #### 좌역원임-가술어 (tunal is-leftinvers-of Predicate)
 
-좌역원임-가술어 isLeftinversOf는 내가 방금전에 명명한 가성질이다.
+좌역원임-가술어 tunalIsLeftinversOf는 내가 방금전에 명명한 가성질이다.
+
+가술어를 tunal 서술어를 붙이는 이유는 tunna-al (다랑어-적)이라는 뜻으로 가술어임을 말하기 위해서다. 이유는 가성질 • 참성칠 명명 유래 참고.
 
 tunalIsLeftinversOf(e, b, a) : "b * a = e"
 
-e = 
+e = eₗ으로 대입해서 생각한다면, 좌항등원이 항등원인 좌역원임-가술어라고 하며, e = eᵣ이면 우항등원이 항등원인 좌항등원-가술어라고 한다.
+
+해당사항은 하단의 우역원임-가술어에서도 통용된다.
 
 #### 우역원임-가술어 (tunal is-rightinvers-of Predicate)
 
 우역원임-가술어 isRightinversOf는 내가 방금전에 명명한 가성질이다.
 
 tunalIsRightinversOf(e, b, a) : "a * b = e"
+
+#### 좌역원임-술어 (is-leftinverse-of Predicate)
 
 ### 심볼 목록
 
