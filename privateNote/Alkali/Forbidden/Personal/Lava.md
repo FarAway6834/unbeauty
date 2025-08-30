@@ -70,11 +70,25 @@ e = eₗ으로 대입해서 생각한다면, 좌항등원이 항등원인 좌역
 
 #### 우역원임-가술어 (tunal is-rightinvers-of Predicate)
 
-우역원임-가술어 isRightinversOf는 내가 방금전에 명명한 가성질이다.
+우역원임-가술어 tunalIsRightinversOf는 내가 방금전에 명명한 가성질이다.
 
 tunalIsRightinversOf(e, b, a) : "a * b = e"
 
 #### 좌역원임-술어 (is-leftinverse-of Predicate)
+
+좌역원임-술어 isLeftinverseOf는 내가 방금전에 명명한 가성질이다.
+
+a isLeftinverseOf b : isLeftinverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), isLeftinverseOf(e, a, b)
+
+로, 좌항등원과 우항등원이 같은 경우의 좌역원임-가술어이다.
+
+#### 우역원임-술어 (is-rightinverse-of Predicate)
+
+좌역원임-술어 isLeftinverseOf는 내가 방금전에 명명한 가성질이다.
+
+a isLeftinverseOf b : isLeftinverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), isLeftinverseOf(e, a, b)
+
+로, 좌항등원과 우항등원이 같은 경우의 우역원임-가술어이다.
 
 ### 심볼 목록
 
