@@ -78,17 +78,23 @@ tunalIsRightinversOf(e, b, a) : "a * b = e"
 
 좌역원임-술어 isLeftinverseOf는 내가 방금전에 명명한 가성질이다.
 
-a isLeftinverseOf b : isLeftinverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), isLeftinverseOf(e, a, b)
+a isLeftinverseOf b : isLeftinverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), tunalIsLeftinverseOf(e, a, b)
 
 로, 좌항등원과 우항등원이 같은 경우의 좌역원임-가술어이다.
 
 #### 우역원임-술어 (is-rightinverse-of Predicate)
 
-좌역원임-술어 isLeftinverseOf는 내가 방금전에 명명한 가성질이다.
+우역원임-술어 isRightinverseOf는 내가 방금전에 명명한 기성질이다.
 
-a isLeftinverseOf b : isLeftinverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), isLeftinverseOf(e, a, b)
+a isRightinverseOf b : isRightinverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), tunalIsRightinverseOf(e, a, b)
 
 로, 좌항등원과 우항등원이 같은 경우의 우역원임-가술어이다.
+
+#### 역원임-가술어 (tunal is-inverse-of Predicate)
+
+역원임-가술어 tunalIsInverseOf는 내가 방금전에 명명한 가성질이다.
+
+tunalIsInverseOf(e, a, b) : 
 
 ### 심볼 목록
 
