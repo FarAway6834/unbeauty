@@ -260,6 +260,20 @@ UnitMagma(Volcano₁,₁(D, e, `*`)), Semigroup(Volcano₁,₁(D, e, `*`)) ⊨ "
 
 Laval 대수구조 명칭은 Monoid 이다.
 
+#### 2. 3. 군 (Groop)
+
+이항연산 `*`가
+
+(⊨ Monoid(Volcano₁,₁(D, e, `*`)) ⊨ EntireInvertiblity) ⊨ "이항연산 `*`가 <D, `*`>을 이룸"
+
+인 `*`라면,
+
+즉, 이항연산 `*`가 반군을 이루며, 전가역이면 (= 전가역성을 띄면 = 전가역성을 만족하면)
+
+이를, 군이라 한다.
+
+Laval 대수구조 명칭은 Groop 이다.
+
 ### 성질, 예약 심볼, 대수구조에 대한 해설
 
 #### 결합법칙에 대해 해설하며 ; Associatival Extension과 반군
