@@ -56,6 +56,12 @@ Medial : "(m * n) * (p * q) = (m * p) * (n * q)"
 
 Commutative : "a * b = b * a"
 
+#### 역원임-술어 (is-invers-of Predicate)
+
+역원임-술어 isInversOf는 내가 방금전에 명명한 가성질이다.
+
+b isInversOf a : isInversOf(b, a) : "a * b = e"
+
 ### 심볼 목록
 
 아래 심볼은, Volcano에서 사용 목적이 정해진 특수한 심볼이다
