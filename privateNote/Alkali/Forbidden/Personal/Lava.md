@@ -104,7 +104,9 @@ tunalIsInverseOf(e, a, b) : tunalIsLeftinversOf(e, a, b), tunalIsRightinversOf(e
 
 역원임-술어 isInverseOf는 내가 방금전에 명명한 가성질이다.
 
-b isInverseOf a : isInverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), 
+b isInverseOf a : isInverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), tunalIsInverseOf(e, a, b)
+
+로, 좌항등원과 우항등원이 같은 경우의 역원임-가술어이다.
 
 ### 심볼 목록
 
@@ -231,3 +233,16 @@ f(x₁, ..., xₙ) ≜ f(x₁, ..., xₘ₋₁, f(xₘ, ..., xₙ))
 m, n은 무한해도 좋을거다. 아마도.
 
 Associatival Extension에 의해, m항연산과 가변항연산의 경계가 허물어지는 특징을 보이기에, 반군인 연산은 k항연산이라면, 최소 항의 수를 k로 간주한다.
+
+#### 역원임-술어에 대해 설명하기 : 좌역원이자 우역원이면 역원임 정리
+
+좌역원이자 우역원이면 역원임 정리는 내가 만든 정리로, 사실 정리라고 하기에도 존나 애매한 난이도다.
+
++ p' = p ∧ r
++ q' = q ∧ r
++ s = p ∧ q
++ s' = s ∧ r
+
+에서,
+
+p', q' ⊨ s'임은 당연히 안다.
