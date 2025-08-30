@@ -10,15 +10,16 @@
 
 ### 이차함수의 최대 • 최소
 
-y = f(x) = a(x - p)² + q
-P = (n, m)
-Q = (inf f(x), sup f(x)) (x ∈ P)
++ y = f(x) = a(x - p)² + q
++ P = (n, m)
++ Q = (inf f(x), sup f(x)) (x ∈ P)
 일 때, x ∈ P → y ∈ Q임.
 
 n = p - b, m = p + d 일때,
 
 명제 Φ : inf Q = q 에 대해,
-Φ일때, t = sup Q, 아닐때, t = inf Q로,
++ Φ일때, t = sup Q
++ 아닐때, t = inf Q로,
 q를 극값 경계, t를 비극값 경계로 명명하겠음.
 
 그러나, p < n < m이거나, n < m < p인 경우, 극값 경계니 뭐니는 의미 없다.
