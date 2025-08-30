@@ -144,7 +144,13 @@ x isInvertible : isInvertible(x) : x isInvertibleAs isInverseOf : isInvertibleAs
 
 가역원인지 확인하는 술어이다.
 
-#### 전가역성 (
+#### 전가역성 (Entire-Invertiblity)
+
+전가역성 EntireInvertiblity는 내가 방금전에 만든 참성질 개념으로, "모든 원소가 가역원"을 말하기 귀찮아, 귀차니즘히 심히 많이 도져 귀찮고 괴로워서, 만든 개념이다.
+
+EntireInvertiblity : "x isInvertible"
+
+로써, 모든 x에 대해서 isInvertible인 일반명제임을 술어 Commutative과 같은 경우로 표기했다는 사실로써 능히 알 수 있다.
 
 ### 심볼 목록
 
