@@ -94,7 +94,11 @@ a isRightinverseOf b : isRightinverseOf(a, b) : 항등원이존재함(eₗ, eᵣ
 
 역원임-가술어 tunalIsInverseOf는 내가 방금전에 명명한 가성질이다.
 
-tunalIsInverseOf(e, a, b) : 
+tunalIsInverseOf(e, a, b) : tunalIsLeftinversOf(e, a, b), tunalIsRightinversOf(e, a, b)
+
+로, 좌역원임-가술어와 우역원임-가술어를 모두 만족시키는, 즉, 역원인 경우로써,
+
+이경우도 e에 따라, 항등원이 좌/우 항등원인 역원임-가술어로 말할 수 있다.
 
 ### 심볼 목록
 
