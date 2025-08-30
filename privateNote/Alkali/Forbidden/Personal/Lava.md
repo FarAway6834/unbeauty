@@ -122,7 +122,29 @@ x isInvertibleAs Φ : isInvertibleAs(x, Φ) : ∃y s.t. Φ(x, y)
 
 왜냐하면, 내가 FOL로 만들기 디껍고 귀찮기 때문이다.
 
-다만 한가지 주의하기 위해 참고할 점은, ∃y라는 y는 해당 구조의 도메인 위에 있어야 하므로, 닫여있는 원소인 조건이라는것이고, 따라서, 구조
+다만 한가지 주의하기 위해 참고할 점은, ∃y라는 y는 해당 구조의 도메인 위에 있어야 하므로, 닫여있는 원소인 조건이라는것이고, 따라서, 구조위에서의 의미해석을 해야함에 주의하자.
+
+#### 가역원임-술어 (cheking-dose-it invertible-element Predicate)
+
+가역원임 술어 isInvertible는 방금전에 내가 만든 가성질로,
+
+x isInvertible : isInvertible(x)
+
+이며,
+
+isInvertible : isInvertibleAs isInverseOf
+
+로써,
+
+x = y, y = z, x = z에서
+
+x isInvertible : isInvertible(x) : x isInvertibleAs isInverseOf : isInvertibleAs(x, isInverseOf)
+
+인 isInvertible로, isInverseOf조건의 isInvertibleAs로 볼수 있으며,
+
+가역원인지 확인하는 술어이다.
+
+#### 전가역성 (
 
 ### 심볼 목록
 
