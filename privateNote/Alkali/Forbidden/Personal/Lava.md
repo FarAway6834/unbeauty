@@ -110,7 +110,7 @@ b isInverseOf a : isInverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), tunalIs
 
 #### 가역원임-가술어 (tunal its-invertible-element Predicate)
 
-가역원임 가술어 tunalInvertibleElement(
+가역원임 가술어 invertibleElementAs는 역원 지정 
 
 ### 심볼 목록
 
