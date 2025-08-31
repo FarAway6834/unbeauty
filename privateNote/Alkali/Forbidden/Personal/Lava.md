@@ -373,9 +373,14 @@ p' ∧ q' = s'임은 당연히 안다.
 
 ### 기초적 파악
 
+앞으로 말할 L은 모델론적 언어라는 맥락에서 말하는거다.
+
 #### 명세관계 ; isInterfaceOf
 
 T isInterfaceOf L : isInterface(L, T) : (L ⊨ T) s.t. (∀T' ⊨ L)(T ⊨ T')
+
+T는 L의 명세인 관계로, L의 기초임을 알리는 관계다.
+L
 
 ## NOTE
 
