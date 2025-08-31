@@ -1,5 +1,7 @@
 # Lava System
 
+N.B. ATTENTION, WARNING, NOTE(IMPORTANT), WATCHOUT, TIP, DECLARE, READIT : 만족•귀결기호 `⊨`가 존나 흥건히 나오지만, 그건 만족•귀결의 의미로 의미론적으로 같아 해석할것 • 그리고 하게 할 것의 목적이며, 정의 기호와의 혼용은 전혀, 전혀, 전혀 없이, 잘 쓰여있다. 간혹 정의같이 나온다면, 정의의 의미를 가진 귀결로, 귀결에는 오류가 없다 단언한다. (글 읽을땨마다 이곳을 참고헐것)
+
 (내가 추상대수학 배우려고 만든 체계)
 
 닫힌형태의 대수구조를 폐구조라고 명명하고, Lava라고 부르겠음.
@@ -120,7 +122,7 @@ b isInverseOf a : isInverseOf(a, b) : 항등원이존재함(eₗ, eᵣ), tunalIs
 
 로, 좌항등원과 우항등원이 같은 경우의 역원임-가술어이다.
 
-#### 가역원임-가술어 (tunal cheking-dose-it invertible-element Predicate)
+#### 가역원임-가술어 (tunal checking-does-it invertible-element Predicate)
 
 가역원임 가술어 isInvertibleAs는 방금전에 내가 만든 가성질로,
 
@@ -136,7 +138,7 @@ x isInvertibleAs Φ : isInvertibleAs(x, Φ) : ∃y s.t. Φ(x, y)
 
 다만 한가지 주의하기 위해 참고할 점은, ∃y라는 y는 해당 구조의 도메인 위에 있어야 하므로, 닫혀있는 원소인 조건이라는것이고, 따라서, 구조위에서의 의미해석을 해야함에 주의하자.
 
-#### 가역원임-술어 (cheking-dose-it invertible-element Predicate)
+#### 가역원임-술어 (checking-does-it invertible-element Predicate)
 
 가역원임 술어 isInvertible는 방금전에 내가 만든 가성질로,
 
@@ -322,7 +324,7 @@ Group(Volcano₁,₁(D, e, `*`)) s.t. D = {e} ⊨ "이항연산 `*`가 <{e}, `*`
 
 이항연산 `*`가
 
-Quasigroup(Volcano₁,₁(D, e, `*`)), UnitMagma(Volcano₁,₁(D, e, `*`)) ⊨ "이항연산 `*`가 <D, *>를 이룸"
+Quasigroup(Volcano₁,₁(D, e, `*`)), UnitMagma(Volcano₁,₁(D, e, `*`)) ⊨ "이항연산 `*`가 <D, `*`>를 이룸"
 
 일때, 이를 고리라고 하고, Laval 대수구조 명칭으로 Loop 이라 한다.
 
