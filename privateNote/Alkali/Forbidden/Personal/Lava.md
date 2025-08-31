@@ -380,7 +380,9 @@ p' ∧ q' = s'임은 당연히 안다.
 T isInterfaceOf L : isInterface(L, T) : (L ⊨ T) s.t. (∀T' ⊨ L)(T ⊨ T')
 
 T는 L의 명세인 관계로, L의 기초임을 알리는 관계다.
-L
+L의 정의 ⋅ 규칙을 담당하는 부분으로, 논리 언어 Lₗₒₛᵢₖ (원래 losik가 아닌 logic로 쓰려고 했지만, 유니코드의 한계상 포기)이 Nattural Dedication하는걸 제외한, 규칙계형 파트로 전반적 논리를 구성한다.
+
+예를들어 L은 Tensorflow, T는
 
 ## NOTE
 
