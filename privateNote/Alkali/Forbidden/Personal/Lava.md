@@ -373,6 +373,10 @@ p' ∧ q' = s'임은 당연히 안다.
 
 ### 기초적 파악
 
+#### 명세관계 ; isInterfaceOf
+
+T isInterfaceOf L : isInterface(L, T) : (L ⊨ T) s.t. (∀T' ⊨ L)(T ⊨ T')
+
 ## NOTE
 
 작성중이고, 함자 (* x), (x *)가 준동형사상인 마그마가 유사군(quasigroup)이라고 하는데, 어떻게 적어야 할 지 모르겠으니, 범주론 배울때 배워보자.
