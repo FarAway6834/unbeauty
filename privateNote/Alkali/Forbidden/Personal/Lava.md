@@ -751,6 +751,28 @@ Extenderₙ(M₁, ..., Mₙ) ≜ M s.t. M₁, ..., Mₙ ⊨ M
 
 Extender(상속자)란 n개의 Implement들을 상속한 Structure Model을 주는 함수로 (작성중)
 
+#### 피상속자 ; ExtenderalObject
+
+(작성중)
+
+#### 참피상속자 ; DistunalExtenderalObject
+
+(작성중)
+
+#### Sector
+
+(작성중)
+
+#### 명제귀결 ; ProposolalConsequence
+
+(작성중)
+
+#### 명제귀결도입기반 구조귀결 ; ProposolalConsequenceIntroduceSystemicConsequence
+
+(작성중)
+
+#### 폼페이오 함수 ; Pompeii
+
 ## NOTE
 
 작성중이고, 함자 (* x), (x *)가 준동형사상인 마그마가 유사군(quasigroup)이라고 하는데, 어떻게 적어야 할 지 모르겠으니, 범주론 배울때 배워보자.
