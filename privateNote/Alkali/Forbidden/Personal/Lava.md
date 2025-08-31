@@ -198,7 +198,7 @@ N.B. ATTENTION, WARNING, NOTE(IMPORTANT), WATCHOUT, TIP, DECLARE, READIT : 이�
 
 ### Laval 대수구조 명칭 목록
 
-Laval은 Lava + -al이라서, Lava + -적(的) 이라는 뜻이다. `Laval == Lava적(的)`인것이다.
+**Laval은 Lava + -al이라서, Lava + -적(的) 이라는 뜻이다. `Laval == Lava적(的)`인것이다. (오타아님, 중요)**
 
 어떤 Laval 대수구조 명칭 (= Lava식 대수구조 명칭) K란,
 
