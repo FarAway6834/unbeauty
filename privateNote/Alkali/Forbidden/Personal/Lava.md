@@ -76,7 +76,7 @@ Commutative : "a * b = b * a"
 
 tunalIsLeftinversOf(e, b, a) : "b * a = e"
 
-e = eₗ으로 대입해서 생각한다면, 좌항등원이 항등원인 좌역원임-가술어라고 하며, e = eᵣ이면 우항등원이 항등원인 좌항등원-가술어라고 한다.
+e = eₗ으로 대입해서 생각한다면, 좌항등원이 항등원인 좌역원임-가술어라고 하며, e = eᵣ이면 우항등원이 항등원인 좌항등원-가술어라고 한다. (심볼정의 문단의 항등원 참고)
 
 해당사항은 하단의 우역원임-가술어에서도 통용된다.
 
@@ -194,7 +194,11 @@ EntireInvertiblity : "x isInvertible"
 
 인, 즉, 좌항등원과 우항등원이 같으면, "항등원이 존재한다"고 하고, 좌항등원과 우항등원이 같으니, 그것을 "항등원"이라고 하며, 이것의 존재조건인 좌항등원과 우항등원이 같을것이 항등원의 존재 조건이다.
 
+N.B. ATTENTION, WARNING, NOTE(IMPORTANT), WATCHOUT, TIP, DECLARE, READIT : 이하에서, 좌항등원 및 우항등원 기호도 여기에서 정의했으므로, 여기를 참고해야한다는걸 강조하고 또 경고하겠다.
+
 ### Laval 대수구조 명칭 목록
+
+Laval은 Lava + -al이라서, Lava + -적(的) 이라는 뜻이다. `Laval == Lava적(的)`인것이다.
 
 어떤 Laval 대수구조 명칭 (= Lava식 대수구조 명칭) K란,
 
@@ -214,7 +218,7 @@ Magma라는 영문 명칭 술어이다
 
 이항연산 `*`가
 
-Volcano₁,₁(D, e, `*`) ⊨ 이항연산 `*`가 (D, `*`, e)를 이룸
+Volcano₁,₁(D, e, `*`) ⊨ "이항연산 `*`가 (D, `*`, e)를 이룸"
 
 인 `*`라면, 즉, 항등원을 가진다면,
 
@@ -304,7 +308,7 @@ CommutativeMagma(Volcano₁,₁(D, e, `*`)), Group(Volcano₁,₁(D, e, `*`)) �
 
 Laval 대수구조 명칭을 CommutativeGroup로 한다.
 
-(당연히 AbelianGroup = CommutativeGroup이므로, AbelianGroop로 해도 된다. 왜 대입이 되는지는 Laval명칭의 정의 참고. (술어임))
+(당연히 AbelianGroup = CommutativeGroup이므로, AbelianGroup로 해도 된다. 왜 대입이 되는지는 "Laval명칭"의 정의 참고. (술어임))
 
 #### 2. 5. 자명군 (trivial group)
 
