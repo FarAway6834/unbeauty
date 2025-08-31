@@ -747,7 +747,9 @@ Interface, Implement, Extend... 사실 이것들은 다 Object Oriented Programm
 
 뭐... 그냥 그렇다는거다.
 
-(작성중)
+Extenderₙ(M₁, ..., Mₙ) ≜ M s.t. M₁, ..., Mₙ ⊨ M
+
+Extender(상속자)란 n개의 Implement들을 상속한 Structure Model을 주는 함수로 (작성중)
 
 ## NOTE
 
