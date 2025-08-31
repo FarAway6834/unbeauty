@@ -23,7 +23,7 @@ Volcano는 (m, n)-Lava를 생성하는 무한 차원의 (= 행과 열의 총 길
 내가 스스로 정의한
 Lava에서 확장한걸로 구조꼴 (structrue form)이라는게 있는데, 아래와 같다.
 
-StructureFormₗ,ₘ,ₙ(D, Sym₁, ..., Symₗ, fun₁, ..., funₘ, Pre₁, ..., Preₙ) ≜ <D, Sym₁, ..., Symₘ, fun₁, ..., funₙ, Pre₁, ..., Preₙ>
+StructureFormₗ,ₘ,ₙ(D, Sym₁, ..., Symₗ, fun₁, ..., funₘ, Pre₁, ..., Preₙ) ≜ <D, Sym₁, ..., Symₗ, fun₁, ..., funₘ, Pre₁, ..., Preₙ>
 
 Pre₁, ..., Preₙ는 술어이고, 이게 뭐하나 미스되지 않고, Lava랑은 달리 있을거 다있게 정의된 구조의 최소 단위이므로, 이를 "구조꼴"이라고 하고, 삼차원 행렬 (= 이제 텐서 ㅋㅋㅋㅋ) StructureForm를 통해 만들 수 있다.
 
