@@ -382,7 +382,29 @@ T isInterfaceOf L : isInterface(L, T) : (L ⊨ T) s.t. (∀T' ⊨ L)(T ⊨ T')
 T는 L의 명세인 관계로, L의 기초임을 알리는 관계다.
 L의 정의 ⋅ 규칙을 담당하는 부분으로, 논리 언어 Lₗₒₛᵢₖ (원래 losik가 아닌 logic로 쓰려고 했지만, 유니코드의 한계상 포기)이 Nattural Dedication하는걸 제외한, 규칙계형 파트로 전반적 논리를 구성한다.
 
-예를들어 L은 Tensorflow, T는
+예를들어 L은 Tensorflow, T는 그 공식 document로, 기능은 L에 있고, 그 원리가 T이다.
+
+예를들어,
+
+L = 페아노 산술, T = peano Axioms and defines이면,
+
+L"1 + 1 = 2"에서,
+
+정의는, T에서,
+
+```markdown
+## DEFINITION
+
+### 덧셈 `+`의 정의
+
+1. x + 1 = x⁺
+2. x⁺ + y = (x + y)⁺
+
+## AXIOMS
+
+다음 다섯 공리를 만족하는 1 ∈ ℕ
+
+```
 
 ## NOTE
 
