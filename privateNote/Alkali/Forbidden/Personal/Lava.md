@@ -825,7 +825,10 @@ class PsudoAngdeAlgebra(ConjuntionLattice):
     def __init__(self, value) -> None:
         super().__init__(value)
     
-    def 
+    def __le__(self, value):
+        ```
+        letter `<=` seems like 
+        ```
 
 ```
 
