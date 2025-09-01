@@ -770,26 +770,46 @@ Extender(상속자)란 n개의 Implement들을 상속한 Structure Model을 주�
 상속자를 아래 예시로 살펴보자.
 
 ```python
-# from __future__ import annotations # not need in over python 3.10
 
 class CORE(bool):
+    def __init__(self, value) -> None:
+        super().__init__(value)
     
-    def __init__(self, boolean : bool) -> None:
-        super().__init__(boolean)
-    
-    def __gen_my_type(self, ob : bool):
-    
-    def __invert__(self, other : CORE = None) -> CORE = None:
-        return type(self)(
+    def __gen_my_type(self, ob):
+        return type(self)(ob)
 
-class CNF(CORE):
-    def __init__(self, boolean : bool) -> None:
+class ConjuntionLattice(CORE):
+    def __init__(self, value) -> None:
+        super().__init__(value)
+    
+    def __and__(self, other):
+        return self.__gen_my_type(self and other)
+
+class ANF(CORE, ConjuntionLattice):
+    def __init__(self, value) -> None:
+        super().__init__(value)
+    
+    def __xor__(self, other):
+        return self.__gen_my_type(int(self) ^ int(other))
+
+class NagationStructureModel(CORE):
+    
+    def __init__(self, value) -> None:
+        super().__init__(value)
+    
+    def __invert__(self):
+        return self.__gen_my_type(not self)
+
+class CNF(NagationStructureModel, ConjuntionLattice):
+    def __init__(self, value) -> None:
+        super().__init__(value)
+
+class DNF(NagationStructureModel):
+    def __init__(self, value) -> None:
         super().__init__(boolean)
     
-    def __and__(self, other : CNF = None) -> CNF = None:
-        return CNF(self and other)
-    
-    def nagation(self, other : CNF = None):
+    def __or__(self, value):
+        return self.__gen_my_type(self or other)
 
 ```
 
