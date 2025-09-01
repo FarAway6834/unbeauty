@@ -827,7 +827,7 @@ class PsudoAngdeAlgebra(ConjuntionLattice):
     
     def __le__(self, value):
         ```
-        letter `<=` seems like 
+        letter `<=` seems like reversed implication operator `⇐`, so it will coded as `<=` means 
         ```
 
 ```
