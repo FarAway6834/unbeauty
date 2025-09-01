@@ -826,10 +826,23 @@ class PsudoAngdeAlgebra(ConjuntionLattice):
         super().__init__(value)
     
     def __le__(self, value):
-        ```
-        letter `<=` seems like reversed implication operator `⇐`, so it will coded as `<=` means 
-        ```
+        '''
+        letter `<=` seems like reversed implication operator `⇐`, so it will coded as `<=` means `←` which implication symbol s.t. `x ← y` means `y implies x` s.t. `x ← y = y → x = (¬y ∨ x)`
+        '''
+        return self.__gen_my_type(self or not value)
 
+class HighschoolLevelLogicalOperator(PsudoAngdeAlgebra, CNF, DNF, ANF):
+    '''
+    L = {'~', '&&', '||', '^', '<='}
+    '''
+    
+    def __init__(self, value):
+        super().__init__(value)
+```
+
+이처럼 상속 구조는 필드(구조체 상수)및 메서드(구조체 함수)를 가져오는데,
+
+```
 ```
 
 (작성중)
