@@ -785,7 +785,7 @@ class ConjuntionLattice(CORE):
     def __and__(self, other):
         return self.__gen_my_type(self and other)
 
-class ANF(CORE, ConjuntionLattice):
+class ANF(ConjuntionLattice):
     def __init__(self, value) -> None:
         super().__init__(value)
     
@@ -810,6 +810,22 @@ class DNF(NagationStructureModel):
     
     def __or__(self, value):
         return self.__gen_my_type(self or other)
+
+class PsudoAngdeAlgebra(ConjuntionLattice):
+    '''
+    # diffrence between PsudoAngdeAlgebra and Angde Algebra
+    
+    while Angde Algebra is defined by me, and also it only use imply and use boolean value , not using conjuntion, but PsudoAngdeAlgebra is using Conjunction to form the logical operated.
+    
+    model theory to make an logical language or gödel numbering's logical operand.. blablabla
+
+    it used in past as whole diffrent forms. that's an critical diffrence betwean AngdeAlgera
+    '''
+
+    def __init__(self, value) -> None:
+        super().__init__(value)
+    
+    def 
 
 ```
 
