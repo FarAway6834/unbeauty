@@ -905,6 +905,12 @@ memory addr : 0000 0000 0000 07BC | v.y
 
 #### 피상속자 ; ExtenderalObject
 
+피상속자 ExtenderalObject는 External과 반대로, 부모를 쫒아간다 생각하면 편하다.
+
+ExtenderalObjectₙ ≜ (Extenderₙ)⁻¹
+
+ExtenderalObject는 다가함수로, M이 
+
 (작성중)
 
 #### 참피상속자 ; DistunalExtenderalObject
