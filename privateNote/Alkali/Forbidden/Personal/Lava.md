@@ -905,7 +905,7 @@ memory addr : 0000 0000 0000 07BC | v.y
 
 #### 피상속자 ; ExtenderalObject
 
-피상속자 ExtenderalObject는 External과 반대로, 부모를 쫒아간다 생각하면 편하다.
+피상속자 ExtenderalObject는 External과 반대로, 부모를 쫒아간다 생각하면 편하다. (편하다고 했지, 꼭 그런건 아닌게, 피상속 관계를 만족시키는걸 뱉는 다가함수로, 부모 모델들의 집합을 뱉지만 그걸 여러개 뱉으므로, M, N, L을 상속했더라도 `M'`, `N'`, `L'`이 나오지 않으리란 보장이 없다. 사실 둘다 다가로 나오는 함수니까.)
 
 ExtenderalObjectₙ ≜ (Extenderₙ)⁻¹
 
