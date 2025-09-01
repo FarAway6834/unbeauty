@@ -929,7 +929,9 @@ memory addr : 0000 0000 0000 07BC | v.y
 
 ExtenderalObjectₙ ≜ (Extenderₙ)⁻¹
 
-ExtenderalObject는 다가함수로, M이 상속된 자식이게 라는 M
+ExtenderalObject는 다가함수로, M이 상속된 자식이게 하는 M₁, ..., Mₙ들의 모임 `M'`을 뱉는 다가함수로, M'이 여러개이기에, 튜플(=구조체)집합(=모임)(=M')의 집합족(M'들의 모임)으로 가는 치역을 가진다.
+
+ExtenderObject는 결국 M을 만족시키기에, 자신을 낳을(=모델링할) 부모를 파악하는 함수이다. 또한, 
 
 (작성중)
 
