@@ -842,7 +842,34 @@ class HighschoolLevelLogicalOperator(PsudoAngdeAlgebra, CNF, DNF, ANF):
 
 이처럼 상속 구조는 필드(구조체 상수)및 메서드(구조체 함수)를 가져오는데,
 
-```
+다음 c/c++코드를 보라.
+
+```c++
+
+struct intSizeTyp {
+    int main_value;
+    
+    intSizeTyp(int main_value) {
+        this.main_value = main_value;
+    }
+}
+
+struct MathmaticalStructure : intSizeTyp;
+
+struct MathmaticalStructure {
+    const MathmaticalStructure Sym1 = MathmaticalStructure(0);
+    const MathmaticalStructure Sym2 = MathmaticalStructure(1);
+    
+    MathmaticalStructure Fun1(intSizeTyp x) {
+        return x + this.Sym2
+    }
+    
+    MathmaticalStructure Fun2(void) {
+        /* null-ary operand */
+        return this.Sym1
+    }
+};
+
 ```
 
 (작성중)
