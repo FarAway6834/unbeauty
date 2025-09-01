@@ -869,8 +869,17 @@ struct MathmaticalStructure {
         return this.Sym1
     }
 };
-
 ```
+
+저 구조체는 다음과 같은 튜플이다.
+
+MathmaticalStructure = <constructer, Sym1, Sym2, Fun1, Fun2, main_value>
+
+각각 도메인(이라고 치자고 ㅋㅋ ㅠㅠ) 상수기호 Sym1, Sym2, 함수기호 Fun1, Fun2, 변수기호 main_value가 차례대로 담긴 그저 튜플이다.
+
+그리고 이건 시벙 놀랍게도 C의 구조체의 역할인 그냥 이름붙여 묶기를 잘 수행하는 튜플이다.
+
+C의 구조체는 컴파일되면, 단
 
 (작성중)
 
