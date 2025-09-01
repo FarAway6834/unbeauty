@@ -765,7 +765,35 @@ Interface, Implement, Extend... 사실 이것들은 다 Object Oriented Programm
 
 Extenderₙ(M₁, ..., Mₙ) ≜ M s.t. M₁, ..., Mₙ ⊨ M
 
-Extender(상속자)란 n개의 Implement들을 상속한 Structure Model을 주는 함수로 (작성중)
+Extender(상속자)란 n개의 Implement들을 상속한 Structure Model을 주는 함수로 Extender의 용법의 대표적 예시로는, DustunalExtenderalObject와 Sector가 있다.
+
+상속자를 아래 예시로 살펴보자.
+
+```python
+# from __future__ import annotations # not need in over python 3.10
+
+class CORE(bool):
+    
+    def __init__(self, boolean : bool) -> None:
+        super().__init__(boolean)
+    
+    def __gen_my_type(self, ob : bool):
+    
+    def __invert__(self, other : CORE = None) -> CORE = None:
+        return type(self)(
+
+class CNF(CORE):
+    def __init__(self, boolean : bool) -> None:
+        super().__init__(boolean)
+    
+    def __and__(self, other : CNF = None) -> CNF = None:
+        return CNF(self and other)
+    
+    def nagation(self, other : CNF = None):
+
+```
+
+(작성중)
 
 #### 피상속자 ; ExtenderalObject
 
