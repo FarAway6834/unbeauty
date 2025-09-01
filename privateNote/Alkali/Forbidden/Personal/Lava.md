@@ -887,14 +887,14 @@ struct cardesian_coordinate {
     double y; //8B = 64bit
 };
 
-cardesian_coordinate x;
+cardesian_coordinate v;
 ```
 
 위 코드는 다음과 같이 메모리에 적제될것이다. (컴파일 예시지 실제로 저러진 않는다.
 
 ```
-memory addr : 0000 0000 0000 07B4 | x
-memory addr : 0000 0000 0000 07BC | y
+memory addr : 0000 0000 0000 07B4 | v.x
+memory addr : 0000 0000 0000 07BC | v.y
 ```
 
 그러면 저 필드가 가르키는건 순전히 <x, y>인 튜플의 원소다.
