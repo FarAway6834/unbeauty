@@ -882,8 +882,24 @@ MathmaticalStructure = <constructer, Sym1, Sym2, Fun1, Fun2, main_value>
 예를 들어보자.
 
 ```cpp
+struct cardesian_coordinate {
+    double x; //8B = 64bit
+    double y; //8B = 64bit
+};
+
+cardesian_coordinate x;
+```
+
+위 코드는 다음과 같이 메모리에 적제될것이다. (컴파일 예시지 실제로 저러진 않는다.
 
 ```
+memory addr : 0000 0000 0000 07B4 | x
+memory addr : 0000 0000 0000 07BC | y
+```
+
+그러면 저 필드가 가르키는건 순전히 <x, y>인 튜플의 원소다.
+
+실제로 SIMD vectorization연산도 이와 유사하다.
 
 C의 구조체는 컴파일되면, 단
 
