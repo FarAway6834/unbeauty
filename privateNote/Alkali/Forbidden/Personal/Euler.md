@@ -52,4 +52,16 @@ Q.E.D.
 P(z) : z̄ = 1/z
 Θ(x, y, z) : Φ(z), Ψ(x, y, z), P(z)
 
+Fact) P(z) ↔ (zz̄ = 1)
 Fact) Θ(cos θ, sin θ, cis θ)
+p.f. 나머지는 전부 항진이니, P(z) ↔ (zz̄ = 1)에서,
+cisθ × cis(-θ) = cos²θ + sin²θ = 1
+Q.E.D.
+Fact) zz̄ = 1 ↔ z = cisθ
+pf. 양방향함의는 논리적 동등 기호 `↔`이기에 분해 가능
+1. zz̄ ≠ 1에서, cisθ × cis(-θ) = cos²θ + sin²θ = 1로 모순이므로, zz̄ = 1 → z = cisθ
+2. z̄cisθ ≠ 1에서 zz̄ = 1일때, z = cisθ이므로, 모순.
+
+Q.E.D.
+
+질문 : 그렇다면 f(n) = aⁿ이 주기함수라면, cis의 배수로 표현 가능한가?
