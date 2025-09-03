@@ -19,13 +19,14 @@
 
 AC말고도 무한공리도 분기적 명제다. `ZF-`를 보면 알 수 있다.
 
-## 구조주의에 대한 낭만적 입장
+## 구조주의에 대한 낭만적 입장, 그리고 잊지 말아야 할 점
+
+**나는 구조주의를 무시하고 말한게 아니다. 그러나 구조주의가 범주론을 서술하는거에 최대한의 옹호는 다음이 다다.**
 
 범주론에서 도달 불가능 기수 존재 공리가 분기적 명제인데 분기에 따라, 구조주의로 수학을 보거나, 아니거나 한다는 점
 다음 노래에 비유함 ; 
-Someone wrote this song before
-And I could tell you where it's from
-The 4736251 to put my mind at ease
+
+```
 Please just have a laugh with me
 'Cause you know I'm borrowing by now
 These sounds, have already crowned
@@ -36,8 +37,9 @@ And if you want a piece of my thoughts
 There's a coin worth flipping (구조주의에 비유 채택 이유 : 구조주의는 분기적 명제인 도달 불가능 비유 공리를 쓰므로, 저 가사가 찰떡임)
 Why don't you toss
  - 「Mild High Club - Homage 中」
+```
 
-그러나 잊지 말라. 형식주의가 멍청하듯 이것도 멍청하다. 근원도 멍청하지만 개찐도찐이다
+**그러나 잊지 말라. 형식주의가 멍청하듯 이것도 멍청하다. 근원도 멍청하지만 개찐도찐이다**
 
 ## 마치며 - 농담
 
