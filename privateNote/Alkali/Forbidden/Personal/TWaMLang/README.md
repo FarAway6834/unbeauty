@@ -260,6 +260,8 @@ class of tuple what classified by arity | expression orform |
 | :---: | :---: |
 | 0-tuple | () (= ε) |
 | 1-tuple | (x, )† |
+| 2-tuple (pair, ko : 순서쌍) | (x, y) |
+| n-tuple (n > 2) | (x₁, ..., xₙ)
 
 († 표기법에 대해 햇갈리지만 뭐 ㅋ 아님 말구 ㅋ)
 
