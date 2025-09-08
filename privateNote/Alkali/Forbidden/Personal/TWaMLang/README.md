@@ -75,7 +75,11 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 | øsi | [논점률](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/%EB%AA%BD%EC%83%81/%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%AA%BD%EC%83%81)에서의 3인칭 |
 | øvo | [논점률](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/%EB%AA%BD%EC%83%81/%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%AA%BD%EC%83%81)에서의 4인칭 |
 
-술어가 정 궁금하면 아래를 볼것. (나는 네이밍 잘했다고 보는데...)
+참고로, "x가 주제이다"는 `x ø: øpa` 로 쓸 수 있다. 왜냐하먄, "x : 주제"라고 말하는것이기 때문이다
+
+하핳! 이러니 Amongus없는 주제 설정이 되겠지 ㅋㅋ
+
+추가해설 : 위 술어가 정 궁금하면 아래를 볼것. (나는 네이밍 잘했다고 보는데...)
 ```
 
 DoseItNumberOne(x) : x = 1
@@ -95,7 +99,7 @@ DoseItNumberOne(x) : x = 1
 | øcoho | co'o |
 | øwow | it was an interjection |
 
-위 함수에 대해 알고싶으면 다음을 참고할것. (솔찍히 GenNormalForm은 이름 직관적이라 봄)
+추가해설 : 위 함수에 대해 알고싶으면 다음을 참고할것. (솔찍히 GenNormalForm은 이름 직관적이라 봄)
 ```
 
 shr(x, n) ≜ ⌊x/(2ⁿ)⌋
@@ -216,7 +220,7 @@ predicate or relationship or sentense or proposol declare symbol what can use to
 
 이계논리인거에 불만이 없을것이다 가정한다.
 
-나는 존나 귀찮기 때문이다.
+나는 존나 귀찮기 때문이다... 🔥 (~~귀찮은게 자랑이냐?~~)
 
 (Tip : 콜론으로 선언하는 표기법이 내 기억이 맞다면 표준이다. 아님 ㅋ 말구 ㅋ)
 
