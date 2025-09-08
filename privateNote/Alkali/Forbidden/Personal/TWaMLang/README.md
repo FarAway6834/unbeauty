@@ -10,6 +10,7 @@ TWaMLang에 대해 소개하겠다.
 | :---: | :---: |
 | 유형 | 고립어 |
 | 어순 | Predicate - Argument형으로 그냥 함수 모양 (Polandian Notation) |
+| 서자방향 | 좌행서를 쓰되, 유니코드에서 우행서 리터럴이 나오면, 표준적인 유니코드 렌더링을 따름 |
 | 문자 | 로마자 |
 | 목적 | TWaML("수리논리로 말하기"의 준말임) (그니까 왜 그래야하냐고 : 의외성정리에서 말하는 단순의미언어중 쉬운거 제작) |
 | 계통 | 영어랑 로지반에서 단어 몇게 쌔벼옴, 수리논리상 술어논리 기반, 일부 양상논리 기반 |
@@ -25,8 +26,9 @@ TWaMLang에 대해 소개하겠다.
 >
 > "rule 2. using TWaMLang in any logical sentense is `⊥` because it couldn't define in logical way"
 > 
-> "rule 3. if logical sentence got error by predicate s.t. which not 「the some predicates」, then set that logical system as 「The Subjectal Language Logic System」"
+> "rule 3. as 「Loj System」 if logical sentence got error by predicate s.t. which not 「the some predicates」, then set that logical system as 「The Subjectal Language Logic System」"
 > 
+> "
 
 수학에서 누가 술어 지정하는거 방해하지 않는것처럼 여기서도 자유이다.
 
@@ -38,6 +40,8 @@ TWaMLang에 대해 소개하겠다.
 
 언어상에서 모델론적으로 의미를 이미 정의한 술어나 상수 혹은, 문법적으로 그 의미가 규정된 문법사 (문법사라고는 했지만, lojban `cu`와는 달리, 양화사같은것이거나 괄호용 문자같은거다.)
 
+여기서 문법사는 영어로 "「the math based literal charactor」"로 당연히 이것도 조어다. ㅋㅋㅋ
+
 N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없다. 열린 식이 나오거나 자연어를 술어로 쓰는 미친짓거리를 이 안에서 할 수 있음에 주의하자.
 
 #### list of constant literal
@@ -46,3 +50,17 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 | :---: | --- |
 | TWaMLang | the word s.t. exactly meanung [this language](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang) |
 | TWaML | the word which mean TalkWith a MathmaticalLanguage |
+| ĵ0 | F |
+| ĵ1 | T |
+
+#### list of predicate literal
+
+참고로 빈칸 (Blanked Box) `□` 안의 값은 어떤 한자리 십육진수 숫자도 다 체울수 있더록 허용되었다는 뜻이다.
+
+형식문법으로 작성하기 귀찮 ㅠㅠ 아서 ㅠㅠ 이랬다.
+
+| TWaMLang | ZFC or Modal Logic or English or Lojban |
+| :---: | --- |
+| î□ | GenNormalForm(□) |
+
+#### list of 
