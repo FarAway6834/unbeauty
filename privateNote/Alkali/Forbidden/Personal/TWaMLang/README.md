@@ -256,4 +256,8 @@ Vector가 카데시안 곱인 집합에 덧셈과 상수배가 정의되어 군�
 
 튜플의 제귀적 정의 (Recursive definition of a tuple)가 골때린다.
 
+class of tuple what classified by arity | expression orform |
+| :---: | :---: |
+| 0-tuple | () (= ε) |
+
 #### 술어를 정의하는 방식에 대한 아쉬움과 투덜투덜및 그대로 좋다고 주절주절하는 말
