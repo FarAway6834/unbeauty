@@ -161,7 +161,7 @@ S 즉, 튜플(= n-열)집합 (그게 S임) 이, 저 HexToBinTuple가 내뱉는 �
 정규형식을 이해하기 위해서는 다음 진리표를 보자.
 
 | p | q | | Φ(p, q) |
-| :---: | --- | :---: | --- |
+| :---: | :---: | --- | :---: |
 | 1 | 1 | | l |
 | 1 | 0 | | m |
 | 0 | 1 | | n |
@@ -191,7 +191,7 @@ x̄ = ((1, 1), (1, 0),
 여기서 문자 쓸때 벡틱은 마크다운에서 렌더링에 오류를 낼까 겁나서 내가 하남자라서 적은거임 ㅅㄱ (Tip : 벡틱은 마크다운에서 코드블럭으로 렌더링되기에, 마크다운 소스를 뜯지 않는 이상 안보이니 ㄱㅊㄱㅊ)
 
  TWaMLang | ZFC or Modal Logic or English or Lojban | Charactor Type | 
-| :---: | --- | ---: |
+| :---: | --- | :---|
 | `ø(` | `(` | parentheses charactorset L s.t. what written in last of this section |
 | `ø;` | `,` | parentheses charactorset L s.t. what written in last of this section |
 | `ø)` | `)` | parentheses charactorset L s.t. what written in last of this section |
