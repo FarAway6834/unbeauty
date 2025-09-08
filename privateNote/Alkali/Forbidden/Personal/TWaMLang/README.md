@@ -270,11 +270,14 @@ class of tuple what classified by arity | expression orform |
 
 망할.... 이래서, (x, y, z) = (x, (y, z)) 가 성립한다. ‡
 
+이것만 그랬으면, 걍 `("arity", "tuple")`꼴로 표기하는 명세를 만들어 다른 모델을 만든 후 만족했을것이다.
+그러나, 골때리는게 아직 하나 남아있다.
+
 따라서,
 
 ```
-first(x, y)
-last(x, y)
+first(x, y) ≜ x
+last(x, y) ≜ y
 
 tuple_index(t, length, idx)
 ```
