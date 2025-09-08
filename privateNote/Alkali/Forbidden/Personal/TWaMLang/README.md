@@ -20,4 +20,14 @@ TWaMLang에 대해 소개하겠다.
 
 ## 절대적 규칙
 
-> "Predicate is Free. it's up to you.. except for some predicates"
+> "Predicate is Free. it's up to you.. except for 「the some predicates」"
+
+수학에서 누가 술어 지정하는거 방해하지 않는것처럼 여기서도 자유이다.
+
+에초에 이것도 나중에 구현 제작하기 전에, 형식문법 및 모델언어를 통하여 구체적으로 명세화 할 생각이다.
+
+그리고 구현은 "✅️ not yet, ☑️ processing, ☑️complete" 중 checked one's 상태이다. (체크된이라고 하면 분명 구글번역기가 말썽을 피울거다)
+
+### 「the some predicates」
+
+언어상에서 모델론적으로 의미를 이미 정의한 
