@@ -55,8 +55,8 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 
 | TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
-| TWaMLang | the word s.t. exactly meanung [this language](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang) |
-| TWaML | the word which mean TalkWith a MathmaticalLanguage |
+| ĵTWaMLang | the word s.t. exactly meanung [this language](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang) |
+| ĵTWaML | the word which mean TalkWith a MathmaticalLanguage |
 | ĵ□ | DoseItNumberOne(□) |
 
 #### list of predicate literal
@@ -73,7 +73,9 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 
 여기서 문자 쓸때 벡틱은 마크다운에서 렌더링에 오류를 낼까 겁나서 내가 하남자라서 적은거임 ㅅㄱ (Tip : 벡틱은 마크다운에서 코드블럭으로 렌더링되기에, 마크다운 소스를 뜯지 않는 이상 안보이니 ㄱㅊㄱㅊ)
 
- TWaMLang | ZFC or Modal Logic or English or Lojban |
-| :---: | --- |
-| `ǰ(` | `(` |
-| `ǰ:` | `:` |
+ TWaMLang | ZFC or Modal Logic or English or Lojban | Charactor Type | 
+| :---: | --- | ---: |
+| `ĵ(` | `(` | parentheses charactorset L s.t. what written in last of this section |
+| `ĵ;` | `,` | parentheses charactorset L s.t. what written in last of this section |
+| `ĵ)` | `)` | parentheses charactorset L s.t. what written in last of this section |
+| `ĵ:` | `:` | predicate or relationship or sentense or proposol declare symbol what can use to naming |
