@@ -53,7 +53,7 @@ NOTE : 위의 해설에 대해 수정하고 전체적으로 왜 그런지 보충
 
 이 부분에서는 단어를 좀 리스트업 할꺼다.
 
-언어상에서 모델론적으로 의미를 이미 정의한 술어나 상수 혹은, 문법적으로 그 의미가 규정된 문법사 (문법사라고는 했지만, lojban `cu`와는 달리, 양화사같은것이거나 괄호용 문자같은거다.)
+언어상에서 모델론적으로 의미를 이미 정의한 술어나 상수나 함수 혹은, 문법적으로 그 의미가 규정된 문법사 (문법사라고는 했지만, lojban `cu`와는 달리, 양화사같은것이거나 괄호용 문자같은거다.)
 
 여기서 문법사는 영어로 "「the math based literal charactor」"로 당연히 이것도 조어다. ㅋㅋㅋ
 
@@ -195,7 +195,27 @@ x̄ = ((1, 1), (1, 0),
 
 뭔소린지 쉽게 가늠할수 있을것이라고 본다.
 
-마지막으로
+#### list of function
+
+제공되는 함수가 이것밖에 없다고 안삼할만하지 않다.
+사실 이거는 특성 서술아 전부이기에 유일성의 구성적 증명을 좋아하는 분들에겐 재앙이다.
+그러나 지금 나는 구채적이지 않은 논리적 구조를 구성하는것에 관삼있지 구성주의에는 관심없다. 히히...
+사실 문법사의 의미가 아니만 진짜 ㄹㅇ "Actually Grammer Part", 그니까 사실상 문법파트다.
+
+크하핳
+
+| TWaMLang | ZFC or Modal Logic or English or Lojban |
+| :---: | :---: |
+| la | la |
+| Hint | (λx. (Hint x)) |
+
+지금보니 la는 너무 겉멋인것 같다. 그러나 Hint보다 더 오래 애용한 발명품으로(그래봤자 함수지만) 바꾸기 골치아프다.
+
+저기서 람다표기를 썻지만, 저건 함자를 만드는 **함자**목적임에 유의하라.
+
+함수와 동일한 역할을 하는 이유는, 람다임애도 저것이 명백히 사상이니, 여기서는 사실 혼동을 줄이기 위해, 함수로 따로 쓰는게 나을수 있는 선택으로 볼 수 있고, 사실 걍 이건 함수의 의미로 쓴거다. 한마디로 귀차나즘.
+
+아래에 이것이 어케 정의되는지 보이갰다, 자. 보라.
 
 ```
 DecoeatingSyntax ≡ x s.t. Φ(x)
@@ -222,7 +242,7 @@ x Hint Φ = DecoeatingSyntax
 
 여기서 문자 쓸때 벡틱은 마크다운에서 렌더링에 오류를 낼까 겁나서 내가 하남자라서 적은거임 ㅅㄱ (Tip : 벡틱은 마크다운에서 코드블럭으로 렌더링되기에, 마크다운 소스를 뜯지 않는 이상 안보이니 ㄱㅊㄱㅊ)
 
- TWaMLang | ZFC or Modal Logic or English or Lojban | Charactor Type | 
+| TWaMLang | ZFC or Modal Logic or English or Lojban | Charactor Type | 
 | :---: | --- | :---|
 | `ø(` | `(` | parentheses charactorset L s.t. what written in last of this section |
 | `ø;` | `,` | parentheses charactorset L s.t. what written in last of this section |
