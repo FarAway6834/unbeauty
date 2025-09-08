@@ -261,7 +261,14 @@ class of tuple what classified by arity | expression orform |
 | 0-tuple | () (= ε) |
 | 1-tuple | (x, )† |
 | 2-tuple (pair, ko : 순서쌍) | (x, y) |
-| n-tuple (n > 2) | (x₁, ..., xₙ)
+| n-tuple (n > 2) | (x₁, ..., xₙ) |
+
+> **튜플의 귀납적 정의**
+>
+> "n-tuple y에 대해 (x, y)는 (n + 1)-tuple"
+>
+
+망할.... 이래서, (x, y, z) = (x, (y, z)) 가 성립한다. 
 
 († 표기법에 대해 햇갈리지만 뭐 ㅋ 아님 말구 ㅋ)
 
