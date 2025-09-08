@@ -6,7 +6,7 @@ TWaMLang에 대해 소개하겠다.
 
 | 성질명 | 성질값 |
 | :---: | :---: |
-| 정체 | 단순언어†문법 Extension Framework Langauge |
+| 정체 | 단순언어†문법 Based Langauge-like |
 | 유형 | 굳이 따지자면 고립어 겸 형식언어-like |
 | 어순 | Polandian Notation이라 굳이 따지자면 VSO |
 | 서자방향 | 좌행서를 쓰되, 유니코드에서 우행서 리터럴이 나오면, 표준적인 유니코드 렌더링을 따름 |
@@ -20,7 +20,7 @@ TWaMLang에 대해 소개하겠다.
 
 († 튜링 이상의 형식언어를 말한다. [내 독자탐구 내용상의 의외성정리](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/Abstract#%EC%9A%A9%EC%96%B4-%EC%A0%95%EC%9D%98)상 "단순언어"다.)
 
-(‡ TWaML을 일상적인 용도로도 쓸것이기 때문에, 술어를 가져온다. 절대 규칙 참고. 또한 이 언어는 엄밀히 말하자면 [나의 비결절성 추성어관련 탐구 (기본어휘언어에 대해서 탐구하는 주제만 저장한 섹인임)](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang/%EC%B4%88%EB%8B%A8%EC%88%9C%EC%96%B8%EC%96%B4_%EB%B0%8F_%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%8F%85%EC%9E%90%ED%83%90%EA%B5%AC/)의 "기본어휘언어"에다가 단순언어†문법 Extension을 입혀서 사실상 Framework가 된거라고 볼수밖에 없다.)
+(‡ TWaML을 일상적인 용도로도 쓸것이기 때문에, 술어를 가져온다. 절대 규칙 참고. 또한 이 언어는 엄밀히 말하자면 [나의 비결절성 추성어관련 탐구 (기본어휘언어에 대해서 탐구하는 주제만 저장한 섹인임)](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang/%EC%B4%88%EB%8B%A8%EC%88%9C%EC%96%B8%EC%96%B4_%EB%B0%8F_%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%8F%85%EC%9E%90%ED%83%90%EA%B5%AC/)의 "기본어휘언어"에다가 단순언어†문법 기초 제공 품사(「the some predicates」)들 및 활용규정을 지정해서 푸는걸로 흡사 프레임워크와 그 프레임워크에서 제어역전 라이브러리(여기서는 기초 제공 품사의 역할)를 제공하는것과 같다.)
 
 NOTE : 위의 해설에 대해 수정하고 전체적으로 왜 그런지 보충설명좀 할것. 아니 그게 가정되어있다고 전제하명 어쩌자는고임
 
