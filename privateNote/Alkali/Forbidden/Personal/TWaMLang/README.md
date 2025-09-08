@@ -71,6 +71,9 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 
 #### list of 「the math based literal charactor」
 
+여기서 문자 쓸때 벡틱은 마크다운에서 렌더링에 오류를 낼까 겁나서 내가 하남자라서 적은거임 ㅅㄱ (Tip : 벡틱은 마크다운에서 코드블럭으로 렌더링되기에, 마크다운 소스를 뜯지 않는 이상 안보이니 ㄱㅊㄱㅊ)
+
  TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
-| | |
+| `ǰ(` | `(` |
+| `ǰ:` | `:` |
