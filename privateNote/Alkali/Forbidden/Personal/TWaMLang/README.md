@@ -20,4 +20,4 @@ TWaMLang에 대해 소개하겠다.
 
 ## 절대적 규칙
 
-> "Predicate is Free. it's up to you"
+> "Predicate is Free. it's up to you.. except for some predicates"
