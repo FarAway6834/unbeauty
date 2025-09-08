@@ -157,7 +157,7 @@ Structures_Pair타입에 Structures_Pair_type_vector = <x, y>에 대해,
 first(Structures_Pair_type_vector) = Structures_Pair_type_vector.HexFirst
 last(Structures_Pair_type_vector) = Structures_Pair_type_vector.HexLast에서
 
-S = {x | typeof(x) == typeof(Structures_Pair_type_vector.HexFirst)}인 스칼라 S에 대해 S²이 Structures_Pair타입일때,
+`S = {x | typeof(x) == typeof(Structures_Pair_type_vector.HexFirst)}`인 스칼라 S에 대해 S²이 Structures_Pair타입일때,
 
 S 즉, 튜플(= n-열)집합 (그게 S임) 이, 저 HexToBinTuple가 내뱉는 원소의 치역이라는거.
 
@@ -354,3 +354,7 @@ f(x, y, z) = x + y + z
 (‡ 이 예시가 만족되는 경우, n-tuple에 대한 제귀적 정의식이 유일히 결정되기에, 저 예시가 이해하기 쉬운 예시라고 생각한다, 예시를 이해하지 못하는 사람이라면, 단순히 저기서 말하는 바는, "첫 항목 이외의 항목은 (n-1)튜플로 n-tuple의 첫 항목 이외의 항목인것이다.)
 
 #### 술어를 정의하는 방식에 대한 아쉬움과 투덜투덜및 그래도 좋다고 주절주절하는 말
+
+# 마치며
+
+미친 깃헙 페이지가 내가 쓴 수학적 집합 표가법을 변수로 판단하는 바람에, 집합은 왠만하면 백틱 안의 텍스트에 있다. 이 글을 소스를 뜯어서 본다면 주의할것.
