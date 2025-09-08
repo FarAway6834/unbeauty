@@ -15,6 +15,7 @@ TWaMLang에 대해 소개하겠다.
 | 계통 | 영어랑 로지반에서 단어 몇게 쌔벼옴, 수리논리상 술어논리 기반, 일부 양상논리 기반 |
 
 († 튜링 이상의 형식언어를 말한다. [내 독자탐구 내용상의 의외성정리](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/Abstract#%EC%9A%A9%EC%96%B4-%EC%A0%95%EC%9D%98)상 "단순언어"다.)
+
 (‡ TWaML을 일상적인 용도로도 쓸것이기 때문에, 술어를 가져온다. 절대 규칙 참고. 또한 이 언어는 엄밀히 말하자면 [나의 초단순언어관련 탐구](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang/%EC%B4%88%EB%8B%A8%EC%88%9C%EC%96%B8%EC%96%B4_%EB%B0%8F_%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%8F%85%EC%9E%90%ED%83%90%EA%B5%AC/)의 "초단순 언어"에다가 단순언어†문법 Extension을 입혀서 사실상 Framework가 된거라고 볼수밖에 없다.)
 
 NOTE : 위의 해설에 대해 수정하고 전체적으로 왜 그런지 보충설명좀 할것. 아니 그게 가정되어있다고 전제하명 어쩌자는고임
@@ -32,11 +33,13 @@ NOTE : 위의 해설에 대해 수정하고 전체적으로 왜 그런지 보충
 > 
 > "rule 3. as 「Loj System」 if logical sentence got error by predicate s.t. which not 「the some predicates」, then set that logical system as 「The Subjectal Language Logic System」"
 > 
-> "
 
 제 1 규칙에 대해 해설하자면, 수학에서 누가 술어 지정하는거 방해하지 않는것처럼 여기서도 자유이다.
 
 그리고 제 2 규칙과 제 3 규칙은 *수학적 맥락 혹은 그 외의 맥락등지의 맥락*†에서, 논리적 일관성을 가지는 대화를 위함이다
+
+핵심 : 사실 저 규칙들이 있다는 지점에서 「the some predicates」이외의 어휘에 애해 valid한 문법 규칙을 지정하는것이다
+1. 그 근거로, 1번 규칙은 처음에 말한 초단순언어
 
 († 위에 명시한 의외성정리 관련 링크 참고)
 
