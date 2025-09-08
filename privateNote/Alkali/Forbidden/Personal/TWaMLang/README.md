@@ -75,10 +75,17 @@ DoseItNumberOne(x) : x = 1
 | TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
 | ñ□ | GenNormalForm(□) |
-| `øpa` | wait | 작성중이라고 |
-| `øre` | wait | 작성중이라고 |
-| `øsi` | wait | 작성중이라고 |
-| `øvo` | wait | 작성중이라고 |
+| øpa | øpa |
+| øre | øre |
+| øsi | øsi |
+| øvo | øvo |
+
+술어에 대해셔는 정의 좀 하겠다.
+```
+
+øpa(x) : 
+
+```
 
 위 함수에 대해 알고싶으면 다음을 참고할것. (솔찍히 이름 직관적이라 봄)
 ```
