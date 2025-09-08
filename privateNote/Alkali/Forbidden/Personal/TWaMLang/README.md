@@ -63,7 +63,7 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 
 참고로 빈칸 (Blanked Box) `□` 안의 값은 어떤 한자리 이진수 숫자도 다 체울수 있더록 허용되었다는 뜻이다.
 
-| øTWaMLang | ZFC or Modal Logic or English or Lojban |
+| TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
 | øTWaMLang | the word s.t. exactly meanung [this language](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang) |
 | øTWaML | the word which mean TalkWith a MathmaticalLanguage |
