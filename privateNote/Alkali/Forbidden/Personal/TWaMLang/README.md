@@ -53,7 +53,7 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 
 참고로 빈칸 (Blanked Box) `□` 안의 값은 어떤 한자리 이진수 숫자도 다 체울수 있더록 허용되었다는 뜻이다.
 
-| TWaMLang | ZFC or Modal Logic or English or Lojban |
+| øTWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
 | øTWaMLang | the word s.t. exactly meanung [this language](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang) |
 | øTWaML | the word which mean TalkWith a MathmaticalLanguage |
@@ -79,6 +79,9 @@ DoseItNumberOne(x) : x = 1
 | TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
 | ñ□ | GenNormalForm(□) |
+| øcoi | coi |
+| øcoho | co'o |
+| øwow | it was an interjection |
 
 위 함수에 대해 알고싶으면 다음을 참고할것. (솔찍히 GenNormalForm은 이름 직관적이라 봄)
 ```
@@ -204,6 +207,14 @@ predicate or relationship or sentense or proposol declare symbol what can use to
 나는 존나 귀찮기 때문이다.
 
 (Tip : 콜론으로 선언하는 표기법이 내 기억이 맞다면 표준이다. 아님 ㅋ 말구 ㅋ)
+
+### 감탄사에 대한 주의점
+
+필요없는 문법 싫어해서 많이 뺀건 맞지만 감탄사는 좀 다르다.
+
+여기서는 감탄사에 대한 규칙이 있다.
+
+그 이유를 설명하겠다
 
 ## 부록
 
