@@ -44,14 +44,20 @@ TWaMLang에 대해 소개하겠다.
 
 N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없다. 열린 식이 나오거나 자연어를 술어로 쓰는 미친짓거리를 이 안에서 할 수 있음에 주의하자.
 
+#### WARNING : 작성자 날먹주의보 발령 ㅋㅋ
+
+일부러 죄다 적어야 하는 표에, 술어를 통해서 그 뜻을 얼렁뚱땅 넘어가게 모델론적으로 구현한게 있는데 날먹이다.
+다 평가해서 넣어야 하는걸 내가 날먹한거다.
+
 #### list of constant literal
+
+참고로 빈칸 (Blanked Box) `□` 안의 값은 어떤 한자리 이진수 숫자도 다 체울수 있더록 허용되었다는 뜻이다.
 
 | TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
 | TWaMLang | the word s.t. exactly meanung [this language](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang) |
 | TWaML | the word which mean TalkWith a MathmaticalLanguage |
-| ĵ0 | F |
-| ĵ1 | T |
+| ĵ□ | DoseItNumberOne(□) |
 
 #### list of predicate literal
 
@@ -63,4 +69,8 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 | :---: | --- |
 | î□ | GenNormalForm(□) |
 
-#### list of 
+#### list of 「the math based literal charactor」
+
+ TWaMLang | ZFC or Modal Logic or English or Lojban |
+| :---: | --- |
+| | |
