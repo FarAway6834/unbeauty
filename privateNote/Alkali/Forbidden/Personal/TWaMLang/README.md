@@ -96,10 +96,10 @@ PredicateWhichNormalFormIs2(p, q) : p ∧ ¬q
 PredicateFactorWhichNormalFormIs4(p, q) : ¬p ∧ q
 PredicateFactorWhichNormalFormIs8(p, q) : ¬p ∧ ¬q
 
-FactorWhichNormalFormIs1(p, q, r) : p ∧ q
-FactorWhichNormalFormIs2(p, q, r) : p ∧ ¬q
-FactorWhichNormalFormIs4(p, q, r) : ¬p ∧ q
-FactorWhichNormalFormIs8(p, q, r) : ¬p ∧ ¬q
+FactorWhichNormalFormIs1(r, p, q) : on_off_the_x(r, PredicateWhichNormalFormIs1(p, q))
+FactorWhichNormalFormIs2(r, p, q) : on_off_the_x(r, PredicateWhichNormalFormIs2(p, q))
+FactorWhichNormalFormIs4(r, p, q) : on_off_the_x(r, PredicateWhichNormalFormIs4(p, q))
+FactorWhichNormalFormIs8(r, p, q) : on_off_the_x(r, PredicateWhichNormalFormIs8(p, q))
 
 GenNormalForm(x) ≜ 
 
