@@ -422,7 +422,7 @@ A₁ × ... × Aₙ = A₁ × (A₂ × ... × Aₙ)
 
 튜플의 제귀적 정의 (Recursive definition of a tuple)가 골때린다.
 
-class of tuple what classified by arity | expression orform |
+| class of tuple what classified by arity | expression orform |
 | :---: | :---: |
 | 0-tuple | () (= ε) |
 | 1-tuple | (x, )† |
@@ -479,6 +479,12 @@ f(x, y, z) = x + y + z
 (‡ 이 예시가 만족되는 경우, n-tuple에 대한 제귀적 정의식이 유일히 결정되기에, 저 예시가 이해하기 쉬운 예시라고 생각한다, 예시를 이해하지 못하는 사람이라면, 단순히 저기서 말하는 바는, "첫 항목 이외의 항목은 (n-1)튜플로 n-tuple의 첫 항목 이외의 항목인것이다.)
 
 #### 술어를 정의하는 방식에 대한 아쉬움과 투덜투덜및 그래도 좋다고 주절주절하는 말
+
+>
+> ### **⚠️ SUPREUM WARNING : <u>「작성중」</u> ⚠️**
+> 
+> #### **⚠️ 이 문단은 아직 전혀 <u>작성되지 못한</u> 문단입니다. ⚠️**
+>
 
 # 마치며
 
