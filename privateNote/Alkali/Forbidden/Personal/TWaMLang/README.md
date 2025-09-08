@@ -19,6 +19,8 @@ TWaMLang에 대해 소개하겠다.
 († 튜링 이상의 형식언어를 말한다. [내 독자탐구 내용상의 의외성정리](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/Abstract#%EC%9A%A9%EC%96%B4-%EC%A0%95%EC%9D%98)상 "단순언어"다.)
 (‡ TWaML을 일상적인 용도로도 쓸것이기 때문에, 술어를 가져온다. 절대 규칙 참고. 또한 이 언어는 엄밀히 말하자면 [나의 초단순언어관련 탐구](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang/%EC%B4%88%EB%8B%A8%EC%88%9C%EC%96%B8%EC%96%B4_%EB%B0%8F_%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%8F%85%EC%9E%90%ED%83%90%EA%B5%AC/)의 "초단순 언어"에다가 단순언어†문법 Extension을 입혀서 사실상 Framework가 된거라고 볼수밖에 없다.)
 
+NOTE : 위의 해설에 대해 수정하고 전체적으로 왜 그런지 보충설명좀 할것. 아니 그게 가정되어있다고 전제하명 어쩌자는고임
+
 그렇다. 이건 걍 제미로 단어 몇게 명명해놓고 언어라고 우기는거다. 형식언어지, 자연어나 인공어급은 아니다.
 
 **그래서 모든 단어들은 너가 술어를 집적 가져와야한다.**
@@ -61,7 +63,7 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 
 #### list of constant literal
 
-참고로 빈칸 (Blanked Box) `□` 안의 값은 어떤 한자리 이진수 숫자도 다 체울수 있더록 허용되었다는 뜻이다.
+ ¤ 참고로 빈칸 (Blanked Box) `□` 안의 값은 어떤 한자리 이진수 숫자도 다 체울수 있더록 허용되었다는 뜻이다.
 
 | TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
@@ -82,7 +84,7 @@ DoseItNumberOne(x) : x = 1
 
 #### list of predicate literal
 
-참고로 빈칸 (Blanked Box) `□` 안의 값은 어떤 한자리 십육진수 숫자도 다 체울수 있더록 허용되었다는 뜻이다.
+ ¤ 참고로 빈칸 (Blanked Box) `□` 안의 값은 어떤 한자리 십육진수 숫자도 다 체울수 있더록 허용되었다는 뜻이다.
 
 형식문법으로 작성하기 귀찮 ㅠㅠ 아서 ㅠㅠ 이랬다.
 
