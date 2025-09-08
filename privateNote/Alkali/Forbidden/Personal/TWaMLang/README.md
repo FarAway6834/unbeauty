@@ -20,7 +20,13 @@ TWaMLang에 대해 소개하겠다.
 
 ## 절대적 규칙 (이 규칙을 어기면 분화한 방언으로 취급하겠다. 내 독자표기법을 리스프 페밀리 만들고 싶지 않다)
 
-> "Predicate is Free. it's up to you.. except for 「the some predicates」"
+>
+> "rule 1. Predicate is Free. it's up to you.. except for 「the some predicates」"
+>
+> "rule 2. using TWaMLang in any logical sentense is `⊥` because it couldn't define in logical way"
+> 
+> "rule 3. if logical sentence got error by predicate s.t. which not 「the some predicates」, then set that logical system as 「The Subjectal Language Logic System」"
+> 
 
 수학에서 누가 술어 지정하는거 방해하지 않는것처럼 여기서도 자유이다.
 
@@ -38,4 +44,5 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 
 | TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
-| 작성중 | 작성중 |
+| TWaMLang | the word s.t. exactly meanung [this language](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang) |
+| TWaML | the word which mean TalkWith a MathmaticalLanguage |
