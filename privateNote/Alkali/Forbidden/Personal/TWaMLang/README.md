@@ -89,9 +89,27 @@ shl(x, n) ≜ shl_onceⁿ(x)
 idx(n, x, i) ≜ shr(shl(x, i), n - 1)
 
 HexToBinTuple(x) ≜ (idx(4, x, 0), idx(4, x, 1), idx(4, x, 2), idx(4, x, 3))
+
+PredicateWhichNormalFormIs1(p, q) : p 
+
 GenNormalForm(x) ≜ 
 
 ```
+
+정규형식을 이해하기 위해서는 다음 진리표를 보자.
+
+| p | q | | Φ(p, q) |
+| :---: | :---: | :---: |
+| 1 | 1 | l |
+| 1 | 0 | m |
+| 0 | 1 | n |
+| 0 | 0 | o |
+
+이건 Φ가 논리적 연결사의 술어화로 치고 가는거다, 이러한 방식으로 형식화하는걸 논리적 연결사의 진리함수적 정의라고 한다.
+
+Φ의 에 번호를 붙이자면 `0blnmo`이 좋지 않겠는가?
+놀랍게도 Φ의 정규형식은 2³l + 2²m + 2¹n + 2⁰o란다.
+아름답지 않나? (~~나만그럴지도~~)
 
 #### list of 「the math based literal charactor」
 
