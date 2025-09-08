@@ -55,9 +55,9 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 
 | TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
-| ĵTWaMLang | the word s.t. exactly meanung [this language](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang) |
-| ĵTWaML | the word which mean TalkWith a MathmaticalLanguage |
-| ĵ□ | DoseItNumberOne(□) |
+| øTWaMLang | the word s.t. exactly meanung [this language](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang) |
+| øTWaML | the word which mean TalkWith a MathmaticalLanguage |
+| ø□ | DoseItNumberOne(□) |
 
 #### list of predicate literal
 
@@ -67,7 +67,7 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 
 | TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
-| î□ | GenNormalForm(□) |
+| ñ□ | GenNormalForm(□) |
 
 #### list of 「the math based literal charactor」
 
@@ -75,7 +75,10 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 
  TWaMLang | ZFC or Modal Logic or English or Lojban | Charactor Type | 
 | :---: | --- | ---: |
-| `ĵ(` | `(` | parentheses charactorset L s.t. what written in last of this section |
-| `ĵ;` | `,` | parentheses charactorset L s.t. what written in last of this section |
-| `ĵ)` | `)` | parentheses charactorset L s.t. what written in last of this section |
-| `ĵ:` | `:` | predicate or relationship or sentense or proposol declare symbol what can use to naming |
+| `ø(` | `(` | parentheses charactorset L s.t. what written in last of this section |
+| `ø;` | `,` | parentheses charactorset L s.t. what written in last of this section |
+| `ø)` | `)` | parentheses charactorset L s.t. what written in last of this section |
+| `ø:` | `:` | predicate or relationship or sentense or proposol declare symbol what can use to naming |
+| `øA` | `∀` | Quantifier |
+| `øE` | `∃` | Quantifier |
+| `ø` | wait | 작성중이라고 |
