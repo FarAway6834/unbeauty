@@ -109,7 +109,37 @@ GenNormalForm(x) ≜ {t | Wait(t, HexToBinTuple(x))}
 
 아니 미친 무려 술어를 리턴한다.
 
-저게 왜 저렇게 되는지는 최하단의 "부록"에서 "투털투덜"에서 "순서쌍에 대한 투털투덜"참고.
+저게 왜 저렇게 되는지는 최하단의 "부록"에서 "투털투덜"에서 "순서쌍에 대한 투털투덜"참고. [shl, shr, idx는 중학교때 탐구해서 고등학교 1학년때 정리한 내용이고 그냥 툴이었다](https://faraway6834.github.io/LAFTF1.1)... 중요한건 정규형식의 각 비트를 다음과 같은 구조체의 pair
+
+```c++
+typedef struct {
+    struct HexFirst {
+        bool l : 1;
+        bool m : 1;
+        bool n : 1;
+        bool o : 1;
+    } : 4;
+    struct HexLast {
+        bool l : 1;
+        bool m : 1;
+        bool n : 1;
+        bool o : 1;
+    } : 4;
+} Structures_Pair;
+```
+
+Structures_Pair에 대해서
+
+Structures_Pair타입에 Structures_Pair_type_vector = <x, y>에 대해,
+
+first(Structures_Pair_type_vector) = Structures_Pair_type_vector.HexFirst
+last(Structures_Pair_type_vector) = Structures_Pair_type_vector.HexLast에서
+
+S = {x | typeof(x) == typeof(Structures_Pair_type_vector.HexFirst)}인 스칼라 S에 대해 S²이 Structures_Pair타입일때,
+
+S 즉, 튜플(= n-열)집합 (그게 S임) 이, 저 HexToBinTuple가 내뱉는 원소의 치역이라는거.
+
+당연히 (우연히 구조체라는 친구가 모델에서 말하는 구조체와 비슷한 구조라서 이렇게 설명할수 있기에) 누구나 이해 할 수 있으며, 코딩같 (는점이 참 다행이라고 본다.)
 
 정규형식을 이해하기 위해서는 다음 진리표를 보자.
 
