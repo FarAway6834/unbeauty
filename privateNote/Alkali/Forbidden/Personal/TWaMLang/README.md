@@ -116,3 +116,5 @@ predicate or relationship or sentense or proposol declare symbol what can use to
 이계논리인거에 불만이 없을것이다 가정한다.
 
 나는 존나 귀찮기 때문이다.
+
+(Tip : 콜론으로 선언하는 표기법이 내 기억이 맞다면 표준이다. 아님 ㅋ 말구 ㅋ)
