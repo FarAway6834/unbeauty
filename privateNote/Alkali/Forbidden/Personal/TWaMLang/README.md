@@ -87,3 +87,18 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 | `øE` | `∃` | Quantifier |
 
 parentheses charactorset L s.t. what written in last of this section이라고 말했던 `L = {'(', ',', ')'}`
+
+predicate or relationship or sentense or proposol declare symbol what can use to naming이란, 예시를 들면 바로 알것이다.
+
+```
+
+Φ(P) : x s.t. P(x)
+먹다(x) : "x를 먹다"
+
+먹는거 = Φ(먹다)
+
+```
+
+이계논리인거에 불만이 없을것이다 가정한다.
+
+나는 존나 귀찮기 때문이다.
