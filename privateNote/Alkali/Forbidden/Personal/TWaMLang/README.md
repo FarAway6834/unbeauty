@@ -51,7 +51,7 @@ TWaMLang에 대해 소개하겠다.
 
 그리고 현제 그 구현은 "✅️ not yet, ☑️ processing, ☑️complete" 중 `✅️`에 해당하는 상태이다.
 
-### 「the some predicates」 (기초어휘를 배우려면 이곳으로)
+### 「the some predicates」 (기초어휘(「the some predicates」)~~를 배우려면 이곳으로 가 아니라 그냥 그러기 좋은~~리스트)
 
 이 부분에서는 단어를 좀 리스트업 할꺼다.
 
