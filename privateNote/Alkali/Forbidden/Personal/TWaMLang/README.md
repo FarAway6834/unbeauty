@@ -58,13 +58,17 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 | øTWaMLang | the word s.t. exactly meanung [this language](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang) |
 | øTWaML | the word which mean TalkWith a MathmaticalLanguage |
 | ø□ | DoseItNumberOne(□) |
+| øpa | [논점률](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/%EB%AA%BD%EC%83%81/%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%AA%BD%EC%83%81)에서의 1인칭 |
+| øre | [논점률](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/%EB%AA%BD%EC%83%81/%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%AA%BD%EC%83%81)에서의 2인칭 |
+| øsi | [논점률](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/%EB%AA%BD%EC%83%81/%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%AA%BD%EC%83%81)에서의 3인칭 |
+| øvo | [논점률](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/%EB%AA%BD%EC%83%81/%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%AA%BD%EC%83%81)에서의 4인칭 |
 
 술어가 정 궁금하면 아래를 볼것. (나는 네이밍 잘했다고 보는데...)
 ```
 
 DoseItNumberOne(x) : x = 1
 
-```
+```.
 
 #### list of predicate literal
 
@@ -75,21 +79,16 @@ DoseItNumberOne(x) : x = 1
 | TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
 | ñ□ | GenNormalForm(□) |
-| øpa | øpa |
-| øre | øre |
-| øsi | øsi |
-| øvo | øvo |
 
-술어에 대해셔는 정의 좀 하겠다.
+위 함수에 대해 알고싶으면 다음을 참고할것. (솔찍히 GenNormalForm은 이름 직관적이라 봄)
 ```
 
-øpa(x) : 
+shr(x, n) ≜ ⌊x/(2ⁿ)⌋
+shl_once(x) ≜ 2x - 2⌊x⌋
+shl(x, n) ≜ shl_onceⁿ(x)
+idx(n, x, i) ≜ shr(shl(x, i), n)
 
-```
-
-위 함수에 대해 알고싶으면 다음을 참고할것. (솔찍히 이름 직관적이라 봄)
-```
-
+HexToBinTuple(x) ≜ (shr(x, 3), shr(x, 2) - two_shr(x, 3), 
 GenNormalForm(x) ≜ 
 
 ```
