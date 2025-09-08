@@ -59,6 +59,13 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 | øTWaML | the word which mean TalkWith a MathmaticalLanguage |
 | ø□ | DoseItNumberOne(□) |
 
+술어가 정 궁금하면 아래를 볼것. (나는 네이밍 잘했다고 보는데...)
+```
+
+DoseItNumberOne(x) : x = 1
+
+```
+
 #### list of predicate literal
 
 참고로 빈칸 (Blanked Box) `□` 안의 값은 어떤 한자리 십육진수 숫자도 다 체울수 있더록 허용되었다는 뜻이다.
@@ -72,6 +79,13 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 | `øre` | wait | 작성중이라고 |
 | `øsi` | wait | 작성중이라고 |
 | `øvo` | wait | 작성중이라고 |
+
+위 함수에 대해 알고싶으면 다음을 참고할것. (솔찍히 이름 직관적이라 봄)
+```
+
+GenNormalForm(x) ≜ 
+
+```
 
 #### list of 「the math based literal charactor」
 
