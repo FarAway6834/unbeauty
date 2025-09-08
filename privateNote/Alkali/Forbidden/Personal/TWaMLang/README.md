@@ -1,5 +1,11 @@
 # TWaMLang : Language for TWaML(TalkWith_a_MathematicalLogic)
 
+>
+> ### **⚠️ SUPREUM WARNING : <u>「참고하라는 링크를 전부 훓지 않으면 이해할 수 없는 글임.」</u> ⚠️**
+> 
+> #### **⚠️ 문서의 의미론이 링크로 서술되었음 (보어가 가르키는 뜻이 하이퍼링크로 되어있는데, 하필 그게 문서를 좌우함)⚠️**
+>
+
 TWaMLang에 대해 소개하겠다.
 
 ~~JOKE : not TWaML-wise Argument Markup Language~~
@@ -38,7 +44,25 @@ TWaMLang에 대해 소개하겠다.
 
 제 1 규칙에 대해 해설하자면, 수학에서 누가 술어 지정하는거 방해하지 않는것처럼 여기서도 자유이다.
 
-그리고 제 2 규칙과 제 3 규칙은 *수학적 맥락 혹은 그 외의 맥락등지의 맥락*†에서, 논리적 일관성을 가지는 대화를 위함이다
+그리고 제 2 규칙과 제 3 규칙은 *수학적 맥락 혹은 그 외의 맥락등지의 맥락*†에서, 논리적 일관성을 가지는 대화를 위함이다‡
+
+저 규칙이 평가되는건 언어 논라에서다.
+
+저건 언어를 규정하는 법령이다. vaild-form과 invaild-form을 판결할수 있다.
+
+그러나, 1번 규칙은 언어 내부애서는 어길수 없으므로 언어를 설명하는 말에 대한 규칙이자, 자신을 정의하는 문장이다.
+그리고 2, 3번 규칙은 수학적 추론임을 명시하지 않으면 문제가 해결된다.
+자연어는 주석처리같지만 사실 주석이 핵심인셈인 상태인거다 ㅋㅋ
+
+ㅇ
+
+>
+> #### ⚠️중요한건 3번 규칙이 말하는 내용은 ⚠️
+> 
+> ⚠️ 일반 언어 논리에서는 통하지 않고,　loj에 의해 「Loj System」 평가가 진행된 경우에 한정한다. ⚠️
+> 
+> **⚠️이 문서 전체 핵심⚠️ : ⚠️ 즉, 평상시는 논리 용도가 아니기에, 이 언어는 논리를 따지지 않는다 ⚠️**
+> 
 
 핵심 : 사실 저 규칙들이 있다는 지점에서 「the some predicates」이외의 어휘에 애해 valid한 문법 규칙을 지정하는것이다
 1. 그 근거로, 1번 규칙은 처음에 말한 초단순언어
@@ -79,6 +103,9 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 | øre | [논점률](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/%EB%AA%BD%EC%83%81/%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%AA%BD%EC%83%81)에서의 2인칭 |
 | øsi | [논점률](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/%EB%AA%BD%EC%83%81/%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%AA%BD%EC%83%81)에서의 3인칭 |
 | øvo | [논점률](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/%EB%AA%BD%EC%83%81/%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%AA%BD%EC%83%81)에서의 4인칭 |
+| øsl | Subjectal Language |
+
+øsl의 경우 보통 `øsl : 언어코드명(ISO 639)`형식으로 적는다. 저것에 관해서는 「The Subjectal Language Logic System」참고.
 
 참고로, "x가 주제이다"는 `x ø: øpa` 로 쓸 수 있다. 왜냐하먄, "x : 주제"라고 말하는것이기 때문이다
 
@@ -97,12 +124,19 @@ DoseItNumberOne(x) : x = 1
 
 형식문법으로 작성하기 귀찮 ㅠㅠ 아서 ㅠㅠ 이랬다.
 
-| TWaMLang | ZFC or Modal Logic or English or Lojban |
-| :---: | --- |
-| ñ□ | GenNormalForm(□) |
-| øcoi | coi |
-| øcoho | co'o |
-| øwow | it was an interjection |
+| TWaMLang | ZFC or Modal Logic or English or Lojban | 비고 |
+| :---: | --- | - |
+| ñ□ | GenNormalForm(□) | - |
+| øcoi | coi | 로지반어 인삿말 쌔벼옴 |
+| øcoho | co'o | 로지번오 안삿말 쌔벼옴 |
+| øwow | it was an interjection | - |
+| loj | 아래내용을 메타적으로 x1로 서술한것에 대해, 「Loj System」을 논리로 평가한다 | "아래내용"은 말 그대로 바로 아래에 나오는 내용을 지칭하는 한국어 방식 지칭 구문이기에, 여기서 유일하게 한국어로 정의됨. 근데 아래내용은 1. 2. 3. 순으로 정의된 숫자 항목 몬호 나열을 튜플로 받아옴. **(핵심!! 구현핵심요소!!)** |
+
+>
+> #### 주의사항
+>
+> loj를 쓰지 않으면, 「Loj System」이 발동될일도 없으니, rule-3가 말하는 모드가 아니라 그냥 「Subjectal Language」로 말하는거다.
+>
 
 추가해설 : 위 함수에 대해 알고싶으면 다음을 참고할것. (솔찍히 GenNormalForm은 이름 직관적이라 봄)
 ```
@@ -297,16 +331,16 @@ predicate or relationship or sentense or proposol declare symbol what can use to
 #### 고정된 예시
 
 >
-> ### **⚠️ SUPREUM WARNING : <u>「작성중」</u>**
+> ### **⚠️ SUPREUM WARNING : <u>「작성중」</u> ⚠️**
 > 
-> #### **이 문단은 아직 전혀 <u>작성되지 못한</u> 문단입니다. ⚠️**
+> #### **⚠️ 이 문단은 아직 전혀 <u>작성되지 못한</u> 문단입니다. ⚠️**
 
 #### 기초어휘적 관점에서의 예시
 
 >
-> ### **⚠️ SUPREUM WARNING : <u>「작성중」</u>**
+> ### **⚠️ SUPREUM WARNING : <u>「작성중」</u> ⚠️**
 > 
-> #### **이 문단은 아직 전혀 <u>작성되지 못한</u> 문단입니다. ⚠️**
+> #### **⚠️ 이 문단은 아직 전혀 <u>작성되지 못한</u> 문단입니다. ⚠️**
 >
 
 ### 감탄사에 대한 주의점
@@ -334,9 +368,9 @@ predicate or relationship or sentense or proposol declare symbol what can use to
 
 ## Loj System과 논리 시스템 및 증명시 요구될 사항
 
-### **⚠️ SUPREUM WARNING : <u>「작성중」</u>**
+### **⚠️ SUPREUM WARNING : <u>「작성중」</u> ⚠️**
 
-#### **이 문단은 아직 전혀 <u>작성되지 못한</u> 문단입니다. ⚠️**
+#### **⚠️ 이 문단은 아직 전혀 <u>작성되지 못한</u> 문단입니다. ⚠️**
 
 ## 부록
 
