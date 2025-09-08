@@ -26,7 +26,7 @@ TWaMLang에 대해 소개하겠다.
 
 에초에 이것도 나중에 구현 제작하기 전에, 형식문법 및 모델언어를 통하여 구체적으로 명세화 할 생각이다.
 
-그리고 구현은 "✅️ not yet, ☑️ processing, ☑️complete" 중 checked one's 상태이다. (체크된이라고 하면 분명 구글번역기가 말썽을 피울거다)
+그리고 구현은 "✅️ not yet, ☑️ processing, ☑️complete" 중 checked one's 상태이다. (~~굳이 영어로 쓴 이유는, 체크된이라고 하면 분명 구글번역기가 말썽을 피울거라고 생각하기 때문이다. 아님 말고, 근데 아니여도 고치기 귀찮음 ㅋㅋ~~)
 
 ### 「the some predicates」
 
