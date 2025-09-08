@@ -86,9 +86,9 @@ DoseItNumberOne(x) : x = 1
 shr(x, n) ≜ ⌊x/(2ⁿ)⌋
 shl_once(x) ≜ 2x - 2⌊x⌋
 shl(x, n) ≜ shl_onceⁿ(x)
-idx(n, x, i) ≜ shr(shl(x, i), n)
+idx(n, x, i) ≜ shr(shl(x, i), n - 1)
 
-HexToBinTuple(x) ≜ (shr(x, 3), shr(x, 2) - two_shr(x, 3), 
+HexToBinTuple(x) ≜ (idx(4, x, 0), idx(4, x, 1), idx(4, x, 2), idx(4, x, 3))
 GenNormalForm(x) ≜ 
 
 ```
