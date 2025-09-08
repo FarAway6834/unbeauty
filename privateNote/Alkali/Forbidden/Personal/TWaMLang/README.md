@@ -285,6 +285,30 @@ predicate or relationship or sentense or proposol declare symbol what can use to
 
 그냥 Roman Alphabet하면 멋이 죽어서, 로마제국ㅋㅋㅋㅋ 표기법ㅋㅋㅋ 같이 거창함 이름을 붙였다 ㅋㅋㅋㅋㅋ 앜ㅋㅋㅋ
 
+#### 주의할것.
+
+저기 있는 설명만으론 다 알수 없으니 예문을 보여주고 모호하지 않게 모든 사용례를 이해할 수 있게 설명해주는 글을 작성할것이며 읽어보는게 좋음.
+난 기본적으로 예시에 대해 예시가 필요없을정도로 더 설명하기에, 예시에 겁먹을 필요가 없음.
+
+따라서 아래 예시 문단을 읽기를 권장.
+
+### 예시
+
+#### 고정된 예시
+
+>
+> ### **⚠️ SUPREUM WARNING : <u>「작성중」</u>**
+> 
+> #### **이 문단은 아직 전혀 <u>작성되지 못한</u> 문단입니다. ⚠️**
+
+#### 기초어휘적 관점에서의 예시
+
+>
+> ### **⚠️ SUPREUM WARNING : <u>「작성중」</u>**
+> 
+> #### **이 문단은 아직 전혀 <u>작성되지 못한</u> 문단입니다. ⚠️**
+>
+
 ### 감탄사에 대한 주의점
 
 이 언어에는 품사가 절대적으로 부족한게 맞다!
@@ -309,6 +333,10 @@ predicate or relationship or sentense or proposol declare symbol what can use to
 >  
 
 ## Loj System과 논리 시스템 및 증명시 요구될 사항
+
+### **⚠️ SUPREUM WARNING : <u>「작성중」</u>**
+
+#### **이 문단은 아직 전혀 <u>작성되지 못한</u> 문단입니다. ⚠️**
 
 ## 부록
 
