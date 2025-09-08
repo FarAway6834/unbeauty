@@ -17,7 +17,7 @@ TWaMLang에 대해 소개하겠다.
 | 계통 | 영어랑 로지반에서 단어 몇게 쌔벼옴, 수리논리상 술어논리 기반, 일부 양상논리 기반 |
 
 († 튜링 이상의 형식언어를 말한다. [내 독자탐구 내용상의 의외성정리](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/Abstract#%EC%9A%A9%EC%96%B4-%EC%A0%95%EC%9D%98)상 "단순언어"다.)
-(‡ TWaML을 일상적인 용도로도 쓸것이기 때문에, 술어를 가져온다. 절대 규칙 참고. 또한 이 언어는 엄밀히 말하자면 □에다가 단순언어†문법 Extension을 입혀서 사실상 Framework가 된거라고 볼수밖에 없다.)
+(‡ TWaML을 일상적인 용도로도 쓸것이기 때문에, 술어를 가져온다. 절대 규칙 참고. 또한 이 언어는 엄밀히 말하자면 [나의 초단순언어관련 탐구](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/TWaMLang/%EC%B4%88%EB%8B%A8%EC%88%9C%EC%96%B8%EC%96%B4_%EB%B0%8F_%EC%96%B8%EC%96%B4%EC%97%90_%EB%8C%80%ED%95%9C_%EB%8F%85%EC%9E%90%ED%83%90%EA%B5%AC/)의 "초단순 언어"에다가 단순언어†문법 Extension을 입혀서 사실상 Framework가 된거라고 볼수밖에 없다.)
 
 그렇다. 이건 걍 제미로 단어 몇게 명명해놓고 언어라고 우기는거다. 형식언어지, 자연어나 인공어급은 아니다.
 
