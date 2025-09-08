@@ -275,7 +275,9 @@ class of tuple what classified by arity | expression orform |
 망할.... 이래서, (x, y, z) = (x, (y, z)) 가 성립한다. ‡
 
 이것만 그랬으면, 걍 `("arity", "tuple")`꼴로 표기하는 명세를 만들어 다른 모델을 만든 후 만족했을것이다.
-그러나, 골때리는게 아직 하나 남아있다.
+그러나, 골때리는게 아직 하나 남아있다,
+
+[다변수 함수](https://namu.wiki/w/%EC%88%9C%EC%84%9C%EC%8C%8D#s-4.3)란, 변수가 여러개인 함수를 말하는데, 놀랍게도 f(x, y, z)같은 애들 말고 내적도 다변수함수다.
 
 따라서,
 
@@ -283,8 +285,12 @@ class of tuple what classified by arity | expression orform |
 first(x, y) ≜ x
 last(x, y) ≜ y
 
-tuple_index(t, length, idx)
+tuple_index(t, length, idx) ≜ firstᵖ(lastⁿ(t)) [p := {length - 1 = n}][n := idx = n]
 ```
+
+가 참이되는게 튜플의 정의다 이거다.
+
+골때리지 않는가?
 
 († 표기법에 대해 햇갈리지만 뭐 ㅋ 아님 말구 ㅋ)
 (‡ 이 예시가 만족되는 경우, n-tuple에 대한 제귀적 정의식이 유일히 결정되기에, 저 예시가 이해하기 쉬운 예시라고 생각한다, 예시를 이해하지 못하는 사람이라면, 단순히 저기서 말하는 바는, "첫 항목 이외의 항목은 (n-1)튜플로 n-tuple의 첫 항목 이외의 항목인것이다.)
