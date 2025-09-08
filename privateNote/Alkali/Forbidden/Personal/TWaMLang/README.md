@@ -2,9 +2,7 @@
 
 TWaMLang에 대해 소개하겠다.
 
-~~not TWaML-wise Argument Markup Language~~
-
-~~취소선된 개드립은 넘기도록 하라.~~
+~~JOKE : not TWaML-wise Argument Markup Language~~
 
 | 성질명 | 성질값 |
 | :---: | :---: |
@@ -122,7 +120,7 @@ GenNormalForm(x) ≜ {t | Wait(t, HexToBinTuple(x))}
 
 ```
 
-아니 미친 무려 술어를 리턴한다.
+~~아니 미친 무려 술어를 리턴한다.~~
 
 저게 왜 저렇게 되는지는 최하단의 "부록"에서 "투털투덜"에서 "순서쌍에 대한 투털투덜"참고. [shl, shr, idx는 중학교때 탐구해서 고등학교 1학년때 정리한 내용이고, 사실 별로 중요하지 않은거며, 그냥 툴이다](https://faraway6834.github.io/LAFTF1.1)... 중요한건 정규형식의 각 비트를 다음과 같은 구조체의 pair
 
