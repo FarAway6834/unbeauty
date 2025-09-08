@@ -270,6 +270,15 @@ class of tuple what classified by arity | expression orform |
 
 망할.... 이래서, (x, y, z) = (x, (y, z)) 가 성립한다. ‡
 
+따라서,
+
+```
+first(x, y)
+last(x, y)
+
+tuple_index(t, length, idx)
+```
+
 († 표기법에 대해 햇갈리지만 뭐 ㅋ 아님 말구 ㅋ)
 (‡ 이 예시가 만족되는 경우, n-tuple에 대한 제귀적 정의식이 유일히 결정되기에, 저 예시가 이해하기 쉬운 예시라고 생각한다, 예시를 이해하지 못하는 사람이라면, 단순히 저기서 말하는 바는, "첫 항목 이외의 항목은 (n-1)튜플로 n-tuple의 첫 항목 이외의 항목인것이다.)
 
