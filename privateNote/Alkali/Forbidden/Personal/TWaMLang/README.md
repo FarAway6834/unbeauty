@@ -101,9 +101,15 @@ FactorWhichNormalFormIs2(r, p, q) : on_off_the_x(r, PredicateWhichNormalFormIs2(
 FactorWhichNormalFormIs4(r, p, q) : on_off_the_x(r, PredicateWhichNormalFormIs4(p, q))
 FactorWhichNormalFormIs8(r, p, q) : on_off_the_x(r, PredicateWhichNormalFormIs8(p, q))
 
-GenNormalForm(x) ≜ 
+Wait(t, a, b, c, d) : FactorWhichNormalFormIs1(a, t) ∨ FactorWhichNormalFormIs2(b, t) ∨ FactorWhichNormalFormIs4(c, t) ∨ FactorWhichNormalFormIs8(d, t)
+
+GenNormalForm(x) ≜ {t | Wait(t, HexToBinTuple(x))}
 
 ```
+
+아니 미친 무려 술어를 리턴한다.
+
+저게 왜 저렇게 되는지는 최하단의 "부록"에서 "투털투덜"에서 "순서쌍에 대한 투털투덜"참고.
 
 정규형식을 이해하기 위해서는 다음 진리표를 보자.
 
