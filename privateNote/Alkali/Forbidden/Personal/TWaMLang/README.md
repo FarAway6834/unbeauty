@@ -68,6 +68,10 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 | TWaMLang | ZFC or Modal Logic or English or Lojban |
 | :---: | --- |
 | ñ□ | GenNormalForm(□) |
+| `øpa` | wait | 작성중이라고 |
+| `øre` | wait | 작성중이라고 |
+| `øsi` | wait | 작성중이라고 |
+| `øvo` | wait | 작성중이라고 |
 
 #### list of 「the math based literal charactor」
 
@@ -81,4 +85,5 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 | `ø:` | `:` | predicate or relationship or sentense or proposol declare symbol what can use to naming |
 | `øA` | `∀` | Quantifier |
 | `øE` | `∃` | Quantifier |
-| `ø` | wait | 작성중이라고 |
+
+parentheses charactorset L s.t. what written in last of this section이라고 말했던 `L = {'(', ',', ')'}`
