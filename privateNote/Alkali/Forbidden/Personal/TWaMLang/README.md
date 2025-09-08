@@ -68,7 +68,7 @@ N.B. 참고로 난 연언명제를 이 체계에 넣지 않겠다고 한 적 없
 
 DoseItNumberOne(x) : x = 1
 
-```.
+```
 
 #### list of predicate literal
 
@@ -90,7 +90,16 @@ idx(n, x, i) ≜ shr(shl(x, i), n - 1)
 
 HexToBinTuple(x) ≜ (idx(4, x, 0), idx(4, x, 1), idx(4, x, 2), idx(4, x, 3))
 
-PredicateWhichNormalFormIs1(p, q) : p 
+on_off_the_x(flag_on, x) : x ∧ ((¬x) ∨ flag_on)
+PredicateWhichNormalFormIs1(p, q) : p ∧ q
+PredicateWhichNormalFormIs2(p, q) : p ∧ ¬q
+PredicateFactorWhichNormalFormIs4(p, q) : ¬p ∧ q
+PredicateFactorWhichNormalFormIs8(p, q) : ¬p ∧ ¬q
+
+FactorWhichNormalFormIs1(p, q, r) : p ∧ q
+FactorWhichNormalFormIs2(p, q, r) : p ∧ ¬q
+FactorWhichNormalFormIs4(p, q, r) : ¬p ∧ q
+FactorWhichNormalFormIs8(p, q, r) : ¬p ∧ ¬q
 
 GenNormalForm(x) ≜ 
 
