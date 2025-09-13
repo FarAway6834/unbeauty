@@ -1,4 +1,4 @@
-# semiProbability
+# semiProbability and ㄴStatisticalMetaSystem
 
 일단 말하기 앞서 다음과 같이 공리적 확률론을 분할할 생각임.
 
@@ -37,7 +37,7 @@ P(Φ) = |Mod(Φ)|/|Ω|
 
 이렇게 두가지 심볼 ㄴSIZE 및 ㄴNumberOfCase가 정의된 모델을 ㄴStatisticalMetaSystem 이라 하겠다.
 
-#### ㄴStatisticalMetaSystem
+#### ㄴStatisticalMetaSystem (semiProbability에서 새로 정의한 ZFC를 분석하는 Meta System. (사실상 Model이고 확률론 공리계의 Extension처럼 동작하지만, 그냥 메타적으로 분석하니까 메타시스템이라고 함.))
 
 ㄴStatisticalMetaSystem는 다음 Symbol이 정의되고 다음 Axiom이 만족된 Kolmogorov’s Axioms & ZFC 위의 Model Structure이다.
 
