@@ -299,3 +299,22 @@ fac(x) ≜ if (x < 0) {
 } else {
     return gcd(x, k + 1, ret)
 }] [first(x, y) := x] [last(x, y) := y] [COMMENT := ("g는 평범한 자연수 소인수분해 알고리즘이다... 원래는 while문을 이용해서, pₖ으로 나눠지지 않을때까지 나누면서, 리턴값인 벡터에, 소인수의 지수를 적어야하는데, 여기는 그런거 없으니, tail Requation의 flow를 이용했다. 솔찍히 어떻게 되더라도, 명세만 만족하멷 된다. (Tip : fac(1) = <0, ..., 0>이기에, 인자로 받은 리턴값 ret을 리턴하는거다. (Tip : 마지막 else는 나눠지지 않을때, 다음 소수에 대한 처리다. (Tip : 의도한대로 실행되는 이유는 처리 흐름을 따라가보면 알 수 있다.))", "x < 0인경우는 따로 음수 비트를 활성화하는것 뿐이니 나머지 부분을 설명해보자. f에서, 자연수가 아니면 f(first(x)) - f(last(x))로 처리하는걸 보았을것이다. 이걸 해설해보이겠다.", "벡터는 튜플이므로, first(<x, y>) = x이며, last(<x, y>) = y에서, f(first(x : y)) - f(last(x : y)) = f(x) - f(y)인것이다. 이게 `핵심`")]
+
+이해을 돕기 위해 g만 특별히 psudo-code로 써보겠다.
+psudo-code용 언어는 python이다.
+
+```python
+def original_ver(x):
+    p = 2
+    ret = []
+    while x != 1:
+        if x % p:
+            p += 1
+        else:
+            x //= p
+            ret.append(p)
+    return ret
+
+def vector_ver(x, k, ret = ):
+    d
+```
