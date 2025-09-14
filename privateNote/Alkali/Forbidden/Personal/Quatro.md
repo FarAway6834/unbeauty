@@ -19,37 +19,37 @@ Quatro는 Polandian-Notation인 연산을 지원한다. 프로그래밍에도 �
 
 1. Constants
 
-QMinus = <<-1, 0>, <0, 1>>
-Qrev = <<0, 1>, <1, 0>>
+ + QMinus = <<-1, 0>, <0, 1>>
+ + Qrev = <<0, 1>, <1, 0>>
 
 앞서 말한 기준에서, QMinus와 Qrev는 단항연산자임을 알 수 있다. `QMinus x`는 `-x`를 의미하고, `Qrev x`는 `1/x`를 의미한다.
 
-Qadder = <<<0, 1>, <1, 0>>, <<0, 0>, <0, 1>>>
-Qmuler = <<<1, 0>, <0, 0>>, <<0, 0>, <0, 1>>>
+ + Qadder = <<<0, 1>, <1, 0>>, <<0, 0>, <0, 1>>>
+ + Qmuler = <<<1, 0>, <0, 0>>, <<0, 0>, <0, 1>>>
 
 앞서 말한 기준에서, Qadder와 Qmuler는 이항연산자임을 알 수 있다. `Qadder x y`는 `x + y`이고, `Qmuler x y`는 `xy`를 의미함도 알 수 있다.
 
 2. Functions
 
-Qcmp(v, w) = ((Qadder (QMinus w)) v) • e₁
+ + Qcmp(v, w) = ((Qadder (QMinus w)) v) • e₁
 
 Qcmp는 단순히 v - w의 분모는 저리치우고, 분자를 따진다. 이건 더이상 선형이 아니다.
 
 3. Relation
 
-Qeq(v, w) : Qcmp(v, w) = 0
+ + Qeq(v, w) : Qcmp(v, w) = 0
 
 겉보기엔 Qcmp의 근을 나타내는 방정식의 해집합 Qeq로 술어 내지 관계를 만든것 같지만, Qcmp의 근은 유리수체에서 `v = w`를 의미하므로, 동치관걔임을 알 수 있다.
 
-유리수 p, q에 대해, p - q = 0시, p - q = 0 = q - p이므로, 가환이고, p = a/b이고, q = c/d 일시,
-p - q = (ad - bc)/bd 이므로, 완전히 비율로 취급하고 계산하는것이라서, a:b = c:d이면, Qeq(<a, b>, <c, d>)이므로,
+1. 유리수 p, q에 대해, p - q = 0시, p - q = 0 = q - p이므로, 가환이고, p = a/b이고, q = c/d 일시,
+2. p - q = (ad - bc)/bd 이므로, 완전히 비율로 취급하고 계산하는것이라서, a:b = c:d이면, Qeq(<a, b>, <c, d>)이므로,
 
 a:b:c = d:e:f에서,
 
 Qeq(<a, d>, <b, e>), Qeq(<b, e>, <c, f>) ⊨ Qeq(<a, d>, <c, f>)임은,
 
-r = a:b, R = b:c에서,
-a = br, b = cR, a = crR에서,
+1. r = a:b, R = b:c에서,
+2. a = br, b = cR, a = crR에서,
 
 에초에, w:x = y:z부터, t = w:x로 잡았을때,
 
@@ -108,8 +108,8 @@ Qmuler <a, b> = <<a, 0>, <0, b>>
 
 두번째 쳅터로, 동치관계를 주는 부분을 해보고 싶다.
 
-(a : b = c : d) : ad = bc 로,
-(a : b = c : d) : ad - bc = 0 이므로,
+1. (a : b = c : d) : ad = bc 로,
+2. (a : b = c : d) : ad - bc = 0 이므로,
 
 아주 정확히 v - w = 0일시 동등하므로,
 
@@ -159,8 +159,8 @@ Qeq(v, w) : Qcmp(v, w) = 0
 
 위 방정식은 어떻게 보면 술어이자 관계이다.
 
-의미론적으로 볼때, 유리수체 위의 뺄셈 함수의 방정식에 대해, x - y = 0 ↔ x = y이기에
-방정식을 만족하는 해집합 Qeq에 대해, (v, w) ∈ Qeq ↔ ((v, w) ⊨ Qeq) ↔ Qeq(v, w)이기에, 이 술어이자 관계 Qeq는 유리수체 위의 동치관계를 노리고 코딩하였음을 쉽게 알 수 있다.
+1. 의미론적으로 볼때, 유리수체 위의 뺄셈 함수의 방정식에 대해, x - y = 0 ↔ x = y이기에
+2. 방정식을 만족하는 해집합 Qeq에 대해, (v, w) ∈ Qeq ↔ ((v, w) ⊨ Qeq) ↔ Qeq(v, w)이기에, 이 술어이자 관계 Qeq는 유리수체 위의 동치관계를 노리고 코딩하였음을 쉽게 알 수 있다.
 
 이하에서 Qrev, Qadder, Qcmp, Qmuler, QMinus, Qeq를 모두 설명했다.
 
