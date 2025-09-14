@@ -464,4 +464,6 @@ QRSM Standard Inclusive Model은 다음과 같은 모델이다.
 
 Quatro로 정의된 유리수 ℚ에 대해, Qrev, QMinus, Qadd, Qmul정의되었으니, Qsub, Qdiv를 각각 f(x, y) = Qadd (QMinus y) x인 f와 f(x, y) = Qmul (Qrev y) x 인 f로 정의하면, Quatro로 유리수체를 준비할 수 있다. 이러한 ℚ를 유리수체로 다루겠다.
 
-M = <
+다음은 n-QRSM Standard Inclusive Model 이다.
+
+Mₙ = <((ℚⁿ)ⁿ) ∪ ℚⁿ, 
