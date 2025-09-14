@@ -240,6 +240,26 @@ gcd가 집합을 인자로 받은 이유는, 가환 반군을 이루기 때문�
 
 암튼 gcd에서, |S| = 2일때의 처리는 유클리드 호제법의 처리이다. base condition은 0 ∈ S이며, 이때는 인자를 리턴해주므로, Tail Requation이다.
 
+psudo code인 python예제로는,
+
+```python
+# req : 3.10 >= version
+
+def gcd(x : set):
+    match len(x):
+        case 1 :
+            ret, = x
+        case 2 :
+            if 0 in x:
+                ret, = x - {0}
+            else:
+                ret = gcd(min(x), max(x) % min(x))
+        case _:
+            ret = gcd({gcd(x - {min(x)}), min(x)})
+    
+    return ret
+```
+
 lcm S ≜ (Π S)/(gcd S)
 
 이렇게 정의한 이유는,
