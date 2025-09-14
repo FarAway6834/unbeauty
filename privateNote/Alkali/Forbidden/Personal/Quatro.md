@@ -253,7 +253,7 @@ def gcd(x : set):
             if 0 in x:
                 ret, = x - {0}
             else:
-                ret = gcd(min(x), max(x) % min(x))
+                ret = gcd({min(x), max(x) % min(x)})
         case _:
             ret = gcd({gcd(x - {min(x)}), min(x)})
     
