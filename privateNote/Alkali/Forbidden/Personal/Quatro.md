@@ -304,6 +304,8 @@ fac(x) ≜ if (x < 0) {
 psudo-code용 언어는 python이다.
 
 ```python
+from its_せかい에_어ㅂㅅ다 import primes, inf_vector
+
 def original_ver(x):
     p = 2
     ret = []
@@ -315,6 +317,14 @@ def original_ver(x):
             ret.append(p)
     return ret
 
-def vector_ver(x, k, ret = ):
-    d
+def vector_ver(x, k = 1, ret = inf_vector.full_zero()):
+    while x != 1:
+        if x % primes(k):
+            k += 1
+        else:
+            x //= primes(k)
+            ret.append(p)
+    return ret
+
+def finnally_tailreq_ver(x, k = 1, ret = 
 ```
