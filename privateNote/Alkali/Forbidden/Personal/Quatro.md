@@ -298,4 +298,4 @@ fac(x) ≜ if (x < 0) {
     return gcd(x/pₖ, k, ret + $ₙ)
 } else {
     return gcd(x, k + 1, ret)
-}] [first(x, y) := x] [last(x, y) := y] [COMMENT :=
+}] [first(x, y) := x] [last(x, y) := y] [COMMENT := "g는 평범한 자연수 소인수분해 알고리즘이다."]
