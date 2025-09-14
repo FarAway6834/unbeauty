@@ -271,6 +271,15 @@ lcm S ≜ (Π S)/(gcd S)
 
 참고로, 나는 feature를 코딩하는 관점에서, 어떤 객체의 구성을 설명할수 있다는 사실에서, 엘런 튜링이 생각했듯, 수학을 코딩처럼 보고 정리하는 방식도 탁월하다고 본다.
 
+이것도 psudo code인 python으로 보이면,
+
+```python
+from math import prod
+
+def lcm(x : set):
+    return prod(x)//gcd(x)
+```
+
 pₙ ≜ if (n = 0) {
     return 1
 } else {
