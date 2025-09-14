@@ -413,7 +413,21 @@ def finnally_tailreq_ver(x, k = 1, ret = inf_vector.full_zero()):
 
 ### 후설명
 
-fac(±x/y) = <(1∓1)/2, 0, ..., 0> + fac(x) - fac(y)이며, fac(x) = 
+fac(±x/y) = <(1∓1)/2, 0, ..., 0> + fac(x) - fac(y) 이며,
+
+fac(x) = <0, a₁, ..., aₙ> s.t. x = Πₖ (pₖ ↑ aₖ) 이다.
+
+즉, fac(x) • (Σₖ ₩ₖ₋₁ eₖ) = x 이다.
+
+F(x) + F(y) = F(xy)라면,
+
+z = x/y 에 대해, x = yz이므로,
+
+F(z) + F(y) = F(x)에서, F(z) = F(x) - F(y) 이므로,
+
+F(x/y) = F(x) - F(y) ... (1)
+
+
 
 FakeLog(Πₘ pₘⁿ [n:= Aₘ]) = Σₘ FakeLog(pₘⁿ) [n:= Aₘ] 이기에, 유리수체 위에서 로그법칙을 만족하지만, 역함수가 지수함수라는 보장이나, 밑변환이 된다는 보장이 없으니 유사 로그함수이다.
 
