@@ -1,4 +1,4 @@
-# Quatro
+# Quatro (미완성)
 
 ## 유리수체 ℚ를 구성하는 모델 Quatro
 
