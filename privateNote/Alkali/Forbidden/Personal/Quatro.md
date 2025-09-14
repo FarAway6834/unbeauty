@@ -342,4 +342,4 @@ def finnally_tailreq_ver(x, k = 1, ret = inf_vector.full_zero()):
 
 FakeLog(Πₘ pₘⁿ [n:= Aₘ]) = Σₘ FakeLog(pₘⁿ) [n:= Aₘ] 이기에, 유리수체 위에서 로그법칙을 만족하지만, 역함수가 지수함수라는 보장이나, 밑변환이 된다는 보장이 없으니 유사 로그함수이다.
 
-즉, 치역은 "codom FakeLog"이고 이것은 잘 규정된 대상들의 모임이므로, 객체의 모임이고, 
+즉, 치역은 "codom FakeLog"이고 이것은 잘 규정된 대상들의 모임이므로, 객체의 모임이고, FakeLog객체인것이다.
