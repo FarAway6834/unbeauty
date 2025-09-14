@@ -323,8 +323,17 @@ def vector_ver(x, k = 1, ret = inf_vector.full_zero()):
             k += 1
         else:
             x //= primes(k)
-            ret.append(p)
+            ret[k] += 1
     return ret
 
-def finnally_tailreq_ver(x, k = 1, ret = 
+def finnally_tailreq_ver(x, k = 1, ret = inf_vector.full_zero()):
+    if x == 1:
+        return ret
+    elif x % primes(k):
+        return finnally_tailreq_ver(x, k = k + 1, ret = ret)
+    else:
+        ret[k] += 1
+        return finnally_tailreq_ver(x // primes(k), k, ret)
 ```
+
+휴... 이정도면 이제 쉬울것이다.
