@@ -27,7 +27,7 @@ Quatro는 Polandian-Notation인 연산을 지원한다. 프로그래밍에도 �
  + Qadder = <<<0, 1>, <1, 0>>, <<0, 0>, <0, 1>>>
  + Qmuler = <<<1, 0>, <0, 0>>, <<0, 0>, <0, 1>>>
 
-Qmuler의 정체가 궁금할수 있으니 말하겠다. Qmuler v w는 아다마르 곱 v ∘ w 이다.
+Qmuler의 정체가 궁금할수 있으니 말하겠다. 이차원 벡터 v, w에 대해, Qmuler v w는 아다마르 곱 v ∘ w 이다.
 
 앞서 말한 기준에서, Qadder와 Qmuler는 이항연산자임을 알 수 있다. `Qadder x y`는 `x + y`이고, `Qmuler x y`는 `xy`를 의미함도 알 수 있다.
 
