@@ -33,7 +33,7 @@ def _MyLinearTransformation(x : _GenericTensorGenerator, Einstein = False): # Ho
      def LinearTransformation_decorating_wrapper_part(method):
          @_deco_wraps(method)
          def LinearTransformationMethod(self, *argv, **kargv):
-             return method(self, *argv, LinearTransformator = LinearTransformator, **kargv)
+             return method(self, *argv, LinearTransformator = LinearTransformator, **kargv).view(self.__class__)
          return LinearTransformationMethod
      return LinearTransformation_decorating_wrapper_part
 
@@ -97,7 +97,7 @@ class _Coreof_RatioArgumentVector(metaclass = MyNumpyArrayClassType):
     def __div__(self, others):
         raise NotImplementedError
     
-    def __eq__(self, others, gen_zero_vector = GenericLinearTransformationMethod([0, 0])):
+    def __eq__(self, others, gen_zero_vector = _GenericLinearTransformationMethod([0, 0])):
         return self.__eq_helper(others) == 0 if others else super().__eq__(gen_zero_vector(dtype = self.dtype)) # when others is 0, then else case returned.
 
 class SubtractArgumentVector(_Core_SubtractArgumentVector): # Model of x - y
