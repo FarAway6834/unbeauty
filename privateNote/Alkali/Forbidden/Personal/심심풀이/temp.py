@@ -22,9 +22,13 @@ class MyNumpyArrayClassType(type(NumpyArrayType)):
         value['__array_finalize__'] = __array_finalize__
         return super().__new__(cls, name, (NumpyArrayType, *base), value)
 
-def LinearTransformation(x : GenericTensorGenerator):
-     def LinearTransformator(self, *others):
-         return (x(dtype = self.dtype) @ self) @ others[0] if others else x(dtype = self.dtype) @ self
+def MyLinearTransformation(x : GenericTensorGenerator, Einstein = False):
+     if p:
+         def LinearTransformator(self, *others):
+             return np.einsum('kij,k->ij', x(dtype = self.dtype), self) @ others[0] if others else np.einsum('kij,k->ij', x(dtype = self.dtype), self)
+     else:
+         def LinearTransformator(self, *others):
+             return (x(dtype = self.dtype) @ self) @ others[0] if others else x(dtype = self.dtype) @ self
      def LinearTransformation_decorating_wrapper_part(method):
          @_deco_wraps(method)
          def LinearTransformationMethod(self, *argv, **kargv):
@@ -32,17 +36,17 @@ def LinearTransformation(x : GenericTensorGenerator):
          return LinearTransformationMethod
      return LinearTransformation_decorating_wrapper_part
 
-def NormalLinerTransformationMethoder(x : GenericTensorGenerator):
+def NormalLinerTransformationMethoder(x : GenericTensorGenerator, p = False):
     def NormalLinerTransformationMethoder_decorating_wrapper_part(func):
-        @LinearTransformation(x)
+        @MyLinearTransformation(x, p = p)
         @_deco_wraps(func)
         def NormalLinerTransformationMethod(self, *args, LinearTransformator = None, **kargs):
             return LinearTransformator(self, *args, **kargs)
         return NormalLinerTransformationMethod
     return NormalLinerTransformationMethoder_decorating_wrapper_part
 
-def GenericLinearTransformationMethod(iterable_obj):
-    return NormalLinerTransformationMethoder(GenericTensorGenerator(iterable_obj))
+def GenericLinearTransformationMethod(iterable_obj, p = False):
+    return NormalLinerTransformationMethoder(GenericTensorGenerator(iterable_obj), p = p)
 
 Change2InversedElement = GenericLinearTransformationMethod([[0, 1], [1, 0]])
 
