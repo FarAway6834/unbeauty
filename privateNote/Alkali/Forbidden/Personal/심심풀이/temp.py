@@ -97,10 +97,10 @@ class _Coreof_RatioArgumentVector(metaclass = MyNumpyArrayClassType):
 
 class SubtractArgumentVector(_Core_SubtractArgumentVector):
     def __new__(cls, x, y, **kargv):
-        return super().__new__(x, y, **kargv)
+        return super().__new__(cls, [x, y], **kargv)
 
 class RatioArgumentVector(_Coreof_RatioArgumentVector):
     def __new__(cls, x, y, **kargv):
-        return super().__new__(x, y, **kargv)
+        return super().__new__(cls, [x, y], **kargv)
 
 # 겨우 만들었는데 제대로 작동할지 미지수...
