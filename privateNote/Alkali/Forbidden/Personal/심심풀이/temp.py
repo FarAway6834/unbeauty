@@ -23,7 +23,7 @@ class MyNumpyArrayClassType(type(NumpyArrayType)):
         value['__array_finalize__'] = __array_finalize__
         return super().__new__(cls, name, (NumpyArrayType, *base), value)
 
-def MyLinearTransformation(x : GenericTensorGenerator, Einstein = False):
+def MyLinearTransformation(x : GenericTensorGenerator, Einstein = False): # Hotfix as Einstein
      if Einstein:
          def LinearTransformator(self, *others):
              return einsteinal_product('kij,k->ij', x(dtype = self.dtype), self) @ others[0] if others else einsteinal_product('kij,k->ij', x(dtype = self.dtype), self)
