@@ -4,7 +4,7 @@ from numpy import array as tensor # numpy array is actually linear algebric tens
 from numpy import einsum as einsteinal_product
 from functools import wraps as _deco_wraps
 
-class GenericTensorGenerator(list):
+class _GenericTensorGenerator(list):
     def __init__(self, iterable_obj):
         super().__init__(iterable_obj)
     
@@ -23,7 +23,7 @@ class MyNumpyArrayClassType(type(NumpyArrayType)):
         value['__array_finalize__'] = __array_finalize__
         return super().__new__(cls, name, (NumpyArrayType, *base), value)
 
-def MyLinearTransformation(x : GenericTensorGenerator, Einstein = False): # Hotfix as Einstein
+def _MyLinearTransformation(x : _GenericTensorGenerator, Einstein = False): # Hotfix as Einstein
      if Einstein:
          def LinearTransformator(self, *others):
              return einsteinal_product('kij,k->ij', x(dtype = self.dtype), self) @ others[0] if others else einsteinal_product('kij,k->ij', x(dtype = self.dtype), self)
@@ -37,26 +37,26 @@ def MyLinearTransformation(x : GenericTensorGenerator, Einstein = False): # Hotf
          return LinearTransformationMethod
      return LinearTransformation_decorating_wrapper_part
 
-def NormalLinerTransformationMethoder(x : GenericTensorGenerator, Einstein = False):
+def _NormalLinerTransformationMethoder(x : _GenericTensorGenerator, Einstein = False):
     def NormalLinerTransformationMethoder_decorating_wrapper_part(func):
-        @MyLinearTransformation(x, Einstein = Einstein)
+        @_MyLinearTransformation(x, Einstein = Einstein)
         @_deco_wraps(func)
         def NormalLinerTransformationMethod(self, *args, LinearTransformator = None, **kargs):
             return LinearTransformator(self, *args, **kargs)
         return NormalLinerTransformationMethod
     return NormalLinerTransformationMethoder_decorating_wrapper_part
 
-def GenericLinearTransformationMethod(iterable_obj, Einstein = False):
-    return NormalLinerTransformationMethoder(GenericTensorGenerator(iterable_obj), Einstein = Einstein)
+def _GenericLinearTransformationMethod(iterable_obj, Einstein = False):
+    return _NormalLinerTransformationMethoder(_GenericTensorGenerator(iterable_obj), Einstein = Einstein)
 
-Change2InversedElement = GenericLinearTransformationMethod([[0, 1], [1, 0]])
+Change2InversedElement = _GenericLinearTransformationMethod([[0, 1], [1, 0]])
 
 
 class _Core_SubtractArgumentVector(metaclass = MyNumpyArrayClassType):
     @Change2InversedElement
     def __neg__(self): pass
     
-    @GenericLinearTransformationMethod([[[1, 0], [0, 1]], [[0, 1], [1, 0]]], Einstein = True)
+    @_GenericLinearTransformationMethod([[[1, 0], [0, 1]], [[0, 1], [1, 0]]], Einstein = True)
     def __mul__(self): pass
     
     def __rsub__(self, others):
@@ -66,29 +66,29 @@ class _Core_SubtractArgumentVector(metaclass = MyNumpyArrayClassType):
         raise NotImplementedError
     
     def __eq__(self, others):
-        return self - others == 0 if others else self[0] = self[1]
+        return self - others == 0 if others else self[0] = self[1] # when others is 0, then else case returned.
 
 class _Coreof_RatioArgumentVector(metaclass = MyNumpyArrayClassType):
     
-    @GenericLinearTransformationMethod([[-1, 0], [0, 1]])
+    @_GenericLinearTransformationMethod([[-1, 0], [0, 1]])
     def __neg__(self): pass
     
     @Change2InversedElement
     def reciprocal(self): pass
     
-    @GenericLinearTransformationMethod([[[0, 1], [1, 0]], [[0, 0], [0, 1]]], Einstein = True)
+    @_GenericLinearTransformationMethod([[[0, 1], [1, 0]], [[0, 0], [0, 1]]], Einstein = True)
     def __add__(self): pass
     
-    @GenericLinearTransformationMethod([[[1, 0], [0, 0]], [[0, 0], [0, 1]]], Einstein = True)
+    @_GenericLinearTransformationMethod([[[1, 0], [0, 0]], [[0, 0], [0, 1]]], Einstein = True)
     def __mul__(self): pass
     
-    @GenericLinearTransformationMethod([[[0, -1], [1, 0]], [[0, 0], [0, 1]]], Einstein = True)
+    @_GenericLinearTransformationMethod([[[0, -1], [1, 0]], [[0, 0], [0, 1]]], Einstein = True)
     def __rsub__(self): pass
     
-    @GenericLinearTransformationMethod([[[0, 0], [1, 0]], [[0, 1], [0, 0]]], Einstein = True)
+    @_GenericLinearTransformationMethod([[[0, 0], [1, 0]], [[0, 1], [0, 0]]], Einstein = True)
     def __rdiv__(self): pass
     
-    @GenericLinearTransformationMethod([[[0, -1], [1, 0]], [[0, 0], [0, 0]]], Einstein = True)
+    @_GenericLinearTransformationMethod([[[0, -1], [1, 0]], [[0, 0], [0, 0]]], Einstein = True)
     def __eq_helper(self): pass
     
     def __sub__(self, others):
@@ -98,7 +98,7 @@ class _Coreof_RatioArgumentVector(metaclass = MyNumpyArrayClassType):
         raise NotImplementedError
     
     def __eq__(self, others, gen_zero_vector = GenericLinearTransformationMethod([0, 0])):
-        return self.__eq_helper(others) == 0 if others else super().__eq__(gen_zero_vector(dtype = self.dtype))
+        return self.__eq_helper(others) == 0 if others else super().__eq__(gen_zero_vector(dtype = self.dtype)) # when others is 0, then else case returned.
 
 class SubtractArgumentVector(_Core_SubtractArgumentVector): # Model of x - y
     def __new__(cls, x, y, **kargv):
