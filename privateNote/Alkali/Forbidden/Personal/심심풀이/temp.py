@@ -66,7 +66,7 @@ class _Core_SubtractArgumentVector(metaclass = MyNumpyArrayClassType):
         raise NotImplementedError
     
     def __eq__(self, others):
-        return self - others == 0 if others else self[0] = self[1] # when others is 0, then else case returned.
+        return self - others == 0 if others else self[0] == self[1] # when others is 0, then else case returned.
 
 class _Coreof_RatioArgumentVector(metaclass = MyNumpyArrayClassType):
     
