@@ -55,7 +55,7 @@ class _Core_SubtractArgumentVector(metaclass = MyNumpyArrayClassType):
     @Change2InversedElement
     def __neg__(self): pass
     
-    @GenericLinearTransformationMethod([[[1, 0], [0, 1]], [[0, 1], [1, 0]]])
+    @GenericLinearTransformationMethod([[[1, 0], [0, 1]], [[0, 1], [1, 0]]], Einstein = True)
     def __mul__(self): pass
     
     def __rsub__(self, others):
@@ -75,19 +75,19 @@ class _Coreof_RatioArgumentVector(metaclass = MyNumpyArrayClassType):
     @Change2InversedElement
     def reciprocal(self): pass
     
-    @GenericLinearTransformationMethod([[[0, 1], [1, 0]], [[0, 0], [0, 1]]])
+    @GenericLinearTransformationMethod([[[0, 1], [1, 0]], [[0, 0], [0, 1]]], Einstein = True)
     def __add__(self): pass
     
-    @GenericLinearTransformationMethod([[[1, 0], [0, 0]], [[0, 0], [0, 1]]])
+    @GenericLinearTransformationMethod([[[1, 0], [0, 0]], [[0, 0], [0, 1]]], Einstein = True)
     def __mul__(self): pass
     
-    @GenericLinearTransformationMethod([[[0, -1], [1, 0]], [[0, 0], [0, 1]]])
+    @GenericLinearTransformationMethod([[[0, -1], [1, 0]], [[0, 0], [0, 1]]], Einstein = True)
     def __rsub__(self): pass
     
-    @GenericLinearTransformationMethod([[[0, 0], [1, 0]], [[0, 1], [0, 0]]])
+    @GenericLinearTransformationMethod([[[0, 0], [1, 0]], [[0, 1], [0, 0]]], Einstein = True)
     def __rdiv__(self): pass
     
-    @GenericLinearTransformationMethod([[[0, -1], [1, 0]], [[0, 0], [0, 0]]])
+    @GenericLinearTransformationMethod([[[0, -1], [1, 0]], [[0, 0], [0, 0]]], Einstein = True)
     def __eq_helper(self): pass
     
     def __sub__(self, others):
