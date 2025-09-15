@@ -23,7 +23,7 @@ class MyNumpyArrayClassType(type(NumpyArrayType)):
         return super().__new__(cls, name, (NumpyArrayType, *base), value)
 
 def MyLinearTransformation(x : GenericTensorGenerator, Einstein = False):
-     if p:
+     if Einstein:
          def LinearTransformator(self, *others):
              return np.einsum('kij,k->ij', x(dtype = self.dtype), self) @ others[0] if others else np.einsum('kij,k->ij', x(dtype = self.dtype), self)
      else:
@@ -36,17 +36,17 @@ def MyLinearTransformation(x : GenericTensorGenerator, Einstein = False):
          return LinearTransformationMethod
      return LinearTransformation_decorating_wrapper_part
 
-def NormalLinerTransformationMethoder(x : GenericTensorGenerator, p = False):
+def NormalLinerTransformationMethoder(x : GenericTensorGenerator, Einstein = False):
     def NormalLinerTransformationMethoder_decorating_wrapper_part(func):
-        @MyLinearTransformation(x, p = p)
+        @MyLinearTransformation(x, Einstein = Einstein)
         @_deco_wraps(func)
         def NormalLinerTransformationMethod(self, *args, LinearTransformator = None, **kargs):
             return LinearTransformator(self, *args, **kargs)
         return NormalLinerTransformationMethod
     return NormalLinerTransformationMethoder_decorating_wrapper_part
 
-def GenericLinearTransformationMethod(iterable_obj, p = False):
-    return NormalLinerTransformationMethoder(GenericTensorGenerator(iterable_obj), p = p)
+def GenericLinearTransformationMethod(iterable_obj, Einstein = False):
+    return NormalLinerTransformationMethoder(GenericTensorGenerator(iterable_obj), Einstein = Einstein)
 
 Change2InversedElement = GenericLinearTransformationMethod([[0, 1], [1, 0]])
 
