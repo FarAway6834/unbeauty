@@ -58,7 +58,7 @@ class _Core_SubtractArgumentVector(metaclass = MyNumpyArrayClassType):
         return (-self) + others
     
     def __sub__(self, others):
-        raise NotImplemented
+        raise NotImplementedError를
     
     def __eq__(self, others):
         return self - others == 0 if others else self[0] = self[1]
@@ -87,10 +87,10 @@ class _Coreof_RatioArgumentVector(metaclass = MyNumpyArrayClassType):
     def __eq_helper(self): pass
     
     def __sub__(self, others):
-        raise NotImplemented
+        raise NotImplementedError를
     
     def __div__(self, others):
-        raise NotImplemented
+        raise NotImplementedError를
     
     def __eq__(self, others, gen_zero_vector = GenericLinearTransformationMethod([0, 0])):
         return self.__eq_helper(others) == 0 if others else super().__eq__(gen_zero_vector(dtype = self.dtype))
