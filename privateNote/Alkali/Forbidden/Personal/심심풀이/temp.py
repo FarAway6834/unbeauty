@@ -109,6 +109,6 @@ class RatioArgumentVector(_Coreof_RatioArgumentVector): # Model of x : y
 
 class RatioArgumentVector_by_SubtractArgumentVector(RatioArgumentVector):
      def __new__(cls, a, b, x, y, **kargv):
-          return super().__new__(cls, SubtractArgumentVector(a, b, dtype = kargv['dtype']), SubtractArgumentVector(x, y, dtype = kargv['dtype']), dtype = Object, **kargv) if 'dtype' in kargv.keys() else super().__new__(cls, SubtractArgumentVector(a, b), SubtractArgumentVector(x, y), dtype = Object, **kargv)
+          return super().__new__(cls, SubtractArgumentVector(a, b, **kargv), SubtractArgumentVector(x, y, **kargv), dtype = object, **kargv) 
 
 # 아오 개힘들게 만들었네.... 작동 안하면 말고 시발
