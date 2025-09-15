@@ -99,12 +99,12 @@ class _Coreof_RatioArgumentVector(metaclass = MyNumpyArrayClassType):
     def __eq__(self, others, gen_zero_vector = GenericLinearTransformationMethod([0, 0])):
         return self.__eq_helper(others) == 0 if others else super().__eq__(gen_zero_vector(dtype = self.dtype))
 
-class SubtractArgumentVector(_Core_SubtractArgumentVector):
+class SubtractArgumentVector(_Core_SubtractArgumentVector): # Model of x - y
     def __new__(cls, x, y, **kargv):
         return super().__new__(cls, [x, y], **kargv)
 
-class RatioArgumentVector(_Coreof_RatioArgumentVector):
+class RatioArgumentVector(_Coreof_RatioArgumentVector): # Model of x : y
     def __new__(cls, x, y, **kargv):
         return super().__new__(cls, [x, y], **kargv)
 
-# 겨우 만들었는데 제대로 작동할지 미지수...
+# 아오 개힘들게 만들었네.... 작동 안하면 말고 시발
