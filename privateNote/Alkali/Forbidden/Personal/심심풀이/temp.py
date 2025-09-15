@@ -54,7 +54,7 @@ class _Core_SubtractArgumentVector(metaclass = MyNumpyArrayClassType):
     @GenericLinearTransformationMethod([[[1, 0], [0, 1]], [[0, 1], [1, 0]]])
     def __mul__(self): pass
     
-    def __isub__(self, others):
+    def __rsub__(self, others):
         return (-self) + others
     
     def __sub__(self, others):
@@ -78,10 +78,10 @@ class _Coreof_RatioArgumentVector(metaclass = MyNumpyArrayClassType):
     def __mul__(self): pass
     
     @GenericLinearTransformationMethod([[[0, -1], [1, 0]], [[0, 0], [0, 1]]])
-    def __isub__(self): pass
+    def __rsub__(self): pass
     
     @GenericLinearTransformationMethod([[[0, 0], [1, 0]], [[0, 1], [0, 0]]])
-    def __idiv__(self): pass
+    def __rdiv__(self): pass
     
     @GenericLinearTransformationMethod([[[0, -1], [1, 0]], [[0, 0], [0, 0]]])
     def __eq_helper(self): pass
