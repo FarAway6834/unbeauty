@@ -466,4 +466,4 @@ Quatro로 정의된 유리수 ℚ에 대해, Qrev, QMinus, Qadd, Qmul정의되�
 
 다음은 n-QRSM Standard Inclusive Model 이다.
 
-Mₙ = <((ℚⁿ)ⁿ) ∪ ℚⁿ, 
+Mₙ = <((ℚⁿ)ⁿ) ∪ ℚⁿ, zero_vectorₙ, QSIMImplicitFunctionₙ, L_QSIMIFₙ, R_QSIMIFₙ
