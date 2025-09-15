@@ -86,7 +86,7 @@ class _Coreof_RatioArgumentVector(metaclass = MyNumpyArrayClassType):
     def __rsub__(self): pass
     
     @_GenericLinearTransformationMethod([[[0, 0], [1, 0]], [[0, 1], [0, 0]]], Einstein = True)
-    def __rdiv__(self): pass
+    def __rtruediv__(self): pass
     
     @_GenericLinearTransformationMethod([[[0, -1], [1, 0]], [[0, 0], [0, 0]]], Einstein = True)
     def __eq_helper(self): pass
