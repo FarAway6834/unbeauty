@@ -1,6 +1,7 @@
 from numpy import ndarray as NumpyArrayType
 from numpy import asarray as _NumpyArrayTypeObject_create
 from numpy import array as tensor # numpy array is actually linear algebric tensor.
+from numpy import einsum as einsteinal_product
 from functools import wraps as _deco_wraps
 
 class GenericTensorGenerator(list):
@@ -25,7 +26,7 @@ class MyNumpyArrayClassType(type(NumpyArrayType)):
 def MyLinearTransformation(x : GenericTensorGenerator, Einstein = False):
      if Einstein:
          def LinearTransformator(self, *others):
-             return np.einsum('kij,k->ij', x(dtype = self.dtype), self) @ others[0] if others else np.einsum('kij,k->ij', x(dtype = self.dtype), self)
+             return einsteinal_product('kij,k->ij', x(dtype = self.dtype), self) @ others[0] if others else einsteinal_product('kij,k->ij', x(dtype = self.dtype), self)
      else:
          def LinearTransformator(self, *others):
              return (x(dtype = self.dtype) @ self) @ others[0] if others else x(dtype = self.dtype) @ self
