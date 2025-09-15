@@ -111,4 +111,4 @@ class RatioArgumentVector_by_SubtractArgumentVector(RatioArgumentVector):
      def __new__(cls, a, b, x, y, **kargv):
           return super().__new__(cls, SubtractArgumentVector(a, b, **kargv), SubtractArgumentVector(x, y, **kargv), dtype = object, **kargv) 
 
-# 아오 개힘들게 만들었네.... 작동 안하면 말고 시발
+# 개힘들다... 그래도 어쨌거나 성공이다. RatioArgumentVector_by_SubtractArgumentVector를 만들었느니 범자연수 빕합에 대해 수학적 모델로써 RatioArgumentVector_by_SubtractArgumentVector가 유리수를 구성하니까
