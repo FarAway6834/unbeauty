@@ -52,4 +52,20 @@ P(f, op, n, 1, 0, yᵢ, xᵢ, yⱼ, xⱼ, yₖ, xₖ) ⊨ (P(f, op, n, 1, 1, y�
 
 단순히 동일한 원시 바이트 타입에 타입케스팅 binjection을 넣어서 보았을 때, 모든 성질이 다 보존되고, 값도 일일히 일대일대응되면, 와... 미친 ㅋㅋㅋ 그거야말로 동치같네.
 
-동형사상 f가 X에서 Y로 간다면 f⁻¹은
+동형사상 f가 X에서 Y로 간다면 f⁻¹은 Y에서 X로 간다.
+
+그렇다면 f⁻¹은
+
+(Volcano₀,ₙ(Y, op₁, ..., opₙ) ⊨ sentence) → (Volcano₀,ₙ(X, op₁, ..., opₙ) ⊨ sentence)
+
+를 만족하므로, 
+
+f, f⁻¹이 존재하는데에서
+
+(Volcano₀,ₙ(X, op₁, ..., opₙ) ⊨ sentence) ↔ (Volcano₀,ₙ(Y, op₁, ..., opₙ) ⊨ sentence)
+
+를 만족하기 위해 어느 한방향의 함의가 존재할것을 요구하며, 보장하는 사상 f, f⁻¹두가지가 존재하여, 대수구조의 성질과 대상도 보존한다.
+
+걍
+
+∃f⁻¹ = g, {p | Volcanoₘ,ₙ(X, x₁, ..., xₘ, op₁, ..., opₙ) ⊨ p} = {q | Volcanoₘ,ₙ(X, x₁, ..., xₘ, op₁, ..., opₙ) ⊨ q}, Volcanoₘ,ₙ({x₁, ..., xₘ}, x₁, ..., xₘ, op₁, ..., opₙ) = Volcanoₘ,ₙ(X, x₁, ..., xₘ, op₁, ..., opₙ), Volcanoₘ,ₙ({f(x₁), ..., f(xₘ)}, f(x₁), ..., f(xₘ), op₁, ..., opₙ) = Volcanoₘ,ₙ(Y, f(x₁,) ..., f(xₘ), op₁, ..., opₙ), {p | Volcanoₘ,ₙ(X, f⁻¹(y₁), ..., f⁻¹(yₘ), op₁, ..., opₙ) ⊨ p} = {q | Volcanoₘ,ₙ(Y, y₁, ..., yₘ, op₁, ..., opₙ) ⊨ q}, Volcanoₘ,ₙ({y₁, ..., yₘ}, x₁, ..., xₘ, op₁, ..., opₙ) = Volcanoₘ,ₙ(X, x₁, ..., xₘ, op₁, ..., opₙ), Volcanoₘ,ₙ({f(x₁), ..., f(xₘ)}, f(x₁), ..., f(xₘ), op₁, ..., opₙ) = Volcanoₘ,ₙ(Y, f(x₁,) ..., f(xₘ), op₁, ..., opₙ)
