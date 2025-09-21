@@ -68,4 +68,12 @@ f, f⁻¹이 존재하는데에서
 
 걍
 
-∃f⁻¹ = g, {p | Volcanoₘ,ₙ(X, x₁, ..., xₘ, op₁, ..., opₙ) ⊨ p} = {q | Volcanoₘ,ₙ(X, x₁, ..., xₘ, op₁, ..., opₙ) ⊨ q}, Volcanoₘ,ₙ({x₁, ..., xₘ}, x₁, ..., xₘ, op₁, ..., opₙ) = Volcanoₘ,ₙ(X, x₁, ..., xₘ, op₁, ..., opₙ), Volcanoₘ,ₙ({f(x₁), ..., f(xₘ)}, f(x₁), ..., f(xₘ), op₁, ..., opₙ) = Volcanoₘ,ₙ(Y, f(x₁), ..., f(xₘ), op₁, ..., opₙ), {p | Volcanoₘ,ₙ(X, f⁻¹(y₁), ..., f⁻¹(yₘ), op₁, ..., opₙ) ⊨ p} = {q | Volcanoₘ,ₙ(Y, y₁, ..., yₘ, op₁, ..., opₙ) ⊨ q}, Volcanoₘ,ₙ({f⁻¹(y₁), ..., f⁻¹(yₘ)}, f⁻¹(y₁), ..., f⁻¹(yₘ), op₁, ..., opₙ) = Volcanoₘ,ₙ(X, f⁻¹(y₁), ..., f⁻¹(yₘ), op₁, ..., opₙ), Volcanoₘ,ₙ({y₁, ..., yₘ}, y₁, ..., yₘ, op₁, ..., opₙ) = Volcanoₘ,ₙ(Y, y₁, ..., yₘ, op₁, ..., opₙ)
+∃f⁻¹ = f, {p | Volcanoₘ,ₙ(X, x₁, ..., xₘ, op₁, ..., opₙ) ⊨ p} = {q | Volcanoₘ,ₙ(X, x₁, ..., xₘ, op₁, ..., opₙ) ⊨ q}, Volcanoₘ,ₙ({x₁, ..., xₘ}, x₁, ..., xₘ, op₁, ..., opₙ) = Volcanoₘ,ₙ(X, x₁, ..., xₘ, op₁, ..., opₙ), Volcanoₘ,ₙ({f(x₁), ..., f(xₘ)}, f(x₁), ..., f(xₘ), op₁, ..., opₙ) = Volcanoₘ,ₙ(Y, f(x₁), ..., f(xₘ), op₁, ..., opₙ), {p | Volcanoₘ,ₙ(X, f⁻¹(y₁), ..., f⁻¹(yₘ), op₁, ..., opₙ) ⊨ p} = {q | Volcanoₘ,ₙ(Y, y₁, ..., yₘ, op₁, ..., opₙ) ⊨ q}, Volcanoₘ,ₙ({f⁻¹(y₁), ..., f⁻¹(yₘ)}, f⁻¹(y₁), ..., f⁻¹(yₘ), op₁, ..., opₙ) = Volcanoₘ,ₙ(X, f⁻¹(y₁), ..., f⁻¹(yₘ), op₁, ..., opₙ), Volcanoₘ,ₙ({y₁, ..., yₘ}, y₁, ..., yₘ, op₁, ..., opₙ) = Volcanoₘ,ₙ(Y, y₁, ..., yₘ, op₁, ..., opₙ)
+
+임을 만족시키는 X, Y를 동형이라고 한다고 하면 되겠네...
+
+너무 직관적으로 논리적인 말들이 결합되어있어서 그만 할말을 잃었네.
+
+아... 이렇게 코딩처럼 잘 설명되는게 동형사상이라니...
+
+대체 이 정신나간 대상에 대해 다루는 대수학은 뭐하는 젠장할 분야인거지?
