@@ -1,5 +1,9 @@
 # HLFW (Hyper Langauge FrameWork)
 
+단도직입적으로 맥락없이 HLFW에 대해서 설명하겠다.
+
+Hyper Language FW는 각각 Hyper과 Language FW (언어 FW)에서 붙인 이름으로,
+
 Hyper는 그 스스로 Meta적 조작이 된다는거에서 붙인 이름이다.
 
 언어를 구성하는 lang의 Logical Coherance이며, "조어"를 이용하여 언어를 구성한다.
