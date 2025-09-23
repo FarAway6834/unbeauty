@@ -1,4 +1,4 @@
-# HLFW (Hyper Langauge FrameWork)
+크# HLFW (Hyper Langauge FrameWork)
 
 단도직입적으로 맥락없이 HLFW에 대해서 설명하겠다.
 
@@ -32,4 +32,4 @@ HLFW라고 하였다.
 
 그러면 왜 형식논리인가?
 
-제 0 조건, 형식적인 HLFW를 형식 HLFW혹은 보통 HLFW
+제 0 조건, 형식적인 HLFW를 형식 HLFW혹은 보통 HLFW라고 하며, 좁은의미에서 HLFW는 이것이다. 그러니 비형식적인 HLFW도 있을수 있는데, 이는 비형식적인 논리에서 사용하는 유한한 양의 기의를 가지는 유한한 기표로 표현되는 논리에 한정하여, 그렇게 유항한 기표와 기의를 도입산 경우는 형식 HLFW로 취급하기를 허용하며, 이를 비형식 HLFW라고 한다.
