@@ -1,4 +1,4 @@
-크# HLFW (Hyper Langauge FrameWork)
+# HLFW (Hyper Langauge FrameWork)
 
 단도직입적으로 맥락없이 HLFW에 대해서 설명하겠다.
 
