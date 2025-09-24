@@ -20,4 +20,4 @@ Hyper Language FW는 "기본 어휘"를 이용하지 않고 언어의 형식적 
 
 `♤x`는 "x가 옳다"같이 x를 긍정하는 기호이다.
 
-ㅇ
+[내 뇌피셜](https://faraway6834.github.io/unbeauty/privateNote/Alkali/Forbidden/Personal/temp)
