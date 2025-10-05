@@ -51,7 +51,7 @@ StructureForm이 삼차원 행렬이기에, StructureFormₗ,ₘ,ₙ식으로 �
 
 왼쪽 역연산 LeftInverse은
 
-x LeftInverseOf(*) y ≜ (x *)⁻¹(y)
+x LeftInverseOf(`*`) y ≜ (x `*`)⁻¹(y)
 
 으로, 왼쪽 연산에 대한 역연산으로,
 
@@ -63,7 +63,7 @@ x LeftInverseOf(*) y ≜ (x *)⁻¹(y)
 
 오른쪽 역연산 RightInverse은
 
-x RightInverseOf(*) y ≜ (* y)⁻¹(x)
+x RightInverseOf(`*`) y ≜ (`*` y)⁻¹(x)
 
 으로, 오른쪽 연산에 대한 역연산으로,
 
@@ -555,7 +555,7 @@ Laval 대수구조 명칭은 Group 이다.
 
 이항연산 `*`가
 
-CommutativeMagma(Volcano₁,₁(D, e, `*`)), Group(Volcano₁,₁(D, e, `*`)) ⊨ "이항연산 `*`가 <D, `*`>를 이룸"
+CommutativeMagma(VoLeftQuasigrouplcano₁,₁(D, e, `*`)), Group(Volcano₁,₁(D, e, `*`)) ⊨ "이항연산 `*`가 <D, `*`>를 이룸"
 
 인 `*`라면,
 
@@ -588,6 +588,14 @@ Volcanoₘ,₂(D, Sym₁, ..., Symₘ, `*`, `◦`) [`◦` := LeftInverseOf(`*`)]
 Volcanoₘ,₂(D, Sym₁, ..., Symₘ, `*`, `◦`) [`◦` := RightInverseOf(`*`)] ⊨ "이항연산 `*`가 (D, `*`, `◦`)를 이룸", BijectiveRightFunctor
 
 인 `*`라면, 즉, 당연히 `*`는 마그마니까, 그 마그마가, 오른쪽 함자 전단사성을 만족시킨다면, 이를 오른쪽 유사군이라고 한다.
+
+#### 3. 1. 유사군 (Quasigroup)
+
+LeftQuasigroup(Volcanoₘ,₂(D, Sym₁, ..., Symₘ, `*`, `◦`)), RightQuasigroup(Volcanoₘ,₂(D, Sym₁, ..., Symₘ, `*`, `◦`)) ⊨ "이항연산 `*`가 (D, `*`, `◦`)을 이룸"
+
+왼쪽 유사군이자 오른쪽 유사군인것.
+
+즉, 함자가 bijection이면 유사군이다
 
 #### 3. 2. 고리 (Loop, 위키백과에선 고리라고 했다만, 수학계에서는 루프라고 부른다고 카더라)
 
