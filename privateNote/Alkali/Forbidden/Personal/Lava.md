@@ -45,181 +45,6 @@ StructureForm이 삼차원 행렬이기에, StructureFormₗ,ₘ,ₙ식으로 �
 
 ## 대수 구조 공부
 
-### 연산 목록
-
-#### 왼쪽 역연산 (LeftInverse)
-
-왼쪽 역연산 LeftInverse은
-
-x LeftInverseOf(`*`) y ≜ (x `*`)⁻¹(y)
-
-으로, 왼쪽 연산에 대한 역연산으로,
-
-역함수가 존재할 조건인 일대일대응일것임을 만족하기위해
-
-왼쪽 함자 전단사성을 만족시켜야 한다.
-
-#### 오른쪽 역연산 (RightInverse)
-
-오른쪽 역연산 RightInverse은
-
-x RightInverseOf(`*`) y ≜ (`*` y)⁻¹(x)
-
-으로, 오른쪽 연산에 대한 역연산으로,
-
-역함수가 존재할 조건인 일대일대응일것임을 만족하기위해
-
-오른쪽 함자 전단사성을 만족시켜야 한다.
-
-### 관계 목록
-
-n항 관계 Φ는 집합 D에 대해, Φ ⊆ Dⁿ이다.
-
-술어 Φ는 집합 D에 대해, Φ ⊆ D이다.
-
-즉, 술어는 단항관계이다.
-
-술어 Φ가 집합 S에 대해, Φ ⊆ S일때,
-
-S = Dⁿ이면 Φ는 n항관계이다.
-
-그렇다. 나는 관계와 술어에 구분을 두지 않을것이고,
-
-따라서, 관계는 나에게 그저 튜플이 만족시키는 술어일 뿐이라는거다.
-
-아래 관계들은, FunctionalRelationship을 이용하여, 이루어지는 관계들에 대해 다룬다.
-
-FunctionalRelationship이란
-
-FunctionalRelationship(f, P, Q) : f[P] = Q
-
-인 술어로, P에 대한 f의 상이 Q인 관계이다.
-
-즉, (∃f, FunctionalRelationship(f, P, Q)) ⊨ R을 만족시키는 R들이다.
-
-(참고 : 앞으로, "학부 수준의 통상적 대수구조에서의~"가 붙을 말은, 에초에 학부 수준을 넘어서 범주론까지 설명하는건 뇌절이라고 보고, 대화 맥락과 주제가 "학부 수준의 통상적 대수구조에서의~"를 전제로 하는 경우를 대부분으로 하여 서술하고싶기에, "다루고자 하는~"이라고 하겠다.
-
-#### 등수관계 (equinumous)
-
-등수관계 equinumous란,
-
-P equinumous Q : (∃FunctionalRelationship(f, P, Q))(Biject(f))
-
-인 관계로, P에서 Q로가는 일대일대응이 존재하는 관계이다.
-
-P equinumous Q ↔ card P = card Q이다.
-
-#### 준동형 (Homomorphism)
-
-준동형 Homomorphism이란, 대게의 경우에는 다음을 만족한다.
-
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Homomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) [i := card P][j := card Q]
-
-저건 P와 Q사이의 준동형사상 f가 존재하는 관계이다.
-
-<br>
-
-준동형사상 homomorphism은
-
-homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : dom f = P, codom f = Q, (∀x, y ∈ dom f, f(x `*` y) = f(x) `◦` f(y)) [i := card P][j := card Q]
-
-이다.
-
-<br>
-
-마그마 이상을 이루는 P, Q에 대해, P에서 Q로 가는 사상 f가 (에초에 처음부터 함수인지 뭔지 제안하거나 명시하지 않았었음) 각각의 연산 `*`, `◦`에 대해, f(x `*` y) = f(x) `◦` f(y)를 만족시키므로, 준동형사상은 대수구조의 성질을 보존한다, 즉, 대수구조의 성질은 준동형사상에 양변을 대입하여, 다른 대수구조로 옮길수 있다.
-
-참고로 모델은 튜플이므로, first(x, y) = x와 last(x, y) = y에 대해,
-
-P와 Q는 first로 구해지며, sym을 넘어서 `*`와 `◦`는 last를 각각 i + 1번, j + 1번 하여 얻어지며, i, j는 P, Q의 카디널리티로 얻어지므로, 정의에서 Volcanoₖ,₁사용부분에 결정성에 문제가 생기는지는 걱정하지 않아도 좋다.
-
-범주론에서 대수적 구조 = 아벨 범주이다.
-준동형사상은 아벨 범주 위의 사상으로, 범주론을 다루지 않고자 한 지금의 설명에서는 엄밀한 준동형사상의 정의를 다루기 위해 아벨 범주를 다루고싶지 않기에, 다루지 않겠다.
-
-#### 자기 사상을 낀 관계 (Endomorphism)
-
-솔찍히 이게 등호랑 뭐가 다른지 원.....
-
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Endomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(endomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
-
-인 관계로, P와 Q사이에 자기 사상이 존재하는 관계이다.
-
-자기 사상 endomorphism이란,
-
-endomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)), dom f = codom f [i := card P][j := card Q]
-
-이다. 즉, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) = Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))이다.
-
-#### 다루고자 하는 단사 사상을 낀 관계 (Monomorphism)
-
-다루고자 하는 단사 사상을 낀 관계 (Monomorphism) (이)란,
-
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Monomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(monomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
-
-인 관계로, P와 Q사이의 다루고자 하는 단사 사상이 존재하는 관계이다.
-
-다루고자 하는 단사 사상 monomorphism은,
-
-monomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)), Surject(f) [i := card P][j := card Q]
-
-으로, 단사성을 가지는 준동형사상을 말한다.
-
-#### 다루고자 하는 전사 사상을 낀 관계 (Epimorphism)
-
-다루고자 하는 전사 사상을 낀 관계 (Epimorphism) (이)란,
-
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Epimorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(epimorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
-
-인 관계로, P와 Q사이의 다루고자 하는 전사 사상이 존재하는 관계이다.
-
-다루고자 하는 전사 사상 epimorphism은,
-
-epimorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)), Surject(f) [i := card P][j := card Q]
-
-으로, 단사성을 가지는 준동형사상을 말한다.
-
-#### 동형 (Isomorphism)
-
-동형 Isomorphism이란,
-
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Isomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(isomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
-
-인 관계로, P와 Q사이의 동형사상이 존재하는 관계이다.
-
-동형사상 isomorphism이란,
-
-isomorphism : monomorphism, monomorphism
-
-으로, 전사 사상이고 단사 사상인 사상으로,
-
-걍 일대일대응인 준동형사상이라고 보면 된다.
-
-동형인 두 대수구조에서, P, Q는 등수관계이므로,
-
-i = j이다.
-
-k = i = j라고 하면,
-
-Sym₁, ..., Symₖ가 동형사상을 통하여 일대일대응되어, y = f(x)에서, z ∈ {x, y} 로 잡으면, x와 y의 대수구조 종류가 같고, 성질이 같으며, 심볼의 모든 대수구조상의 특성이 동등함(=동치임)을 알수있다.
-
-요컨데, 동형임은 대수적 구조로서 완벽하게 동일함을 말한다.
-
-#### 자기동형 관계 (Automorphism)
-
-자기동형 관계 Automorphism(이)란,
-
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Automorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(automorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
-
-인 관계로, P와 Q사이의 자기동형사상이 존재하는 관계이다.
-
-지기동형사상 automorphism이란,
-
-automorphism : isomorphism, endomorphism
-
-으로, 동형 사상이고 자기 사상인 사상으로,
-
-동형이고, 자기사상을 낀 관계이다.
-
 ### 성질 목록
 
 아래 술어들은, Lava M 혹은 특별한 대상 M에 대해, 
@@ -423,6 +248,181 @@ BijectiveRightFunctor : "Biject((* x))"
 참고로, 저기서는 모든 x에 대한 오른쪽 함자이다.
 쌍따옴표가 있으니, sentence로써 작동하는것이다.
 
+### 연산 목록
+
+#### 왼쪽 역연산 (LeftInverse)
+
+왼쪽 역연산 LeftInverse은
+
+x LeftInverseOf(`*`) y ≜ (x `*`)⁻¹(y)
+
+으로, 왼쪽 연산에 대한 역연산으로,
+
+역함수가 존재할 조건인 일대일대응일것임을 만족하기위해
+
+왼쪽 함자 전단사성을 만족시켜야 한다.
+
+#### 오른쪽 역연산 (RightInverse)
+
+오른쪽 역연산 RightInverse은
+
+x RightInverseOf(`*`) y ≜ (`*` y)⁻¹(x)
+
+으로, 오른쪽 연산에 대한 역연산으로,
+
+역함수가 존재할 조건인 일대일대응일것임을 만족하기위해
+
+오른쪽 함자 전단사성을 만족시켜야 한다.
+
+### 관계 목록
+
+n항 관계 Φ는 집합 D에 대해, Φ ⊆ Dⁿ이다.
+
+술어 Φ는 집합 D에 대해, Φ ⊆ D이다.
+
+즉, 술어는 단항관계이다.
+
+술어 Φ가 집합 S에 대해, Φ ⊆ S일때,
+
+S = Dⁿ이면 Φ는 n항관계이다.
+
+그렇다. 나는 관계와 술어에 구분을 두지 않을것이고,
+
+따라서, 관계는 나에게 그저 튜플이 만족시키는 술어일 뿐이라는거다.
+
+아래 관계들은, FunctionalRelationship을 이용하여, 이루어지는 관계들에 대해 다룬다.
+
+FunctionalRelationship이란
+
+FunctionalRelationship(f, P, Q) : f[P] = Q
+
+인 술어로, P에 대한 f의 상이 Q인 관계이다.
+
+즉, (∃f, FunctionalRelationship(f, P, Q)) ⊨ R을 만족시키는 R들이다.
+
+(참고 : 앞으로, "학부 수준의 통상적 대수구조에서의~"가 붙을 말은, 에초에 학부 수준을 넘어서 범주론까지 설명하는건 뇌절이라고 보고, 대화 맥락과 주제가 "학부 수준의 통상적 대수구조에서의~"를 전제로 하는 경우를 대부분으로 하여 서술하고싶기에, "다루고자 하는~"이라고 하겠다.
+
+#### 등수관계 (equinumous)
+
+등수관계 equinumous란,
+
+P equinumous Q : (∃FunctionalRelationship(f, P, Q))(Biject(f))
+
+인 관계로, P에서 Q로가는 일대일대응이 존재하는 관계이다.
+
+P equinumous Q ↔ card P = card Q이다.
+
+#### 준동형 (Homomorphism)
+
+준동형 Homomorphism이란, 대게의 경우에는 다음을 만족한다.
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Homomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) [i := card P][j := card Q]
+
+저건 P와 Q사이의 준동형사상 f가 존재하는 관계이다.
+
+<br>
+
+준동형사상 homomorphism은
+
+homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : dom f = P, codom f = Q, (∀x, y ∈ dom f, f(x `*` y) = f(x) `◦` f(y)) [i := card P][j := card Q]
+
+이다.
+
+<br>
+
+마그마 이상을 이루는 P, Q에 대해, P에서 Q로 가는 사상 f가 (에초에 처음부터 함수인지 뭔지 제안하거나 명시하지 않았었음) 각각의 연산 `*`, `◦`에 대해, f(x `*` y) = f(x) `◦` f(y)를 만족시키므로, 준동형사상은 대수구조의 성질을 보존한다, 즉, 대수구조의 성질은 준동형사상에 양변을 대입하여, 다른 대수구조로 옮길수 있다.
+
+참고로 모델은 튜플이므로, first(x, y) = x와 last(x, y) = y에 대해,
+
+P와 Q는 first로 구해지며, sym을 넘어서 `*`와 `◦`는 last를 각각 i + 1번, j + 1번 하여 얻어지며, i, j는 P, Q의 카디널리티로 얻어지므로, 정의에서 Volcanoₖ,₁사용부분에 결정성에 문제가 생기는지는 걱정하지 않아도 좋다.
+
+범주론에서 대수적 구조 = 아벨 범주이다.
+준동형사상은 아벨 범주 위의 사상으로, 범주론을 다루지 않고자 한 지금의 설명에서는 엄밀한 준동형사상의 정의를 다루기 위해 아벨 범주를 다루고싶지 않기에, 다루지 않겠다.
+
+#### 자기 사상을 낀 관계 (Endomorphism)
+
+솔찍히 이게 등호랑 뭐가 다른지 원.....
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Endomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(endomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
+
+인 관계로, P와 Q사이에 자기 사상이 존재하는 관계이다.
+
+자기 사상 endomorphism이란,
+
+endomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)), dom f = codom f [i := card P][j := card Q]
+
+이다. 즉, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) = Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))이다.
+
+#### 다루고자 하는 단사 사상을 낀 관계 (Monomorphism)
+
+다루고자 하는 단사 사상을 낀 관계 (Monomorphism) (이)란,
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Monomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(monomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
+
+인 관계로, P와 Q사이의 다루고자 하는 단사 사상이 존재하는 관계이다.
+
+다루고자 하는 단사 사상 monomorphism은,
+
+monomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)), Surject(f) [i := card P][j := card Q]
+
+으로, 단사성을 가지는 준동형사상을 말한다.
+
+#### 다루고자 하는 전사 사상을 낀 관계 (Epimorphism)
+
+다루고자 하는 전사 사상을 낀 관계 (Epimorphism) (이)란,
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Epimorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(epimorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
+
+인 관계로, P와 Q사이의 다루고자 하는 전사 사상이 존재하는 관계이다.
+
+다루고자 하는 전사 사상 epimorphism은,
+
+epimorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)), Surject(f) [i := card P][j := card Q]
+
+으로, 단사성을 가지는 준동형사상을 말한다.
+
+#### 동형 (Isomorphism)
+
+동형 Isomorphism이란,
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Isomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(isomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
+
+인 관계로, P와 Q사이의 동형사상이 존재하는 관계이다.
+
+동형사상 isomorphism이란,
+
+isomorphism : monomorphism, monomorphism
+
+으로, 전사 사상이고 단사 사상인 사상으로,
+
+걍 일대일대응인 준동형사상이라고 보면 된다.
+
+동형인 두 대수구조에서, P, Q는 등수관계이므로,
+
+i = j이다.
+
+k = i = j라고 하면,
+
+Sym₁, ..., Symₖ가 동형사상을 통하여 일대일대응되어, y = f(x)에서, z ∈ {x, y} 로 잡으면, x와 y의 대수구조 종류가 같고, 성질이 같으며, 심볼의 모든 대수구조상의 특성이 동등함(=동치임)을 알수있다.
+
+요컨데, 동형임은 대수적 구조로서 완벽하게 동일함을 말한다.
+
+#### 자기동형 관계 (Automorphism)
+
+자기동형 관계 Automorphism(이)란,
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Automorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(automorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
+
+인 관계로, P와 Q사이의 자기동형사상이 존재하는 관계이다.
+
+지기동형사상 automorphism이란,
+
+automorphism : isomorphism, endomorphism
+
+으로, 동형 사상이고 자기 사상인 사상으로,
+
+동형이고, 자기사상을 낀 관계이다.
+
 ### 심볼 목록
 
 아래 심볼은, Volcano에서 사용 목적이 정해진 특수한 심볼이다
@@ -597,6 +597,8 @@ LeftQuasigroup(Volcanoₘ,₂(D, Sym₁, ..., Symₘ, `*`, `◦`)), RightQuasigr
 
 즉, 함자가 bijection이면 유사군이다
 
+유사군의 Laval 대수구조 명칭을 Quasigroup라 하자.
+
 #### 3. 2. 고리 (Loop, 위키백과에선 고리라고 했다만, 수학계에서는 루프라고 부른다고 카더라)
 
 이항연산 `*`가
@@ -605,7 +607,7 @@ Quasigroup(Volcano₁,₁(D, e, `*`)), UnitMagma(Volcano₁,₁(D, e, `*`)) ⊨ 
 
 일때, 이를 고리라고 하고, Laval 대수구조 명칭으로 Loop 이라 한다.
 
-Quasigroup에 대해서는 최하단 탐구 예정 노트 참고
+Quasigroup에 대해서는 최근 설명을 추가했으니, 위 항목 참고
 
 ### 성질, 예약 심볼, 대수구조에 대한 해설
 
@@ -1218,6 +1220,4 @@ ExtenderObject는 결국 M을 만족시키기에, 자신을 낳을(=모델링할
 
 ## NOTE
 
-작성중이고, 함자 (* x), (x *)가 준동형사상인 마그마가 유사군(quasigroup)이라고 하는데, 어떻게 적어야 할 지 모르겠으니, 범주론 배울때 배워보자.
-
-유사군의 Laval 대수구조 명칭을 Quasigroup라 하자.
+으아....
