@@ -107,7 +107,7 @@ homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym
 
 P와 Q는 first로 구해지며, sym을 넘어서 *와 ◦는 last를 각각 i + 1번, j + 1번 하여 얻어지며, i, j는 P, Q의 카디널리티로 얻어지므로, 정의에서 Volcanoₖ,₁사용부분에 결정성에 문제가 생기는지는 걱정하지 않아도 좋다.
 
-사실 준동형사상은 범주론에서 
+범주론(category theory)에서 '대수적 구조'는 아벨 범주(abelian category)라는 개념으로 체계화되고, 아벨 범주에서의 사상(morphism)을 준동형사상(homomorphism)이라 부르는 것으로 정립된다.
 
 #### 자기 사상을 낀 관계 (Endomorphism)
 
