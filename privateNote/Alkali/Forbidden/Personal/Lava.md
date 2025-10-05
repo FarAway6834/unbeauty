@@ -107,7 +107,8 @@ homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym
 
 P와 Q는 first로 구해지며, sym을 넘어서 *와 ◦는 last를 각각 i + 1번, j + 1번 하여 얻어지며, i, j는 P, Q의 카디널리티로 얻어지므로, 정의에서 Volcanoₖ,₁사용부분에 결정성에 문제가 생기는지는 걱정하지 않아도 좋다.
 
-범주론(category theory)에서 '대수적 구조'는 아벨 범주(abelian category)라는 개념으로 체계화되고, 아벨 범주에서의 사상(morphism)을 준동형사상(homomorphism)이라 부르는 것으로 정립된다.
+범주론에서 대수적 구조 = 아벨 범주이다.
+준동형사상은 아벨 범주 위의 사상으로, 범주론을 다루지 않고자 한 지금의 설명에서는 여기서 한 "만족된다고 하는 정의"로써 다루고자 하는 경우로 해도 좋다.
 
 #### 자기 사상을 낀 관계 (Endomorphism)
 
