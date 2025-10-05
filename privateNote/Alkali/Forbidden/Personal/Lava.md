@@ -85,13 +85,11 @@ P equinumous Q ↔ card P = card Q이다.
 
 #### 준동형 (Homomorphism)
 
-준동형 Homomorphism이란,
+준동형 Homomorphism이란, 대게의 경우에는 다음을 만족한다.
 
 Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Homomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *)) [i := card P][j := card Q]
 
-인 괸계로, 
-
-P와 Q사이의 준동형사상 f가 존재하는 관계이다.
+저건 P와 Q사이의 준동형사상 f가 존재하는 관계이다.
 
 <br>
 
@@ -108,6 +106,8 @@ homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym
 참고로 모델은 튜플이므로, first(x, y) = x와 last(x, y) = y에 대해,
 
 P와 Q는 first로 구해지며, sym을 넘어서 *와 ◦는 last를 각각 i + 1번, j + 1번 하여 얻어지며, i, j는 P, Q의 카디널리티로 얻어지므로, 정의에서 Volcanoₖ,₁사용부분에 결정성에 문제가 생기는지는 걱정하지 않아도 좋다.
+
+사실 준동형사상은 범주론에서 
 
 #### 자기 사상을 낀 관계 (Endomorphism)
 
