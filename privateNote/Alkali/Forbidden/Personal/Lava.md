@@ -82,7 +82,14 @@ FunctionalRelationshiper₁(f) ≜ graph (f FunctionalRelationshiper₀)
 
 함수 f에서 함자 (f FunctionalRelationshiper₀)의 graph로 간다.
 
-함자 (f FunctionalRelationshiper₀)는 
+함자 (f FunctionalRelationshiper₀)는 f의 상을 구하는 함자이기에,
+graph (f FunctionalRelationshiper₀)는 집합 S와 그 S에 대한 f의 상의 관계를 이루게된다.
+
+3. FunctionalRelationship
+
+집합 U×U에서 Func(U, U)로 가는 이항연산
+
+P FunctionalRelationship Q ≜ f s.t. FunctionalRelationshiper₁(f)
 
 ### 성질 목록
 
