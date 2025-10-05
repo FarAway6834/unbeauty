@@ -75,11 +75,51 @@ FunctionalRelationship(f, P, Q) : f[P] = Q
 
 등수관계 equinumous란,
 
-P equinumous Q : (∀FunctionalRelationship(f, P, Q))(Biject(f))
+P equinumous Q : (∃FunctionalRelationship(f, P, Q))(Biject(f))
 
 인 관계로, P에서 Q로가는 일대일대응이 존재하는 관계이다.
 
 P equinumous Q ↔ card P = card Q이다.
+
+#### 준동형 (Homomorphism)
+
+준동형 Homomorphism이란,
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Homomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *)) [i := card P][j := card Q]
+
+인 괸계로, 
+
+P와 Q사이의 준동형사상 f가 존재하는 관계이다.
+
+<br>
+
+준동형사상 homomorphism은
+
+homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)) : dom f = P, codom f = Q, (∀x, y ∈ dom f, f(x * y) = f(x) ◦ f(y)) [i := card P][j := card Q]
+
+이다.
+
+<br>
+
+마그마 이상을 이루는 P, Q에 대해, P에서 Q로 가는 사상 f가 (에초에 처음부터 함수인지 뭔지 제안하거나 명시하지 않았었음) 각각의 연산 *, ◦에 대해, f(x * y) = f(x) ◦ f(y)를 만족시키므로, 준동형사상은 대수구조의 성질을 보존한다, 즉, 대수구조의 성질은 준동형사상에 양변을 대입하여, 다른 대수구조로 옮길수 있다.
+
+참고로 모델은 튜플이므로, first(x, y) = x와 last(x, y) = y에 대해,
+
+P와 Q는 first로 구해지며, sym을 넘어서 *와 ◦는 last를 각각 i + 1번, j + 1번 하여 얻어지며, i, j는 P, Q의 카디널리티로 얻어지므로, 정의에서 Volcanoₖ,₁사용부분에 결정성에 문제가 생기는지는 걱정하지 않아도 좋다.
+
+#### 동형 (Isomorphism)
+
+동형 Isomorphism이란,
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Isomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(isomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))) [i := card P][j := card Q]
+
+인 관계로, P와 Q사이의 동형사상이 존재하는 관계이다.
+
+동형사상 isomorphism이란,
+
+isomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)), Biject(f)(f) [i := card P][j := card Q]
+
+으로, 일대일대응인 준동형사상이다.
 
 ### 성질 목록
 
@@ -100,7 +140,7 @@ M ⊨ Φ : "M이 성질 Φ를 만족한다"
 
 ~배고프니까 천장에서 다랑어가 쏳아졌으면 좋겠다~
 
-참로로 특별한 대상 M에 대해 다루는 경우는 `특-`을 붙여서 "특성질"라고 한다.
+참고로 특별한 대상 M에 대해 다루는 경우는 `특-`을 붙여서 "특성질"라고 한다.
 
 #### 결합법칙 (associative property)
 
