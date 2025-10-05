@@ -45,6 +45,45 @@ StructureForm이 삼차원 행렬이기에, StructureFormₗ,ₘ,ₙ식으로 �
 
 ## 대수 구조 공부
 
+### 관계 목록
+
+n항 관계 Φ는 집합 D에 대해, Φ ⊆ Dⁿ이다.
+
+술어 Φ는 집합 D에 대해, Φ ⊆ D이다.
+
+즉, 술어는 단항관계이다.
+
+술어 Φ가 집합 S에 대해, Φ ⊆ S일때,
+
+S = Dⁿ이면 Φ는 n항관계이다.
+
+그렇다. 나는 관계와 술어에 구분을 두지 않을것이고,
+
+따라서, 관계는 나에게 그저 튜플이 만족시키는 술어일 뿐이라는거다.
+
+1. FunctionalRelationshiper₀
+
+그로덴티크 우주 U에 대해,
+Func(U, U) × U위의 이항연산 FunctionalRelationshiper₀에 대해,
+
+f FunctionalRelationshiper₀ S ≜ f[S]
+
+로 FunctionalRelationshiper₀는 정의된다.
+
+즉, S에 대한 f의 상을 구하는 연산자이다.
+
+2. FunctionalRelationshiper₁
+
+함수 FunctionalRelationshiper₁은
+
+FunctionalRelationshiper₁(f) ≜ graph (f FunctionalRelationshiper₀)
+
+로 정의된다.
+
+함수 f에서 함자 (f FunctionalRelationshiper₀)의 graph로 간다.
+
+함자 (f FunctionalRelationshiper₀)는 
+
 ### 성질 목록
 
 아래 술어들은, Lava M에 대해, 
