@@ -113,7 +113,7 @@ P equinumous Q ↔ card P = card Q이다.
 
 준동형 Homomorphism이란, 대게의 경우에는 다음을 만족한다.
 
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Homomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *)) [i := card P][j := card Q]
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Homomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) [i := card P][j := card Q]
 
 저건 P와 Q사이의 준동형사상 f가 존재하는 관계이다.
 
@@ -121,20 +121,20 @@ Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Homomorphism Volcanoⱼ,₁(Q, Sym₁,
 
 준동형사상 homomorphism은
 
-homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)) : dom f = P, codom f = Q, (∀x, y ∈ dom f, f(x * y) = f(x) ◦ f(y)) [i := card P][j := card Q]
+homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : dom f = P, codom f = Q, (∀x, y ∈ dom f, f(x `*` y) = f(x) `◦` f(y)) [i := card P][j := card Q]
 
 이다.
 
 <br>
 
-마그마 이상을 이루는 P, Q에 대해, P에서 Q로 가는 사상 f가 (에초에 처음부터 함수인지 뭔지 제안하거나 명시하지 않았었음) 각각의 연산 *, ◦에 대해, f(x * y) = f(x) ◦ f(y)를 만족시키므로, 준동형사상은 대수구조의 성질을 보존한다, 즉, 대수구조의 성질은 준동형사상에 양변을 대입하여, 다른 대수구조로 옮길수 있다.
+마그마 이상을 이루는 P, Q에 대해, P에서 Q로 가는 사상 f가 (에초에 처음부터 함수인지 뭔지 제안하거나 명시하지 않았었음) 각각의 연산 `*`, `◦`에 대해, f(x `*` y) = f(x) `◦` f(y)를 만족시키므로, 준동형사상은 대수구조의 성질을 보존한다, 즉, 대수구조의 성질은 준동형사상에 양변을 대입하여, 다른 대수구조로 옮길수 있다.
 
 참고로 모델은 튜플이므로, first(x, y) = x와 last(x, y) = y에 대해,
 
-P와 Q는 first로 구해지며, sym을 넘어서 *와 ◦는 last를 각각 i + 1번, j + 1번 하여 얻어지며, i, j는 P, Q의 카디널리티로 얻어지므로, 정의에서 Volcanoₖ,₁사용부분에 결정성에 문제가 생기는지는 걱정하지 않아도 좋다.
+P와 Q는 first로 구해지며, sym을 넘어서 `*`와 `◦`는 last를 각각 i + 1번, j + 1번 하여 얻어지며, i, j는 P, Q의 카디널리티로 얻어지므로, 정의에서 Volcanoₖ,₁사용부분에 결정성에 문제가 생기는지는 걱정하지 않아도 좋다.
 
 범주론에서 대수적 구조 = 아벨 범주이다.
-준동형사상은 아벨 범주 위의 사상으로, 범주론을 다루지 않고자 한 지금의 설명에서는 여기서 한 "만족된다고 하는 정의"로써 다루고자 하는 경우로 해도 좋다.
+준동형사상은 아벨 범주 위의 사상으로, 범주론을 다루지 않고자 한 지금의 설명에서는 엄밀한 준동형사상의 정의를 다루기 위해 아벨 범주를 다루고싶지 않기에, 다루지 않겠다.
 
 #### 자기 사상을 낀 관계 (Endomorphism)
 
