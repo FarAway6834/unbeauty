@@ -109,6 +109,20 @@ homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym
 
 P와 Q는 first로 구해지며, sym을 넘어서 *와 ◦는 last를 각각 i + 1번, j + 1번 하여 얻어지며, i, j는 P, Q의 카디널리티로 얻어지므로, 정의에서 Volcanoₖ,₁사용부분에 결정성에 문제가 생기는지는 걱정하지 않아도 좋다.
 
+#### 자기 사상을 낀 관계 (Endomorphism)
+
+솔찍히 이게 등호랑 뭐가 다른지 원.....
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Endomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(endomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))) [i := card P][j := card Q]
+
+인 관계로, P와 Q사이에 자기 사상이 존재하는 관계이다.
+
+자기 사상 endomorphism이란,
+
+endomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)), dom f = codom f [i := card P][j := card Q]
+
+이다. 즉, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) = Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))이다.
+
 #### 다루고자 하는 단사 사상을 낀 관계 (Monomorphism)
 
 다루고자 하는 단사 사상을 낀 관계 (Monomorphism) (이)란,
@@ -162,6 +176,22 @@ k = i = j라고 하면,
 Sym₁, ..., Symₖ가 동형사상을 통하여 일대일대응되어, y = f(x)에서, z ∈ {x, y} 로 잡으면, x와 y의 대수구조 종류가 같고, 성질이 같으며, 심볼의 모든 대수구조상의 특성이 동등함(=동치임)을 알수있다.
 
 요컨데, 동형임은 대수적 구조로서 완벽하게 동일함을 말한다.
+
+#### 자기동형 관계 (Automorphism)
+
+자기동형 관계 Automorphism(이)란,
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Automorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(automorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))) [i := card P][j := card Q]
+
+인 관계로, P와 Q사이의 자기동형사상이 존재하는 관계이다.
+
+지기동형사상 automorphism이란,
+
+automorphism : isomorphism, endomorphism
+
+으로, 동형 사상이고 자기 사상인 사상으로,
+
+동형이고, 자기사상을 낀 관계이다.
 
 ### 성질 목록
 
@@ -345,8 +375,6 @@ Biject : Surject, Inject
 즉, 전사이며 단사인것이 전단사다.
 
 전단사성을 만족시키는 함수를 일대일대응이라고 한다.
-
-#### 잠시만
 
 ### 심볼 목록
 
