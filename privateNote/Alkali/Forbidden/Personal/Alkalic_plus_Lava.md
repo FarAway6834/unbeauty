@@ -1,5 +1,12 @@
 # Alkalic + Lava
 
+Alkalic은 일부로 모델론을 입력 가능하게 구상되었다.
+왜일까?
+
+... 바로 수학기초론이기 때문이며, **Lava System**을 이식하기 위함이다
+
+#### 이건 필연이다 ; Alkalic + Lava
+
 ## Alkalic
 
 ````markdown
