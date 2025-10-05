@@ -45,6 +45,32 @@ StructureForm이 삼차원 행렬이기에, StructureFormₗ,ₘ,ₙ식으로 �
 
 ## 대수 구조 공부
 
+### 연산 목록
+
+#### 왼쪽 역연산 (LeftInverse)
+
+왼쪽 역연산 LeftInverse은
+
+x LeftInverseOf(*) y ≜ (x *)⁻¹(y)
+
+으로, 왼쪽 연산에 대한 역연산으로,
+
+역함수가 존재할 조건인 일대일대응일것임을 만족하기위해
+
+왼쪽 함자 전단사성을 만족시켜야 한다.
+
+#### 오른쪽 역연산 (RightInverse)
+
+오른쪽 역연산 RightInverse은
+
+x RightInverseOf(*) y ≜ (* y)⁻¹(x)
+
+으로, 오른쪽 연산에 대한 역연산으로,
+
+역함수가 존재할 조건인 일대일대응일것임을 만족하기위해
+
+오른쪽 함자 전단사성을 만족시켜야 한다.
+
 ### 관계 목록
 
 n항 관계 Φ는 집합 D에 대해, Φ ⊆ Dⁿ이다.
@@ -377,6 +403,26 @@ Biject : Surject, Inject
 
 전단사성을 만족시키는 함수를 일대일대응이라고 한다.
 
+#### 왼쪽 함자 전단사성 (BijectiveLeftFunctor)
+
+왼쪽 힘자 전단사상이란, 다음과 같은 법칙성질이다.
+
+BijectiveLeftFunctor : "Biject((x *))"
+
+말 그대로 왼쪽 함자가 전단사임을 말하는거다.
+참고로, 저기서는 모든 x이 대한 왼쪽 함자이다.
+쌍따옴표가 있으니, sentence로써 작동하는것이다.
+
+#### 오른쪽 함자 전단사성 (BijectiveRightFunctor)
+
+오른쪽 힘자 전단사상이란, 다음과 같은 법칙성질이다.
+
+BijectiveRightFunctor : "Biject((* x))"
+
+말 그대로 오른쪽 함자가 전단사임을 말하는거다.
+참고로, 저기서는 모든 x에 대한 오른쪽 함자이다.
+쌍따옴표가 있으니, sentence로써 작동하는것이다.
+
 ### 심볼 목록
 
 아래 심볼은, Volcano에서 사용 목적이 정해진 특수한 심볼이다
@@ -530,6 +576,18 @@ Laval 대수구조 명칭을 CommutativeGroup로 한다.
 Group(Volcano₁,₁(D, e, `*`)) s.t. D = {e} ⊨ "이항연산 `*`가 <{e}, `*`>를 이룸"
 
 일때, 이를 자명군이라고 하고, Laval 대수구조 명칭을 TrivialGroup 이라 한다
+
+#### 3. 1. 1. 왼쪽 유사군 (LeftQuasigroup)
+
+Volcanoₘ,₂(D, Sym₁, ..., Symₘ, `*`, `◦`) [`◦` := LeftInverseOf(`*`)] ⊨ "이항연산 `*`가 (D, `*`, `◦`)를 이룸", BijectiveLeftFunctor
+
+인 `*`라면, 즉, 당연히 `*`는 마그마니까, 그 마그마가, 왼쪽 함자 전단사성을 만족시킨다면, 이를 왼쪽 유사군이라고 한다.
+
+#### 3. 1. 2. 오른쪽 유사군 (RightQuasigroup)
+
+Volcanoₘ,₂(D, Sym₁, ..., Symₘ, `*`, `◦`) [`◦` := RightInverseOf(`*`)] ⊨ "이항연산 `*`가 (D, `*`, `◦`)를 이룸", BijectiveRightFunctor
+
+인 `*`라면, 즉, 당연히 `*`는 마그마니까, 그 마그마가, 오른쪽 함자 전단사성을 만족시킨다면, 이를 오른쪽 유사군이라고 한다.
 
 #### 3. 2. 고리 (Loop, 위키백과에선 고리라고 했다만, 수학계에서는 루프라고 부른다고 카더라)
 
