@@ -140,27 +140,27 @@ P와 Q는 first로 구해지며, sym을 넘어서 `*`와 `◦`는 last를 각각
 
 솔찍히 이게 등호랑 뭐가 다른지 원.....
 
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Endomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(endomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))) [i := card P][j := card Q]
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Endomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(endomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
 
 인 관계로, P와 Q사이에 자기 사상이 존재하는 관계이다.
 
 자기 사상 endomorphism이란,
 
-endomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)), dom f = codom f [i := card P][j := card Q]
+endomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)), dom f = codom f [i := card P][j := card Q]
 
-이다. 즉, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) = Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))이다.
+이다. 즉, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) = Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))이다.
 
 #### 다루고자 하는 단사 사상을 낀 관계 (Monomorphism)
 
 다루고자 하는 단사 사상을 낀 관계 (Monomorphism) (이)란,
 
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Monomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(monomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))) [i := card P][j := card Q]
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Monomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(monomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
 
 인 관계로, P와 Q사이의 다루고자 하는 단사 사상이 존재하는 관계이다.
 
 다루고자 하는 단사 사상 monomorphism은,
 
-monomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)), Surject(f) [i := card P][j := card Q]
+monomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)), Surject(f) [i := card P][j := card Q]
 
 으로, 단사성을 가지는 준동형사상을 말한다.
 
