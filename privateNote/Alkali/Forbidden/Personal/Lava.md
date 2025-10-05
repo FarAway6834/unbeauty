@@ -168,13 +168,13 @@ monomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, S
 
 다루고자 하는 전사 사상을 낀 관계 (Epimorphism) (이)란,
 
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Epimorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(epimorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))) [i := card P][j := card Q]
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Epimorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(epimorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
 
 인 관계로, P와 Q사이의 다루고자 하는 전사 사상이 존재하는 관계이다.
 
 다루고자 하는 전사 사상 epimorphism은,
 
-epimorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)), Surject(f) [i := card P][j := card Q]
+epimorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`)), Surject(f) [i := card P][j := card Q]
 
 으로, 단사성을 가지는 준동형사상을 말한다.
 
@@ -182,7 +182,7 @@ epimorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym�
 
 동형 Isomorphism이란,
 
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Isomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(isomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))) [i := card P][j := card Q]
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Isomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(isomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
 
 인 관계로, P와 Q사이의 동형사상이 존재하는 관계이다.
 
@@ -208,7 +208,7 @@ Sym₁, ..., Symₖ가 동형사상을 통하여 일대일대응되어, y = f(x)
 
 자기동형 관계 Automorphism(이)란,
 
-Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Automorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(automorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))) [i := card P][j := card Q]
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`) Automorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`) : (∃FunctionalRelationship(f, P, Q))(automorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, `*`), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, `◦`))) [i := card P][j := card Q]
 
 인 관계로, P와 Q사이의 자기동형사상이 존재하는 관계이다.
 
