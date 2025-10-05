@@ -240,6 +240,14 @@ EntireInvertiblity : "x isInvertible"
 
 로써, 모든 x에 대해서 isInvertible인 일반명제임을 술어 Commutative과 같은 경우로 표기했다는 사실로써 능히 알 수 있다.
 
+#### 전사성
+
+Surject : codom f = {f(x) | x ∈ dom f}
+
+#### 단사성
+
+Inject : ∀x, y ∈ dom f, f(x) = f(y) → x = y
+
 ### 심볼 목록
 
 아래 심볼은, Volcano에서 사용 목적이 정해진 특수한 심볼이다
