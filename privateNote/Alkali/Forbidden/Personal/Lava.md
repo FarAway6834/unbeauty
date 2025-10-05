@@ -61,43 +61,25 @@ S = Dⁿ이면 Φ는 n항관계이다.
 
 따라서, 관계는 나에게 그저 튜플이 만족시키는 술어일 뿐이라는거다.
 
-1. FunctionalRelationshiper₀
+아래 관계들은, FunctionalRelationship을 이용하여, 이루어지는 관계들에 대해 다룬다.
 
-그로덴티크 우주 U에 대해,
-Func(U, U) × U위의 이항연산 FunctionalRelationshiper₀에 대해,
+FunctionalRelationship이란
 
-f FunctionalRelationshiper₀ S ≜ f[S]
+FunctionalRelationship(f, P, Q) : f[P] = Q
 
-로 FunctionalRelationshiper₀는 정의된다.
+인 술어로, P에 대한 f의 상이 Q인 관계이다.
 
-즉, S에 대한 f의 상을 구하는 연산자이다.
+즉, (∃f, FunctionalRelationship(f, P, Q)) ⊨ R을 만족시키는 R들이다.
 
-2. FunctionalRelationshiper₁
+#### 등수관계 (equinumous)
 
-함수 FunctionalRelationshiper₁은
+등수관계 equinumous란,
 
-FunctionalRelationshiper₁(f) ≜ graph (f FunctionalRelationshiper₀)
+P equinumous Q : (∀FunctionalRelationship(f, P, Q))(Biject(f))
 
-로 정의된다.
+인 관계로, P에서 Q로가는 일대일대응이 존재하는 관계이다.
 
-함수 f에서 함자 (f FunctionalRelationshiper₀)의 graph로 간다.
-
-함자 (f FunctionalRelationshiper₀)는 f의 상을 구하는 함자이기에,
-graph (f FunctionalRelationshiper₀)는 집합 S와 그 S에 대한 f의 상의 관계를 이루게된다.
-
-3. FunctionalRelationship
-
-집합 U×U에서 Func(U, U)로 가는 이항연산 FunctionalRelationship은
-
-P FunctionalRelationship Q ≜ f s.t. P FunctionalRelationshiper₁(f) Q
-
-이다.
-
-이때 f에 대한 이항 관계 FunctionalRelationshiper₁(f)는 
-
-집합 P와 그 P에 대한 f의 상의 관계로,
-
-Q가 그 상임을 만족하는 f가 존재하여야 정의된다
+P equinumous Q ↔ card P = card Q이다.
 
 ### 성질 목록
 
