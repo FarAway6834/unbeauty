@@ -71,6 +71,8 @@ FunctionalRelationship(f, P, Q) : f[P] = Q
 
 즉, (∃f, FunctionalRelationship(f, P, Q)) ⊨ R을 만족시키는 R들이다.
 
+(참고 : 앞으로, "학부 수준의 통상적 대수구조에서의~"가 붙을 말은, 에초에 학부 수준을 넘어서 범주론까지 설명하는건 뇌절이라고 보고, 대화 맥락과 주제가 "학부 수준의 통상적 대수구조에서의~"를 전제로 하는 경우를 대부분으로 하여 서술하고싶기에, "다루고자 하는~"이라고 하겠다.
+
 #### 등수관계 (equinumous)
 
 등수관계 equinumous란,
@@ -107,6 +109,34 @@ homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym
 
 P와 Q는 first로 구해지며, sym을 넘어서 *와 ◦는 last를 각각 i + 1번, j + 1번 하여 얻어지며, i, j는 P, Q의 카디널리티로 얻어지므로, 정의에서 Volcanoₖ,₁사용부분에 결정성에 문제가 생기는지는 걱정하지 않아도 좋다.
 
+#### 다루고자 하는 단사 사상을 낀 관계 (Monomorphism)
+
+다루고자 하는 단사 사상을 낀 관계 (Monomorphism) (이)란,
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Monomorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(monomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))) [i := card P][j := card Q]
+
+인 관계로, P와 Q사이의 다루고자 하는 단사 사상이 존재하는 관계이다.
+
+다루고자 하는 단사 사상 monomorphism은,
+
+monomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)), Surject(f) [i := card P][j := card Q]
+
+으로, 단사성을 가지는 준동형사상을 말한다.
+
+#### 다루고자 하는 전사 사상을 낀 관계 (Epimorphism)
+
+다루고자 하는 전사 사상을 낀 관계 (Epimorphism) (이)란,
+
+Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Epimorphism Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦) : (∃FunctionalRelationship(f, P, Q))(epimorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦))) [i := card P][j := card Q]
+
+인 관계로, P와 Q사이의 다루고자 하는 전사 사상이 존재하는 관계이다.
+
+다루고자 하는 전사 사상 epimorphism은,
+
+epimorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)), Surject(f) [i := card P][j := card Q]
+
+으로, 단사성을 가지는 준동형사상을 말한다.
+
 #### 동형 (Isomorphism)
 
 동형 Isomorphism이란,
@@ -117,9 +147,19 @@ Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *) Isomorphism Volcanoⱼ,₁(Q, Sym₁, 
 
 동형사상 isomorphism이란,
 
-isomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)) : homomorphism(f, Volcanoᵢ,₁(P, Sym₁, ..., Symᵢ, *), Volcanoⱼ,₁(Q, Sym₁, ..., Symⱼ, ◦)), Biject(f)(f) [i := card P][j := card Q]
+isomorphism : monomorphism, monomorphism
 
-으로, 일대일대응인 준동형사상이다.
+으로, 전사 사상이고 단사 사상인 사상으로,
+
+걍 일대일대응인 준동형사상이라고 보면 된다.
+
+동형인 두 대수구조에서, P, Q는 등수관계이므로,
+
+i = j이다.
+
+k = i = j라고 하면,
+
+Sym₁, ..., Symₖ가 동형사상을 통하여 일대일대응되어, y = f(x)에서, z ∈ {x, y} 로 잡으면, x와 y의 대수구조 종류가 같고, 성질이 같으며, 심볼의 모든 대수구조상의 특성이 동등함(=동치임)을 알수있다.
 
 ### 성질 목록
 
