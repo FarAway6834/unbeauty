@@ -6,7 +6,7 @@
 
 어떤 대수학 명제는 ε-δ 없이 증명될수 없음을 밝힌 점.
 
-````
+````markdown
 # Euler
 
 ```
@@ -82,7 +82,91 @@ Q.E.D.
 
 어떤 점 변항이 0에 한없이 근접하는 행태를 보이기 때문이다
 
-## 과학구조 (유추 구조, 가정구조공리술어, 통계구조생성자, 귀추 구조)
+## 수학의 메타분석 구조
+
+SemiProbability와 UBDG라는 수학의 메타분석 구조를 소개한다.
+
+이 구조가 왜 발생하는지 솔찍히말하자면 너무 궁금하다.
+
+## SemiProbability
+
+```markdown
+# semiProbability and ㄴStatisticalMetaSystem
+
+일단 말하기 앞서 다음과 같이 공리적 확률론을 분할할 생각임.
+
+Kolmogorov’s axioms
+ - Probability (including contingent proposition)
+ - semiProbability (allow only formal proposition)
+
+## semiProbability on DiscreteUniformDistribution (DUD-semiProb)
+
+표본공간 Ω가 이산균등분포인 경우다.
+이 경우 역시 두가지로 나누겠다.
+
+DUD-semiProb
+ - Finite-DUDSemiProb (|Ω| < ℵ₀)
+ - infinite-DUDSemiProb (|Ω| = ℵ₀)
+
+### Finite-DUDSemiProb (F-DUD-SmPr)
+
+이 경우에는 매우 특이한 상황이 된다.
+
+P(Φ)가 Φ일 확률이라고 치면,
+
+P(Φ) = |Mod(Φ)|/|Ω|
+
+를 만족하기 때문이다.
+
+따라서 이때 두가지를 정의하겠다.
+
+ㄴSIZE ≜ |Ω|
+ㄴNumberOfCase ≜ ㄴSIZE P
+
+굳이 `ㄴ`을 쓴 이유는 원래는 `ㄱSIZE`, `ㄱNumberOfCase`와 같이 써서 혹시모를 중복을 피하려고 했는데, `ㄱ`이 부정(Nagation) 기호같이 생긴 탓에 `ㄴ`을 골랐다.
+
+표본공간의 측도가 ㄴSIZE이 되고, 경우의 수가 ㄴNumberOfCase가 되는데, P(Φ) = |Mod(Φ)|/|Ω|이기에,
+이런 P를 ㄴSIZE배 해준 ㄴSIZE P는  |Mod(Φ)|이기에, ㄴNumberOfCase는 |Mod(Φ)|이다.
+
+이렇게 두가지 심볼 ㄴSIZE 및 ㄴNumberOfCase가 정의된 모델을 ㄴStatisticalMetaSystem 이라 하겠다.
+
+#### ㄴStatisticalMetaSystem (semiProbability에서 새로 정의한 ZFC를 분석하는 Meta System. (사실상 Model이고 확률론 공리계의 Extension처럼 동작하지만, 그냥 메타적으로 분석하니까 메타시스템이라고 함.))
+
+ㄴStatisticalMetaSystem는 다음 Symbol이 정의되고 다음 Axiom이 만족된 Kolmogorov’s Axioms & ZFC 위의 Model Structure이다.
+
+1. Constant Symbol Assignment
+
+ㄴSIZE ≜ |Ω|
+
+2. Function Symbol Assignment
+
+ㄴNumberOfCase ≜ ㄴSIZE P
+
+3. ㄴStatisticalMetaSystem Axioms
+
+∀A ⊆ Ω, P(A) = |A|/|Ω|
+
+4. ㄴSMS Notation (선택사항, 그냥 표기 방식 명시)
+
+ㄴNumberOfCase(Predicate)
+ = ㄴNumberOfCase(Predicate ∩ Ω
+ = ㄴNumberOfCase(Mod(Predicate) ∩ Ω)
+
+식으로, 어떤 명제를 술어로 다루겠다는거. 어짜피 술어가 집합이니까 이 표기법은 옳은 표기법이지만, 명확히 할 필요가 있음.
+
+이하에서, ㄴSIZE = t면, 그 ㄴStatisticalMetaSystem을 t-ㄴSMS 라고 하겠다.
+
+t-ㄴSMS에서, 케이스의 수 (ㄴNumberOfCase)는 술어(=문장)가 만족되는 케이스의 수이기에, 모델집합의 카디널을 다루는것이다.
+
+또한 이건, ZFC에 대한 메타분석처럼 볼 수도 있다. 판단 대상이 ZFC상의 논리를 가지고, 모델집합의 측도를 분석하기 때문이다.
+
+매우 흥미롭고, 조심해야할것같다.
+```
+
+## UBDG (a.k.a. 과학구조)
+
+```markdown
+# 과학구조 (유추 구조, 가정구조공리술어, 통계구조생성자, 귀추 구조)
 
 유추 구조, 가정 구조, 귀추 구조는 각각 수학적 수식 혹은 술어이거나 대수 구조이다.
 
@@ -94,7 +178,7 @@ N.B. 씨발씨발 좆좆같네 아아아악이거는 절대 좆 shit 등신같�
 
 씨발 좆좆좆같은 추론내용에 대한 간섭 싫어
 
-### 유추 구조
+## 유추 구조
 
 Zhegalkin Polynomial에서,
 
@@ -105,7 +189,7 @@ Zhegalkin Polynomial에서,
 lim Ψₖ(Φ) : ∀n ∈ ℕ, Φₙ (k → ∞)
 이므로, 이러한 Ψ를 유추 구조라 한다.
 
-### 통계 구조
+## 통계 구조
 
 정해진 y에 대해, x ↔ y를 FuzzyLogic으로 쓰면,
 
@@ -125,7 +209,7 @@ Alkalic에서 논리언어의 모델을 H로 바꿔놓는 개짓거리를 하는
 
 통계 구조의 정의는 아래 참고.
 
-#### 왜 쓰나?
+### 왜 쓰나?
 
 통계 구조 S(X)에 대해, 이 통계 구조가 본래의 부울 도메인 {0, 1}에서 정상작동할것이므로,
 
@@ -147,11 +231,11 @@ B)
 
 함수 S가 바로 "통계구조생성자"이며, 이것이 통계구조의 정의이다.
 
-##### 그래서 왜 큰 수의 법칙을 따르는걸 만들어놓느냐?
+#### 그래서 왜 큰 수의 법칙을 따르는걸 만들어놓느냐?
 
 귀추 구조로 유추 구조 Ψ가 의미하는 바가 가설이라는 귀추 구조를 만들수 있기 때문이다.
 
-### 가정 구조
+## 가정 구조
 
 다음 술어 μ를 보라.
 μ(H) : Ψ(Φ) = H ∧ (⊨Ψ(Φ))
@@ -166,7 +250,7 @@ B)
 
 원래 유추구조에서 판단 불가능한걸 의미해석 중간에 빼돌려서 가능하게 함.
 
-### 귀추 구조
+## 귀추 구조
 
 가설을 공리로 증명하는 규칙도입계 모델 M을 만들고,
 
@@ -176,7 +260,7 @@ B)
 
 절차로 만족시키면, 증명될것이므로, 이러한 M을 귀추 구조라고 한다.
 
-### 마치며
+## 마치며
 
 Q. 추론의 모델링인가요?
 A. 그냥 대수구조가지고 추론을 모델링했다? 지랄하네 목적에 벗어나는 과대해석이지? 그냥 어떤 추론과정을 모델링한것과 같은 결과라고 하면 뭐 맞긴한데 그게 핵심이 아니라고. 핵심은, 내가 추론에 대해서 탐구하는중에 대수구조를 하나 발견한거고, 저건 추론이 아니라 대수구조야. 씨발 추론을 모델링한 목적에 충실하지 않은데 뮤ㅓㄴ 개소리야? 에초에 만들어진 이유가 우연히 발견한 대수구조이고, 그 대수구조는 추론의 목적의 충실하지 않으니 수정해야하네가 개소리된다 죽어버려 개씨발아!! 개소리하지마!! 거짓 거짓 거짓!! 추론의 모델링? 아니오 아니오아니오 씨발아 아닙니다!
@@ -184,3 +268,4 @@ Q. 추론 과정을 모델링한것과 같은 결과네요?
 A. 개씨발새끼야 그럼 미적분은 미분소로 하는게 참이고 무한소쓰는게 표준해석하기겠지 죽어라!! 미적분이 역사적으로 무한소를 쎴지, 초실수체를 다루는 연상이 아닌 δ-ε논법적 연산인것처럼, 과학구조도, 전혀 추론과정따위 좆을 다루능게 아니라 그냥 평범하게 규칙도입계 대수를 이용한 대수구조라고요!!
 
 이 저주받은건 이름부터 "우연이발견한대수구조"(UBDG : U연이 Bar견한 Desu gujo)로 해서 UBDG₀, UBDG₁, UBDG₂, UBDG₃로 고쳐여겠어. 이름이 하느님아버지와 예수님의 분노를 사서 저주받았기에 이렇게 오해받는걸꺼야.
+```
