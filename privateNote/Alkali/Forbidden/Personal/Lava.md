@@ -87,9 +87,17 @@ graph (f FunctionalRelationshiper₀)는 집합 S와 그 S에 대한 f의 상의
 
 3. FunctionalRelationship
 
-집합 U×U에서 Func(U, U)로 가는 이항연산
+집합 U×U에서 Func(U, U)로 가는 이항연산 FunctionalRelationship은
 
-P FunctionalRelationship Q ≜ f s.t. FunctionalRelationshiper₁(f)
+P FunctionalRelationship Q ≜ f s.t. P FunctionalRelationshiper₁(f) Q
+
+이다.
+
+이때 f에 대한 이항 관계 FunctionalRelationshiper₁(f)는 
+
+집합 P와 그 P에 대한 f의 상의 관계로,
+
+Q가 그 상임을 만족하는 f가 존재하여야 정의된다
 
 ### 성질 목록
 
