@@ -265,13 +265,23 @@ BijectiveRightFunctor : "Biject((* x))"
 참고로, 저기서는 모든 x에 대한 오른쪽 함자이다.
 쌍따옴표가 있으니, sentence로써 작동하는것이다.
 
+### 초실수상 수렴 (convergenceOfℝ*)
+
+초실수상의 수렴은 발산하더라도 무한대로써 유한초실수가 아닌 초실수로 수렴하므로, 도약(jump)하는 경우가 유일한 수렴이 아닌 경우다.
+
+convergenceOfℝ* : "f*(x - ε) = f*(x + ε)"
+
+참고로, 발산이나 진동의 경우에는 모든 양의 무한소ε에 대해 값이 일정하지 아니한 경우이다.
+
+다가함수가 아니려면, 함숫값이 유일하게 결정되야하므로, 자세한건 함수 사용전에 어떻게 범위를 설정하는지에 달렸다.
+
 #₩# 연속 (continuous)
 
 연속 (continuous)이란, 함숫값과 극한값이 같음을 말한다
 
-continuous(f, Φ) : (∀Φ(x))((lime f)(x) = f(x))
+continuous : (lime f)(x) = f(x)
 
-함숫값과 극한값이 정의되어야, 등호의 동등관계가 작동한다.
+등호도 관계이므로, 함숫값과 극한값이 정의되어야, 등호의 동등관계가 작동한다.
 
 ### 연산 목록
 
@@ -452,7 +462,7 @@ automorphism : isomorphism, endomorphism
 
 위상동형사상 (Homeomorphism)
 
-Homeomorphism(f) : Biject(f), continuous(f, dom f), continuous(f⁻¹, codom f)
+Homeomorphism(fn) : Biject(fn), (x ∈ dom fn, f = fn ⊨ continuous), (x ∈ codom fn, f = f⁻¹ ⊨ continuous)
 
 ### 심볼 목록
 
