@@ -446,6 +446,539 @@ Mod(¬P) = U 이면이 ∀¬P(x) 이면이 ⊨ ¬P
 ````markdown
 # Lava System
 
+아래 내용을 보라.
+
+```markdown
+# 명제논리와 귀결관계의 술어논리적 • 대수적의미 해석
+
+이 문서에서는 RPN및 중위표기를 혼용하여 표기할것을 먼저 선언한다.
+
+이하에서 명제논리 Lang인 L은 다음으로 한다.
+
+L = {'→', '←', '↔', '∧', '∨', '⊕', '↛', '↚', '↮, '⊼', '⊽', '¬'} (주의 : ⊕는 베타적 논리합임)
+
+## 0. 만족관계의 귀결관계화
+
+만족관계에서, 값이 할당되는 값-배정과 구조체 모델은 값 할당 [x := y]에서 x = y의 의미를 가진다.
+이는 [x := y]와 [y := x]가 x = y의 모델일수 있으며, "심볼 x가 정의되지 않음 ⊸ [x := y]가 모델" (선형논리식) 및 "심볼 y가 정의되지 않음 ⊸ [y := x]가 모델" (선형논리식)이 참이기에, 모델이 각각 정해지며, 도가지가 다 모델이 아닐때, x = y의 모델은 x = y를 증명해야 나오며, 반증되거나 증명될때 조건부로 참 거짓이거나 거짓임이 증명됨 (만족되는 모델도 당연히 없음)이나 참임이 증명됨 (항진명제이고 정리임), 혹은 증명•반증 불가함 (이 언어에서 다룰 수 없음)이 된다.
+즉, 심볼 x와 값 y에 대해, 논리식 x = y는 할당 [x := y]에서 유일하게 참이되게 모델이 유일하므로, 이 만족관계에서 두가지의 의미는 같다.
+
+즉, 만족관계는 할당 [x := y]의 의미의 명제이다.
+
+정리하자면,
+
+"심볼 x와 값 y에 대해 x = y" = {<x [x := y]>}이다.
+
+아래 흐름을 따라서, `0. 0. 값-배정의 귀결관계화`와 `0. 1. 구조체를 통하여 알아보자.`를 보자.
+
+### 0. 0. 값-배정의 귀결관계화
+
+어떤 술어 Φ를 생각해보자.
+
+이 술어의 변항 var₁, ..., varₙ₊ₘ에서, 
+var₁, ..., varₙ을 술어의 인자(argument, parameter)로써, 술어의 입력에 binding된 변항으로 치겠다.
+
+그리고, 나머지는 자유변항(Free Variable)으로, 술어의 입력에 binding되지 않은 변항으로 치겠다.
+
+참고로, n > 1인 술어는 n > 1인 관계이다.
+
+그리고 단변항 술어는 n = 1인 술어이다. (이후에 설명으로 알겠지만, 단변항인지 다변항인지는 크게 구분이 없다 ; 그 예시로 벡터공간에 대한 술어가 그렇다.)
+
+#### 0. 0. 0. 술어와 관계는 모델론에서 같다
+
+모델론에서 관계와 술어에 대해 살펴보자.
+
+ + k항 관계 R은 도메인 D에 대하여, R ⊆ Dᵏ인 R이다.
+ + (따라서, ) 단항관계 R은 도메인 D에 대하여, R ⊆ D¹인 R이다.
+ + 술어 Φ는 도메인 D에 대하여, Φ ⊆ D인 Φ이다.
+
+카데시안 곱에 따라서, D¹ = D다.
+
+다변항 함자는 그 입력이 튜플이다.
+즉, 도메인 D위에서 정의되는 k항함자 f에 대해, dom f = Dᵏ이다.
+
+이하에서,
+
+ + 단항관계는 술어와 같고
+ + 다변항 술어는 입력이 튜플인 술어이며,
+ + 입력이 튜플인 술어는 관계와 같다.
+
+그리고 모델론에서 이들(관계 혹은 술어를 말한다)이 S ⊆ Dᵏ로 표현되었는데,
+
+관계 혹은 술어 S와 인자 튜플 혹은 인자 v(Tip : 왜 v인지 의구심 같지 말길. vector여서 v면 튜플이니 인자튜플이고, value여서 v면 인자여서 v이지 않는가? 맥락은 중요치 않다. S가 취하는 값에 맞는다는 형식적 사실만 중요하다.)에 대하여, S(v)는 도메인 D에서 Boolean Domain 𝔹 = {T, F}로 가는 functor 혹은 사상으로 볼수있다.
+
+그리고, 모델론적으로,
+
+1. (var₁, ..., varₙ₊ₘ ⊨ Φ) ⇔ (varₘ₊₁, ..., varₘ ⊨ Φ(var₁, ..., varₙ)) (즉, 술어 S에서, 그 변항이 값을 대입한것과 같음) 이고, 
+2. (S(v)) ⇔ ((∈ S)(v)) 이다.
+
+즉, 해당 집합에 속하는지, 즉 평가(해석)하여 값-배정이 참이되는지가 그 술어이다.
+
+따라서 이러한 맥락에서 술어는 멤버십 연산자 `∈`에 대해서 오른쪽 작용을 서술하는,
+즉, 집합의 맴버십 판별을 하는 함자로,
+
+맴버십 함자이다.
+
+
+#### 0. 0. 1. 값-배정
+
+n = 0인 경우, 보통 Σ₁⁰ A = 0으로 간주하니, 인자가 없는것으로 간주하겠다.
+
+n = 0인경우 인자 (Argument, Parameter)가 없고, 이런 경우에는 변인은 오로지 자유 변항이 변인으로, 자유 변항의 유무에 따라 그 특성이 결정된다.
+
+m = 0인 경우 자유 변항 (free Variable)이 없고, 이런 경우에는 인자 (Argument, Parameter), 즉 매개되는 변항인 인자만 오로지 변인이므로, 인자의 유무에 따라 그 특성이 결정된다.
+
+n = 0, m = 0인 경우, 인자와 자유 변항이 없다.
+즉, 항진 술어나 항위 술어로 작용하며, 이는 변인에 무관하게 항상 T거나 항상 F이므로, 참이나 거짓을 판단할수 있는, 이미 결정된 명제이다.
+
+n = 0, m ≠ 0인 경우, 무항(nullary) 술어로, 이는 문장 (sentence)이다.
+
+n ≠ 0, m = 0인 경우, 자유 변항이 없으므로, 사실 이 경우를 보통 술어라고 하며, 다른 경우는 술어로 치지 않는 겅우로, 이것은 좁은 의미의 술어다.
+
+이경우가 술어의 표준으로 "참술어"라고 명명하겠다. 표준이 아닌 넓은 의미의 술어를 "가술어"라고 하겠다.
+
+n ≠ 0, m ≠ 0인 경우, 인자와 자유변항이 있고, 이런 경우가 "인자와 자유 변항이 있는 가술어"이다.
+
+"참술어"에 대한 술어논리에서는, 자유 변항과 인자의 집합론적 랭크가 rank x = 0인 집합이 아닌것 ~ rank x = 1인 집합 혹은 FOL의 술어, ..., 해서 최대 랭크가 n이라도 m = 0인 경우만 n계논리이고, 다른 자유변항은 사실상 그 위의 논리로 다뤄야 하므로, 이는 명제꼴같이 술어꼴이 되므로, (n+1)계논리의 술어의 값, 즉, n계논리 술어꼴로, 술어의 묶음이 되야 한다.
+
+즉, "맴버십 함자"라고 방금전 우리가 탐구했던것은, 변항이 변할때를 포함해서 변항이 변할때는 술어꼴이요, 아닐때는 참술어인 가술어를 포함하는것으로, 술어논리 논리식의 평가요, 변항에 가변적인 집합 S의 맴버십 함자다.
+
+즉, 일반적인(=자유 변항같은 술어꼴은 일부로 술어로 안쳐주는) n계논리에서 술어의 모델 (model)이란 그 술어를 만족시키는 값의 배정으로 인자 t가 길이 0 튜플인 ε, 즉 인자 없음, 혹은 t의 길이라 1로, 인자로 튜플을 안받거나, 길이가 2 이상으로 단변항 아닌 다변항인 술어로,
+
+술어의 변항에 대한 값의 대입과 동치다.
+
+즉,
+
+값-배정
+
+(v₁, ..., vₙ₊ₘ) ⊨ Φ는, varₖ = vₖ로 대입한 경우이다.
+
+위 모양이 단순히 값-배정일수도 있으나, 튜플이다.
+
+따라서, k항 벡터에 대한 술어로 술어의 의미론적 해석이 가능하다.
+
+다음 네가지 Fact를 보자.
+
+참고로, 함의 `⇒`에 대해, p ⇒ q ⇒ r을 p ⇒ q, q ⇒ r로 해석하는 규칙을 썻다. 즉, 어느 타당한 증명의 graph가 됨과 마찬가지이므로 각 명제(=논리식)들에 대한 관계의 기호로써 양 옆에 서술하는 식으로 사용되었음에 주의하자. 그래서, `⇒`및 `⇔`는 각각각 p ⇒ q ⇒ r이 p ⇒ q, q ⇒ r로, p ⇔ q가 p ⇒ q ⇒ p ⇒ q (즉, p ⇒ q, q ⇒ p, p ⇒ q로써, p ⇔ q ⇔ r이 p ⇒ q, q ⇒ p, p ⇒ q로, p ⇔ q ⇔ r이 p ⇒ q, q ⇒ p, p ⇒ q, q ⇒ r, r ⇒ q, q ⇒ p로, p ⇔ q ⇒ r이 p ⇒ q, q ⇒ p, p ⇒ q, q ⇒ r식으)로 모호하지 않게 형식문법에 맞게 형식적이고 명확하게 해석된다.)
+
+Fact1) (∀x)(¬Φ(x)) ⇔ (∄x)(Φ(x)) ⇔ (⊭ Φ) ⇔ (⊭ ¬Φ) ⇔ (Card Mod(Φ) = 0) ⇔ (Card Mod(¬Φ) = Card U) ⇒ (∃x)(¬Φ(x)) ⇔ (Card Mod(Φ) ≠ 0) (단. U는 전체집합으로, Card Mod(¬Φ) = Card U라고 하는 문장은 괭장히 모호한 문장으로써, 실제로는 저 부분은 그냥 무시(=항진명제로 치환하여 생각)하도록 하자. 참고로, 어떤 임의의 x를 준비하더라도, 항진명제 Ψ에 대하여서 참이다. 왜냐하면 항진명제는 항상 참이기 때문이다. 그러므로, 어떤 임의의 x를 준비하더라도, 항진명제 Ψ에 대하여서 참이다, 또한 구성적 증명에서 존재성을 구성으로 증명하는데, 이는 존재성을 보이기 위해, x를 준비하는것과 같다. 따라서, ∃x를 증명할때 단순히 그 x를 가져오면 븡명할수 있다. 즉, 어떤 임의의 x를 준비하더라도, 항진명제 Ψ에 대하여서 참이라는걸 바꿔말하자면, 항진명제 Ψ는 어떤 임의의 x를 준비하더라도 항상 만족되어 참으로, 존재성이 증명된다.)
+Fact2) (∀x)(Φ(x)) ⇔ (⊨ Φ) ⇒ (Card Mod(Φ) ≠ 0)
+Fact3) (∃x)(Φ(x)) ⇔ (∃x)(x ⊨ Φ) ⇔ (Card Mod(Φ) ≠ 0)
+Fact4) (∃!x)(Φ(x)) ⇔ (Card Mod(Φ) = 1)
+
+즉, 서술하는 대상의 존재성이 존재론의 해법이라느니 (사실 당연한 소리고, 그 존재기호는 수리논리 이외에 많은 언어를 포함해서 대체 어디서 오냐고 묻고싶어 답답하다.), 양화사가 Quntitifier인것은 Quntiti + fing하는것이니 다 맞다.
+
+즉, 만족되는 모델의 크기를 집합의 기수로, 측도로 볼수 있으며, 그것에 대해 균등분포로 경우의 수나 확률로 분석할수 있음도 당연하고,
+
+모델론과 술어논리가 그 의미에 있어서 동일한(즉, `⇔`로 서술된)일부 맥락을 공유하며,
+
+모델을 통하여, 술어논리를 값-대입으로 볼 수 있음을 알수 있다.
+
+### 0. 1. 구조체를 통하여 알아보자.
+
+구조체에 튜플을 사용함은 튜플이 벡터이니 그리 해석할수 있음도 알수 있다.
+다변수 함자의 맥락에서, 다변수 함수는 튜플을 인자로 받는 함수이다. 즉, 벡터에 대한 함수이다.
+
+모델론적 언어 L에 대하여, 그 L의 심볼에 값을 바인딩시키는것은
+모델 M이 한다. 즉 기표 L과 기의를 연결시키는 lang이다.
+모델 M의 도메인 D에 대해,
+M = <
+D,
+  ConstantSymbol₁ := ConstantSymbolValue₁,
+  ...,
+  ConstantSymbolᵢ := ConstantSymbolValueᵢ,
+  
+  FunctionSymbol₁ := ConstantSymbolValue₁,
+  ...,
+  FunctionSymbolⱼ := FunctionSymbolValueⱼ,
+  
+  RelationSymbol₁ := RelationSymbolValue₁,
+  ...,
+  RelationSymbolₖ := RelationSymbolValueₖ,
+  
+  PredicateSymbol₁ := PredicateSymbolValue₁,
+  ...,
+  PredicateSymbolₗ := PredicateSymbolValueₗ,
+  
+  LogicSymbol₁ := LogicSymbolValue₁,
+  ...,
+  LogicSymbolₘ := LogicSymbolValueₘ,
+  
+  VariableSymbol₁ := VariableSymbolValue₁,
+  ...,
+  VariableSymbolₙ := VariableSymbolValueₙ
+> (Tip : 따라서, 술어의 값-배정 역시 도메인 D에 대한 `변항ᵥ := 변항값ᵥ`로 볼 수 있음이 당연하다. (중요))
+
+이는 Alkalic의 대입 연산 `[x := y], 혹은 Python에서, `:=`연산자와 같기에,
+
+M = <
+D,
+  ConstantSymbol₁ [ConstantSymbol₁ := ConstantSymbolValue₁],
+  ...,
+  ConstantSymbolᵢ [ConstantSymbolᵢ := ConstantSymbolValueᵢ],
+  
+  FunctionSymbol₁ [FunctionSymbol₁ := ConstantSymbolValue₁],
+  ...,
+  FunctionSymbolⱼ [FunctionSymbolⱼ := FunctionSymbolValueⱼ],
+  
+  RelationSymbol₁ [RelationSymbol₁ := RelationSymbolValue₁],
+  ...,
+  RelationSymbolₖ [RelationSymbolₖ := RelationSymbolValueₖ],
+  
+  PredicateSymbol₁ [PredicateSymbol₁ := PredicateSymbolValue₁],
+  ...,
+  PredicateSymbolₗ [PredicateSymbolₗ := PredicateSymbolValueₗ],
+  
+  LogicSymbol₁ [LogicSymbol₁ := LogicSymbolValue₁],
+  ...,
+  LogicSymbolₘ [LogicSymbolₘ := LogicSymbolValueₘ],
+  
+  VariableSymbol₁ [VariableSymbol₁ := VariableSymbolValue₁],
+  ...,
+  VariableSymbolₙ [VariableSymbolₙ := VariableSymbolValueₙ]
+> (Tip : 《동일하다!》따라서, 술어의 값-배정 역시 도메인 D에 대한 `[변항ᵥ := 변항값ᵥ]`로 볼 수 있음이 당연하다. (중요))
+
+임과 같다.
+
+만족관계 M ⊨ T에 대해,
+
+T의 기호들은 모델론적 언어 L에 의해 해석되며,
+
+이는,
+
+다음과 같은 값-배정 x̄
+
+x̄ = (
+  DomainOfM := ValueOfDomainOfM,
+  
+  ConstantSymbol₁ := ConstantSymbolValue₁,
+  ...,
+  ConstantSymbolᵢ := ConstantSymbolValueᵢ,
+  
+  FunctionSymbol₁ := FunctionSymbolValue₁,
+  ...,
+  FunctionSymbolⱼ := FunctionSymbolValueⱼ,
+  
+  RelationSymbol₁ := RelationSymbolValue₁,
+  ...,
+  RelationSymbolₖ := RelationSymbolValueₖ,
+  
+  PredicateSymbol₁ := PredicateSymbolValue₁,
+  ...,
+  PredicateSymbolₗ := PredicateSymbolValueₗ,
+  
+  LogicSymbol₁ := LogicSymbolValue₁,
+  ...,
+  LogicSymbolₘ := LogicSymbolValueₘ,
+  
+  VariableSymbol₁ := VariableSymbolValue₁,
+  ...,
+  VariableSymbolₙ := VariableSymbolValueₙ
+)
+
+과 같으며,
+
+연산은 Function Symbol이므로, 함수이기 때문에
+
+자명히 (사실 스스로 evidance인건 없기에, "다명히"가 아닌 "당연히")
+
+다가함수로 쓸 수 있고,
+
+M = <
+  DomainOfM,
+  
+  ConstantSymbol₁ [ConstantSymbol₁ := ConstantSymbolValue₁],
+  ...,
+  ConstantSymbolᵢ [ConstantSymbolᵢ := ConstantSymbolValueᵢ],
+  
+  FunctionSymbol₁ [FunctionSymbol₁ := FunctionSymbolValue₁],
+  ...,
+  FunctionSymbolⱼ [FunctionSymbolⱼ := FunctionSymbolValueⱼ],
+  
+  RelationSymbol₁ [RelationSymbol₁ := RelationSymbolValue₁],
+  ...,
+  RelationSymbolₖ [RelationSymbolₖ := RelationSymbolValueₖ],
+  
+  PredicateSymbol₁ [PredicateSymbol₁ := PredicateSymbolValue₁],
+  ...,
+  PredicateSymbolₗ [PredicateSymbolₗ := PredicateSymbolValueₗ],
+  
+  LogicSymbol₁ [LogicSymbol₁ := LogicSymbolValue₁],
+  ...,
+  LogicSymbolₘ [LogicSymbolₘ := LogicSymbolValueₘ],
+  
+  VariableSymbol₁ [VariableSymbol₁ := VariableSymbolValue₁],
+  ...,
+  VariableSymbolₙ [VariableSymbolₙ := VariableSymbolValueₙ]
+> [DomainOfM := ValueOfDomainOfM]
+
+대신
+
+(peano 산술상의 집합 𝔹 = {0, 1}를 dom f = 𝔹로 하고 codom f = dom f인 함수로 논리연산을 할당할때) 수열의 곱 혹은 (Zhegalkin Boolean Domain 𝔹 = {0, 1}에서) Zhegalkin 논리곱, 혹은 𝔹 = {F, T}에서 논리곱은 전부 동형으로, 그 논리연산이라는 부울-대수에서 동형이므로, 즉, 메타논리 입장에서 각 기호들에 대한 논리식들이 해석되는 모든 모델론적 입장이 같으므로, 같게 취급하여,
+논리곱, Zhegalkin 논리곱, 대수학에서 곱셈은 가환군을 이루므로, 이들을 모두 수열의 곱 Π으로 취급해서 (사실은 x̄ = (Symbol := value)의 바인딩일때 이 곱이 구조체 M임은 당연하다 (중요!), 이것이 근거임, 동형성의 근거이고 사실상 증명에 준하는 핵심 원리)
+
+z = x [x := y] ⊨ z = x, x = y 이므로, 논리적 귀결관계 x [x := y] ⊨ x (선택적 ; x가 술어나 명제가 아니면 귀결되지 아니한다), x = y에서, 만족관계 (x := y) ⊨ (x = y) 와 동등한 의미로,
+
+대입 연산(진리값을 가지는 대상을 귀결관계를 통해 함의하는 논리 연산이기도 하다)을 담은 논리식을 정의역으로 하는 벡터, 즉 값-배정 x̄는
+
+x̄ = <
+  [DomainOfM := ValueOfDomainOfM],
+  
+  [ConstantSymbol₁ := ConstantSymbolValue₁],
+  ...,
+  [ConstantSymbolᵢ := ConstantSymbolValueᵢ],
+  
+  [FunctionSymbol₁ := FunctionSymbolValue₁],
+  ...,
+  [FunctionSymbolⱼ := FunctionSymbolValueⱼ],
+  
+  [RelationSymbol₁ := RelationSymbolValue₁],
+  ...,
+  [RelationSymbolₖ := RelationSymbolValueₖ],
+  
+  [PredicateSymbol₁ := PredicateSymbolValue₁],
+  ...,
+  [PredicateSymbolₗ := PredicateSymbolValueₗ],
+  
+  [LogicSymbol₁ := LogicSymbolValue₁],
+  ...,
+  [LogicSymbolₘ := LogicSymbolValueₘ],
+  
+  [VariableSymbol₁ := VariableSymbolValue₁],
+  ...,
+  [VariableSymbolₙ := VariableSymbolValueₙ]
+>
+
+로, 수열의 곱 연산을 통해
+
+(M ⊨ T) ⇔ (Πx̄ ⊨ T)
+
+임이
+
+> 
+>  [DomainOfM := ValueOfDomainOfM],
+>  
+>  [ConstantSymbol₁ := ConstantSymbolValue₁],
+>  ...,
+>  [ConstantSymbolᵢ := ConstantSymbolValueᵢ],
+>  
+>  [FunctionSymbol₁ := FunctionSymbolValue₁],
+>  ...,
+>  [FunctionSymbolⱼ := FunctionSymbolValueⱼ],
+>  
+>  [RelationSymbol₁ := RelationSymbolValue₁],
+>  ...,
+>  [RelationSymbolₖ := RelationSymbolValueₖ],
+>  
+>  [PredicateSymbol₁ := PredicateSymbolValue₁],
+>  ...,
+>  [PredicateSymbolₗ := PredicateSymbolValueₗ],
+>  
+>  [LogicSymbol₁ := LogicSymbolValue₁],
+>  ...,
+>  [LogicSymbolₘ := LogicSymbolValueₘ],
+>  
+>  [VariableSymbol₁ := VariableSymbolValue₁],
+>  ...,
+>  [VariableSymbolₙ := VariableSymbolValueₙ]
+>  
+>  ⊨
+>  
+>  T
+> 
+
+인 귀결관계를 만족한다는것과 같으므로, 당연한 이치이다.
+
+## 1. 명제논리 결합자(연결사)의 해석
+
+명제논리 결합자, 즉 논리연산자는 술어로 해석할수 있으며, 동시에 연산으로 해석할수 있다.
+
+### 1. 1. 진리 함자
+
+임의의 논리 결합자 기호 S₁에 대해 그 결합자의 역할을 하는 술어 Φ(S₁)을 다음과 같이 정의한다.
+
+DEFINITION) ∀S₁ ∈ L, "⋯" Φ("S₁") : "⋯ S₁"
+
+예컨데,
+
+ + p q Φ("→")는 p가 q를 함의하는것이고,
+ + p Φ("¬")는 p의 부정이다.
+
+즉, 이 진리 함자 Φ("S₁")를 치역으로 하는 길이 1의 문자열 집합 S ⊆ L+이 치역인 함수 Φ에 대해, Φ("S₁")와 "S₁"은 평가가 같으므로, 의미론적으로, 같다 볼수 있고,
+
+사실, "⋯ S₁" ⇔ "⋯" Φ("S₁") 이므로, 걍 사용에 있어서 같다.
+
+즉, 술어로써의 Φ("S₁")는 Card를 정의하지 않았을때의 언어에서 S₁과 언어 내 의미론적으로 같고, 실제 개념상으로 부터 다르며 구문론적으로 다르다.
+
+### 1. 2. 명제논리 모델간의 동형성
+
+#### 1. 2. 1. Zhegalkin 다항식 혹은 {0, 1}이 정의역이자 공역인 사상으로써의 동형성
+
+명제논리와 Zhegalkin Polynomial (Algebric Normal Form)에서, 다음 함자를 준비하자.
+
+두 집합 B, 𝔹에 대해,
+
+Zhegalkin Polynomial의 대수에서,
+
+Zhegalkin Boolean Domain B는 B = {0, 1}
+
+부울 대수(=불 대수)에서,
+
+Boolean Domain 𝔹는 𝔹 = {F, T}
+
+𝔹에서 B로 가는 함수 int와 B위의 술어 bool에 대해,
+
++ bool(x) : x = 1
++ $ int(x) = \begin{cases} 1, & x, \ 0, & ¬x \end{cases} $
+
+참고로, "x ∈ B" ⇔ "x가 Zhegalkin Polynomial의 대수 위에 있음" 이고, 항진명제 a ≠ b ↔ ¬(a = b), 0 ≠ 1에서, 등호는 동치관계이므로, "⊭ x = 0, x = 1"임이 증명되므로, B = {0, 1} = {x | x = 0 ∨ x = 1}에서, x ∈ B ↔ x = 0 ∨ x = 1이므로, x = 0과 x = 1은 x가 Zhegalkin Polynomial의 대수 위에 있을때, 반대이며 소반대이므로, x ≠ 0 ↔ ¬(x = 0) ↔ x = 1이며, x ≠ 1 ↔ ¬(x = 1) ↔ x = 0이다.
+
+즉, bool(x) ↔ x ≠ 0이다.
+
+y = int(x)에서, y ∈ B ↔ y ≠ 0 ↔ ¬(y = 0) ↔ y = 1이며, y ≠ 1 ↔ ¬(y = 1) ↔ y = 0이고, y = 0 ⊕ y = 1 이다.
+
+함자 (int)및 함자 (bool)은 각각
+
+ + dom (int) = 𝔹 = codom (bool)
+ + codom (int) = B = dom (bool)
+
+이고 동형사상이다. 왜냐?
+
+부정논리곱을 x▪︎y = 1 - xy로 표현 가능하다.
+
+이는 (1 -)(x) = 1 - x가 대합 사상으로, 전단사이기 때문에, 
+
+이가 원리에 따라서,
+
+Alkalic관련 포스트에서 말했던것처럼,
+
+사상 (int)및 (bool)은 그 연산이 대응되도록 보존하는 고전적 정의에서의 준동형사상이자, 전단사 사상으로, 서로 역함자인 동형사상이다.
+
+따라서, 모든 명제논리가 Zhegalkin이나 {0, 1}이 정의역이거나 공역인 사상과 동형으로, 동형임을 알 수 있다.
+
+#### 1. 2. 2. 동일 형식시스템의 공리계로써의 동형성
+
+(x, y) Φ("S₁")이거나, x Φ("S₁")이거나로, 그 진리 함자로 논리연산자를 취급하여보겠다. 
+
+즉, 전부 t Φ("S₁")로 퉁치겠다.
+
+어떤 논리식(=문장) Ψ("S₁")을 정의하겠다.
+
+t Ψ("S₁") : t Φ("S₁")
+
+SOL을 쓴게 흠이지만...
+
+ + Ψ("S₁") ⇔ Φ("S₁") 이므로,
+ + Mod(Ψ("S₁")) = Mod(Φ("S₁")) 이다.
+
+즉, 평가(=해석)가 같다.
+
+어떤 논리식 논리식 Ψ("S₁")은 문장이다.
+
+어떤 형식시스템에서, 법칙 (Ψ("S₁") ↔ Φ("S₁"))을 만족하는 Ψ("S₁")로 Ψ("S₁")가 정의됨은 당연하다 (중요)
+
+따라서, 그 형식시스템에서의 법칙을 통하여, Ψ("S₁")가 정의된다.
+
+M ⊨ (Ψ("S₁") ↔ Φ("S₁"))인 경우는 경우를 나누어 크게 두가지가 있다.
+
+1. (Φ("S₁") : Ψ("S₁"))로 정의된경우, 즉, [(t S₁) := (t Ψ("S₁"))]로 모델이 정의시켜버리는 경우
+2. (Φ("S₁") : Ψ("S₁"))로 정의되지 아니하고, 모델이 법칙 (Ψ("S₁") ↔ Φ("S₁"))를 만족시키는 경우
+
+두번째 경우가 존재하지 아니하면 무조건 첫번째 경우이다.
+
+그치만 저 경우에, 두 모델에서 S₁이 완전히 동일하게 동작하도록 정의되었다는 사실은 변하지 않는다. 
+즉,
+
+M = <𝔹, S₁>과 M = <𝔹, S₁'>에서, M ⊨ (Ψ("S₁") ↔ Φ("S₁"))에서, 두 M은 동형이요, 동일한 이론의 모델이다.
+
+따라서 명제논리가 표준과 호환이라면 다음 정의가 명시하는 논리식을 만족한다.
+
+DEFINATION 1)
+
+1. p ← q : q → p
+
+DEFINATION 2)
+
+1. p ↔ q : p → q, q → p
+
+
+아래 DEFINATION 3.A.와 DEFINATION 3.B.와 DEFINATION 3.C. 는 서로 동형인 정의이다. 즉, TFAE이다.
+
+DEFINATION 3.A.)
+
+1. ↔가 반사성을 만족
+2. ↔가 대칭성을 만족
+3. ↔가 추이성을 만족
+
+DEFINATION 3.B.)
+
+1. (p → q, q → r) → (p → r)
+2. (p, p → q) → (q)
+3. ⊨ p → T
+
+웃긴 사실은 이를 통해서, →가 항상 건전한 추론규칙으로 작용한다는걸 알 수 있다. 아니 건전한게 이거인가?
+
+아무튼, 어떤 Theorem t에 대해? p → t가 건전함은 곧 p가 참임이다.
+
+DEFINATION 3.C.)
+
+1. p → q : ¬p ∨ q
+
+DEFINAFION 4. & 5. & 6. & 7. & 8. & 9.)
+
+1. TREF on De Morgan's Law & 이중부정의 법칙
+1. 1. p ↛ q : ¬(p → q)
+1. 2. p ↛ q : p ∧ ¬r
+1. 3. p ↚ q : ¬(q → p)
+1. 4. p ↚ q : ¬p ∧ q
+1. 5. p ↮ q : ¬(p ↔ q)
+1. 6. p ↮ q : p ⊕ q
+1. 7. p ⊕ q : (p ∨ q) ↛ (p ∧ q)
+1. 8. p ⊼ q : ¬p ∨ ¬q
+1. 9. p ⊽ q : ¬p ∧ ¬q
+1. 10. p ⊼ q : ¬(p ∧ q)
+1. 11. p ⊽ q : ¬(p ∨ q)
+1. 12. p ∧ q : ¬p ⊽ ¬q
+1. 13. p ∨ q : ¬p ⊼ ¬q
+1. 14. ¬x ↮ x
+1. 15. x : ¬¬x
+1. 16. ¬x : x ⊕ x
+
+## 2. 아리스토텔레스 논리학에서 온 형식적 조작의 비형식적 맥락과 불 및 기타 논리학자 및 수학자 및 전산학자들을 통한 후대의 추가된 맥락과 원래부터 있던 맥락 등 등 보통의 논리에서 취급되는 맥락
+
+ + ↔는 동등함, 즉 동등성의 원리를 만족시키고 동치 (순화어로는 동등)관계이며, 정언논리상의 모순관계와 반대에 있는 관계이다. 즉, 논리적 동등.
+ + 베타적 논리합, 베타적 선언인 ⊕는 (p, q)인 경우에 베타적이며, 이의 부정은 논리적 동등이다.
+ + 가언, 즉, 함의(→)는 건전성을 만족시킨다. 왜냐하면 건전겅 그 자체인 명제논리 기호이기 때문이다.
+ + 선언, 즉 포함적 선언인 "혹은"은 즉, ∨는 ∧와 쌍대인 관계이며, p ∨ q에서 [p | q]로 선택할때 어느 하나로 계산되어도 참이여야 하므로, p와 q가 참이라도, 어느 하나를 선택하였을때 p = q = 참이므로 참이다. 어느 하나라도 참이면 된다.
+ + 연언, 즉, 연속해서 x, y, z를 놓았을때 모델론으로 보면 참 편하게 해석할수 있는데, 암튼 연언은 "그리고"의 뜻으로 연연이 서술하는 말들은 전부 참이여야 한다.
+ + 부정은 부정문의 형태를 띄며, 긍정문을 부정하면 부정문이고, 부정문을 부정하면 긍정문이며, 긍정이 아님을 뜻하며, 긍정함은 참이라고 함을 뜻하므로, 부정은 "T↮"를 의미한다.
+ + 전건이 부정문인 함의문은 전건의 부정과 후건의 긍정의 선언과 논리적으로 같다.
+ + 후건이 부정문인 함의문은, 전건의 부정과 후건의 긍정의 부정연언문과 과 논리적으로 같다.
+ + ↔가 쌍조건문으로써 작용한다. 즉, ↔임이 함의와 역함의임이다.
+ + 연언은 모델론의 언어에서 ∧가 `,`로 취급된다.
+ + 가언은 모델론의 언어에서 →가 `⊨`로 취급된다. (겐첸의 연역정리에 따라서 말이다)
+ + 모델론에 언어에서, 부정문 중 x가 항위인건 `⊭ x`로써, x에 대해 부정한다. 사실 `x ⊨ F`로써, 후건을 부정해서 만족불가능화할수도 있지만. 주의할점은 만족 불가능은 만족관계에서 나온 개념이다.
+ + 모델론의 언어에서, 긍정문 중 x가 항진인건 `⊨ x`로서, x에 대해 긍정한다. 사실 `T ⊨ x`로써, 전건을 긍정해주거나, 정리를 넣어 참에서 함축시켜버리는것과 같지만. 주의할점은 만족가능은 만족관계에서 나온 개념이다.
+ + 모델론의 언어에서, x ⊨ y이고, y ⊨ x이면, x와 y가 같다. 만족관계를 이야기하는것이 아니다.
+
+## 3. L = {'→', '←', '↔', '∧', '∨', '⊕', '↛', '↚', '↮, '⊼', '⊽', '¬'}의 표의문자성에 근거한 설명
+
+ + 긍정문 x에 대해 ¬x는 부정문이다.
+ + 우향화살표를 쓰는 구문 x → y는 함의문이다.
+ + 좌향화살표를 쓰는 구문 x ← y는 역함의문이다.
+ + 우향의 역항은 좌향이다. 따라서, 주결합자를 기준으로 법선을 새워서 법선에 대해 대칭이동하면, 함의문의 모양이 된다.
+ + 좌향화살표와 우향화살표 모두, 화살표에 의한 가리킴을 당하는쪽과 시키는쪽이 함의문에서의 후건과 전건의 역할을 하게 된다.
+ + 보통 화살표는 다이어그램에서 생기다 보니, 그런 보편적인 직관에서 생긴 기호의 설명으로 해석할수 있다. 그러나 기표와 기의 자체의 필연적 연결은 없다.
+ + 빗금(□̸)친 곳에 위치한 기표 혹은 바(bar, ō)표시된데에 위치한 기표는 주결합자의 치역에 부정을 취한것이다. 이건 문법규칙으로 작용시켜도, 실제 형식언어의 동작과 일치한다. 근데 사실 빗금은 조건문(함의문) 및 쌍조건문에만 쓰였다는게 특징.
+ + 쌍조건문은 정방향 조건문이자 역방향 조건문으로 쌍방향이다. 뭐... 이렇게 양방향함의에만 적용되는 규칙(실제 동작과 일치하므로)도 기표와 기의 자체의 필연적 연결이 없으니 그저 설명일 뿐이다.
+ + ∧와 ∨는 쌍대성의 관점에서 서로 쌍대(dual)로 거울처럼 맞물려 설명되기에 저리 상하반전된 대칭이동상태로 쓴다. 갑자기 그런 관점이 왜 나오냐고? 이의 있다면 dual(유희왕 듀얼리스트 드립)을 하여 결정하자. (원래 ∨가 먼저 쓰였다. 러셀과 화이트헤드의 Principia Mathematica에서부터.) 마찬가지로 근본적 필연은 아니다. 사실 그래서 a & b (a and b), a | b (a or b)로 표기하는 경우도 많다. 대표적으로 c에서 파생한 문법을 가지는 튜링 언어들의 비트연산.
+ + pm (Principia Mathematica, 형식화) : Φ & Ψ, Φ ∨ Ψ
+ + la (LINGUA LATINA, Όργανον 번역) : Φ et Ψ, Φ vel Ψ
+ + Ελ (Ελληνικά, Όργανον) : Φ καί Ψ, Φ ἤ Ψ
+ + 베타적 논리합 Φ aut Ψ는 중세 스콜라 철학자들테 의해 (포함적) 논리합과 구분됨.
+```
+만족관계는 해당 내용으로 귀결관계로 해석할 수 있고, 명제논리 결합자는 그저 연산자 혹은 술어이다.
+
 N.B. ATTENTION, WARNING, NOTE(IMPORTANT), WATCHOUT, TIP, DECLARE, READIT : 만족•귀결기호 `⊨`가 존나 흥건히 나오지만, 그건 만족•귀결의 의미로 의미론적으로 같아 해석하여 이해하면 "변인에 대한 값의 할당"을 「만족」과 「명제의 귀결」로 구체적으로 이해해보자 • 그리고 하게 할 것의 목적이며, 정의 기호와의 혼용은 전혀, 전혀, 전혀 없이, 잘 쓰여있다. 간혹 정의같이 나온다면, 정의의 의미를 가진 귀결로, 귀결에는 오류가 없다 단언한다. 미지막으로, `≜`가 나올것같은데에 `⊨`를 쓴거는 바로 당신이 문맥으로 읽다가 뒤통수맞은거다... 수학을 할때는 문맥을 버려라. 문맥이 아닌 형식주의적인 조작이기 때문에, 진짜로 `⊨`를 써서 설명했기 때문이다. 정의가 아니라 만족 혹은 귀결을 썼다면 문자 그대로 이해해야한다. 그것이 참이기 때문이다. (글 읽을땨마다 이곳을 참고헐것)
 
 (내가 추상대수학 배우려고 만든 체계)
@@ -507,6 +1040,15 @@ limer [발음 : limmiter [리미터], limer [리머], 약칭 : lime] 함수 lime
 > 참고 : `lime(f) = ((st◦)◦lime*◦(st⁻¹◦))(f) = (st◦)(lime*((st⁻¹◦)(f))) = st◦lime*(st⁻¹◦f) = st◦lime*(f*) 이고, lime*(f*) = (◦(+ε))(f*) = f*◦(+ε)이며, (f*◦(+ε))(x) = f*((+ε)(x)) = f*(x + ε)이므로, lime(f) = st◦lime*(f*)이고, lime*(f*)(x) = f*(x + ε)이며 (st◦lime*(f*))(x) = st(lime*(f*)(x)) = st(lime*(f*(x))) = st(f*(x + ε)) = lim f(t) (t → x)에서, 당연히 lime(f)(x) = st◦lime*(f*) = lim f(t) (t → x)인, 즉 극한을 취해주는 함수임 (주의 함수st⁻¹(f) = f*는 그저 transfer원리를 통해 초실수로 확장하는 f*과정을 은유적으로 표현한것. 사실상 "g(f) = f*"인 g로 고쳐야함.)`
 
 특징 : `점 불연속을 복원함, 초실수체에서 lime* f는 "불연속 이면이 도약 불연속"임. 진동의 경우에는 유한 초실수의 종류에 따라 구간에서의 선택이 달라지기에, 사실 "불연속 이면이 진동 혹은 도약 불연속"임. (극한이 논리적으로 aproximate하게되어 진행중인것처럼 취급되는지, 아니면 그 논법을 숫자로 압축시켰는지 차이로, 실수에서는 수가 무한까지 크게 잡아져있지 않고, 초실수는 무한이 있어서, 실수에서 무한으로 발산해서 끊어지는게 초실수에서는 안 끊어지는, 연속적 • 위상적 관점에 특징 때문에, 제거 가능한 불연속인 점 불연속 이외의 도약 불연속만이 유일한 후보가 되는 원리, 그리고 도약 불연속에서 좌극한과 우극한은 다름. 그러나 실수에서는 끊어져 버리기에 연속이 아님.), FOL에서는 d/dx f* = ((lime* f*) - f*)/ε 인 성질에 따라서, FOL에서, 미분에 활용 가능 (또 여기서 알수있는 특징이, f가 연속 이면이 ((lime* f*) - f*)/ε가 연속. (주의 : f는 실함수로, 가 점 불연속과 도약 불연속과 발산 불연속과 진동이 아닐때 연속이고, f*이 연속이어도, f가 연속이 아니면 이계도함수를 만들수 없을수 있음) 초실수 범위에서 발산불연속이 상쇠되기에 연속이면 미분가능.) (또한, (((lime* f*) - f*)/ε)(x) = ((lime* f*)(x) - f*(x))/ε = (f*(x + ε) - f*(x))/ε 으로써, x = 0에서 f*(0) = Ω = undefined이거나, x = ε일때 진동하여, ε의 종류마다 달라지거나, f*가 점 불연속일때도 제거해주지 않으면, 그 점에서 미분 불가능하므로, (lime* f*)의 도함수에서, 실함수 f의 모든 불연속점을 정의 불가능으로 새로 규정해줘야 f*의 도함수임)`
+
+참고로, ε를 임의의 양의 무한소 혹은 임의의 음의 무한소로 제한하면, 일반화된 (lime*)으로 설정되며, 그렇지 아니한 경우, ε에 따라, (lime*)이 결정된다. 유일한 경우 정의되게 정의역을 한정하면, 다가함수가 아닌 제대로된 단가함수다. 그 경우를 "극한이 정의된다."고 한다.
+
+이때,
+
+1. Cⁿ f : Cⁿ⁻¹ f, Cⁿ⁻¹ f ⊨ C ((dⁿ⁻¹ f)/(d xⁿ⁻¹))
+2. C¹ f : C f : ∃! dy/dx = (df/dx)(x) = st((((lime* f) - f)/ε)(x)) (단. ε는 임의의 0이 아닌 모든 무한소이다)
+
+로 제귀적으로 정의되고, 미분이 저런건 당연한거라서 뭐... 할말이 없지만...
 
 ### 성질 목록
 
@@ -711,13 +1253,23 @@ BijectiveRightFunctor : "Biject((* x))"
 참고로, 저기서는 모든 x에 대한 오른쪽 함자이다.
 쌍따옴표가 있으니, sentence로써 작동하는것이다.
 
+### 초실수상 수렴 (convergenceOfℝ*)
+
+초실수상의 수렴은 발산하더라도 무한대로써 유한초실수가 아닌 초실수로 수렴하므로, 도약(jump)하는 경우가 유일한 수렴이 아닌 경우다.
+
+convergenceOfℝ* : "f*(x - ε) = f*(x + ε)"
+
+참고로, 발산이나 진동의 경우에는 모든 양의 무한소ε에 대해 값이 일정하지 아니한 경우이다.
+
+다가함수가 아니려면, 함숫값이 유일하게 결정되야하므로, 자세한건 함수 사용전에 어떻게 범위를 설정하는지에 달렸다.
+
 #₩# 연속 (continuous)
 
 연속 (continuous)이란, 함숫값과 극한값이 같음을 말한다
 
-continuous(f, Φ) : (∀Φ(x))((lime f)(x) = f(x))
+continuous : (lime f)(x) = f(x)
 
-함숫값과 극한값이 정의되어야, 등호의 동등관계가 작동한다.
+등호도 관계이므로, 함숫값과 극한값이 정의되어야(다른말로 "x = y ⊨ ∃x, ∃y" 등호 관계가 성립함음 그 대상이 존재해야하는 경우가 전제되기에, 귀결이다, 그 역은 x ≠ y를 만족하는 경우로 부등호 관계도 존재를 전제하기에 아님.) , 등호의 동등관계가 작동한다.
 
 ### 연산 목록
 
@@ -898,7 +1450,7 @@ automorphism : isomorphism, endomorphism
 
 위상동형사상 (Homeomorphism)
 
-Homeomorphism(f) : Biject(f), continuous(f, dom f), continuous(f⁻¹, codom f)
+Homeomorphism(fn) : Biject(fn), (x ∈ dom fn, f = fn ⊨ continuous), (x ∈ codom fn, f = f⁻¹ ⊨ continuous)
 
 ### 심볼 목록
 
