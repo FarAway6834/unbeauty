@@ -578,6 +578,272 @@ StructureForm이 삼차원 행렬이기에, StructureFormₗ,ₘ,ₙ식으로 �
 
 ## 대수 구조 공부
 
+### 극한에 대하여
+
+`⟶` 요 기호는 함의 기호 `→` 가 아니다.
+단지, 교과서에 나온 접근 기호와 가장 비슷한 기호를 골라 접근 기호로 쓰는 것 뿐.
+앞으로 접근 기호 `⟶`는 접근의 기호로 쓰일것이다.
+
+나는 대충 아래 새가지가 성립한다고 안다.
+
+1. x ∈ {x | Φ(x)} : Φ(x)
+2. {Φ(x) | Ψ(x)} = {x | Φ(x), Ψ(x)}
+3. {f(x) | Φ(x)} = {y | y = f(x), Φ(x)
+
+2, 3부분은 분류공리꼴땜에 된다고 안다.
+
+그리고 나는 상을 이렇게 알고있다.
+
+f[X] ≜ {f(x) | x ∈ X}
+
+그러므로, 이를 전제에 깔고 가겠다.
+
+그리고 구문론적 정의로 표기법 하나만 도입하겠다.
+
+def) NOTATION(Φ ? x : y) ≡ $ \begin{cases} x, & Φ, \ y, & ¬Φ \end{cases} $
+
+예컨데, 
+
+> 
+> $ \begin{cases} 1/x, & x ≠ 0, \ 0, & x = 0 \end{cases} $
+> 
+
+이런식의 수식을 작성하고 싶다면,
+
+> 
+> NOTATION(x ≠ 0 ? 1/x : 0)
+> 
+
+이런식으로 작성 가능하다. C 코드같이 생긴 저건 표기법이다. 절대로 삼항연산자가 아닌거다!!
+
+다음으로 defined, undefined 표기법을 도입하겠다.
+
+x is defined : ∃!k, x = k
+x is undefined : ¬(x is defined)
+
+defined, undefined는 함숫값이 정의되는지를 판단하는 enum이기에, 유일성을 따진다.
+
+ℝdist는 수직선 위의 두 실수 사이의 거리를 구하는 함수이다.
+
+ℝdist(x, y) ≜ |x - y|
+
+따라서 차의 절댓값(일차원 벡터의 노름이기도 하다.)을 그 값으로 한다
+
+"한계 오차 ε를 기준으로 x가 y에 접근함"은 `x ⟶ y (by ε)`라고 쓰고, 다음과 같이 정의한다.
+
+x ⟶ y (by ε) : NOTATION(ε > 0, NOTATION(y = ∞, x > ε, NOTATION(y = -∞, x < -ε, ℝdist(x, y) < ε)), x is undefined)
+
+
+예컨데,
+
+(x ⟶ a (by ε)) ↔ (|x - a| < ε) (단. ε > 0)
+
+이고,
+
+(x ⟶ ∞ (by M)) ↔ (x > M) (단. M > 0)
+
+이며,
+
+(x ⟶ -∞ (by M)) ↔ (x < - M) (단. M > 0)
+
+이다.
+
+참고로,
+
+t ≥ 0에서,
+
+(x ⟶ y (by 0 - t)) ↔ x is undefined
+
+이다.
+
+다음으로 좌접근, 우접근을 정의하겠다.
+
+x ⟶ y ± (by ε) : NOTATION(y ≠ ∞ ⊼ y ≠ -∞ ⊼ ε > 0, NOTATION(±1 = 1, y < x < y + ε, y - ε < x < y), x is undefined) (복부호 동순)
+
+예컨데,
+
+x ⟶ y+ (by ε) ↔ NOTATION(y ≠ ∞ ⊼ y ≠ -∞ ⊼ ε > 0, NOTATION(+1 = 1, y < x < y + ε, y - ε < x < y), x is undefined)
+
+이며
+
+x ⟶ y- (by ε) ↔ NOTATION(y ≠ ∞ ⊼ y ≠ -∞ ⊼ ε > 0, NOTATION(-1 = 1, y < x < y + ε, y - ε < x < y), x is undefined)
+
+이다.
+
+즉,
+
++1 = 1 ↔ T, -1 = 1 ↔ F 이므로,
+x ⟶ y+ (by ε)
+ ↔ NOTATION(y ≠ ∞ ⊼ y ≠ -∞ ⊼ ε > 0, NOTATION(+1 = 1, y < x < y + ε, y - ε < x < y), x is undefined)
+ ↔ NOTATION(y ≠ ∞ ⊼ y ≠ -∞ ⊼ ε > 0, NOTATION(T, y < x < y + ε, y - ε < x < y), x is undefined)
+ ↔ NOTATION(y ≠ ∞ ⊼ y ≠ -∞ ⊼ ε > 0, y < x < y + ε, x is undefined)
+
+이며
+
+x ⟶ y- (by ε)
+ ↔ NOTATION(y ≠ ∞ ⊼ y ≠ -∞ ⊼ ε > 0, NOTATION(-1 = 1, y < x < y + ε, y - ε < x < y), x is undefined)
+ ↔ NOTATION(y ≠ ∞ ⊼ y ≠ -∞ ⊼ ε > 0, NOTATION(F, y < x < y + ε, y - ε < x < y), x is undefined)
+ ↔ NOTATION(y ≠ ∞ ⊼ y ≠ -∞ ⊼ ε > 0, y - ε < x < y, x is undefined)
+
+이다.
+
+그러므로,
+
+t ≥ 0에 대해,
+
+x ⟶ ∞± (by ε) ↔
+x ⟶ -∞± (by ε) ↔
+x ⟶ a± (by 0 - t)
+ ↔ x is undefined
+
+이다.
+
+이하에서 a ∈ ℝ에서,
+
+x ⟶ a+ (by ε) : a < x < a + ε (단. ε > 0)
+
+이며
+
+x ⟶ a- (by ε) : a - ε < x < a (단. ε > 0)
+
+이다.
+
+다음으로는 x ≠ y일때의 접근을 정의하겠다.
+
+참고로, `x ⟶ y (by ε)`에서, y가 `a+`거나 `a-`여도 좋다.
+
+x ⟶̣ y (by ε) : (x ≠ y), x ⟶ y (by ε)
+
+`x ⟶̣ y (by ε)`는 "(x ≠ y)이고 x ⟶ y (by ε)"임을 의미한다.
+
+그게 다다. ㅋㅋㅋㅋ
+
+x ⟶̣ y+ (by ε) ↔ (x ≠ y), x ⟶ y+ (by ε)
+
+이며,
+
+x ⟶̣ y (by ε) ↔ (x ≠ y), x ⟶ y (by ε)
+
+이고,
+
+x ⟶̣ y- (by ε) ↔ (x ≠ y), x ⟶ y- (by ε)
+
+이다.
+
+이제 극한 • 좌극한 • 우극한을 정의하겠다.
+
+lim f(x) = L (x ⟶ a) : ∀ε>0, ∃δ>0 s.t. ((x ⟶̣ a (by δ)) → (f(x) ⟶ L (by ε))
+
+이에 따라,
+
+(lim f(x) = L ∈ ℝ (x ⟶ ±∞))
+ ↔ (∀ε>0, ∃K>0 s.t. ((x ⟶̣ ±∞ (by K)) → (f(x) ⟶ L ∈ ℝ (by ε)))
+ ↔ (∀ε>0, ∃K>0 s.t. NOTATION(±1 = 1, x > K, x < -K) → (f(x) ⟶ L ∈ ℝ (by ε)))
+
+이고,
+
+(lim f(x) = ±∞ (x ⟶ ±∞))
+ ↔ (∀M>0, ∃K>0 s.t. ((x ⟶̣ ±∞ (by K)) → (f(x) ⟶ ±∞ (by M)))
+ ↔ (∀M>0, ∃K>0 s.t. NOTATION(±1 = 1, x > K, x < -K) → NOTATION(±1 = 1, x > M, x < -M))
+
+이며,
+
+(lim f(x) = ∓∞ (x ⟶ ±∞))
+ ↔ (∀M>0, ∃K>0 s.t. ((x ⟶̣ ±∞ (by K)) → (f(x) ⟶ ∓∞ (by M)))
+ ↔ (∀M>0, ∃K>0 s.t. NOTATION(±1 = 1, x > K, x < -K) → NOTATION(∓1 = 1, x > M, x < -M))
+
+이고,
+
+(lim f(x) = ∓∞ (x ⟶ a ∈ ℝ))
+ ↔ (∀M>0, ∃δ>0 s.t. (x ⟶̣ a (by δ)) → (f(x) ⟶ ∓∞ (by M)))
+ ↔ (∀M>0, ∃δ>0 s.t. (x ⟶̣ a (by δ)) → NOTATION(∓1 = 1, x > M, x < -M))
+
+이며,
+
+(lim f(x) = ±∞ (x ⟶ a± ∈ ℝ))
+ ↔ (∀M>0, ∃δ>0 s.t. (x ⟶̣ a± (by δ)) → (f(x) ⟶ ±∞ (by M)))
+ ↔ (∀M>0, ∃δ>0 s.t. (x ⟶̣ a± (by δ)) → NOTATION(±1 = 1, x > M, x < -M))
+
+이고
+
+(lim f(x) = ±∞ (x ⟶ a∓ ∈ ℝ))
+ ↔ (∀M>0, ∃δ>0 s.t. (x ⟶̣ a∓ (by δ)) → (f(x) ⟶ ±∞ (by M)))
+ ↔ (∀M>0, ∃δ>0 s.t. (x ⟶̣ a∓ (by δ)) → NOTATION(±1 = 1, x > M, x < -M))
+
+이다.
+
+이제, 실수에서의 유계를 정의하자.
+
+UpperBound(x, S) : ∀t ∈ S, t ≤ x
+LowerBound(x, S) : ∀t ∈ S, t ≥ x
+
+UpperBoundSet(S) ≜ {x | UpperBound(x, S)}
+LowerBoundSet(S) ≜ {x | LowerBound(x, S)}
+
+BoundedAbove(S) : UpperBoundSet(S) ≠ ∅
+BoundedBelow(S) : LowerBoundSet(S) ≠ ∅
+
+LeastUpperBound(S) ≜ NOTATION(BoundedAbove(S) ? min UpperBoundSet(S) : ∞)
+GreatestLowerBound ≜ NOTATION(BoundedBelow(S) ? max LowerBoundSet(S) : -∞)
+
+sup S ≜ LeastUpperBound(S)
+inf S ≜ GreatestLowerBound(S)
+
+그리고 함수값의 상•하한은 다음으로 정의한다.
+
+sup f(x) (Φ(x)) ≜ sup f[Φ]
+inf f(x) (Φ(x)) ≜ inf f[Φ]
+
+Mₒ(a) ≜ sup f(x) (x ⟶̣ a (by o))
+mₒ(a) ≜ inf f(x) (x ⟶̣ a (by o))
+
+lim sup f(x) (x → a) ≜ inf Mₒ(a) (o > 0)
+lim inf f(x) (x → a) ≜ sup mₒ(a) (o > 0)
+
+이렇세 상극한 하극한을 나무위키를 참고하여 정의하였다.
+
+나무위키 ε-δ논법 해설을 참고하라.
+극한을 배우는데 매우 유용하다.
+
+참고로, 저 극한들이 동작하는 원리는 나무위키에 첨부된 Ray수학의 "극한을 정의하는 가장 세련된 방법"에서 그래프로 이해하자.
+
+그게 제일 편하고 쉽다.
+
+에초에 도약(jump) 불연속같은 개념이나 좌극한 우극한 같은 개념을 직관적으로 숙지해 두면, 수렴할때 극한의 유일성을 납득하는데 도움이 많이 된다.
+
+한마디로 머릿속에 논리식과 그래프가 한번에 그려지고 죄다 설명된다.
+
+뭐... 그런 직관은 이미 수II시간이나 미적분시간에 주입받았을테니까 문제없긴 한데...
+
+지금까지 정의한 ×나많은 개념들이 이상하다고 느껴질수 있으니 초실수체로 직관를 잡는법도 있다.
+
+입시에 쓰기에는 비효율적이지만 무한소식 사고방식이다.
+
+나무위키 초실수체 문서의 ultrapower construction를 참고하라.
+
+울트라곱을 이용했을때, 무한소가 되는 실수열의 특성과, 그것이 ε-δ랑 호환되는 꼴을 보아하면,
+ε-δ가 만든 한계 오차의 개념이 얼마나 정신나간 개념인지 체감할 수 있는데,
+
+이번에 정의한 `x ⟶̣ a` 및 `x ⟶ a` 개념이 좌극한 우극한 포함해서 어떻게 초실수로 옮겨지는지를 생각하면....
+
+...
+
+극한은 무한소가 한없이 0에 가까운 정신나간 특성을 가지는...
+
+즉, x ⟶̣ 0 인 정신나간 성질을 이용하는 체계로써, 
+실수 자체도 초유리수에서 초실수로 확장한걸 표준부분을 쓰지 않고서야 코시 수열로는 참으로 터무니없이 어렵고,
+초실수체의 울트라곱 대수구조를 생각하면, 극한은 터무니없이 정신나간 체계이다.
+
+설명을 마치며, 이번 "극한에 대하여"문단은, 
+<Checklist>
+[✅️] 0. 일단 이것부터 다 작성한 후
+[☑️] 1. 초실수애 대한 설명추가 후,
+[☑️] 2. "미분에 대하여"문단을 따로 만들고
+[☑️] 3. 합쳐서
+[☑️] 4. 내용을 전부 분할해서, 이 Lava설명 내부에 녹일것이다.
+
+끝.
+
 ### 참고 함수
 
 참고사항일 뿐이다...
