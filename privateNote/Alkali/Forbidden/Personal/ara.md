@@ -13,8 +13,8 @@ AgF와 SO¤C가 가입되어있으며,
 ## 용어 정의
 
  - 아포칼립스 : 재해나 인간의 자멸로 인한 후생수준의 급격한 퇴보나 범새계적 국가 붕괴
- - 포스트 아포칼립스용 금화 AfocalipsGold : 13K 적금(Red Gold, Cu + Au) 60% + 철(Iron, Fe) 40%를 융융하여 혼합한 "적금-철 혼합물' 1oz에 백금(Platinum, Pt) 5 μm도금한 coin
- - AUGU$T : {1000$ + 1 AfocalipsGold}당 스테이블 코인 2000개를 대응시킨 코인
+ - 포스트 아포칼립스용 금화 AfocalipsGold : 13K 적금(Red Gold, Cu + Au) 60% + 철(Iron, Fe) 40%를 융융하여 혼합한 "적금-철 혼합물' 1oz에 백금(Platinum, Pt) 5 μm도금한 coin
+ - AUGU$T : {1000$ + 1 AfocalipsGold}당 스테이블 코인 2000개를 대응시킨 코인
 
 ## AgF(AfocalipsGoldFoundation) : Post Afocalips에서 AfocalipsGold를 이용하여 문명을 복구하고, AgF를 제건하는게 목적인 제단.
 
