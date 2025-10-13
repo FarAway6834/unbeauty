@@ -134,7 +134,7 @@ operator ¤ system의 한 원소와, 그 두 C코드 인자와 그렇기 만든 
 
 SO¤C에서 operator ¤ system및 L₁, L₂의 표준으로써 정하는 표준의 목록이다.
 
- - FakeStandard : 명목상 표준으로 창립시에 미리 등기해야하며, 고정이다.
+ - FakeStandard : 명목상 표준으로 창립시에 미리 등기해야하며, 고정이다.
  - SubStandard : 사실상 (de facto)의 표준으로 SO¤C에서 채택된 표준이다. 단 하나의 co-SubStandard만 표준이 될 수 있다. 연도별로 SO¤C SubStandard 채택 대회에 변동 혹은 동결로 결정하여, 다음 대회까지 기다리는 형태이다. SO¤C에서 심사 대리인으로써 TaskForse를 급조하여, 매뉴얼대로 심사하게 지시한다.
  - co-SubStandard : FakeStandard에서 이것으로 컴파일되는 C언어로 작성된 컴파일러가 제공되어야 하며, SubStandard 채택 대회에 신청하여, SO¤C에서 채택하면 SubStandard가 된다.
  - nonStandard : 수학에서 비표준 해석학마냥, 채택되지 않고 co-SubStandard도 아니고, FakeStandard도 이니면 nonStandard라 한다. 비표준해석학을 한다고 욕 안먹는것처럼 이것도 마찬가지.
