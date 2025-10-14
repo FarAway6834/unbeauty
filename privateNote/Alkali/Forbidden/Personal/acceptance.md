@@ -47,4 +47,4 @@
 
 ## 의미론적인 "규정"에 대하여
 
-정의(definition)나 할당(assignment
+정의(definition)나 할당(assignment, 대부분 대입을 변수 선언에 쓰기에, 대입을 할당의 의미로 쓰는경우가 많다)
