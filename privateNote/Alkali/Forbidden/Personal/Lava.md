@@ -1428,6 +1428,12 @@ Group(Volcano₁,₁(D, e, `*`)) s.t. D = {e} ⊨ "이항연산 `*`가 <{e}, `*`
 
 일때, 이를 자명군이라고 하고, Laval 대수구조 명칭을 TrivialGroup 이라 한다
 
+#### 2. 6. 환 (rig)
+
+Volcano₂,₂(D, 0, 1, +, ×) ⊨ CommutativeGroup(Volcano₁,₁(D, 0, +)), Monoid(Volcano₁,₁(D, 1, ×)) ⊨ 
+
+...작성중...
+
 #### 3. 1. 1. 왼쪽 유사군 (LeftQuasigroup)
 
 Volcanoₘ,₂(D, Sym₁, ..., Symₘ, `*`, `◦`) [`◦` := LeftInverseOf(`*`)] ⊨ "이항연산 `*`가 (D, `*`, `◦`)를 이룸", BijectiveLeftFunctor
