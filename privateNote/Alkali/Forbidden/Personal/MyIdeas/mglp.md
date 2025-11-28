@@ -132,7 +132,7 @@ L○x : L"x는 보편적이다."
 
 ## ADGA (Aspic Deepmind Gedankenexperiment AI) 모델 가정
 
-CoT대신에, 설계부터 <UG(생성문법 처리기) • 형식언어 처리기 (HOL+HoTT+Chu Space) • 프로그래밍 언어 번역기 • 프로그래밍 언어능력 엔진>을 탑제하고, "MGLP"에 친화적인 알고리즘으로 설계한 LLM을 GPT급으로 충실히 학습시키면서도, MGLP적 사고를 3배 이상 더 학습시킨 LLM, ADGA(Aspic Deepmind Gedankenexperiment AI)모델이 존재한다 가정하자
+CoT대신에, 설계부터, 4대 논리 처리기 <UG(생성문법 처리기) • 형식언어 처리기 (HOL+HoTT+Chu Space) • 프로그래밍 언어 번역기 • 프로그래밍 언어능력 엔진>을 탑제하고, "MGLP"에 친화적인 알고리즘으로 설계한 LLM (4대 논리 처리기 + 라틴어 엔진) 을 GPT급으로 충실히 학습시키면서도, MGLP적 사고를 3배 이상 더 학습시킨 LLM, ADGA(Aspic Deepmind Gedankenexperiment AI)모델이 존재한다 가정하자 (단. 라틴어와 기타 모든 나라의 언어를 골고루 학습한 평범한 LLM이지만, 4대 논리 처리기를 이용하요 MGLP사고를 하는 부분에 초점이 맞춰저 있다. 물론 GPT처럼 Contextous Topos를 자연어로 이해할수도 있다.)
 
 1. 존재할수 있을까?
 2. GPT API + ADGA로 사고하는 앙상블을 만들때 CoT vs MGLP
