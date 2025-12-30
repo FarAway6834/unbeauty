@@ -15,6 +15,9 @@ Hexcheck자료형의 배열로, short형의 크기를 가지고 있고, short형
 
 그래야 무결성이 맞다.
 
+참고로 아래 코드들은 의사코드다.
+실행용이 아니고, UB먹고싶지 않으면 실행하지 말길.
+
 ## include/hexchecker/chexcheck.h
 ```c
 #pragma once
