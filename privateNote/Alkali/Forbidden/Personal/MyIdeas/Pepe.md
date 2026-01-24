@@ -4,11 +4,17 @@
 
 ## PSSL (Pepe Syntax Sugar Layer)
 
+Pepe의 문법 설탕 파트다. 사실은 Pepe는 많는 부분이 문법 설탕으로 되어있다.
+
+...작성중...
+
 ## PwP (Pepe without PSSL)
 
 PSSL에서 지원하는 문법이 결어된 Pepe로, 문법 설탕으로 만들어진 다수의 문법이 존재하지 않는다.
 
 여기서 지원되는 문법이라고는, BNF의 문법과 그룹, 그리고 '!'밖에 없다.
+
+...작성중...
 
 ## Pepe Core
 
