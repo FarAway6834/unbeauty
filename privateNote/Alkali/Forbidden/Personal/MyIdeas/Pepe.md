@@ -28,11 +28,59 @@ EBNFiblePCREW가 지원하는 유사 EBNF이다.
 
 EBNFiblePCREW는 PCREW-DSL의 베터리(Bettery, 언어 내장 기본제공 라이브러리를 의미하는 말)인 DSL인데, Pepe를 사용하기 위한 언어다.
 
-Pepe는 
+Pepe는 "script for function definition" 페러다임언어고, EBNFiblePCREW는 Pepe의 이용자 (고객) 언어이다.
+
+Pepe랑 EBNFiblePCREW코드는 또 EBNF랑 PCREW랑도 다르다.
 
 ````markdown
+
+```EBNF
+```
+
 ```pepe
+```
+
 ```pcrew/ebnfible
+#!/bin/pcrew/dsl/ebnfible
+```
+
+```pcrew
+```
+````
+
+그렇다. EBNFiblePCREW는 DSL이랍시고 붙인 저 컴파일러 "ebnfible"이 컴파일러인 언어이다.
+
+사실 DSL도 아니고 pcrew를 컴파일러로 활용하게해주는 FW니까 컴파일러라고 불러도 손색이 없고, 그게 사실 옳은말이다.
+
+DSL이 커스컴이 안되고 컴차일만 되명 뭐가 도메인-특화인가? 전혀 문법을 유저가 정의하지 않는데. 그건 걍 컴파일러다.
+
+암튼
+
+pepe코드는 다음과 같이 사용된다.
+
+````pcrew/ebnfible
+#!/bin/pcrew/dsl/ebnfible
+
+...함수명 생략... = s/...패턴 앞부분 생략... ```pepe
+...pepe 코드 생략...
+; 이 버전은 s/$pettern/$replace-str/gm 버전
+``` ...패턴 뒷부분 생략.../...치환 문자열 부분 생략.../gm
+
+...함수명 생략... = pcrew(pr/...패턴 앞부분 생략... ```pepe
+...pepe 코드 생략...
+; 이 버전은 pcrew(pr/$pettern/gm, "$replace-str") 버전
+``` ...패턴 뒷부분 생략.../gm, "...치환 문자열 부분 생략...")
+````
+
+## "script for function definition" 페러다임
+
+함수를 정의하는 용도의 프로그래밍 언어 (스크립트 언어)를 이르는 말.
+
+물론, 그런 페러다임 없다. 내가 붙인 이름
+
+"script for function definition" 페러다임 언어는 항상 라이브러리 용도로 사용되며, 그 라이브러리의 이용자 (고객) 언어가 항상 존재해야한다.
+
+안그러면 라이브러리인 자신을 써줄 타깃이 없으니까.
 
 ## PSSL (Pepe Syntax Sugar Layer)
 
