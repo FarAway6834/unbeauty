@@ -72,6 +72,12 @@ pepe코드는 다음과 같이 사용된다.
 ``` ...패턴 뒷부분 생략.../gm, "...치환 문자열 부분 생략...")
 ````
 
+그리고 자칭 dsl컴파일러라는 사실상 EBNFiblePCREW언어의 컴파일러는, 위에서,
+
+1. pepe코드블럭을 읽는다.
+2. Pepe 컴파일러 (**Pe**PeC : **Pe**pe **C**ompiler) 에게 시켜서 PCRE상의 Pepe Core Runtime으로 컴파일시킨다.
+3. pepe코드 블럭을 컴파일 결과물인 PCRE상의 Pepe Core Runtime으
+
 ## "script for function definition" 페러다임
 
 함수를 정의하는 용도의 프로그래밍 언어 (스크립트 언어)를 이르는 말.
