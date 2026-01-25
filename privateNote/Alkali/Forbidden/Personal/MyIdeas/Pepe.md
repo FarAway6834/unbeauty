@@ -1,5 +1,7 @@
 # **P**epe : **E**bnfible**P**crew - **E**bnf (EBNF that used on EBNFiblePCREW)
 
+역두문자어 PEPE는 다음의 약자이다.
+
 **P**epe : **E**bnfible**P**crew - **E**bnf (EBNF that used on EBNFiblePCREW)
 
 EBNFiblePCREW가 지원하는 유사 EBNF이다.
@@ -8,7 +10,29 @@ EBNFiblePCREW가 지원하는 유사 EBNF이다.
 
 (지금 작성자는 현제 재작성일 (최초작성일 다음날인 1월 25일) 재작성시간 (9시 8분) 기준 막일어나서 졸려서 설명이 빻은점 양해 부탁한다.)
 
+사실 Pepe코드랑 EBNF코드는 작성부터 다르다.
 
+````markdown
+```EBNF
+이게 EBNF
+```
+
+```pepe
+이게 pepe
+```
+````
+
+이다.
+
+또한 Pepe는 Pepe 컴파일러 (**Pe**PeC : **Pe**pe **C**ompiler)에 의해, PCRE상의 Pepe Core Runtime으로 컴파일된다.
+
+EBNFiblePCREW는 PCREW-DSL의 베터리(Bettery, 언어 내장 기본제공 라이브러리를 의미하는 말)인 DSL인데, Pepe를 사용하기 위한 언어다.
+
+Pepe는 
+
+````markdown
+```pepe
+```pcrew/ebnfible
 
 ## PSSL (Pepe Syntax Sugar Layer)
 
