@@ -76,7 +76,11 @@ pepe코드는 다음과 같이 사용된다.
 
 1. pepe코드블럭을 읽는다.
 2. Pepe 컴파일러 (**Pe**PeC : **Pe**pe **C**ompiler) 에게 시켜서 PCRE상의 Pepe Core Runtime으로 컴파일시킨다.
-3. pepe코드 블럭을 컴파일 결과물인 PCRE상의 Pepe Core Runtime으
+3. pepe코드 블럭을 컴파일 결과물인 PCRE상의 Pepe Core Runtime으로 치환한다.
+4. 그러면 해당 코드는 일반 PCREW나 다를바 없는 코드가 된다.
+5. 그러면 컴파일 끝 ㅋㅋ
+
+이러한 언어가 EBNFiblePCREW이고, EBNFiblePCREW용도의 자칭 EBNF가 Pepe다.
 
 ## "script for function definition" 페러다임
 
