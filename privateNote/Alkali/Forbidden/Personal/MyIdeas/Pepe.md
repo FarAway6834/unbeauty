@@ -82,6 +82,22 @@ pepe코드는 다음과 같이 사용된다.
 
 이러한 언어가 EBNFiblePCREW이고, EBNFiblePCREW용도의 자칭 EBNF가 Pepe다.
 
+ - Original BNF
+ - Wirth's EBNF
+ - Cromwell's EBNF
+ - Lex/Yacc BNF
+ - ABNF
+ - Lark EBNF
+ - Peg.js / PEG.js
+ - RFC 2234
+ - ISO/IEC 14977
+ - W3C EBNF
+ - PEP 617 (EBNF for Python)
+ - Regex-infused EBNF
+ - 젠장 너무 많아서 검색 포기함...
+
+등 여러가지 EBNF들은 PCREW의 bettery FW인 PCREW-DSL을 통해서 잘 만들기를 빈다. Pepe를 배우는것보다, 차라리, EBNFiblePCREW를 로직으로 빌드된 PCREW-DSL을 이용해서, EBNFiblePCREW로 컴파일되는 코드블럭으로, 각각의 BNF/EBNF들의 코드블럭의 문법을 지원시키기를 바란다. 이상. 서론 끝.
+
 ## "script for function definition" 페러다임
 
 함수를 정의하는 용도의 프로그래밍 언어 (스크립트 언어)를 이르는 말.
