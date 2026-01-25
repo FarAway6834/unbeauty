@@ -2,6 +2,14 @@
 
 **P**epe : **E**bnfible**P**crew - **E**bnf (EBNF that used on EBNFiblePCREW)
 
+EBNFiblePCREW가 지원하는 유사 EBNF이다.
+
+표면적으로는, EBNFiblePCREW상의 EBNF이지만, 사실랑 유사 EBNF임을 공식으로 명시할거다.
+
+(지금 작성자는 현제 재작성일 (최초작성일 다음날인 1월 25일) 재작성시간 (9시 8분) 기준 막일어나서 졸려서 설명이 빻은점 양해 부탁한다.)
+
+
+
 ## PSSL (Pepe Syntax Sugar Layer)
 
 Pepe의 문법 설탕 파트다. 사실은 Pepe는 많는 부분이 문법 설탕으로 되어있다.
