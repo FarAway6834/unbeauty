@@ -342,3 +342,20 @@ X<⋯>식으로 작성한다.
 그렇다. 이건 그저 Notation일 뿐.
 
 Notation은 Notation인데, 타입을 객체로 취급해주는 레벨인거다.
+
+## tuplic-definion (Notation)
+
+```
+(dom = X, codom = Y, graph f)(⋯) ≜ ~
+```
+
+를
+
+```
+f :: X -> Y
+f(⋯) ≜ ~
+```
+
+라고 정의하는 표기법 (Notaion)이다.
+
+이 최강의 표기법을 얻고싶어서 이지랄을 떨었던거다.
