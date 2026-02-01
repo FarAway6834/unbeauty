@@ -874,6 +874,8 @@ limer [발음 : limmiter [리미터], limer [리머], 약칭 : lime] 함수 lime
 
 #### 부록 : 혼자 만든 극한 이해 시스템
 
+단순히, 극한점만 정리해도 이해하기 편하겠다~ 싶어서 썼다.
+
 1. Endofunctor Type System
 
 ````markdown
@@ -1322,6 +1324,10 @@ T ET x = <T, x, f>인 모노이드로 정의된다고 해두겠다.
 
 이상으로, EndofunctorTypesystem의 정의를 마친다.
 ````
+
+2. Endofunctor Type System을 응용한, 극한점 타입 제작
+
+... 작성즁 ...
 
 ### 성질 목록
 
