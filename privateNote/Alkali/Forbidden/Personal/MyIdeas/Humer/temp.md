@@ -376,11 +376,11 @@ struct unrolledTRONamespace2TROFunction<T, 1> : TROFunction {
 /* 어디까지나 의사코드일 뿐임 */
 ```
 
-## KyuKurarin heap
+## KyuKurarin uso (うそ) : 거짓된 런타임을 제공하는 유일한 편의기능.
 
-사용 방법은 `#pragma KyuKurarin(include, KyuKurarin heap)`를 쓰면, SlicibleTarr의 사용이 허가되는 방식이다.
+사용 방법은 `#pragma KyuKurarin(include, KyuKurarin うそ)`를 쓰면, SlicibleTarr의 사용이 허가되는 방식이다.
 
-SlicibleTarrAlloc<T, L>의 페이지를 생성했다면; SlicibleTarrAlloc<T, L>::SlicibleTarr<L>로, SlicibleTarr을 다룰수 있고, SlicibleTarr은 인덱싱과, SlicibleTarr.sliceafter, SlicibleTarr.split SlicibleTarr.slicebefore, SlicibleTarr.primitive_slicebystep SlicibleTarr.slicebystep, SlicibleTarr.applyGPUShuffle등을 사용 가능하다. SlicibleTarr.primitive_slicebystep SlicibleTarr.applyGPUShuffle로 구현된다.
+SlicibleTarrAlloc<T, L>의 페이지를 생성했다면; SlicibleTarrAlloc<T, L>::SlicibleTarr<L>로, SlicibleTarr을 다룰수 있고, SlicibleTarr은 인덱싱과, SlicibleTarr.sliceafter, SlicibleTarr.split, SlicibleTarr.slicebefore, SlicibleTarr.primitive_slicebystep SlicibleTarr.slicebystep, SlicibleTarr.applyGPUShuffle등을 사용 가능하다. SlicibleTarr.primitive_slicebystep SlicibleTarr.applyGPUShuffle로 구현된다.
 
 SlicibleTarr.slicebystep(k)은, SlicibleTarr.primitive_slicebystep(k)[:len(x)//k]인 것인 셈이고, 
 
@@ -391,6 +391,24 @@ x[:len(x)//k]에 x[::k]의 인덱스를 몰아넣고, x[len(x)//k:]에 나머지
 예컨데, {0, 1, 2, 3, 4, 5}[::3]를 하고싶을땐,
 
 {0, 3, 1, 2, 4, 5}인 미리 생성된 GPUShuffle을 SlicibleTarr.applyGPUShuffle을 통해 이용하여, virtual MMU수준에서 조작한다.
+
+SlicibleTarr.split(L)을 하면, L기준 first와 last에 대해, ret이
+struct {
+    union {
+        delctyp(self)* old;
+        delctype(self.first)* first;
+    };
+    delctype(self.last)* last;
+} ret = {.old = self, .last = (delctype(self.last)*) malloc(sizeof(delctype(self.last)))};
+이면
+addrswap((size_t) &ret.old->last, (size_t) &ret.last); 이후 (**fact : addrswap이 커널에 없어서, 가상 메모리를 만들기로 마음먹었다. 이 시점에서, KyuKurarin 언어는 malloc • calloc • realloc • free • new • delete가 이미 컴파일러 레벨에서 튜닝되어있다.**)
+
+ret.first = (delctype(self.first)*) realloc(ret.old, sizeof(delctype(self.first)));을 통하여 완성하면,
+**split 완료**
+
+NOTE : 
+
+**WARNING : 원래는 MMU를 OS가 아닌 프로그램이 직접 제어하길 원했다. 아무리 공학용 설비라고 하지만, 왜 컴퓨터의 주인이 프로그램을 제작해서 돌리는 유저가 아닌 커널인가? kernel이 컴퓨터를 지배한다는것은 이론전산학적 관점에서는 자원 관리 문제의 해법일뿐, 필연도 아니고, 그냥 한가지 공학적 관점을 전체 프로그래밍 이론에게 강요하는 권위적 독제다. 관습적으로 우리가 kernel을 당연시하는건, 자연어에 의존해, 수학(이론전산학을 포함하는 학문)이라는 형식언어에서, 비형식적인 감정인 "권위"를 들이대는, 오류를 저질렀다고 느낀다. 그냥 kernel에게서, MMU제어권을 조심히 할당해서, kernel이 허용하는 범위 네에서, 줏 조작 요청을 보내거나, 스왑 요청을 보낼때, 해당 조작이나 스왑이, 권한 • 스코프 • 위치 등 여러 측면에서 안전하면 허용하면 되지 않는가? 진짜 너무한다. 그래서 가상화한 버전으로나마 만들어봤다.**
 
 아래 쓰여있는 SlicibleTarr(아직 안썼지만)을 통해, 자동 new • delete가 되는 heap을, 가상 메모리 풀 페이지를 할당하는 경우에 한해서 허용한다.
 
