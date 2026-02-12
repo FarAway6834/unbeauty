@@ -376,7 +376,7 @@ struct unrolledTRONamespace2TROFunction<T, 1> : TROFunction {
 /* 어디까지나 의사코드일 뿐임 */
 ```
 
-## KyuKurarin uso (うそ) : 거짓된 런타임을 제공하는 유일한 편의기능.
+## KyuKurarin uso (うそ) : 거짓된 런타임을 제공하는 유일한 편의기능. (명목상 포지션 = 극사실주의 기법 중, 현실적인 부분을 여러군대 그리다가, 비현실적인 부분(가짜 힙)을 추가하는 기법)
 
 사용 방법은 `#pragma KyuKurarin(include, KyuKurarin うそ)`를 쓰면, SlicibleTarr의 사용이 허가되는 방식이다.
 
