@@ -1,7 +1,8 @@
 # LinguaFormalisLatina
 
-Quick DB : CountingFilter에 x가 있다면, bool hash map에 x번째 인덱스를 가져오고 아니면 false를 반환하는 DB를 이르는 말.
-Declinato Exceptio DB : Declinato Exceptio를 등록한 DB
+기술 정의
+1. Quick DB : CountingFilter에 x가 있다면, bool hash map에 x번째 인덱스를 가져오고 아니면 false를 반환하는 DB를 이르는 말.
+2. Declinato Exceptio DB : Declinato Exceptio를 등록한 DB
 
 LinguaFormalisLatina : 완전히 형식화된 라틴어 
 1. Declinato 강제(forse)
