@@ -10,6 +10,8 @@
  > * tip : 우울증 완치된지 3년이나 되서 "우울증 흉내"인것이다. 컨셉이다 컨셉 ㅋㅋㅋ, 그러나 절대 유쾌한 질환은 아니다.
  > * note : Kafu(可不, かふ)가 부른 KyuKurarin과 Phony에서 영감을 얻었다. 평소에 즐겨듣는 노래다.
  > * 추가적인 관전 POV : 가상 힙을 사용할때, OS로부터 매모리를 할당받기에, 사실은 페이지를 mmap으로 불러온다)의 생산성은? (+ 정적 영역의 메모리 할당을 전부 구조체 • 공용체 기반으로, 메모리 구조도 다이어그램으로 타입을 취급하도록 하고 Haskell적 OOP같이 함수로 구조체를 인자로 받을수 있는거 외에, 정적 영역은 죄다 구조체로 다뤄야하는 지옥이라, 하나의 네임스페이스 안에 모든걸 일반화 • 구조화하려는 플라톤적 강박이라는 비형식적 아이러니
+ > * 언어의 촘스키 위계 : `#pragma KyuKurarin(allow, stack)`를 코드에서 사용하지 않으면서 제귀를 안쓰는 heaplessKyuKurarin인겅우 FSM, heaplessKyuKurarin인겅우 PDA, `#pragma KyuKurarin(include, KyuKurarin うそ)`가 코드 내에 존재하면, Turing Machine.
+ > * heaplessKyuKurarin와 stacklessKyuKurarin : `#pragma stacklessKyuKurarin`을 선언하면, 자동으로, `#pragma heaplessKyuKurarin`이 따라붙는다 (`#pragma KyuKurarin(allow, stack)`를 금지하는 방법이다.). 컴파일러 옵션에서, --not-stacklessKyuKurarin를 해야지, `#pragma stacklessKyuKurarin`가 코드에 존재하지 않아도 에러를 내지 않으며, --not-stacklessKyuKurarin인 상태라면, --not-heaplessKyuKurarin를 해야, `#pragma heaplessKyuKurarin`가 없어도 코드에서 에러를 안낸다. <의도 = 왠만해서는, 튜링머신으로 자신을 속인 FSM을 FSM이나 PDA로 다루라는 메시지. 일부러 번거로움을 추가하여, 정적영역 only나 heapless설계를 고려하도록 설계되어있다. 또한, `heaplessKyuKurarin`의 다른 이름은 `造花（ぞうか）`임. `#pragma ぞうか`도 인식함. "この世で（よで）造花より（ぞうかより）綺麗な（きれいな）花は（はなは）無い（ない）わ"라고 해서, `#pragma ぞうか`를 선언하면, 컴파일러는, 
  > 
 
 ````
@@ -389,6 +391,15 @@ struct unrolledTRONamespace2TROFunction<T, 1> : TROFunction {
 ````
 
 ## KyuKurarin uso (うそ) : 거짓된 런타임을 제공하는 유일한 편의기능. (명목상 포지션 = 극사실주의 기법 중, 현실적인 부분을 여러군대 그리다가, 비현실적인 부분(가짜 힙)을 추가하는 기법)
+
+ ⚠️ 주의 : heaplessKyuKurarin언어에 대해 정의함. ⚠️
+  * heaplessKyuKurarin언어 : `#pragma heaplessKyuKurarin`시 `#pragma KyuKurarin(include, KyuKurarin うそ)`에 대해, `わたし きゅうくらりん`라고 에러를 내고 종료한다. 이외에난 KyuKurarin언어와 100%동일
+  * 실제로 KyuKurarin은 heap을 malloc • calloc • realloc • free • new • delete • splitlloc 으로 직접 사용하는걸 금지한다. `#pragma IAmKyuKurarinCompiler`를 명시해야만 사용 가능하다.
+  * SlicibleTarr는 `#pragma KyuKurarin(include, KyuKurarin うそ)`를 명시해야 include되고, 그제서야 사용 가능하다. 그 이전까지, virtual MMU는 존재하지 않고, SlicibleTarr도 존재하지 않는거다.
+  * malloc • calloc • realloc • free • new • delete • splitlloc 마저도, `#pragma KyuKurarin(include, KyuKurarin うそ)`를 명시해야 include되고, 그제서야 사용 가능하다. 그 이전까지, virtual MMU는 존재하지 않고, malloc • calloc • realloc • free • new • delete • splitlloc도 존재하지 않는거다.
+  * load 라는 명령이 존재하는데, "load 객체타입"시, new를 하는 대신에, SlicibleTarr에 인덱스를 추가해서 (realloc 이후 new를 하여, addrswap으로 로드하고, realloc으로 발생한 쓰래기만 delete하는 기법) 사용하는 방식으로, 사실상 new의 대용이다. SlicibleTarr를 초기에 생성하면, SlicibleTarr::load 식의 이름으로 사용 가능한 명령어다. 기본적으로, SlicibleTarr초기화 및 사용은 IAmKyuKurarinCompiler없이도 허용되기 때문. 인덱스 삭제로 슬라이싱을 통해서 구현되서, delete가 필요없던거고.
+  *  SlicibleTarr가 없는 KyuKurarin은, Stack이외에 동적 할당이 없으니까, Push down Automata로 봐도 무방하다.
+  *  SlicibleTarr를 `#pragma KyuKurarin(include, KyuKurarin うそ)`로 로드해야만, 튜링 완전하다.
 
  > 
  > 사용 방법은 `#pragma KyuKurarin(include, KyuKurarin うそ)`를 쓰면, SlicibleTarr의 사용이 허가되는 방식이다.
