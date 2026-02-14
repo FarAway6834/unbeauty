@@ -733,6 +733,192 @@ KyuKurarinLispList<T> (Fact : bytecode • exec가 추가된 CytarrList), KyuKur
 4. 재배열시, KyuKurarinLispDynamicStruct::function의 맴버 변수 엑세스를, 에셋에 맞게 매핑시키는건, k = 1일시 O(1)이도록 동작해야하기에, KyuKurarinLispDynamicStruct(KyuKurarinLispDynamicStruct::function)을 하는 코드 자체를 **재배열시 조작하는 방식이다.** 요컨데, 컴파일러를 컴파일하는거다.
 5. 변경이 잦다면 trie를 추천하지 않고, 접근속도를 희생해서, KyuKurarinPCREibleBytes선에서 끝내는걸 추천한다. GPGPU Shuffle을 AOT로 추가하지 않는 경우 최악의 경우 O(n) (미리 준비된 만능 Shuffle에셋을 조합하는 경우)이고, 엑세스 에셋에 맞게 컴파일할 런타임JIT Modifier를 JIT컴파일하는데 드는 비용이, 사실상 런타임에 코드를 생성하는거라, 미리 기억해둔 에셋 이름과 주소 쌍을, 코드로 구현하는데 드는 시간은, 길이 L = 1일때, O(1)로 에셋 이름과 주소와, 작성할 코드를 KyuKurarinLispListComprehension이라는 이터레이터로 O(L)에 걸쳐 생성하기에, 언젠가는 O(L)이 걸린다. O(1) 단위 생성 속도는 빠르지만. 최악의 경우 총 O(n + L)이다. (n은 Shuffle에셋 조합시 드는 횟수) 거기에다가, KyuKurarinLispDynamicStruct::function함수로 접근할때마다, k번의 작업이 존재할때, O(k)로 해야해서, KyuKurarinLispDynamicStruct::compile로 미리 이용할 KyuKurarinLispDynamicStruct::function을 JIT컴파일러로 기계어로 만들어야한다. O(n + L + k)인거다. KyuKurarinLispListComprehension자체도 JIT컴파일된다. O(L)과 O(k)가 JIT오버해드까지 동반라니 지옥이다. 참고로 굽는 시간중에, GPGPU속도는 사실, SlicibleTarr의 정의되지-않은-셔플-동작 시에 드는 비용이라, 행렬 연산 몇번하고, 통신은 input•ouput으로 한번밖에 안쓰이고, ram을 디바이스로 쓰기에 압승이긴 하다. 단지, GPU병렬연산인 Shuffle 한번에 시간 t가 소요될때, 시간 tn의 소모가 아깝다는거고, KyuKurarinLispListComprehension으로 JIT된 KyuKurarinLispDynamicStruct::compile를 생성하는 시간도, 실은, C++의 런타임에 생성돠는 iterator의 속도로 빠른데, 메모리 할당도, SlicibleTarr를 써서, 존나 빨라서 문제 없다. 해당사항이 O(1)이라도, 명령 L개에 대해서, KyuKurarinLispDynamicStruct::function에서 컴파일할것이 지시된 명령어(사실상 문자(char)열로 박혀있는 부분을 컴파일하라는 미션) 을 순회하는데 드는 시간은, 네이티브 for문으로 JIT컴파일되기에, 기계어를 런타임에 생성하는거다. 생성을 하더라도, jump table switch부분도 JIT가 개입해야하고, 그 이후에, jump table switch가 KyuKurarinLispDynamicStruct::function을 KyuKurarinLispDynamicStruct::compiled_function으로 바꿀때 하는 짓이, 상수 (KyuKurarinLispListComprehension에서 해당 상수를 박아넣는데, 그 상수는 바로, 메모리 에셋 구조체 필드가 어느 오프셋에 있는지다)의 구초제 접근으로 JIT컴파일을 라는 로직이기에, 사실상, 구조체 접근을 하는 정상적인 바이너리를 생성하는데 드는 시간이 jump table swich에 각 명령이 수행하는 기능이다. 말 그대로 jump table기반 JIT인터프리터 정도의 오버해드를 가지는 KyuKurarinLispDynamicStruct::compile를 생성하는거다. KyuKurarinLispDynamicStruct::compile은 함수를 런타임에 컴파일해주는거고, 그 함수를 읽는 과정이 인터프리터와 유사하기에 JIT되는데, 막상 KyuKurarinLispDynamicStruct::compile의 생성도 JIT로 (str.format(i, j) for i, j in asset)를 만드는 시간이라 기계어 시간이니까, 런타임 컴파일러를 제작하는 재작자 개고생한다. 실제로는, O(n + L + k)중에서, GPU부분 최적화가 응용되어 O(n + k)가 쓰일거고, 막상 재배열 이후에, function으로 접근하지 않으면 O(1)이다. O(n + k)마저 바이너리 성능이라는거. 중요한건, 최악의 경우, 기계어로 O(n + L + k)라는거, 귀중한 n + L + k명령 횟수가 날라가지 않는가 크하핫!!
 
+## 응용 기술 : CSML
+
+```markdown
+# CSML : C-Structed Markup Language
+
+HTML DOM을 사용하는 대신에, CSML DOM으로, WASM타깃인 Native언어(C/C++같은 언어. 어셈블리도 네이티브 언어임)에서 DOM을 고속 조작하는 방식을 이용한다.
+
+프로그래밍 언어는 KyuKyrarin.
+컴파일 옵션에서 `--fast`시 KyuKyrarinLisp를 프로그래밍 언어로 사용하지 않고, `--fast`없을시 기본적으로 KyuKyrarinLisp를 사용한다.
+
+기본적으로 CSML은 KyuKyrarin과 KyuKyrarinLisp로 컴파일된다 (`--fast`시 결과에 KyuKyrarinLisp는 없다.)
+
+...
+
+...
+
+(물론, CSML이 웹에 연결되는 방식에서 WASM부분만이 핵심이기에, 그렇게 말한거다)
+
+...
+
+...
+
+## 기반 프로젝트 (의존성)
+
+CSML프로잭트는 아닌데, CSML이 의존하는 기술들이다.
+
+### JS • WASM target LLVM compiler of KyuKyrarin & KyuKyrarinLisp
+
+CSML은 HTML/CSS/JS/WASM플렛폼 타깃 KyuKyrarin & KyuKyrarinLisp이다.
+
+에초에 프로그래밍 언어가 JS(HTML/CSS/JS)랑 KyuKyrarin & KyuKyrarinLisp이다.
+
+그리고 런타임이 WASM이다.
+
+프로그래밍 언어는 의존성으로 달아놓기 애매하지만, 참조하는 기술은 맞기에 기재하였다.
+
+### WebGPU • WebGL
+
+런타임에 가장먼저,
+1. WebGPU 사용 가능성 확인
+2. WebGL 사용 가능성 확인
+3. 알맞은 라이브러리를 WASM에서 사용하도록 연결 (KyuKyrarin은 기본적으로 GPU가 필요하기 때문에, WebGL같은 방식으로라도 가상이라도 강제로 할당해야한다.)
+4. WASM WarmUp
+5. 본격적인 작업 시작
+
+을 하므로, 의존성이다.
+
+### htmlless.js : <script src = 파일명>을 통해서 html을 생성하는 라이브러리. (서버리스가 실제로 서버를 최소화하듯, htmlless는 html을 최소화할 뿐이다.)
+
+ > 
+ >  - 정체 : 형식언어
+ >  - 구현체 : 컴파일러
+ >  - 결괏값 : html파일과 js파일
+ > 
+
+요약 : htmlless.js는 html의 문법에서, "필수식별자"라는 문법을 추가한 마크업 언어다.
+
+필수식별자 : element이름 앞에 필수로 붙여야하는 식별자
+1. extensible
+2. sealed
+3. frozen
+4. nonhtmllessjs
+
+제 1 장 : extensible
+
+ > 
+ >  - 원리 : JS가 `document.head / document.boy 등등`을 통해, element를 추가한다. (이걸 `onload-time DOM조작`이라 부른다.)
+ >  - 특징 : DOM으로 해당 document element의 object를 조회해보면, `Object.isExtensible`시 true인 객체이다.
+ >  - 구현 방법 : 순정 `make` (JS에서 DOM객체를 만든다) and `pack` (DOM에 추가한다) 방식
+ >  - 주의사항 : make and pack방식이 이름이 거창해서 그렇지, DOM에 객체를 추가할때, "make element, and pack it!"이라는 지극히 당연한 소리다. (예컨데, 배열 초기화시, "declare array, and initialize"라고 말하는급의 황당함)
+ > 
+
+제 2 장 : sealed
+
+ > 
+ >  - 원리 : JS가 `document.head / document.boy 등등`을 통해, element를 추가한다. (이걸 `onload-time DOM조작`이라 부른다.)
+ >  - 특징 : DOM으로 해당 document element의 object를 조회해보면, `Object.isSealed`시 true인 객체이다.
+ >  - 주의사항 : `Object.isFrozen`시는 false다.
+ >  - 구현 방법 : make결괏값을 pack하기 전에, Object.seal을 해준다 (개조된 `make` (JS에서 DOM객체를 만든다) and `pack` (DOM에 추가한다) 방식)
+ >  - extensible과의 차이점 : 없다. Object.seal을 해준거 말고 없다. 솔찍히 왜 나눴는지도 모를정도로.
+ > 
+
+제 3 장 : frozen
+
+> 
+ >  - 원리 : JS가 `document.head / document.boy 등등`을 통해, element를 추가한다. (이걸 `onload-time DOM조작`이라 부른다.)
+ >  - 특징 : DOM으로 해당 document element의 object를 조회해보면, `Object.isFrozen`시 true인 객체이다.
+ >  - 구현 방법 : make결괏값을 pack하기 전에, Object.freeze을 해준다 (개조된 `make` (JS에서 DOM객체를 만든다) and `pack` (DOM에 추가한다) 방식)
+ >  - extensible과의 차이점 : 없다. Object.freeze을 해준거 말고 없다. 솔찍히 왜 나눴는지도 모를정도로.
+ > 
+
+제 4 장 : nonhtmllessjs
+
+ > 
+ >  - 펙트 : 결과적으로 생성된 html파일에 박힐 코드다.
+ >  - 그럼 왜 htmlless.js임? : 그래서 지시어 이름이 "non"htmllessjs임
+ >  - 왜 필요함? : `<script src = 파일명>을 통해서 html을 생성하기 위해서` 그리고 인코딩이나 <html> • <head> • <body> 태그 명시
+ > 
+
+결론
+ > 
+ > 컴파일러가...
+ >  * simple compiler : 앞서 설명된 내용만 충실히 실행
+ >  * optimized compiler : 최적화된 html • js파일을 내놓음
+ > 
+ > 으로 나뉨.
+ > 
+ > 업대이트 유무...
+ >  * 언어 설계는 simple compiler구현체인 셈이므로, simple compiler는 업데이트가 없다 (= 언어의 업데이트는 이게 끝이다.)
+ >  * 이 프로젝트는, 사실상 **optimized compiler**를 어떻개 만들고 유지보수하고, **힌트용 구문을 추가하는가**이다.
+ > 
+
+#### optimized compiler의 힌트용 구문 예시
+
+초기 설계 당시 계획된건 단 네가지밖에 없었다.
+
+ * @conf_pragma : @pragma지시어를 통해, optimized compiler의 optimize과정을 능동적으로 통제 가능한 확장 프로그램을 명시한다 (그 확장 프로그램의 API구조는 명시되지 않았지만)
+ * @pragma : 확장 프로그램이 처리하기 위해서 있는거다.
+ * @alias(데코레이터로 사용할 이름, pragma기능명) : `@`문법이 확장되기 위해서.
+ * @initialize_default_setting : 현제 optimized compiler가 @alias나 @conf_pragma등등 초기 optimized compiler 힌트용 구문들을 실행하게 한다. 이를 통해서, 미리, 힌트용 구문들이 설정되어서, 실제 컴파일러는 오로지 확장 프로그램을 정의하고, @initialize_default_setting를 통해서 로드하는 식으로 기능추가 • 컴파일러 버전 업데이트시 기능 제공 등 유지보수를 하는거다.
+
+모든 데코레이터 형식의 optimized compiler 힌트용 구문은, @conf_pragma및 @pragma를 통해서 구현된다.
+
+다만, 실제로 유저가 @conf_pragma를 쓰는 일이 없어야 하기 때문에, 실제로는, @conf_pragma는 사용시 "WARNING : use trustible compiler extension. but I'll trust your choice."이라고 경고가 뜬다. 물론 컴파일러에 내장된 확장 프로그램의 경우엔 경고가 안뜬다.
+
+ > 
+ > 요약
+ >  - 핵심 : 컴파일러에서, 확장 프로그램과 API를 통해, optimizing만 전부 optimized compiler에 위탁.
+ >  - 자유도 : MAX. 확장 프로그램이 결괏값을 입맛대로 조절 가능. 인증 절차가 필요할듯해서, 컴파일러 내장 확장 프로그램에 인증용 확장을 제공할 생각.
+ >  - 그럼 컴파일러가 느려질텐데? : 실제로는, 구문에 `@initialize_default_setting`의 유무에 따라서, 존재하면, 확장 프로그램을 로드하는 과정을 생략하고 컴하일러가 확장 프로그램 기능을 대신하는 hot path를 준비하는 식임.
+ >  - 런타임은 안느려지는가? : 컴파일타임 오버해드에 대한 이야기일 뿐, 데코레이터 문법은, 런타임이 아닌 컴파일타임 실행일 뿐이다.
+ > 
+
+## CCSS (CSML CSS)
+
+CSS는 기본적으로, key와 value와 데코레이터 꼴의 추가구문으로 나뉘기에,
+그냥 C Struct로 바꿔버린다.
+
+**CCCS (compiled CCSS) 로 컴파일된다.**
+
+CCCS는 struct로 객체처럼 취급된다.
+
+## DOM 표현 방식
+
+CSML nonasset 인터페이스(그냥 빈 struct이고, 실제로 메서드 구현 여부는 concept로 확인한다)를 상속한 경우와, CSML asset 객체인 경우로 나뉜다.
+
+#### CSML nonasset 인터페이스(그냥 빈 struct이고, 실제로 메서드 구현 여부는 concept로 확인한다)를 상속한 경우
+
+CASE 1 : sealed
+ > 
+ > 원리 : 에초에 sealed자체가 struct랑 동형이라, KyuKyrarin에서 struct로 구현된다.
+ > 구현 : sealed라는 템플릿 타입의 객체로써, static영역에 할당된다.
+ > 동형성 : static영역의 struct와 JavaScript seal Object는 이론전산학적으로 동형
+ > 
+
+CASE 2 : frozen
+ > 
+ > 원리 : const인 sealed다.
+ > 구현 : sealed라는 템플릿 타입의 객체로써, const영역에 할당된다. 실은, const sealed 타입이라고 하는게 정확하겠다.
+ > 동형성 : const영역의 struct와 JavaScript의 Frozen Object는 이론전산학적으로 동형
+ > 
+
+CASE 3 : extensible
+ > 
+ > 원리 : extensible자체가 json과 동형이고, KyuKyrarinLispDynamicStruct이 json과 동형이므로, KyuKyrarinLispDynamicStruct를 json마냥 동적 구조체로 다루는 extensible객체를 이용한다.
+ > 구현 : KyuKyrarinLispDynamicStruct를 다루기에, 속성 추가•삭제가 가능한 JavaScript객체의 특성을 가진 KyuKyrarinLispDynamicStruct일 뿐이다. 그게 전부다.
+ > 동형성 : 이론전산학적으로 json과 JavaScript의 Object가 동형이고, 이론전산학적으로 json과 KyuKyrarinLispDynamicStruct가 동형이다.
+ > 
+
+위 대상들은 html을 거치지 않고,
+1. CCCS에 입각해서 렌더링할 대상에 대한 대이터는 이미 확보되어있다.
+2. 곧장 WebGL • WebGPU를 통해 렌더링된다.
+3. **이걸 CSML Viewer라 부르고, CSML Viewer가 필요하기 때문에, 대부분에 개발은 여기서 이루어진다.**
+
+원칙 : 추상화는 지옥이니, 유지보수를 위한 저수준으로 제어 가능한 제로 코스트 추상화가 아니면 도입하지 말라. 문법설탕같은 트릭을 이용하여, 추상화하지 않고서야, 절대 안된다. CSML Viewer는 CSML과 CCCS를 읽고 (acess), 즉시 렌더링해야한다. (direct randering). Keep it simple, Keep it fast
+예외 : 컴파일 결과물이 런타임 없이, CSML Viewer가 지연 없이 바로 렌더링을 조지는 2단계 스탭을 만족하면, DSL을 통해서, 추상화를 하는건 허용한다. 런타임 추상화가 아닌 컴파일 타임에 프로그래밍 언어 자체를 조작하는거기 때문에 런타임에 무관하디 때문이다.
+
+#### asset
+
+... 폰 사용시간 미스로 인해 이외에 정보를 적지 못했다. ...
+
+### Simple CSML
+
+
+```
+
 ## 마치며 (comment)
 
 흥미로운 지점은, SlicibleTarr자체는, Tarr의 가상 MMU관리를 동반한 객체일 뿐이라는 점이다. Tarr을 가상 RAM을 mmap으로 실제 페이지에 연결해서 만든 가상 힙 매모리 풀에서 할당한 객체가 SlicibleTarr이다 (가능하면 vram이 아니라 진짜 ram과 mmu를 쓰고싶다... 커널 독재니까 불가능하겠네.. 울적하다.). 가상 MMU주소 변경(addrswap)과 realloc으로, split을 구현해서, x[:k], x[k:]를 구현하고, 가상 MMU주소 변경(addrswap)과 realloc으로 동일하게 split의 역과정도 가능하고, 심지어는 SlicibleTarr의 GPUShuffle을 이용해서, x[::k]슬라이싱용 split과 원소 이동을 구현했다. 이 과정만으로 슬라이싱 • concat가능한 고정길이, 배열 타입으로 슬라이싱 • concat시 타입이 변하니까, SlicibleTarr의 포인터를 관리해주는 객체만 만들면 list도 꿈이 아니다.
