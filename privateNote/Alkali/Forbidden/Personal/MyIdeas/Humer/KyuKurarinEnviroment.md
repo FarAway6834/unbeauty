@@ -16,6 +16,8 @@
  > * 추가적인 관전 POV : 가상 힙을 사용할때, OS로부터 매모리를 할당받기에, 사실은 페이지를 mmap으로 불러온다)의 생산성은? (+ 정적 영역의 메모리 할당을 전부 구조체 • 공용체 기반으로, 메모리 구조도 다이어그램으로 타입을 취급하도록 하고 Haskell적 OOP같이 함수로 구조체를 인자로 받을수 있는거 외에, 정적 영역은 죄다 구조체로 다뤄야하는 지옥이라, 하나의 네임스페이스 안에 모든걸 일반화 • 구조화하려는 플라톤적 강박이라는 비형식적 아이러니
  > * 언어의 촘스키 위계 : `#pragma KyuKurarin(allow, stack)`를 코드에서 사용하지 않으면서 제귀를 안쓰는 heaplessKyuKurarin인겅우 FSM, heaplessKyuKurarin인겅우 PDA, `#pragma KyuKurarin(include, KyuKurarin うそ)`가 코드 내에 존재하면, Turing Machine.
  > * heaplessKyuKurarin와 stacklessKyuKurarin : `#pragma stacklessKyuKurarin`을 선언하면, 자동으로, `#pragma heaplessKyuKurarin`이 따라붙는다 (`#pragma KyuKurarin(allow, stack)`를 금지하는 방법이다.). 컴파일러 옵션에서, --not-stacklessKyuKurarin를 해야지, `#pragma stacklessKyuKurarin`가 코드에 존재하지 않아도 에러를 내지 않으며, --not-stacklessKyuKurarin인 상태라면, --not-heaplessKyuKurarin를 해야, `#pragma heaplessKyuKurarin`가 없어도 코드에서 에러를 안낸다. <의도 = 왠만해서는, 튜링머신으로 자신을 속인 FSM을 FSM이나 PDA로 다루라는 메시지. 일부러 번거로움을 추가하여, 정적영역 only나 heapless설계를 고려하도록 설계되어있다. 또한, `heaplessKyuKurarin`의 다른 이름은 `造花（ぞうか）`임. `#pragma ぞうか`도 인식함. "この世で（よで）造花より（ぞうかより）綺麗な（きれいな）花は（はなは）無い（ない）わ"라고 해서, `#pragma ぞうか`를 선언하면, 컴파일러는, "ああ 化石に（かせきに）なっちまうよ、 ああ 取り繕って（とりつくろって）いたいな、 ちゃんと笑え（わらえ）なきゃね、 大した（たいした）取り柄も（とりえも）無い（ない）から、 空っぽが（からっぽが）埋らない（いまらない）こと、 全部（ぜんぶ）ばれてたらとしよ。。。heap is toritsukurotta-warai（取り繕った笑い, とりつくろったわらい） not real"라면서 경고를 냄. --slime이라고 컴파일러에게 지시해야, 그런 경고를 내지 않음. `#pragma toritsukurotta-warai`라고 적으면, slime지시어의 효과를 냄.
+ > 웃긴 점 1 : PDA나 FSM으로 언어의 위계를 내릴수 있기에 고속 처리가 가능하다.
+ > 웃긴 점 2 : 언어 자체가 static • const에 구조체를 할당하고 최적의 구조체 인자 배치 • 구조채/공용체간 변환 • 네임스패이스화를 통해서 정적 영역을 고속으로 처리한다 
  > 
 
 ````
@@ -830,6 +832,7 @@ CSML은 HTML/CSS/JS/WASM플렛폼 타깃 KyuKyrarin & KyuKyrarinLisp이다.
  >  - 펙트 : 결과적으로 생성된 html파일에 박힐 코드다.
  >  - 그럼 왜 htmlless.js임? : 그래서 지시어 이름이 "non"htmllessjs임
  >  - 왜 필요함? : `<script src = 파일명>을 통해서 html을 생성하기 위해서` 그리고 인코딩이나 <html> • <head> • <body> 태그 명시
+ >  - 요컨데 : htmlless.js에서 nonhtmllessjs는 htmlless.js가 html랑 js로 컴파일될때, html에 초기에 박혀있는 값을 의미하는서다.
  > 
 
 결론
@@ -845,7 +848,7 @@ CSML은 HTML/CSS/JS/WASM플렛폼 타깃 KyuKyrarin & KyuKyrarinLisp이다.
  >  * 이 프로젝트는, 사실상 **optimized compiler**를 어떻개 만들고 유지보수하고, **힌트용 구문을 추가하는가**이다.
  > 
 
-#### optimized compiler의 힌트용 구문 예시
+#### htmlless.js컴파일러의 optimized compiler의 힌트용 구문 예시
 
 초기 설계 당시 계획된건 단 네가지밖에 없었다.
 
@@ -865,6 +868,8 @@ CSML은 HTML/CSS/JS/WASM플렛폼 타깃 KyuKyrarin & KyuKyrarinLisp이다.
  >  - 그럼 컴파일러가 느려질텐데? : 실제로는, 구문에 `@initialize_default_setting`의 유무에 따라서, 존재하면, 확장 프로그램을 로드하는 과정을 생략하고 컴하일러가 확장 프로그램 기능을 대신하는 hot path를 준비하는 식임.
  >  - 런타임은 안느려지는가? : 컴파일타임 오버해드에 대한 이야기일 뿐, 데코레이터 문법은, 런타임이 아닌 컴파일타임 실행일 뿐이다.
  > 
+
+이로써 htmlless.js에 대한 설명은 일단 여기까지다
 
 ## CCSS (CSML CSS)
 
@@ -916,7 +921,9 @@ CASE 3 : extensible
 
 ### Simple CSML
 
+## 고속인 이유
 
+CSML은 DOM을 조작하기보다는 웹사이트 body렌더링을 WebGPU로 치환해서, WASM CSML -> WASM + WebGPU -> show 구조를 쓰는거다. 그래서 빠르다.
 ```
 
 ## 마치며 (comment)
