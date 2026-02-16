@@ -915,6 +915,13 @@ CASE 3 : extensible
 원칙 : 추상화는 지옥이니, 유지보수를 위한 저수준으로 제어 가능한 제로 코스트 추상화가 아니면 도입하지 말라. 문법설탕같은 트릭을 이용하여, 추상화하지 않고서야, 절대 안된다. CSML Viewer는 CSML과 CCCS를 읽고 (acess), 즉시 렌더링해야한다. (direct randering). Keep it simple, Keep it fast
 예외 : 컴파일 결과물이 런타임 없이, CSML Viewer가 지연 없이 바로 렌더링을 조지는 2단계 스탭을 만족하면, DSL을 통해서, 추상화를 하는건 허용한다. 런타임 추상화가 아닌 컴파일 타임에 프로그래밍 언어 자체를 조작하는거기 때문에 런타임에 무관하기 때문이다.
 
+#### 특수 태그들
+
+head내 태그중
+1. style은 CCSS(CSML CSS)로 렌더링할거기 때문에, <ccss style>이라는 이름의 태그로 대체한다. ccss style은 CCSS를 CSML에서 로드시키도록 WASM타깃 KyuKyrarin으로 컴파일된다.
+2. base태그를 제거하는 컴파일 방식을 거친다. base태그가 없어지고 걍 명시하게 되는 방식이다. base태그에 대한 변경이 코드 내에 명시되어있을 경우, base역할의 링크가 CSML런타임인 WASM타깃 KyuKyrarin에 명시되고, nonhtmlless버전의 경우, "base링크 + 상대주소"꼴에서, base링크가 끝나는 인덱스를 저장해서 치환를 용이하게 한다. 즉, <csml base>라는 태그로 처리하게 한다.
+3. ...작성중...
+
 #### nonasset의 document접근
 
 nonasset의 seal • const • extendible자체는 JavaScript객체처럼 어트리뷰트를 접근할수 있다.
