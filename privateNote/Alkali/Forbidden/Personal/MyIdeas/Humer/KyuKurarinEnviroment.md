@@ -920,7 +920,9 @@ CASE 3 : extensible
 head내 태그중
 1. style은 CCSS(CSML CSS)로 렌더링할거기 때문에, <ccss style>이라는 이름의 태그로 대체한다. ccss style은 CCSS를 CSML에서 로드시키도록 WASM타깃 KyuKyrarin으로 컴파일된다.
 2. base태그를 제거하는 컴파일 방식을 거친다. base태그가 없어지고 걍 명시하게 되는 방식이다. base태그에 대한 변경이 코드 내에 명시되어있을 경우, base역할의 링크가 CSML런타임인 WASM타깃 KyuKyrarin에 명시되고, nonhtmlless버전의 경우, "base링크 + 상대주소"꼴에서, base링크가 끝나는 인덱스를 저장해서 치환를 용이하게 한다. 즉, <csml base>라는 태그로 처리하게 한다.
-3. ...작성중...
+3. document.title을 이용하는 title태그를 <htmllessjs title>태그라고 한다.
+HTTP Early Hint (103)를 이용하여 link이전에 load하는걸 4. <hinted link>라는 태그라고 하겠다. HTTP Early Hint (103)로 힌트를 주게 만드는 링크다.
+5.  ...작성중...
 
 #### nonasset의 document접근
 
