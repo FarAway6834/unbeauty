@@ -880,11 +880,11 @@ CSS는 기본적으로, key와 value와 데코레이터 꼴의 추가구문으�
 
 CCCS는 struct로 객체처럼 취급된다.
 
-## DOM 표현 방식
+## CDOM (CSML Document Object Model) 표현 방식
 
 CSML nonasset 인터페이스(그냥 빈 struct이고, 실제로 메서드 구현 여부는 concept로 확인한다)를 상속한 경우와, CSML asset 객체인 경우로 나뉜다.
 
-#### CSML nonasset 인터페이스(그냥 빈 struct이고, 실제로 메서드 구현 여부는 concept로 확인한다)를 상속한 경우
+### CSML nonasset 인터페이스(그냥 빈 struct이고, 실제로 메서드 구현 여부는 concept로 확인한다)를 상속한 경우
 
 CASE 1 : sealed
  > 
@@ -913,13 +913,27 @@ CASE 3 : extensible
 3. **이걸 CSML Viewer라 부르고, CSML Viewer가 필요하기 때문에, 대부분에 개발은 여기서 이루어진다.**
 
 원칙 : 추상화는 지옥이니, 유지보수를 위한 저수준으로 제어 가능한 제로 코스트 추상화가 아니면 도입하지 말라. 문법설탕같은 트릭을 이용하여, 추상화하지 않고서야, 절대 안된다. CSML Viewer는 CSML과 CCCS를 읽고 (acess), 즉시 렌더링해야한다. (direct randering). Keep it simple, Keep it fast
-예외 : 컴파일 결과물이 런타임 없이, CSML Viewer가 지연 없이 바로 렌더링을 조지는 2단계 스탭을 만족하면, DSL을 통해서, 추상화를 하는건 허용한다. 런타임 추상화가 아닌 컴파일 타임에 프로그래밍 언어 자체를 조작하는거기 때문에 런타임에 무관하디 때문이다.
+예외 : 컴파일 결과물이 런타임 없이, CSML Viewer가 지연 없이 바로 렌더링을 조지는 2단계 스탭을 만족하면, DSL을 통해서, 추상화를 하는건 허용한다. 런타임 추상화가 아닌 컴파일 타임에 프로그래밍 언어 자체를 조작하는거기 때문에 런타임에 무관하기 때문이다.
 
-#### asset
+#### nonasset의 document접근
+
+nonasset의 seal • const • extendible자체는 JavaScript객체처럼 어트리뷰트를 접근할수 있다.
+그러나, 실제 JavaScript의 document객체에 붙어있는 객체들은 객체의 메소드라는 함수가 존재한다.
+그렇기에, nonasset객체는 기본적으로, CDOM객체로 관리된다.
+
+CDOM객체간, nonasset객체를 상속한 객체로, static method나 inline method로 객체에 메소드를 정의한거다.
+
+그게 다다. ㅇㅅㅇ
+
+진짜 함수 접근 하나 존재한다는거임.
+
+### asset
 
 ... 폰 사용시간 미스로 인해 이외에 정보를 적지 못했다. ...
 
-### Simple CSML
+## Simple CSML
+
+CSML을 wasm과 html ...적는중...
 
 ## 고속인 이유
 
