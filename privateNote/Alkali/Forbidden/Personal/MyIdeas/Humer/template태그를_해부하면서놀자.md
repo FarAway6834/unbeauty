@@ -2,6 +2,7 @@
 
 (데코는 명곡제조기야 ㄹㅇ)
 
+```
 그럼에도 사실상 /((DEFINE)?
     (?<spacing>[\s\t]+)
     (?<__eq__> (?&spacing)=(?&spacing))
@@ -88,3 +89,4 @@ struct attlist_info {
 엄.... 생각이 안난다 어떻게든 직렬화 가능할것 같은데...
 
 직렬화된다면 HTTP Header에 저걸 Base64로 담으면 되잖아 ㅠㅠ
+```
