@@ -151,3 +151,30 @@ TWaML검증기가, 검증할때 "현제 논의가 진행되는 텍스트"라는 
 때려치우고싶다. 괜히 배우는것 같다.
 
 읽다보니 좆같음이 사라지는것 같아서, 적응한 내가 싫다.
+
+# Comment Ver2
+
+추가적으로 적을게 있어서...
+
+## list of predicate literal에 대해
+
+저걸 쓰냐니 스콜라 철학자들이 모호성을 제거한 라틴어를 쓰겠다.
+
+변항기호 x, 명제나 술어기호 p, q에 대해,
+
+ * PRO OMNES x, p x : ∀x, p(x)
+ * EXSTAT ALIQUIS x, q x : ∀x, q(x)
+ * p ET q : x 
+ * p VEL q : 
+ * p AUT q : 
+ * p HOC EST q : 
+ * p HOC EST QUOD q : 
+ * SI p, ERGO q : 
+ * SI p, NON ERGO q : 
+ * p EST VERUM. QUOD q EST VERUM. : 
+ * QUOD ILLUD, p EST VERUM : 
+ * NEC p, NEC q : 
+ * p ET q NON SIMUL SUNT : 
+ * NON p :
+ * p QUOD TAILS q :
+ * p SATISFACIS q : 
