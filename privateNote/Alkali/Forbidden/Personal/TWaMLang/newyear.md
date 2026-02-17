@@ -163,18 +163,18 @@ TWaML검증기가, 검증할때 "현제 논의가 진행되는 텍스트"라는 
 변항기호 x, 명제나 술어기호 p, q에 대해,
 
  * PRO OMNES x, p x : ∀x, p(x)
- * EXSTAT ALIQUIS x, q x : ∀x, q(x)
- * p ET q : x 
- * p VEL q : 
- * p AUT q : 
- * p HOC EST q : 
- * p HOC EST QUOD q : 
- * SI p, ERGO q : 
- * SI p, NON ERGO q : 
- * p EST VERUM. QUOD q EST VERUM. : 
- * QUOD ILLUD, p EST VERUM : 
- * NEC p, NEC q : 
- * p ET q NON SIMUL SUNT : 
- * NON p :
- * p QUOD TAILS q :
- * p SATISFACIS q : 
+ * EXSTAT ALIQUIS x, p x : ∃x, p(x)
+ * p ET q : p ∧ q
+ * p VEL q : p ∨ q
+ * p AUT q : p ⊕ q
+ * p HOC EST q : p ↔ q인데 p = q도 가능. 에초에 항등관계 `=`는 불리언 도메인에 대해서도 반사성을 가짐.
+ * p HOC EST QUOD q : p ≜ q인데, p ↔ q라고 정의하는것이기도 함. `HOC EST`를 참고하도록.
+ * SI p, ERGO q : NON p VEL q
+ * SI p, NON ERGO q : NON QUOD ILLUD, SI p, ERGO q
+ * p EST VERUM. QUOD q EST VERUM. : q → p
+ * QUOD ILLUD, p EST VERUM : (p), 괄호를 쓸수 있다니 최고다.
+ * NEC p, NEC q : NON (p VEL q)
+ * p ET q NON SIMUL SUNT : NON (P et Q)
+ * NON p : QUOD ILLUD p EST FALSUM이기도 하고, ¬p임.
+ * p QUOD TAILS q : p s.t. q (엡실론 오퍼레이터)
+ * p SATISFACIS q : p ⊨ q
