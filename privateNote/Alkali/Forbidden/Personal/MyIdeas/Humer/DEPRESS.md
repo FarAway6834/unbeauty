@@ -133,6 +133,6 @@ dpress언어에서 허용된 구문 목록
 7. 산술연산자와 비트연산자 마음대로.
 8. 메모리는 이미 DEPRESS객체와 LSTACK, RSTACK이 정했으니 이만...
 9. 입출력 • 파일입출력 등은, "SYSCALL"명령이, 변수 a, b, c, d, w, x, y, z를 인자로 사용하게 함. 
-10. for문, while문 허용, goto문 허용
+10. for문, while문 허용, goto문 허용, if문, switch문 허용
 11. union, struct는 C정도 선에서만 작성 허용
 12. KyuKyrarin언어 연동 지원. C/C++과 연동 지원. 방식은 include를 연결하기 위해서, `#pragma include(KyuKyrarin, 파일명)`과 `#pragma include(C, 파일명)`와 `#pragma include(C++, 파일명)`과 `#pragma include(NASM, 파일명)`지원.
