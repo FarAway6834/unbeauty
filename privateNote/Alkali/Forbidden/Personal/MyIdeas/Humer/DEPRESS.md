@@ -13,6 +13,7 @@ C++은 그냥 언어가 어떻게 생겼는지 보여주는 의사코드일 뿐.
 메모리 할당같은 본래의 작업은 C/Assambly로 되어있으니 이건 로우레벨이다.
 
 ```
+#define SYSCALL asm volatile ("syscall")
 #define DEPRESSED(N, M, RO, RW) depress_t<N, M> DEPRESS = {.rodata = RO, .rwdata = RW}
 #define USING_LSTACK /* 대충 LSTACK을 생성하는 코드 */
 #define USING_RSTACK /* 대충 RSTACK을 생성하는 코드 */
@@ -125,13 +126,13 @@ typedef struct StackInfo {
 dpress언어에서 허용된 구문 목록
 1. DEPRESSED(N, M, {배열초기화}, {배열 초기화});
 2. USING_LSTACK; 및 USING_RSTACK;
-3. 변수 a, b, c, d, w, x, y, z가 레지스터
+3. 변수 a, b, c, d, w, x, y, z가 레지스터 순서는 a, b, c, d, w, x, y, z 순서로, 하드웨어 레지스터 배정 순서이 따라 배정됨. 하드웨어 레지스터도 나열순서가 있으니까. 다만, systemcall기준 나열로다가 만듬.
 4. 객체 DEPRESS의 조작은 무제한
 5. 객체 L의 조작은 무제한 (L은 LSTACK)
 6. 객체 R의 조작은 무제한 (R은 RSTACK)
 7. 산술연산자와 비트연산자 마음대로.
 8. 메모리는 이미 DEPRESS객체와 LSTACK, RSTACK이 정했으니 이만...
-9. C++ filesystem과 C++ cout같은건 허용
+9. 입출력 • 파일입출력 등은, "SYSCALL"명령이, 변수 a, b, c, d, w, x, y, z를 인자로 사용하게 함. 
 10. for문, while문 허용
 11. union, struct는 C정도 선에서만 작성 허용
 12. KyuKyrarin언어 연동 지원. C/C++과 연동 지원. 방식은 include를 연결하기 위해서, `#pragma include(KyuKyrarin, 파일명)`과 `#pragma include(C, 파일명)`와 `#pragma include(C++, 파일명)`과 `#pragma include(NASM, 파일명)`지원.
