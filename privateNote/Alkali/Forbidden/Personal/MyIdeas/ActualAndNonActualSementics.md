@@ -1,8 +1,4 @@
-# 속뜻•겉뜻 의미론 (actual & non-actual sementics)
-
-의미론은 펙트상의 뜻 (actual semmtics)에 대해 다뤄야하지, "non-actual sementics"에 대해 다루는것은 "의외성 정리"상의 언어의 분류를 오해하는것이다.
-
-"non-actual sementics"는 의외성 정리상 단순언어이서나 "actual sementics"와 일치하는것이다.
+# 속뜻•겉뜻 의미론
 
 ## 1. DFM++ EXPRESSION과 의외성 정리
 
@@ -569,3 +565,60 @@ q : "s의 뜻은 v다"
 즉, 속뜻은 이항관계 "(s, v) ⊨ q"에서, s에 대한 v이다.
 
 s = v일때, 속뜻이 겉뜻인거다.
+
+## 보편명제 증명론
+
+````markdown
+# 보편명제 증명론
+
+인과관계란 "SI P, ERGO Q"가 가지는 관계를 말한다.
+
+N.B. 자연어에서는 "EXSTAT ALIQUIS P, Q, SI P, ERGO Q. NON HOC EST, NON L VEL Q"다. 다른 경우가 존재한다. 칸트의 정언명령과 그 공리는, 자연어가 사용하는 "맥락(CONTEXTOUS)"에 따른 인과관계를 써야한다.
+
+함축관계 : 무맥락 인과관계
+무맥락 인과관계 : "NON P VEL Q"를 이르는 말
+
+## 절대적인 규칙 : 논리의 정의에 따라서 보편적으로 참인 문장
+
+"SI QUOD ILLUD, SI P, ERGO Q, EST VERUM ATQUE IN ID CONTEXTOUS, SI NON P VEL Q, EST NON REPUGNAT, ERGO, NON P VEL Q"
+
+즉, 기존 문맥과 맥락 정합적일때만, 전건긍정이 성립한다.
+
+## 문장의 해석
+
+자연어를 해석하는 구문을 자연어로 작성하면 "Q. p의 뜻은 q인가? A. yes"이다.
+
+자연어에서는, 화자와 청자가 있으니, 스스로에게 질문한다면, 긍정 여부를 알수 있다.
+
+## 증명 이론 : 문장이 함축하는 의미의 파악
+
+그걸 자연어로 쓰면 "p이다. Q. 그렇다면 q인가? A. yes"의 형태가 된다.
+
+보편 명제의 증명은, "SI QUOD ILLUD, SI P, ERGO Q, EST VERUM ATQUE IN ID CONTEXTOUS, SI NON P VEL Q, EST NON REPUGNAT, ERGO, NON P VEL Q"로 진행되기 때문이다.
+
+## 문맥 스택 (Contextous Stack)
+
+문맥 의존 언어는, 최소한 push-down automata로 작동한다.
+그러므로, "ATQUE IN ID CONTEXTOUS, SI NON P VEL Q, EST NON REPUGNAT"라는것은, 이전 문맥을 참조한다.
+
+그러므로, 문장은 Contextous Stack에 보편명제 증명론에 의해 「사고를 이치에 맞게 이끌어 가는 과정 (Step by Step)」을 타당하게 적었다 볼 수 있다.
+
+## 형식화된 보편명제의 증명
+
+사고에 있어서, `1. 2. 3.`이라는 스탭별로 진행한다.
+
+문단의 리스트 Paragraph에 대해, Paragraph[i]는 i문단이고, Paragraph[i][j]가 i문단의 j문장일때,
+
+ContextousStack[StackPointer] = "Paragraph[i][j]의 값은 p다."
+ContextousStack[StackPointer + 1] = "Q. Step1 Question"
+ContextousStack[StackPointer + 2] = "A. Step1 Answer, Q. Step2"
+...
+ContextousStack[StackPointer + n] = "UT, Step_n"
+식으로 추론된다.
+
+이는 배외측전전두피질(DLPFC)가 인간에 뇌에서, Step별로 추론을 하기 때문이다.
+
+굳이 Step시스템을 쓸 필연성은 없다. 물론 필요성은 있을수 있다.
+
+뇌피셜 (이론적 조망과 개연성에서, 통계 모델로의, 보편적 인식의 페러다임 시프트 가능성) : 확률적으로 추측하는게, Step시스템보다 "강한 이론 (큰 틀을 설명하거나 설명 능력이 강한 이론)"인 경우, 인간은 논리를 버리고 기꺼히 강한 이론을 택할수도 있을것같다.
+````
