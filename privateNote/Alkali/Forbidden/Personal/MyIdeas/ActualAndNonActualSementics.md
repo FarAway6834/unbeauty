@@ -566,7 +566,14 @@ q : "s의 뜻은 v다"
 
 s = v일때, 속뜻이 겉뜻인거다.
 
-## 보편명제 증명론
+## 속뜻 의미론에 파악에 대해서
+
+속뜻 의미론의 파악은 두가지 방법이 있다.
+
+1. 의미를 해석하는 타당한 사고과정 (사변적 과정. 보편명제 증명론)
+2. 겉뜻의미론으로 환원하는 과정 (더 쉬운 문제로 변환. Interpretation-modeling 논법)
+
+### 보편명제 증명론
 
 ````markdown
 # 보편명제 증명론 (N.B. 모두 가설에 영역이다. 이 증명론이 실제로 작동하는지는 모른다.)
@@ -641,3 +648,18 @@ ContextousStack[StackPointer + n] = "UT, Step_n"
 자연어 의미론의 파악은, 사변적인 추론 (보편명제 증명론)을 통하여 이루어질수 있다는게 내 가설이다.
 
 "이 의미는 이러하다, 그 증명은 이러하다" 형식으로 추론 가능할거라, 개인적으로 기대한다.
+
+### isInterpretationOf 관계와 Interpretation-modeling 논법
+
+```
+# isInterpretationOf 관계
+
+p isInterpretationOf q : "p의 뜻은 q이고, q의 뜻은 q이다"
+
+isInterpretationOf 관계를 사용하면, 속뜻 의미론을 겉뜻 의미론으로 형식화할수 있다.
+
+단순한 추론을 하려면 문제를 단순화하면 된다는 이과적인 접근이다.
+
+사실 내가 보편명제 증명론을 사용했을때, isInterpretationOf를 이용하여, 
+"Q. p의 의미는? A. q임 Q. q가 hint연산이나 la연산을 통해 언질하는 바가 있나? 혹은 operator를 통해 생성된 단어가 있는가? 말인 그렇다면, DFM++ Expression으로 분석하라"라는 방식을 썼다. 굳이 이름붙이자면 "Interpretation-modeling 논법"이다
+```
