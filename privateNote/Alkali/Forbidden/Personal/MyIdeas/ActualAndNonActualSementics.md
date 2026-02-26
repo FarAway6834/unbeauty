@@ -396,6 +396,71 @@ Q2 : ♠︎(A or B라면 마땅히 포함적이다)가 맞나?
 
 그러나, 속뜻의미론은 표현하지 못한다.
 
+#### 긍정자에 대한 추가노트
+
+````markdown
+# 긍정자에 대한 추가노트
+
+긍정자는 다음과 같이 langblock notation을 통하여 정의된다
+ * L♤"~" : ♤L"~"
+ * L♠︎"~" : ♠︎L"~"
+
+## langblock noation이란?
+
+```markdown
+# langblock notation
+
+일반적인 집합론에서의 langblock과 endofunctor typesystem에서의 langblock을 정의하는 notation이다.
+
+문자열을 편리하게 표기하기 위한 용도이나, 사실은 llfn(lambda - like function notation)에서 활용하기 좋게 하려는 의도도 있었다.
+
+## langblock notation - type I : 일반적인 집합론에서의 langblock
+
+쉽게 말해 `L"~"`식으로 문자열을 작성하면 해당 문자열을 언어 L의 문자열(텍스트)로 취급하는거다.
+
+t3n으로 간소화한 형식 문법으로 적자면
+
+"L\"" `concat` x `concat`  "\"" =>¹ "\"" `concat` x `concat`  "\" (∈ L*)"
+
+이다.
+
+마치 markdown의 codeblock처럼, 문자열을 담는 블럭을 언어명 L로 묶는다 하여 langblock이라 이름지었다.
+
+## langblock notation - type II : endofunctor typesystem에서의 langblock
+
+쉽게 말하자면`(::L)"~"`의 경우, `L* EndofucntorType "~"`로 해석한다.
+
+형식문법으로는 아래와 같다.
+
+"(::L)\"" `concat` x `concat` "\"" =>¹ "L* EndofucntorType \"" `concat` x `concat` "\""
+
+EndofucntorType에 대한 글에서 언급한 바 있듯이,
+
+f = S EndofucntorType x 에 대해,
+
+f의 타입은 f :: S이고, dom f = S°⁰°, codom f = S, graph f = {(ε, x)}가 되기에, f() = x이다.
+
+그런 타입으로 만들어버리는 무시무시한 기능도 제공한다는거다.
+
+## llfn(lambda - like function notation)에서의 활용
+
+(λx :: L*)
+
+...작성중...
+```
+
+후술하겠지만, 실제로 언어에서 사용될때는 타입이론은 전혀 사용되지 않는다.
+
+엔도펑터 타입 시스템을 응용한 notation들에서 그저 notation만 참고하라.
+
+## 자연어에서의 타입결여 증명
+
+````
+
+#### 긍정자에 정의에 쓰인 엔도펑터 타입 시스템을 응용한 notation들
+````markdown
+````
+
 ### 의외성 정리
 
 ````markdown
