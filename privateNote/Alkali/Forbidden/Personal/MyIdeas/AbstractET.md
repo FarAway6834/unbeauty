@@ -442,3 +442,23 @@ T ET choose = T ET choose(T) 이며,
 T ET x = <T, x, f>인 모노이드로 정의된다고 해두겠다.
 
 이상으로, EndofunctorTypesystem의 정의를 마친다.
+
+## 응용가능성과, 응용 사례
+
+이를 응용하면, 다음 표기법이 가능하다. 다만 다음 표기법은 Endofunctor Type이 아닌 독자적인 개인용 표기법이다.
+
+### graph type notation
+1. (:f) ≜ graph f
+2. (P ::: f) : (P :: (:f))
+각각 단항연산자 `(:•)`및 이항관계 `:::`이다. 모델론적 언어인대도, notation이라 부르는 이유는, 이미 술어논리와 모델론에서 사용되고 있는 기호인 `:`을 남용했기에, 표기법으로 정의해야 했다.
+
+### lambda - like function notation
+1. (λx : X. y : Y) ≜ (X, Y, (:(λx : X. y : Y)))
+2. (:(λx : X. y : Y)) ≜ {(x, y) | x ∈ X, y ∈ Y}
+이도 역시 집합론이라는 형식언어로 표현 가능한데도 표기법인 이유는, graph type notation로 정의되었고, x랑 y에 아무런 심볼이나 와도 무방하기 때문이다.
+
+그런 이유로 더 형식적으로 표현하자면
+
+1. "(λ" `concat` x `concat` " : " `concat` X `concat` ". " `concat` y ": " `concat` Y `concat` ")" =>¹ "(" `concat` X `concat` ", " `concat` Y `concat` ", (:(λ" `concat` x `concat` " : " `concat` X `concat` ". " `concat` y `concat` " : " `concat` Y `concat` ")))"
+2. "(:(λ" `concat` x `concat` " : " `concat` X ". " `concat` y `concat` " : " `concat` Y `concat` "))" =>¹ "{(" `concat` x `concat` ", " `concat` y `concat` ") | " `concat` x `concat` " ∈ " `concat` X `concat` ", " `concat` y `concat` " ∈ " `concat` Y `concat` "}"
+라는 형식문법이다. 오우 복잡해서 빈칸 기호를 다 쓰고싶은 기분이다.
