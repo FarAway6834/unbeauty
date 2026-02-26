@@ -1651,3 +1651,7 @@ isInterpretationOf 관계를 사용하면, 속뜻 의미론을 겉뜻 의미론�
 사실 내가 보편명제 증명론을 사용했을때, isInterpretationOf를 이용하여, 
 "Q. p의 의미는? A. q임 Q. q가 hint연산이나 la연산을 통해 언질하는 바가 있나? 혹은 operator를 통해 생성된 단어가 있는가? 말인 그렇다면, DFM++ Expression으로 분석하라"라는 방식을 썼다. 굳이 이름붙이자면 "Interpretation-modeling 논법"이다
 ```
+
+## 여담
+
+이러한 논리적 사고 방식이 타 아스퍼거 아동에게 재현성이 있을지 모르겠는게, LowLevel • HighLevel • FunctionalProgramming • Model Theory • 수리논리학 • 철학쪽 기호논리학 • 집합론 • 람다대수 • 이론전산학 • 생성언어학 • 추상대수학 • 그래프 렌더링 프로그램인 geogebra를 통한 프로그래밍 • PCRE라는 걸 스스로 사용할정도 스팩이 되면서, 패턴화 지능 • 분석적 지능이 있는 아스퍼거 아동이라는 재현하기 빡센 조건임. (추가로, 나랑 조건이 같으려면, 저걸 즐기면서 공부했어야함.)
