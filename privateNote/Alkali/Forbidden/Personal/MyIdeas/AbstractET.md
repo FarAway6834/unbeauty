@@ -506,3 +506,15 @@ codom TFSO ⊆ D
 4. (λx ::: X. y ::: Y) ≜ (λx : (: X). y : (: Y))
 5. (λx :::: X. y :::: Y) ≜ (λx : (::: X). y : (::: Y))
 더이상의 자세한 설명은 생략한다.
+
+### escaping notation
+
+프로그래밍 언어에서 쓰이는 이스케이핑 문자 `\\`, `\'`, `\"`의 사용을 허가한다.
+
+### forse the concat operator
+
+함수 concat이 덧셈기호 `+` 마냥, 항상 Abstract Collection의 도메인에 맞게, 어떤 도메인이던간게 `concat`을 기호로써, 연산자로 예약하고, 그걸 모델에서 배정하도록 하는 방식
+
+### t3n (the 3 notation)
+
+escaping notation, forse the concat operator, 그리고 컴파일러에 대한 책인 Dragon Book에서 사용한 `=>ⁿ`, `=>*`, `=>⁺`라는 notation 이렇게 새가지를 묶어서 부르는 명칭.
