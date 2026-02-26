@@ -459,6 +459,7 @@ f의 타입은 f :: S이고, dom f = S°⁰°, codom f = S, graph f = {(ε, x)}�
 
 #### 긍정자에 정의에 쓰인 엔도펑터 타입 시스템을 응용한 notation들
 ````markdown
+
 ````
 
 ### 의외성 정리
