@@ -452,6 +452,42 @@ T ET x = <T, x, f>인 모노이드로 정의된다고 해두겠다.
 2. (P ::: f) : (P :: (:f))
 각각 단항연산자 `(:•)`및 이항관계 `:::`이다. 모델론적 언어인대도, notation이라 부르는 이유는, 이미 술어논리와 모델론에서 사용되고 있는 기호인 `:`을 남용했기에, 표기법으로 정의해야 했다.
 
+### truth-functional-set-operator)
+
+진리함수는 함수이지 술어(집합)이 아니다.
+
+그러나, 치역이 진리치기만 하면 상관없는 사람들을 위해서 다음 단항연산을 제공한다.
+
+모델 TFSM(D) ≜ <D, TFSO>에 대하여,
+
+TFSO f ≜ {x | f(x)}
+
+dom TFSO = {f | dom f ⊆ D, codom f = 𝔹}
+codom TFSO ⊆ D
+
+즉, 전체집합 D에 따라서, TFSO는 달라진다. 다만, 주의할점은, D에 기본적으로 우주 (Universe)를 대입할 생각으로 설계했기에ㅜ 범주론의 공리를 받아들이지 않는 선에서 사용하면, TFSO의 사용은 다소 자유롭지 않다.
+
+### Endofunctor-TypeSet Notation
+
+엔도펑터 타입 시스템을 TFSO를 통하여 집합으로 나타내는 Notation이다.
+
+다음 이항관계 ETSN(::), ETSN(:::)는 다음과 같이 정의되어, 이 함자 표기를 통한 타입 시스템에 쓰이기에, 체계에 쓰인다
+1. (x ETSN(::) y) : (x :: y)
+2. (x ETSN(:::) y) : (x ::: y)
+3. (:: x) ≜ TFSO((ETSN(::) x)
+4. (::: x) ≜ TFSO((ETSN(:::) x)
+
+이때, `ETSN(::)`와 `ETSN(:::)`는 Lexing되는 "단일 문자"로, (1, 2)가 모댈론적 정의가 되기 위해서, 추가적으로 등록된 길이-1 문자다.
+
+3, 4의 경우, 표기법(Notation)으로, 형식문법을 통해 해석되는것으로
+
+엄밀히는,
+
+3. "(:: " `concat` x `concat` ")" =>¹ "TFSO((ETSN(::) " `concat` x `concat` ")'
+4. "(::: " `concat` x `concat` ")" =>¹ "TFSO((ETSN(:::) " `concat` x `concat` ")'
+
+에 해당한다.
+
 ### lambda - like function notation
 1. (λx : X. y : Y) ≜ (X, Y, (:(λx : X. y : Y)))
 2. (:(λx : X. y : Y)) ≜ {(x, y) | x ∈ X, y ∈ Y}
@@ -462,3 +498,11 @@ T ET x = <T, x, f>인 모노이드로 정의된다고 해두겠다.
 1. "(λ" `concat` x `concat` " : " `concat` X `concat` ". " `concat` y ": " `concat` Y `concat` ")" =>¹ "(" `concat` X `concat` ", " `concat` Y `concat` ", (:(λ" `concat` x `concat` " : " `concat` X `concat` ". " `concat` y `concat` " : " `concat` Y `concat` ")))"
 2. "(:(λ" `concat` x `concat` " : " `concat` X ". " `concat` y `concat` " : " `concat` Y `concat` "))" =>¹ "{(" `concat` x `concat` ", " `concat` y `concat` ") | " `concat` x `concat` " ∈ " `concat` X `concat` ", " `concat` y `concat` " ∈ " `concat` Y `concat` "}"
 라는 형식문법이다. 오우 복잡해서 빈칸 기호를 다 쓰고싶은 기분이다.
+
+사실 lambda - like function notation는 5가지 항목이다.
+1. (λx : X. y : Y) ≜ (X, Y, (:(λx : X. y : Y)))
+2. (:(λx : X. y : Y)) ≜ {(x, y) | x ∈ X, y ∈ Y}
+3. (λx :: X. y :: Y) ≜ (λx : (:: X). y : (:: Y))
+4. (λx ::: X. y ::: Y) ≜ (λx : (: X). y : (: Y))
+5. (λx :::: X. y :::: Y) ≜ (λx : (::: X). y : (::: Y))
+더이상의 자세한 설명은 생략한다.
