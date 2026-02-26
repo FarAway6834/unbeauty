@@ -518,3 +518,78 @@ codom TFSO ⊆ D
 ### t3n (the 3 notation)
 
 escaping notation, forse the concat operator, 그리고 컴파일러에 대한 책인 Dragon Book에서 사용한 `=>ⁿ`, `=>*`, `=>⁺`라는 notation 이렇게 새가지를 묶어서 부르는 명칭.
+
+### High Orderd Functional Type
+
+HOFT는 LLFN(lambda - like function notation)에서 쓸 목적으로 개발된 집합에서 집합으로 가는 연산이다.
+
+멱집합 연산 P(A) = 2ᴬ과 함수공간 Func(X, Y) = {f | dom f = X, codom f = Y}에 대해,
+
+Func의 상 Func[P(X) × P(Y)]는, X의 부분집합을 정의역으러, Y의 부분집합을을 공역으로 가지는 함수공간의 모임인 상이므로, HOFT를 다음과 같은 무한집합으로 정의 가능하다.
+
+HOFT(D) ≜ P(D) ∪ P[Func[HOFT(D) × HOFT(D)]] ∪ {{ε}}
+
+참고로 이 경우, 그저 HOFT(𝔹)를 쓰는것 만으로도, 
+
+∅, {F}, {T}, 𝔹, {ε} ∈ HOFT(𝔹)이고
+∀X, Y ∈ HOFT(𝔹), P(Func(X, Y)) ⊆ HOFT(𝔹)
+이다.
+
+이 고차함수놈은, 함수가 아닌 놈부터, 점점 함수의 함수, 함수의 함수의 함수, ... 쭉쭉쭉 올라가서, 결국은 무한이 올라간다.
+
+다만, 이를 엄밀히 정의하는건 다른 방법을 쓴다.
+
+바로, 아래와 같은 형식으로 귀납적으로 정의한다.
+
+definition)
+1. {ε} ∈ preHOFT(D)₀
+2. P(D) ⊆ preHOFT(D)₀
+3. preHOFT(D)₍ₙ₊₁₎ = P[Func[preHOFT(D)ₙ²]] ∪ preHOFT(D)ₙ
+4. HOFT(D) = lim_{n ⟶ ∞} preHOFT(D)ₙ
+
+Tip : P[Func[S²]] = P[{Z | X, Y ∈ S, Z = Func(X, Y)}] = {x | x ⊆ {Z | X, Y ∈ S, Z = Func(X, Y)}} 이다. 즉, ∀X, Y ∈ S, Func(X, Y) ∈ Func[S²]인 Func[S²]에 대해, Func[S²]의 Power Set. 어짜피 S가 가능한 모든 타입이면, 해당 타입들 가지도 만드는 함수는, 정의역이 저따구일수밖에.
+
+암튼 이런식으로 정의된다.
+
+#### High Order Functional Model : HOFT의 LLFN(lambda - like function notation)에서의 응용
+
+멱집합 연산 P(A) = 2ᴬ에 대해, 혼동의 오류가 있으니, Power = P라 하자.
+
+그러면 알수있는 사실은, 모델 M = <D, t> (구조채가 튜플이므로, 튜플의 제귀적 정의에 따라, t는 D에 대한 연산이 들어있는 튜플일것이다.) 에 대해, M에 상수기호를 따로 정의하지 않고 함수기호만 있을때, LLFN(lambda - like function notation)와 해당 모델을 합한 방식으로 조합되는 조합논리 • 혹은 모델을 High Order Functional Model이라고 정의하고,
+
+HOFM(D, t) = (HOFT(D), power, Func, dom, codom, (::•), <D, t>)라 정의하겠음. (그렇다. 구조체는 아닌데 어쨌든 정의가 된다. 일단, 함수의 경우, 대수구조 <D, t>위의 함수고, 타입의 경우 power로 지네릭 대상 타입을 구할수 있고, typename의 경우 HOFT(D)로 구할수 있고, 함수 타입의 경우 Func를, 마지막으로 람다의 경우, HOFT안에 있는 Func인 타입이 된다. 그리고 심지어 집합론적이다.)
+
+그러면, LLFN(lambda - like function notation)은 완벽하게 HOFM위에 정의된 상수가 되기에, LLFN은 모델론적으로 설명 가능하게 된다. (물론, 가능한 타입을 상당히 제한했기에 가능했겠지만)
+
+Endotypize := λS : Power(HOFT(D)). (λx : S. (λt : {ε}. x : S) : Func({ε}, S)) : Func(S, Func({ε}, S))
+
+인 Endotypize를 보라. 얼마나 깔끔하게 코딩되었는가?
+
+지네릭 기능을 쓰자면
+
+HOFM위의 S에서, Endotypize<S>로 가는 함수이다.
+
+주의할점이 있다면, 지금까지는 타입 기능이 아예 없다. 그러니, 타입이 없는 그냥 평범한 함수일 뿐이다.
+
+그러나, Endotypize<S>(x)를 써주면, 타입이 생긴다. 야호!
+
+그러므로 다음 Disendotyize
+
+Disendotyize := λT : HOFT(D). (λx :: T. x() : T) : Func((::T), T)
+
+에 대해서, 다음과 같은 정신나간 짓거리가 가능하다.
+
+typecast := λT : HOFT(D). (λG : HOFT(D). (λx :: T. Endotypize<G>(Disendotyize<T>(x)) :: G) : Func((::T), (::G))) : Func(HOFT(D), Func((::T), (::G)))
+
+Notation) T `typecast` G을 문법적으로 강제로 typecast<T><G>로 정의.
+
+이런 함수 T `typecast` G에 대하여 타입 케스팅이 된다...
+
+이를 통해서, 프로그래밍 가능한 대수구조가 생긴다. 야호!
+
+이는 C++ template같이 명시적인 타입에 Haskell같은 수학적 철저함도 갗추고 있기 때문에, 함수를 작성하기 매우 용이하게 만들어준다.
+
+이가 의미하는 바는 간단하다. 모델 M위에서 제한적으로 Endofunctor Type System을 사용하는 대수구조를 통하면, 간편하게 Endofunctor Type System을 사용할수 있을것이다.
+
+N.B. 그러한 편의 용도로 정의한거다. 명확한 형식적 정의와 높은 표현력을 가지는 형식 언어이므로, 앞으로 자주 사용될것이다.
+N.B. 고1 때까지만 해도 전산 지망이었다가, 고2때 수학도로 전향한 놈이었어서, 함수를 정의할때 가끔씩 프로그래밍하듯이 적을 때가 있다. 근데 이건 프로그래밍 언어를 의도하고 만든게 아니다. (그러나 나는 프로그래밍 언어를 만들 생각이었을 경우, 튜링 완전하면, 죄다 "프로그래밍 언어"라고 주저 없이 명시한다.) 그렇다. 당연하게도 형식언어로써, 함수를 편리하게 표현하고 싶었을 뿐이다.
