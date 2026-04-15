@@ -1,4 +1,4 @@
-# Lava System
+# Lava System (추상대수 • 대수구조 관련 노트)
 
 아래 내용을 보라.
 
