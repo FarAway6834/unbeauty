@@ -6,6 +6,8 @@
 
 ## 1. NewFixedism
 
+N.B. NewFixedism은 acept에 의존성이 없을 뿐더러 관련도 없고, acept는 NewFixedism에 포함도 안되는데, 왜 대체 이걸 공학적 도구로 취급하는 바보같은 해석을, 이 문서도 안읽고 하냐고 대체, 아니 못참겠네... 제발 두 채계를 서로서로 배제하고 생각합시다. (개빡침)
+
 ```markdown
 # NewFixedism
 
