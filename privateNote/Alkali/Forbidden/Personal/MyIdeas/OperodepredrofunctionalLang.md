@@ -120,4 +120,4 @@ isFunctionalModelOf(M, S) : M = FullSpecifiedModel(oper(S), ≤)
 
 그렇다. operodepredrodel은 이러한 operodepredrofunctional lang을 규정하는데 사용된다.
 
-이로써, `<type> <fname>(<type>ⁿ) : <type>11는 식의 형식언어체계로, 모델론을 더 쉽게 이해하는 언어인 operodepredrofunctional lang가 정의된다.
+이로써, `<type> <fname>(<type>ⁿ) : <type>`는 식의 형식언어체계로, 모델론을 더 쉽게 이해하는 언어인 operodepredrofunctional lang가 정의된다.
