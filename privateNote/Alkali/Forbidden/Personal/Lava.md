@@ -2740,3 +2740,7 @@ ExtenderObject는 결국 M을 만족시키기에, 자신을 낳을(=모델링할
 ## NOTE
 
 으아....
+
+## TODO
+
+1066~1511 Endofunctor Type System은 제발 문서 밖으로 옮기자.
