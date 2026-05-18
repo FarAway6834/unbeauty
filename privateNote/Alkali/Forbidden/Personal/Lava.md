@@ -1535,6 +1535,16 @@ M ⊨ Φ : "M이 성질 Φ를 만족한다"
 
 참고로 특별한 대상 M에 대해 다루는 경우는 `특-`을 붙여서 "특성질"라고 한다. 왜냐하면 이 특별한 대상은 "대수구조가 아니라 집합이나 순서쌍 혹은 함수다"
 
+그리고 진리함수적 목적으로 정의된 특성질은, 그 특별한 대상 M이 그냥 술어의 인자인 경우가 잇다. 이 경우, 오로지 인자의 변항과, 이미 결정된 상수•함수기호에 대한 양화논리식만 허용되며, 성질이라고도 안부르고 "순술어"라 부른다.
+
+순술어는 x ⊨ Φ인 x가 따로 잇는게 아니라, 인자에 들어갈 대상의 집합 S₁, ..., Sₙ에 대해, Φ ⊆ S₁ × ... × Sₙ인 술어인지라, t ∈ S₁ × ... × Sₙ에 대해, Φ(t)가 참 또는 거짓인거다. "pure"라는 서술어를 붙여서 나타낸다.
+
+왜냐면, 순술어는 순수하게, 성질이 아닌 술어로써의 기능으로 스이기 때문에, 대상이 만족할 성질이 아닌 술어 본연의 진리함수적 기능으로만 쓰이기 때문이다.
+
+반면에, 순술어가 아니라, 성질로서 쓰이는 술어는 죄다, 가술어라 부른다.
+
+"순술어는, 술어논리적인 용도로, 가술어는 대수적인 용도로 사용된다."라 한줄요약할수 있다.
+
 #### 결합법칙 (associative property)
 
 결합법칙 Associative는 다음과 같은 법칙성질(참성질)이다.
@@ -1553,7 +1563,41 @@ Medial : "(m * n) * (p * q) = (m * p) * (n * q)"
 
 Commutative : "a * b = b * a"
 
-#### 좌역원임-가술어 (tunal is-leftinvers-of Predicate)
+#### 국소적-좌항등원-존재-순술어 (pure existance-of-local-left-identity-of Preadicate, 국소적 좌항등원 존재성)
+
+국소적-좌항등원-존재-순술어 ExistanceOflocalLeftIdentityOf는 pureIsLocalLeftIdentityOf를 다루기 위해, 내가 방금전에 고안한 순술어다.
+
+pureExistanceOflocalLeftIdentityOf(a, <S, *>) : a ∈ S, (∃Eₗ ∈ S, Eₗ * a = a)
+
+이쯤되면, 왜 쓰이는지는 알아서 pureIsLocalLeftIdentityOf에 대해 알아봐서 생각해봐라. 난 더이상, 4월의 그 고 2 (최초 작성당시 본인)만큼 친절하고 성실하지 않다. ㅋ
+
+#### 국소적-우항등원-존재-순술어 (pure existance-of-local-right-identity-of Preadicate, 국소적 좌항등원 존재성)
+
+국소적-우항등원-존재-순술어 ExistanceOflocalRightIdentityOf는 pureIsLocalRightIdentityOf를 다루기 위해, 내가 방금전에 고안한 순술어다.
+
+pureExistanceOflocalRightIdentityOf(a, <S, *>) : a ∈ S, (∃Eₗ ∈ S, Eₗ * a = a)
+
+이쯤되면, 왜 쓰이는지는 알아서 pureIsLocalRightIdentityOf에 대해 알아봐서 생각해봐라. 난 더이상, 4월의 그 고 2 (최초 작성당시 본인)만큼 친절하고 성실하지 않다. ㅋ
+
+#### 국소적-좌항등원임-순술어 (pure is-local-leftidentity-of Predicate)
+
+국소적-좌항등원임-순술어 pureIsLocalLeftIdentityOf는 국소적 항등원에 대해 다루기 위해, 내가 방금전에 고안한 순술어다.
+
+Eₗ pureIsLocalRightIdentityOf (a, <S, *>) : pureIsLocalLeftIdentityOf(Eₗ, a, <S, *>) : Eₗ * a = a
+
+「국소 to 전역 성질분석」문단에서 쓰인다.
+
+그 외에, 이게 어떤 심볼 정의에 쓰이는지는 ...작성중...
+
+#### 국소적-우항등원임-순술어 (pure is-local-rightidentity-of Predicate)
+
+국소적-우항등원임-순술어 pureIsLocalRightIdentityOf는 국소적 항등원에 대해 다루기 위해, 내가 방금전에 고안한 순술어다.
+
+Eᵣ pureIsLocalRightIdentityOf (a, <S, *>) : pureIsLocalRightIdentityOf(Eᵣ, a, <S, *>) : a * Eᵣ = a
+
+「국소 to 전역 성질분석」문단에서 쓰인다.
+
+#### 좌역원임-가성질 (tunal is-leftinvers-of Predicate)
 
 좌역원임-가술어 tunalIsLeftinversOf는 내가 방금전에 명명한 가성질이다.
 
@@ -1919,6 +1963,17 @@ Homeomorphism(fn) : Biject(fn), (x ∈ dom fn, f = fn ⊨ continuous), (x ∈ co
 ### 심볼 목록
 
 아래 심볼은, Volcano에서 사용 목적이 정해진 특수한 심볼이다
+
+#### 국소적 좌항등원 • 국소적 우항등원 (local left identity element • local right identity element)
+
+이항연산 `*`의 우인자 x에 대한 국소적 좌항등원, 좌인자 x에 대한 국소적 우항등원은,
+
+ - Eₗ s.t. Eₗ pureIsLocalLeftIdentityOf (x, <S, *>)
+ - Eᵣ s.t. Eᵣ pureIsLocalRightIdentityOf (x, <S, *>)
+
+인 Eₗ, Eᵣ이다.
+
+자세한 내용은 순술어 isLocalLeftIdentityOf와 순술어 isLocalRightIdentityOf을 참고하라.
 
 #### 항등원 (identity element)
 
