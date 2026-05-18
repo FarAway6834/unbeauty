@@ -1583,19 +1583,21 @@ pureExistanceOflocalRightIdentityOf(a, <S, *>) : a ∈ S, (∃Eₗ ∈ S, Eₗ *
 
 국소적-좌항등원임-순술어 pureIsLocalLeftIdentityOf는 국소적 항등원에 대해 다루기 위해, 내가 방금전에 고안한 순술어다.
 
-Eₗ pureIsLocalRightIdentityOf (a, <S, *>) : pureIsLocalLeftIdentityOf(Eₗ, a, <S, *>) : Eₗ * a = a
+Eₗ pureIsLocalRightIdentityOf (a, <S, *>) : pureIsLocalLeftIdentityOf(Eₗ, a, <S, *>) : pureExistanceOflocalLeftIdentityOf(a, <S, *>), Eₗ * a = a
 
 「국소 to 전역 성질분석」문단에서 쓰인다.
 
-그 외에, 이게 어떤 심볼 정의에 쓰이는지는 ...작성중...
+그 외에, 이게 어떤 심볼 정의에 쓰이는지는 심볼 목록의 국소적 좌항등원 • 국소적 우항등원 (local left identity element • local right identity element) 문단과, 「국소 to 전역 성질분석」문단과, 역반군 문단 등에 대해 알아봐서 생각해봐라. 난 더이상, 4월의 그 고 2 (최초 작성당시 본인)만큼 친절하고 성실하지 않다. ㅋ
 
 #### 국소적-우항등원임-순술어 (pure is-local-rightidentity-of Predicate)
 
 국소적-우항등원임-순술어 pureIsLocalRightIdentityOf는 국소적 항등원에 대해 다루기 위해, 내가 방금전에 고안한 순술어다.
 
-Eᵣ pureIsLocalRightIdentityOf (a, <S, *>) : pureIsLocalRightIdentityOf(Eᵣ, a, <S, *>) : a * Eᵣ = a
+Eᵣ pureIsLocalRightIdentityOf (a, <S, *>) : pureIsLocalRightIdentityOf(Eᵣ, a, <S, *>) : pureExistanceOflocalRightIdentityOf(a, <S, *>), a * Eᵣ = a
 
 「국소 to 전역 성질분석」문단에서 쓰인다.
+
+그 외에, 이게 어떤 심볼 정의에 쓰이는지는 심볼 목록의 국소적 좌항등원 • 국소적 우항등원 (local left identity element • local right identity element) 문단과, 「국소 to 전역 성질분석」문단과, 역반군 문단 등에 대해 알아봐서 생각해봐라. 난 더이상, 4월의 그 고 2 (최초 작성당시 본인)만큼 친절하고 성실하지 않다. ㅋ
 
 #### 좌역원임-가성질 (tunal is-leftinvers-of Predicate)
 
