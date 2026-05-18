@@ -2141,6 +2141,10 @@ Volcano₂,₂(D, 0, 1, +, ×) ⊨ CommutativeGroup(Volcano₁,₁(D, 0, +)), Mo
 
 ...작성중...
 
+#### 3. 0. 역반군 (InverseSemigroup) (note : 초기작성분이 아닌, 추가작성본이다. 요즘 타락햇다. 난 더이상, 4월의 그 고 2 (최초 작성당시 본인)만큼 친절하고 성실하지 않다. ㅋ)
+
+(⊨ Quasigroup(Volcanoₘ,₂(D, Sym₁, ..., Symₘ, `*`, `◦`))), Semigroup(Volcanoₘ,₂(D, Sym₁, ..., Symₘ, `*`, `◦`)))) ⊨ ...잗성즁...
+
 #### 3. 1. 1. 왼쪽 유사군 (LeftQuasigroup)
 
 Volcanoₘ,₂(D, Sym₁, ..., Symₘ, `*`, `◦`) [`◦` := LeftInverseOf(`*`)] ⊨ "이항연산 `*`가 (D, `*`, `◦`)를 이룸", BijectiveLeftFunctor
