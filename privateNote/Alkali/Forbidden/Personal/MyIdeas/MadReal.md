@@ -12,7 +12,17 @@ intSelect(S)에 해당하는 모델은,
 
 {0, 1} ⊆ S인 모델임.
 
-MadReal ≜ (operodel(ℚ), K_ℚ, •¿•:•, =, <, >, ≤, ≥, lim•=lim•, lim•<lim•, lim•>lim•, lim•≤lim•, lim•≥lim•, lim•=∞, lim•=-∞, Cauchy, (∈oper(ℚ)))는
+MadReal ≜ (operodel(ℚ), K_ℚ, •¿•:•, TailReqOpt, ◦, =, <, >, ≤, ≥, lim•=lim•, lim•<lim•, lim•>lim•, lim•≤lim•, lim•≥lim•, lim•=∞, lim•=-∞, Cauchy, (∈oper(ℚ)))는
+
+∀x, y ∈ ℚ, ∀f, g ∈ oper(ℚ)
+1. x ◦ y = x
+2. f ◦ g : ℚ ↦ ℚ
+3. (f ◦ g)(x) = f(g(x))
+
+TailReqOpt(p, f, g) : ℚ ↦ ℚ
+TailReqOpt(p, f, g)(x) = (p(x)?(TailReqOpt(p, f, g)◦f):g)(x)
+
+...작성즁...
 
 (∈oper(ℚ))(f) : f ∈ oper(ℚ)
 Cauchy(f) : (∈oper(ℚ))(f) ∧ (∀ε > 0, ∃N ∈ ℕ s.t. ∀n, m ∈ ℕ, n > N < m → |f(n) - f(m)| < ε)
