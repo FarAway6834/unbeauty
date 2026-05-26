@@ -16,4 +16,4 @@ int(bool(x)) = x 이므로,
 
 intSelect(X) = <X ∪ {0, 1}, •¿•:•> s.t. p¿x:y = int(bool(p)?bool(x):bool(y))
 
-인 모델 intSelect(X)에 대해, 선택 로직은 intSelect(X)으로 처리 가능함이 모델론적 귀결임.
+인 모델 intSelect(X)에 대해, 선택 로직은 intSelect(X)으로 처리 가능함이 귀결임.
