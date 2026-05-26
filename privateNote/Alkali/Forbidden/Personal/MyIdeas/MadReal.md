@@ -45,4 +45,6 @@ Fundamental Theorem of Mad Real :
 
 이를 통해, MadReal은 튜링 완전하며, 동시에, 유리수의 폐포를 포함함을 알 수 있다.
 
-Functional Programmible Halting Problem : ker TailReqOpt를 구하는 일관된 알고리즘은 존재하지 않는다.
+Functional Programmible Halting Problem : ker TailReqOpt를 구하는 알고리즘은 존재하지 않는다.
+
+joke : 알고리즘으로써 오라클은 없는데, 왜 파렴치한 자본주의자인 법인으로써 오라클은 있는걸까? ㅋㅋㅋㅋㅋ
