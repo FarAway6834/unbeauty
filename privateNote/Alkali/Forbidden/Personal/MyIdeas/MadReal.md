@@ -24,9 +24,10 @@ MadReal ≜ (operodel(ℚ), K_ℚ, •¿•:•, TailReqOpt, ◦, =, <, >, ≤, 
 1. TailReqOpt(p, f, g) : ℚ ↦ ℚ
 2. TailReqOpt(p, f, g)(x) = (p(x)?(TailReqOpt(p, f, g)◦f):g)(x)
 ∀x ∈ ℚ, ∀p, f, g ∈ oper(ℚ) s.t. (p, f, g) ∈ ker TailReqOpt
-1. ∀h, h(x) = (p(x)?(h◦f):g)(x) → h ∉ oper(ℚ)
+1. ∃X ⊆ ℚ, ∀h ∈ 𝔉(X, ℚ), h(x) = (p(x)?(h◦f):g)(x) → h ∉ oper(ℚ)
 1. Tip 1 : 어떤 실수 x에 대해서 단 한번이라도, h가 정의 안됨은, 그 x에서 무한 루프에 갇힌다는거다.
 1. Tip 2 : 저러한 h의 경우엔 함수로 반환해주면, TailReqOpt는 더이상 모델에서 닫히지 않기에, 함수가 아닌 상수 0으로 반환한다. 그러므로, 해집합이 멈추지 않는 프로그램이라는거.
+1. Tip 3. ∀p, f, g ∈ oper(ℚ), ∃X ⊆ ℚ, ∀h ∈ 𝔉(X, ℚ), ((∀x ∈ X, h(x) = (p(x)?(h◦f):g)(x)) ∧ X ≠ ℚ) → (p, f, g) ∈ ker TailReqOpt
 
 (∈oper(ℚ))(f) : f ∈ oper(ℚ)
 Cauchy(f) : (∈oper(ℚ))(f) ∧ (∀ε > 0, ∃N ∈ ℕ s.t. ∀n, m ∈ ℕ, n > N < m → |f(n) - f(m)| < ε)
