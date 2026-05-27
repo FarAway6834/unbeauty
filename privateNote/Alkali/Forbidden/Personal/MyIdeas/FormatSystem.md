@@ -1,0 +1,15 @@
+# format system
+
+formatting ≜ ϝEncodeTable : codom EncodingTablize. (ϝt : SignituredTuple. (F(codom codom EncodeTable), {(a concat<card codom EncodeTable> "{" concat<card codom EncodeTable> numchrₙ concat<card codom EncodeTable> "}" concat<card codom EncodeTable> b, a concat<card codom EncodeTable>, tidx(n, t) concat<card EncodeTable> b) | n ∈ [0, first(t)) ∩ ℕ₀ ∧ (a, b ∈ F(codom codom EncodeTable))}) : MadGrammerCore) : 𝔉(SignituredTuple, MadGrammerCore)
+escaping ≜ ϝEncodeTable : codom EncodingTablize. (F(codom EncodeTable), {(a concat<card codom EncodeTable> "\{" concat<card codom EncodeTable> numchrₙ concat<card codom EncodeTable> "\}" concat<card codom EncodeTable>, a concat<card codom EncodeTable> "{" concat<card codom EncodeTable> numchrₙ concat<card codom EncodeTable> "}" concat<card codom EncodeTable> b) | n ∈ ℕ₀ ∧ (a, b ∈ F(codom EncodeTable))}) : MadGrammerCore
+FormalCommpile ≜ ϝ<G, s> : dom MadString. εv (∈G♡s ∖ {x | ∃y, (x, y) ∈ first(last²(MadGrammerize(G)))}) : F(first(G))
+format ≜ ϝEncodeTable : ran EncodingTablize. (ϝ<s, t> : F(codom EncodingTable) × SignituredTuple. FormalCommpile(escaping(EncodeTable), FormalCommpile(formatting(EncodeTable)(t), s)) : F(codom EncodingTable)) : {f ∈ 𝔉(F(codom EncodingTable) × SignituredTuple, F(codom EncodingTable)) | f ∈ ran EncodingTablize}
+FormalCommpile ≜ ϝ<G, s> : dom MadString. εv (∈G♡s ∖ {x | ∃y, (x, y) ∈ first(last²(MadGrammerize(G)))}) : F(first(G))
+format ≜ ϝEncodeTable : ran EncodingTablize. (ϝ<s, t> : F(codom EncodingTable) × SignituredTuple. FormalCommpile(escaping(EncodeTable), FormalCommpile(formatting(EncodeTable)(t), s)) : F(codom EncodingTable)) : {f ∈ 𝔉(F(codom EncodingTable) × SignituredTuple, F(codom EncodingTable)) | f ∈ ran EncodingTablize}
+subchrset(EncodingTable) ≜ SignituredTuple ∩ {(n, t) | n ∈ ℕ₀ ∧ t ∈ (codom EncodingTable)ⁿ}
+optformatMaskRestrictor(t) ≜ $\begin{cases} ℕ⁰, &(first(t) = 0), \ last(t), &(first(t) = 1), \ last²(t) × optformatMaskRestrictor(last³(t)), &(first(t) > 1) \end{cases} $
+optformatMask ≜ ϝEncodingTable : card codom EncodeTableize. ϝv : subchrset(EncodingTable). (ϝx : optformatMaskRestrictor(v). x : optformatMaskRestrictor(v)) : {f ∈ 𝔉(X, X) | X ∈ codom optformatMaskRestrictor}) : {f ∈ 𝔉(X, {f ∈ 𝔉(X, X) | X ∈ codom optformatMaskRestrictor}) | X ∈ codom subchrset}
+optformatCore(EncodingTable)(v, x) ≜ (format(EncodingTable) ◦ (optformatMask(EncodingTable)(v)))(x)
+domofoptformat(EncodingTable) ≜ {x | ∃y = optformatCore(EncodingTable)(x)}
+codomofoptformat(EncodingTable) ≜ {optformatCore(x) | x ∈ domofoptformat(EncodingTable)}
+oprformat ≜ ϝEncodingTable : codom EncodingTablize. (ϝx : domofoptformat(EncodingTable). optformatCore(x) : codomofoptformat(EncodingTable)) : {f ∈ 𝔉(domofoptformat(EncodingTable), codomofoptformat(EncodingTable)) | EncodingTable ∈ codom EncodingTablize}
