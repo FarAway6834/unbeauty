@@ -2,12 +2,14 @@
 
 1. 논의에 필요한 자료
 2. 페아노 공리계부터 제귀 함수까지
+3. 명제적 분포부터, 진리함수 산술까지
 
 ## 논의에 필요한 자료
 
 1. Operodepredrofunctionalang
 2. select
 3. ProgrammibleAnalysis
+4. About Language
 
 ### Operodepredrofunctionalang
 
@@ -215,6 +217,457 @@ Fundamental Theorem of Mad Real :
 Functional Programmible Halting Problem : ker TailReqOpt를 구하는 알고리즘은 존재하지 않는다.
 
 joke : 알고리즘으로써 오라클은 없는데, 왜 파렴치한 자본주의자인 법인으로써 오라클은 있는걸까? ㅋㅋㅋㅋㅋ 독과점 오라클좌 ㄷㄷ ㅋㅋㅋㅋ
+```
+
+### About Language
+
+1. Degamma Notation
+2. Mad Grammer
+3. Numberize System
+4. Name-System
+
+#### Degamma Notation
+
+```markdown
+# DigammaNotation 정의
+
+ϝ를 구문론적으로 정의하는 노테이션이다.
+보통을 L을 ZFC로 놓는다. 왜냐? 이건 함수를 표기하기 위한 용도이기에, 수학에서 많이 쓰일수밖에 없다. 수학을 L로 놓기 때문이다. 물론, 왜 하필 그 많은 공리계중 ZFC냐면, ZFC가 가장 많이 쓰이는 수학 공리계니까 그런거다.
+
+## 서론
+
+서술에 앞서 미리 요약하자면
+
+dom (ϝx : X. y : Y) = X
+codom (ϝx : X. y : Y) = Y
+ran (ϝx : X. y : Y) = {y | x ∈ dom (ϝx : X. y : Y)}
+graph (ϝx : X. y : Y) = {(x, y) | x ∈ dom (ϝx : X. y : Y)}
+(ϝx : X. y : Y)(x) = y
+
+인 기호 ϝ로 함수를 표기하는거다.
+
+## 본론
+
+TRS랑 자유 모노이드를 미리 정의한 후 DigammaNotation을 정의하겠다.
+
+### 튜플 제귀 분할 모델 TRS(S)
+
+들어가기 앞서, 
+벡터에 대해서는 1도 생각 않고 기획했다는점을 기억하자, 벡터에 주어지는 dim은 결코 튜플의 길이가 될수 없다. 외냐면 모든 튜플은 최대길이가 L인 경우, 길이 1~L이나 L로 길이를 해석해도 무리가 없기 때문에, 하나로 정해졌다 하기 애매하다.
+
+왜냐? 제귀적 정의에 따라서, n-tuple은 (n-1)-tuple의 일종이기 때문이다.
+
+이제부턴 본론으로 들어간다.
+
+TRS(S) ≜ <S*, ε, I, first, last, LengthEq>
+
+I : S* ↦ S*
+I(x) = x
+first : S* ↦ S*
+first|_{(S×S+)×(S×S+)}(x, y) = x
+first|_{S¹}(x) = x
+first|_{S⁰}() = ε
+last : S* ↦ S*
+last|_{(S×S+)×(S×S+)}(x, y) = y
+last|_{S¹}(x) = ε
+last|_{S⁰}() = ε
+
+$LengthEqCore(p, f, x, y) : \begin{cases} f(x) = ε ↔ f(y) = ε, &(p), \ LengthEqCore(¬p, f, x, y) ∨ LengthEq(p, last◦f, x, y), &(¬p) \end{cases}$
+LengthEq(x, y) : LengthEqCore(T, I, x, y)
+
+LengthEq가 재대로 작동하는지는 근데 페아노 공리계에서 증명가능함.
+
+에초에 LengthEq(x, y) ↔ ∃n ∈ ℕ₀, lastⁿ(x) = ε ↔ lastⁿ(y)임. ㅋㅋㅋ
+
+### 자유모노이드 F(X)
+
+F(X) ≜ <X*, ε, juxtaposition>
+
+k는 튜플이 아닌 constant로, 아무거나 ㄱㄴ. k = {{∅}, {{∅}}}로 놓으면 이해하기 쉬워짐.
+
+juxtaposition : X* × X* ↦ X*
+$x juxtaposition y = \begin{cases} x, &(y = ε), \ y, &(x = ε), \ (x, y), &(LengthEq(x, last(k, k))), \ first(x) juxtaposition last(x) juxtaposition y, &(¬LengthEq(x, last(k, k))) \end{cases} $
+
+### 디감마 표기법 DigammaNotation
+
+parentheses ≜ {'(', ')', ','}
+
+DigammaNotationStartSymbol ≜ 'ϝ'
+DigammaNotationNonVarname ≜ parentheses ∪ DigammaNotationNonterminal
+DigammaNotationNonterminal ≜ {'ϝ', ':', '.'}
+DigammaNotationTerminal(L) ≜ L ∪ parentheses
+CompileTargetOfDigammaNotationLang ≜ DigammaNotationTerminal
+DigammaNotationLang(L) ≜ DigammaNotationTerminal(L) ∪ DigammaNotationNonterminal
+DigammaNotationLformation(L) ≜ F(DigammaNotationLang(L))
+
+아래 함수 DigammaNotationLFormat(L) / DigammaNotationRFormat(L)는 자유모노이드 DigammaNotationLformation(L)위에서 조합논리로써 조합된 함수다.
+DigammaNotationLFormat(L) : (DigammaNotationLang(L)*)⁴↦DigammaNotationLang(L)*
+DigammaNotationLFormat(L)(x, X, y, Y) ≜ "ϝ" juxtaposition x juxtaposition ":" juxtaposition X juxtaposition "." juxtaposition y juxtaposition ":" juxtaposition Y
+DigammaNotationRFormat(L)(L) : (DigammaNotationLang(L)*)⁴↦DigammaNotationLang(L)*
+DigammaNotationRFormat(L)(x, X, y, Y) ≜ "(" juxtaposition X juxtaposition "," juxtaposition Y juxtaposition "," juxtaposition "{(" juxtaposition x juxtaposition "," juxtaposition y juxtaposition ") | " juxtaposition x juxtaposition "∈" juxtaposition X juxtaposition "})"
+모노이드 DigammaNotationLformation(L)에 대한건 여기까지다.
+
+DigammaNotationFormationRule(L) ≜ {(DigammaNotationLFormat(L)(x, X, y, Y), DigammaNotationRFormat(L)(x, X, y, Y)) | X, x ∈ (DigammaNotationLang(L) ∖ DigammaNotationNonVarname)* ∧ Y, y ∈ DigammaNotationLang(L)*}
+DigammaNotationFormalGrammer(L) ≜ (DigammaNotationNonterminal, DigammaNotationTerminal(L), DigammaNotationFormationRule(L), DigammaNotationStartSymbol)
+
+이를통해 DigammaNotationFormalGrammer(L)가 변형행성문법임을 알수 있다.
+
+Formation Rule이 사실상 PCRE(PCRE에 없는 문자집합 DigammaNotationLang(L), DigammaNotationNonVarname를 쓴건 양해해주길)코드 s/ϝ(?<x> [[DigammaNotationLang(L)]--[DigammaNotationNonVarname]]*?)[\s\t]*:[\s\t]*(?<X> [[DigammaNotationLang(L)]--[DigammaNotationNonVarname]]*?)[\s\t]*\.[\s\t]*(?<y>[DigammaNotationLang(L)]*?)[\s\t]*:[\s\t]*[[DigammaNotationLang(L)]--[DigammaNotationNonVarname]]*?/\($X, $Y, \{\($x, $y\) \| $x∈$X\}\)/나 다름없다. (이걸 python fstring같이 작성하자면, 변수(일수있는)기호(즉, (DigammaNotationLang(L) ∖ DigammaNotationNonVarname)*) X, x와 DigammaNotationLang(L)가 charset인 L-formula Y, y에 대하여, f"ϝ{x}:{X}.{y}:{Y}"가 감지되면 f"({X}, {Y}, {{({x}, {y}) | {x}∈{X}}})"로 치환하는거다.)
+
+TMI : 촘스키 위계상 정규언어라고도 부른다.
+
+변형생성문법이론에서 Lang이란 charset이다. DigammaNotation의 Lang는 DigammaNotationLang(L)이고, 그 Lang는 컴파일 타깃인 CompileTargetOfDigammaNotationLang(L)로 컴파일된다.
+
+즉, DigammaNotation는 사실상의 메크로, 그러니까 표기법(Notation)이다. 구문론적으로 ϝ를 정의한것이다.
+
+사실... 구문론적 등호를 =ₛ라 하면, 
+
+임의의 모델론적언어 L에 대한 L-formula x, X, y, Y에 대하여,
+
+ϝx : X. y : Y =ₛ (X, Y, {(x, y) | x∈X)})
+
+라고 한줄요약 가능하다.
+
+ㅅㅂ...
+
+또한, f = (X, Y, {(x, y) | x∈X)})라 하면, {(x, y) | x∈X)} ⊆ X × ran f를 만족하므로,
+
+다음 두 조건
+1. ran f ⊆ Y를 만족할것.
+2. {(x, y) | x∈X)}가 오른쪽 유일인 관계일것
+
+을 만족하는 튜플 (X, Y, {(x, y) | x∈X)})은 ZFC에서 함수를 정의하는 표준 모델상 함수일 공리를 만족시킨다.
+
+그렇다. 함수 간단하게 적겠답시고 이 ㅈㄹ 한거다.
+```
+
+#### Mad Grammer
+
+````markdown
+# MadOperator
+
+ - EncodedFree Monoid (isomorphismity of string and encoded tuple)
+ - MadGrammer
+
+## definition of encoded free monoid
+
+Φ(decoder, x, y) : $\begin{cases} decodersize(x)(y) = EncodingTablize(x)⁻¹(y), &(y ∉ dom first), \ decoder(x)(y) = (EncodingTablize(L, s)⁻¹(first(y)), decoder(x)(last(y))), &(y ∈ dom first) \end{cases}$
+decoding = ϝx : dom EncodingTablize. (ϝy : (codom EncodingTablize(x))*. decoding(x)(y) : (dom EncodingTablize(x))*) : {𝔉((codom EncodingTablize(x))*, (dom EncodingTablize(x))*) | x ∈ codom EncodingTablize} s.t. (decoding(x)("") = ε) ∧ Φ(decoder, x, y)
+FLL(L, s) ≜ (<<F(𝔽) := (𝔽)*, zero<L>, basis<L>, concat<L>>, <𝔽 := (ℤ/Lℤ), 0, 1, +, -, ×>, <𝕍ₙ := Span(𝔽, {basis(n, k) | k ∈ [1, n] ∩ ℕ₀}, +, -), dim, •>, decoding<L, s>)
+zero<L>(n) ≜ basis<L>(n) - basis<L>(n)
+basis<L>(n, i) ≜ $\begin{cases} zero<L>(i - 1) concat<L> basis<L>(1, 1) concat<L> zero<L>(n - i), &(n ≠ 1), \ ε, &(n = 0), \ <1>, &(n = 1) end{cases} $
+dim 𝕍ₙ ≜ n
+∀n ∈ ℕ₀, ∀v, w ∈ 𝕍ₙ, v ± w ≜ $ \begin{cases} <first(v) ± first(w), last(v) ± last(w)>, &(dim v > 1), \ ε, &(dim v = 0), \ v ± w, &(dim v = 1) end{cases} $
+∀x ∈ 𝔽, ∀y ∈ {x ∈ 𝕍ₙ | n ∈ ℕ₀}, x•y ≜ $ \begin{cases} <k first(v), k • last(v)>, &(dim v > 1), \ ε, &(dim v = 0), \ kv, &(dim v = 1) end{cases} $
+x concat<L> y ≜ $ \begin{cases} (x, y), &(dim x = 1), \ (first(x), last(x) concat<L> y), &(dim x > 1), \ y, &(dim x = 0), \ x, &(dim y = 0) \end{cases} $
+
+## defintion of MoeOperator
+
+X? ≜ X¹ ∪ X⁰
+F(X) ≜ (X⁺)?
+X* ≜ F(X)
+X⁺ ≜ X × X*
+MadGrammer(<L, P, ⇒, ⇔, ≡ₛ>) : P ⊆ {(x, y) | x, y ∈ F(L)}, x ⇒¹ y ↔ P(x, y), x ⇒⁰ y ↔ x = y, x ⇔ⁿ y ↔ (x ⇒ⁿ y ∧ y ⇒ⁿ x), (∀n ∈ ℕ ∩ [2, ∞), x ⇒ⁿ y ↔ ∃z ⇒⁽ⁿ⁻¹⁾ y, x ⇒¹z), (x ⇒* y ↔ ∃n ∈ ℕ₀, x ⇒ⁿ y), x ⇒° y ↔ (x ⇒⁰ y ∨ x ⇒¹ y), x ≡ₛ y ↔ (∃z, (x ⇒* z) ↔ (y ⇒* z))
+MadGrammerCore(<L, P>) : ∃<⇒, ⇔, ≡ₛ>, MadGrammer(<L, P, ⇒, ⇔, ≡ₛ>)
+MadGrammerize ≜ ϝ<L, P> : MadGrammerCore. ε<L, P, ⇒, ⇔, ≡ₛ> (MadGrammer) : MadGrammer
+EquivalenceRelation(R) : (∃x, R(x, x)), (∀R(x, y), R(y, x) ∧ (∀R(y, z), R(y, z)))
+EquivalenceRangeRelation(R, S) : S = {x | ∃y, R(x, y)}
+EquivalenceClass ≜ ϝR : EquivalenceRelation. (ϝx : εS. {y | R(x, y)} : 𝒫(S) (∈EquivalenceRelation[{R}])) : 𝔉(EquivalenceRangeRelation[EquivalenceRelation], {𝒫(x) | x ∈ EquivalenceRangeRelation[EquivalenceRelation]})
+compile ≜ ϝ<L, P, ⇒, ⇔, ≡ₛ> : MadGrammer. EquivalenceClass(≡ₛ) : codom EquivalenceClass
+
+StringRelationship(<L, P>, x) : x ∈ F(L), MadGrammerCore(<L, P>), x ∈ dom compile(MadGrammerize(L, P))
+MadString ≜ ϝ(<L, P>, x) : StringRelationship. compile(MadGrammerize(L, P))(x) : codom compile(MadGrammerize(L, P))
+
+> 
+> # definition of MoeOperator '♡'
+> 
+> <L, P>♡s ≜ MadString(<L, P>, s)
+> 
+
+## defintion of MadOperator
+
+1. definition of encoderize
+2. definition of MadOperator
+
+### definition of encoderize
+
+first(x, y) ≜ x
+last(x, y) ≜ y
+congruence ≜ ϝ(n, m) : ℤ². n + mℤ : 𝒫(ℤ)
+tip) 하단 n.b.문단 참고
+abs(x) ≜ +√(x²)
+MinRelation(<S, ≤>, m) : (m ∈ S ∧ ∀x ∈ S, m ≤ x) ∧ (∀x, y ∈ S, (x ≤ y ∨ y ≤ x) ∧ ((x ≤ y ∧ y ≤ x) → x = y) ∧ (∀z ∈ S, (x ≤ y ∧ y ≤ z) → x ≤ z))
+WellOrderdSet(S, ≤) : ∃m, WellOrderdSet(<S, ≤>, m)
+min ≜ ϝ<S, ≤> : WellOrderdSet. (ϝX : 𝒫(S). εm (WellOrderdSet[{<X, ≤>}]) : S) : {f ∈ 𝔉(𝒫(S), S) | ∃(≤), WellOrderdSet(S, ≤)}
+unsigned2natural ≜ ϝx : ran congruence. min(ℕ₀, ≤)(abs[x]) : ℕ₀
+SignituredTuple(L, t) : L ∈ ℕ₀, (L = 0 → t = ε), (L = 1 → (t ∉ dom first ∨ SignituredTuple(2, t))), (L > 1 → (t ∈ dom first ∧ SignituredTuple(L - 1, last(t))))
+isend ≜ ϝL : ℕ₀. (ϝi : ℕ₀. δ₍ᵢ₊₁₎ᴸ : {0, 1}) : 𝔉(ℕ₀, {0, 1})
+tidx ≜ ϝ(i, L, t) : ℕ₀ × SignituredTuple. firstⁱˢᵉⁿᵈ⁽ᴸ⁾⁽ⁱ⁾(lastᴸ(t)) : {y = firstⁱˢᵉⁿᵈ⁽ᴸ⁾⁽ⁱ⁾(lastᴸ(t)) | (i, L, t) ∈ ℕ₀ × SignituredTuple}
+EncodingTablize ≜ ϝ(L, s) : SignituredTuple. (ϝi : dom unsigned2natural. tidx(unsigned2natural(i), L, s) : codom tidx) : 𝔉(dom unsigned2natural, codom tidx)
+Φ(encoderize, x, y) : $\begin{cases} encoderize(x)(y) = EncodingTablize(x)(y), &(y ∉ dom first), \ encoderize(x)(y) = (EncodingTablize(x)(first(y)), encoderize(x)(last(y))), &(y ∈ dom first) \end{cases}$
+encoderize ≜ ϝx : dom EncodingTablize. (ϝy : (dom EncodingTablize(x))*. encoderize(x)(y) : (codom EncodingTablize(x))*) : {𝔉((dom EncodingTablize(x))*, (codom EncodingTablize(x))*) | x ∈ dom EncodingTablize} s.t. (encoderize(x)(ε) = "") ∧ Φ(encoderize, x, y)
+
+#### n.b. 주의 : 대수학의 지랄난 표기법을 이용했음에 주의.
+
+과거 포스트와, 형식적 정의 : 
+```
+# 대수학의 이상한(へんな) 표기법
+
+Step 1. へんの정의
+
+Φ(x, t, a, c) : $\begin{cases} t = (a, c), &(x), \ t = (c, a), &(¬x) \end{cases}$
+Ψ(f) : f ∈ 𝔉((codom f)², codom f)
+∀Ψ(f), LR(f) = (𝔹, 𝔉(codom f, 𝔉(codom f, codom f)), {(x, y) | y = (codom f, 𝔉(codom f, codom f), graph y) ∧ (graph y = {(a, b) | b = (codom f, codom f, graph b) ∧ (graph b = {(c, d) | d = f(t) ∧ Φ(x, t, a, c)})})})
+인 LR(f)에 대해서,
+
+만약, (ϝx : X. y : Y) = (X, Y, {(x, y) | x ∈ X})이라면,
+
+LR(f) = (ϝx : 𝔹. (ϝa : codom f. (ϝc : codom f. f(t) s.t. Φ(x, t, a, c) : codom f) : 𝔉(codom f, codom f)) : 𝔉(codom f, 𝔉(codom f, codom f)))임이 당연하므로,
+
+LR(f)(x)(a)(c) = f(t) s.t. Φ(x, t, a, c)이므로,
+
+LR(f)(x)(a)(c) = f(t) [t := $\begin{cases} (a, c), &(x), \ (c, a), &(¬x) \end{cases}$]임이 당연하고,
+
+그러므로,
+
+LR(f)(T) = (ϝx : codom f. (ϝy. codom f. f(x, y) : codom f) : 𝔉(codom f, codom f))이며
+LR(f)(F) = (ϝx : codom f. (ϝy. codom f. f(y, a) : codom f) : 𝔉(codom f, codom f))임이 당연하다.
+
+이때,
+
+∀Ψ(f), (Left(f), Right(f)) = (LR(f)(F), LR(f)(T))인 Left, Right에 대하여,
+
+Left(f)(x) = ϝy : codom f. f(x, y) : codom f
+Right(f)(x) = ϝy : codom f. f(y, x) : codom f
+임이 당연하다.
+
+그리고,
+
+P(A) = 2ᴬ = {S | S ⊆ A}
+Θ(f, x, y) : Θ(y, x) ∨ (x ∈ codom f ∧ (y ∈ P(codom f) ∨ ∃S, 𝔉(S, codom f))
+K(f, x, y, p, q) : $\begin{cases} p, &(x ∈ codom f), \ q, &(y ∈ codom f) \end{cases}$
+∀Ψ(f), ∀Θ(f, x, y), K(f, x, y, へんな(f, x, y) = へんな(L(f)(x))(y), へんな(R(f)(y))(x)))이며
+B(f, x, p, q) : $\begin{cases}, p, &(x ∈ P(codom f)), \ q, &(x ∉ P(codom f))
+A(f, x) : x ∈ P(codom f) ∨ (∃S, x ∈ 𝔉(S, codom f))
+∀f ∈ 𝔉(dom f, dom f), ∀A(f, x), B(f, x, へんな(f)(x) = {f(y) | y ∈ x}, へんな(f)(x) = f ◦ x)인 へんな에 대해,
+
+へんな는 함수라기보단 수식 へんな(f)(x)으로 정의된다.
+
+Step 2. 대수학도 == へんなひと
+
++ : S² ↦ S
+× : S² ↦ S
+일 시,
+
+x ∈ S, y ∉ S인데, x + y나 xy라 적었다면 빼박, へんなことです。wwww
+
+진짜 ㅈㄴ ㅈㄴ ㅈㄴ まじで はん。
+
+x + y = へんな(+, x, y)
+xy = へんな(×, x, y)임.
+
+미친거 아님?ㅋㅋㅋㅋ
+
+대체 왜 집합 y에 S의 원소 x을 덧셈 뺄쌤하고, 함수 y에, S의 원소 x를 덧셈 뺄샘할 발상을 하는거임? 왜????
+
+수학자들이 ㅈㄴ へんーです。
+
+## 재일 ㅈㄹ난 이유
+
+ㅈㄴ 골때리는건, A/B = {x + B | x ∈ A}란거임.
+
+Step 1. 하... 일단 정수론에서, 나머지와 나누어떨어짐을, 정수론적 시각에서 접근해보자.
+
+연산기호 '+', '-', '×'와, 나누어 이항관계 기호인 떨어짐 기호 '|'및 삼한관계 기호인, 합동기호 '≡'에 대하여,
+
+모델 M(D) = <D, 0, +, -, ×, |, ≡>이 뭐냐 하면,
+
+x | y : ∃z ∈ D, x = yz
+x ≡ y (mod. m) : m | (x - y)
+
+임. 그래서, 나머지가 0인게 나누어 떨어지는거임.
+
+그리고, 만약 나눗셈 기호 '÷'를 정의하고싶거든,
+
+집합론적으로, ÷ : {(m, n) | n ≡ 0 (mod. m)} ↦ D.에서 정의하는수밖에 없고.
+
+근데, D에다가 유리수같은거 넣는건 쓸대없는짓임. 나누어떨어짐 개념은, 체같은거 말고, 정수론에서 다루어지는거라.
+
+즉, 정수론에서, D = ℤ고, 에초에, D가 자연수인경우를 논하든 뭐하든, 에초에, "D에서"라는 말 하나만 붙여주므로써, M(D)에서의 논의를 다 하기 때문에 뭐... 문제 없는거임.
+
+그리고 대망의... 몫군의 원소로 만들어버리기.
+
+추상대수적으로 보자면, mod : D² ↦ ∪{D/mD | m ∈ D}인 준동형사상이고
+
+실은 그냥, x mod m = {y | x ≡ y (mod. m)}인 동치류임.
+
+하하.... 나머지 동치류가 몫군이다 이거임.
+
+나머지가 0이면 나누어 떨어지니, 그냥 합동은, 나누어떻어짐으로 정의되며, x ÷ y가 나누어 떻어지면 결괏값 z가 존재하므로, 곱셈의 역산이 나눗셈이니, x = yz란 ㅈㄴ 당연한 소리를 하는게 모델 M(D)랑 '÷'고.
+
+여기까지는 명쾌함.
+
+Step 2. 골때리는 부분
+
+근데 대수학자들이, 수묶음을 추상화하고싶은 욕구가 존나 욕구불만이었는진 모르겠지만,
+
+x mod m = x + mD로 정의해버린거임.
+
+크아아아아아악 미친놈들아!!!
+
+Q. 이봐요, 대체 왜 집합에 곱셈을 하는데? 벌써 모델 M(D)를 벗어났잖아.
+A. 그거? 집합에도 연산 정의되면 편하잖아 한잔 혀
+Q. 미친놈들아, 그럼 일관되게, 나눗셈 '/'에 대해서도, X/Y를 재대로 정의하시든가!! 일관되지 않잖아! 너희가 그렇게 정의하지만 않으면, 다른 수학분야도 일관될수 있어!
+A. 알아 ㅋ, 그치만, {y | x ≡ y (mod. m)} = x + mD식으로 몫군 만들때 쓸래.
+
+대수학자 : 수 묶음으로 생각하고 싶으니까, 대수학 중심적으로 생각할래.
+대수학자 중심주의 왈 : 집합에 연산을 정의했어. 근데, 질문자는 불만이 있는데 대수학자는 없네? 무슨차일까? 한쪽은, 집합을 수 묶음으로 보네?
+
+(그날 형식주의자는 떠올렸다.)
+
+크아아악!! 왜 A/B = {x + B | x ∈ A}인거야!!!
+
+미친 직관주의자들아!!! A/kB를, a ∈ A, kb ∈ B일시, a ÷ k = b ••• r일시 동치류 r로 정의하는건, 지극히 인간적인 직관인거 아니냐!!
+
+직관을 주장할거면 형식화하라고!!! 형식으로 정의 안되는 직관은, 수학 언어 밖에 있는거잖아!!!
+```
+
+### definition of MadOperator
+
+EvilLary(<L, s, R>, <X, P>) : X = codom EncodingTablize(L, s), P = {(encoderize(L, s)(x), encoderize(L, s)(y)) | R(x, y)}
+LaryLattice(L, s, R) : (L, s) ∈ EncoderTable ∧ R ⊆ {(x, y) | x, y ∈ (dom EncoderTable(L, s))*} ∧ (∃<X, P>, EvilLary(<L, s, R>, <X, P>))
+EvalLary ≜ ϝLL : LaryLattice. εG (EvilLary[{LL}]) : MadGrammerCore
+Larry(<L, s, R>, v) : LaryLattice(L, s, R), v ∈ (ℤ/Lℤ), StringRelationship(EvalLarry(L, s, R), encoder(L, s, R)(v))
+AngelLary ≜ ϝ(LL, s) : Larry. EvalLarg(LL)♡(encoder(LL)(s)) : codom MadString
+
+ > 
+ > # definition of MadOperator '♥︎'
+ > 
+ > LL♥︎s ≜ AngelLary(LL, s)
+ > 
+ ````
+
+#### Numberize System
+
+````markdown
+# Numberize System
+
+x ≤ₚ y : (p → (x ≤ y)) ∧ ((¬p) → (x < y))
+
+-∞ < x < ∞ : x ∈ ℝ
+a ≤ₚ x < ∞ : x ∈ ℝ, a ≤ₚ x
+-∞ < x ≤ₚ b : x ∈ ℝ, x ≤ₚ b
+
+〖ᵤa, b〗ᵥ ≜ {x | a ≤ᵤ x ≤ᵥ b}
+
+(a, b) ≜ 〖₀a, b〗₀
+[a, b) ≜ 〖₁a, b〗₀
+(a, b] ≜ 〖₀a, b〗₁
+[a, b] ≜ 〖₁a, b〗₁
+
+〖ᵤa ⤳ b〗ᵥ ≜ ℤ ∩ 〖ᵤa, b〗ᵥ
+
+```
+seq`•` 연산의 정의)
+1. seq`f`ₙ ≜ f(n)
+2. seq`f`ₙ = (dom f, codom f, graph f)
+3. seq`seq`f``(x) = f(x) (즉, 수열을 원래대로 돌리는 역할도 함 )
+```
+
+Surj x : X. y ≜ ϝ x : X. y : {y | x ∈ X}
+{aₙ : Y}ₓ₍ₙ₎ ≜ seq`ϝn : x. aₙ : Y`
+{aₙ}ₓ₍ₙ₎ ≜ seq`Surj n : x. aₙ`
+
+NSDecoderTableize의 정의)
+NSDecoderTableize(L, x) ≜ {NSDecoderTableize(L, x)}ₜ₍ₙ₎ (단. t = [0 ⤳ L))
+NSDecoderTableize(1, x) ≜ {x}ₜ₍ₙ₎ (단. t = [0 ⤳ 1))
+NSDecoderTableize(L, x)₀ ≜ first(x)
+NSDecoderTableize(L, x)ₙ ≜ NSDecoderTableize(L - 1, last(x))₍ₙ₋₁₎
+
+restrictedArr ≜ {a | dom a = [1 ⤳ card a]}
+ArrLastMask ≜ {{n + 1}ₜ₍ₙ₎ (단. t = [1 ⤳ k)) : restrictedArr}ₜ₍ₙ₎ (단. t ≜ [2 ⤳ ∞))
+
+tuplize ≜  Surj a : tuplize(a)
+tuplize|ₓ ≜ (ϝ a : ε : codom tuplize (단. x = {a | dom a = (0 ⤳ 0))) (tip : (0 ⤳ 0) = [1 ⤳ 0) = ∅)
+tuplize|ₓ ≜ (ϝ a : restrictedArr. (a₁, tuplize(a ◦ (ArrLastMaskₖ))) (단. k = card a) : codom tuplize) (단. x = restrictedArr)
+duptup(L, x) ≜ tuplize({x}ₜ₍ₙ₎) (단. t = [1 ⤳ L])
+mask(L, f) ≜ ϝx : dom mask(L, f). mask(L, f) : codom mask(L, f)
+mask(0, ε) ≜ Surj x : {ε}
+mask(1, f) ≜ f
+mask(n, f) ≜ Surj x : (dom first(f) × dom mask(n - 1, last(f))). (first(f)(first(x)), mask(n - 1, last(f))(last(x)))
+
+abs(x) = |x|
+
+n.b. 아래 m D = {m × d | d ∈ D}는 대수학의 그 ㅈㄹ났던 표기법이다. 뭐... 근데 아까 보여준 정의만 알면 장땡.
+NSmod<D, L, I> ≜ ϝt : D². first(t) + last(t)D : {k ∈ D/last(t)D | t ∈ D²}
+NSmodr<D, L, I> ≜ Surj m : D. (ϝ x : D. NSmod<D, L, I>(x, m) : D/mD)
+Mod(NSmodr<D, L, I>(m)) = <codom NSmodr<D, L, I>(m), tuplize({NSmodr<D, L, I>(m) ◦ NSDecoderTableize(L, I)ₖ ◦ mask(arity(NSDecoderTableize(L, I)ₖ), duptup(arity(NSDecoderTableize(L, I)ₖ), (Surj x : codom NSmodr<D, L, I>(m). min(abs[x]))))}ₜ₍ₖ₎) (단. t = [1 ⤳ L))>
+Tip : 그냥 I가 배정으로, 저기에 들어가는 D에서의 연산자들이, D/mD로 동형사상을 통해서 포팅되는거다.
+NSEncoderTablize(L, x) ≜ NSEncoderTablize<ℤ>(L, x)
+NSEncoderTablize<D>(L, x) ≜ NSmodr<D, K, I>(L) ◦ (NSDecoderizeTablize(L, x)⁻¹)
+Decoderize(L, x) ≜ ϝ v : (codom NSEncoderTablize)* . Φ?ε:(Ψ?NSEncoderTablize(L, x)⁻¹(v):(Decoderize(L, x)(first(v)), Decoderize(L, x)(last(v)))) (단. Φ ↔ (v = ε), Ψ ↔ (v ∈ codom EncoderTablize)) : (com EncoderTablize)*
+삼항연산자의 정의는, ProgrammibleAnalysis초기 설명에서 이미 정의한적 있음
+
+Numberize(T) ≜ iₜ [t := T]
+Numberize(T, G) ≜ ϝ x : T × dom Numberize(G). Numberize(G)(last(x)) × (card T) + first(X) : ℕ₀
+
+FullyNumberize(T, G) ≜ Numberize(T, G) ◦ (Decoderize⁻¹)
+
+FullyNumberize는 문자열을 숫자로 바꿔준다.
+
+## Applicative Example
+
+이건, 다음 편에 만들겠다.
+
+ASCII가 구현되니까, 다음 글인 NameSystem에서 구현한다.
+````
+
+#### NameSystem
+
+```markdown
+# NameSystem
+
+isNameFunc(name) : 
+1. ∀a ∈ dom name, codom name(a) ∩ dom first = ∅ (튜플만 아니면 이름용 문자열론 다 된다.)
+2. name(a) : dom a ↦ lang a
+3. lang은... 젠장 걍, codom name(a)다.
+4. 이건 사실 잘 형식화되지 않은 정의라, 가까운 시일 내에, name의 정의는 형식화된 정리된 형태로 바뀔거다.
+5. 이 조항들 수정해야 함 ㅇㅇ.
+
+{Σ name}_{k ∈ dom a} aₖ ≜ Σ_{k ∈ dom a} ||aₖ|| ObSys(codom name(a))(tuplize(name(a)), name(a))
+이름을 가지고, 일급객체열 a를, 이름을 기저로 만든 벡터로 바꿔주는 그러한 함수다. (사실상 일급객체열을 벡터로 바꿔주는 일대일대응이나 다름없지만)
+
+terminative x ≜ ('\0', x)
+널 문자 (termination 문자)를, 인코드상 코드 0에 넣어놓는거다 ㅋㅋㅋ
+
+shash(str-hash)er 정의)
+shasher(L, x) ≜ Surj v : dom EncodingTablize(L, Terminative x)).  FullyNumberize(duptup(L, ℤ/Lℤ), encoderize(EncodingTablize(L, Terminative x))(v))
+그냥, 터미널이 있큰 문자셋 Terminative x에 대해, 그걸 Numberize해서, 바이트열을, 자릿수순으로 나열해서, 숫자로 만든거임.
+
+tokenL(L, X)ₙ(y) ≜ (n = 0)?ε:((n = 1)?(shasher(L, X)(y)):(shasher(L, X)(first(y)), tokenL(L, X)₍ₙ₋₁₎(last(y))))
+문자셋 (L, X)의 언어로 된 문자열 튜플 y에 해당하는 놈들을 토큰으로 간주하는 언어. 토큰값을 shasher하여, 렉싱 결과에, 렉싱 이전 값을 볼수 있음. 렉싱이라는 묶기 과정이, shasher된 문자로 치환하는 두 자료구조를 변환하는 동형사상 역할의 알고리즘임을 시사함.
+
+V((L, S), ρ)(x) ≜ ρ_{shasher(L, S)(x)}
+배정 ρ의 shasher(L, S)(x)번째 인덱스에 해당하는 변항을 슬라이싱하는 Expression (Expression이 아닌데 용어가 생각이 안난다. 집중력이 갑자기 떨어지고, 몽롱하다.)
+
+ObSys(L, S)ₙ(ρ, (N, t)) ≜ V((N, tokenL(L, S)ₙ(t)), ρ)
+ObSys는, V를 tokenL화 시켜서, 사용되지 않은 인덱스를 줄일수있다!
+
+(Spanᵤ)(B) ≜ {Σᵥ aₓx | a : B ↦ 𝔽} [u := 𝔽][v := (x ∈ B)]
+와 생성 ㅋㅋㅋ
+
+globals ≜ (Σ name)⁻¹
+일급객체를 내이밍하는거의 역함수니, 네임의 값을 구하는거다.
+Quntom(f) ≜ Surj (A, B) : dom f. Span(globals⁻¹[f(globals[Span⁻¹(A)], globals[Span⁻¹(B)])])
+이게 왜 잘 작동하는지 설명 안하면 비형식적이라 욕먹을텐데, 이거 알고보면 ㅈㄴ 형식적임. 물론 증명과, 어떤 기호를 생략했는지 말 안 현제시점은 비형식적. 그러나, 뇌가 탄것같으니, 나중에 설명함 (에초에 걍 보기만 해도, 해당 공간의 정규직교기저를 대충 뽑는 놈을 의도함이 보일텐데, 아 그러고보니 저거 수정해야한다. Span⁻¹가 아니라 해당 공간의 정규직교기저인지라... 그리고, 관계연산에 대해서도 명시해야하는게 있다.)
+
+QuntomNon_H Φ ≜ ∪ₜ ker <x| [t:=(x ∈ Φ)] ≜ Span(globals[globals⁻¹(Span⁻¹(H)) ∖ globals⁻¹[Span⁻¹(X)]])
+
+엄... 헤헤.... 그..
+
+뭐랄까, 상태공간의 각 물리량은, 물리량들이 가지고 있는 음함수적 성질을 만족시키는, 음함수 궤적이라는 배정의 벡터화 모델에 있는 기저고, 그 기저들은, 각각 일급객체로써, 변수 이름으로써의 속성을 지닌다는걸 발견해서 만든거라... 하하...
+
+이건 젯타이니 형식화하야겠다. 나중에 다듬어야한다. 코어 아이디어라
 ```
 
 ## 페아노 공리계부터 제귀 함수까지
@@ -539,4 +992,94 @@ f⁻ˢ⁽ⁿ⁾◦ f ◦fⁿ = I임.
 
 ### 제귀 함수, 제귀 함수를 가진 모델의 언어를 특히 튜링 언어적인 관점에서
 
-...작성중...
+...작성중... (이 문서는 아직 완성되지 않았도, 종이의 내용을 옮겨적는 중)
+
+## 명제적 분포부터, 진리함수 산술까지
+
+1. Propositional Distribution (명제적 분포)
+
+...작성중... (이 문서는 아직 완성되지 않았도, 종이의 내용을 옮겨적는 중)
+
+### Propositional Distribution (명제적 분포)
+
+Tips)
+1. pmf : probability math function
+2. P : probability measure
+
+Definition)
+
+X ~ Φ(A) : ∀v, P(X = v) + pmf(1 - v) = pmf(v) + pmf(1 - v) = pmf²(1) = pmf(P(A)) = 1
+
+이때, Φ(A)를 A에 대한 Propositional Distribution이라 히고, X ~ Φ(X) (확률변수 X가 분포 Φ(A)를 따른다) 라는것은, 위 공식을 만족함을 의미한다.
+
+Φₐ(A) : ∃X, X ~ Φ(A)
+
+이때, Φₐ(A)인 A를 Propositional Event라 한다. 이게 어떤 제약사항이 있는지는 하단 참고.
+
+Theorems)
+
+th. P(X = v) = pmf(v)
+
+pf. DICO QUOD ERAT ; 
+1. i) P(X = v) ≠ pmf(v)
+2. ⊭ P(X = v) + pmf(1 - v) = pmf(v) + pmf(1 - v)
+∴ P(X = v) = pmf(v)
+
+QUOD ERAT DEMONSTRADUM
+
+의의 on 확률론적 POV : pmf가 X의 확률질량함수임을 의미한다.
+
+lemma. P(X ≠ v) = pmf(1 - v)
+
+pf. DICO QUOD ERAT ; 
+1. P(X = v) + pmf(1 - v) = 1
+2. pmf(1 - v) = 1 - P(X = v) = P(X ≠ v)
+
+QUOD ERAT DEMONSTRADUM
+
+th. k ∈ codom X → codom X = {k, 1 - k}
+
+pf. X ≠ k HOC EST X = 1 - k ∵ P(X ≠ v) = pmf(1 - v)
+∴ k ∈ codom X → codom X = {k, 1 - k}
+
+QUOD ERAT DEMONSTRADUM
+
+col. Φ(A)는 베르누이 분포 (이산확률변수를 확률변수로 가지는 분포) 의 일종이다. (i.e. X는 이산확률변수)
+
+의의 on 분포 POV : Φ(A)가 오직 양자택일의 값인 분포라는 겁나 중요한 의의를 가진다.
+
+lemma. pmf²(0) = 0
+
+pf. DICO QUOD ERAT
+1. pmf²(1) = P(X = P(X = 1)) = 1
+2. P(X = P(X = 1)) = P(X = P(X = 1 - 0)) = P(X = P(X ≠ 0)) = P(X = 1 - P(X = 0)) = P(X ≠ P(X = 0)) = 1 - P(X = P(X = 0)) = 1 ∵ P(X ≠ v) = pmf(1 - v)
+3. 1 - (1 - P(X = P(X = 0))) = 1 - (1) = P(X = P(X = 0)) = 0 ∵ 1 = 1, x = y ⊨ 1 - x = 1 - y
+∴ pmf²(0) = 0
+
+QUOD ERAT DEMONSTRADUM
+
+th. s = {0, 1}, (pmf|ₛ)²(v) = v
+
+pf. FACT) pmf²(0) = 0, pmf²(1) = 1
+
+QUOD ERAT DEMONSTRADUM
+
+col. pmf(pmf(x)) = x ⊢ pmf⁻¹ = pmf
+
+의의 on 추상대수 POV : pmf가 정의역 s로 restrict될시, 대합사상이라는 중요한 함의를 말한다.
+n.b. 사실 근데, 대합이라는 점은 별로 중요하지 않다. ∃pmf⁻¹라는것만 중요하다. 그 이외의 정보는 증명에 안쓰이니까.
+
+th. codom X = {0, 1}
+
+pf. FACT) 1 ∈ codom X ∵ pmf²(1) = 1
+
+th. pmf⁻¹(pmf²(1)) = pmf⁻¹(pmf(P(A)) = pmf(1) = P(A) ∵ ∃pmf⁻¹
+
+요약 : 
+1. X ~ Φ(A)면, A를 Propositional Event라 하며, X는 0 또는 1인 이상확률변수임.
+2. pmf(1) = P(A), 1 - pmf(0) = pmf(1)
+3. 위 요약 내용을 통해 알수 있는 사실은, Propositional Event는 100%일어(0%안일어)나거나, 0%로 일어(100%로 안일어)나거나, 한다는거다.
+
+### ...작성중... (이 문서는 아직 완성되지 않았도, 종이의 내용을 옮겨적는 중)
+
+...작성중... (이 문서는 아직 완성되지 않았도, 종이의 내용을 옮겨적는 중)
