@@ -997,6 +997,7 @@ f⁻ˢ⁽ⁿ⁾◦ f ◦fⁿ = I임.
 ## 명제적 분포부터, 진리함수 산술까지
 
 1. Propositional Distribution (명제적 분포)
+2. Explict Named Connective (명시적 네이밍 결합자)
 
 ...작성중... (이 문서는 아직 완성되지 않았도, 종이의 내용을 옮겨적는 중)
 
@@ -1079,6 +1080,63 @@ th. pmf⁻¹(pmf²(1)) = pmf⁻¹(pmf(P(A)) = pmf(1) = P(A) ∵ ∃pmf⁻¹
 1. X ~ Φ(A)면, A를 Propositional Event라 하며, X는 0 또는 1인 이상확률변수임.
 2. pmf(1) = P(A), 1 - pmf(0) = pmf(1)
 3. 위 요약 내용을 통해 알수 있는 사실은, Propositional Event는 100%일어(0%안일어)나거나, 0%로 일어(100%로 안일어)나거나, 한다는거다.
+
+### Explict Named Connective (명시적 네이밍 결합자)
+
+n.b. 비트겐슈타인에 대해서는 2019 고 1 11모 25~29번 지문으로 접했음을 명시하겠음.
+
+이 문단에선 비트겐슈타인이 명제와 사실의 관계를 분명히 밝히기 위해 만든 진리표와 진리함수이론을 통하여, 명시적 네이밍과, 그 성질을 서술하겠다.
+
+#### 명시적 네이밍
+
+결합자 p가, x, y, z ∈ {T, F}인 유일한 z와 유일한 x, y에서만 x p y ↔ z이고, 나머지 경우에 a, b ∈ {T, F}b, (a, b) ≠ (x, y)에서, a p b ↔ ¬z라면, x인 left와 y인 right에서만 z가 되는 결합자라 하여 다음과 같이 명명 규칙으로 나타낸다.
+
+FullPrefixName ≜ ϝ v : {"T", "F"}. (v = "T")?"True":"False" : {"True", "False"}
+PrefixInitial ≜ ϝ v : {"T", "F"}. (v = "T")?"True":"False" : {"t", "f"}
+
+FullName(Left, Right, Value) ≜ optformat({"True", "False"}, {"True", "False"}, {"True", "False"}, "{2}In{0}Left{1}Right", FullPrefixName(Left), FullPrefixName(Right), FullPrefixName(Value))
+Initial(L, R, V) ≜ optformat({"t", "f"}, {"t", "f"}, {"t", "f"}, "{2}i{0}l{1}r", PrefixInitial(L), PrefixInitial(R), PrefixInitial(V))
+
+또한, 결합자 p가 여러개의 좌인자•우인자에서 z면, 이건 이것대로 특이한 표기법으로 적는다.
+
+FNV2C ≜ Surj x : {x ∈ ({"T", "F"}²)ⁿ | n ∈ [1 ⤳ 4]}. (x ∈ {"T", "F"}²)?optformat({"True", "False"}, {"True", "False"}, "{0}Left{1}Right", FullPrefixName(first(x)), FullPrefixName(last(y))):optformat({"True", "False"}, {"True", "False"}, codom FNV2C, "{0}Left{1}RightEt{2}", FullPrefixName(first(first(x))), FullPrefixName(last(first(y))), FNV2C(last(x)))
+FullNameV2 ≜ Surj x : {x ∈ {"T", "F"} × ({"T", "F"}²)ⁿ | n ∈ [1 ⤳ 4]}. optformat({"True", "False"}, codom FNV2C, "{0}In{1}", FullPrefixName(first(x)), FNV2C(last(x)))
+
+IV2C ≜ Surj x : {x ∈ ({"T", "F"}²)ⁿ | n ∈ [1 ⤳ 4]}. (x ∈ {"T", "F"}²)?optformat({"t", "f"}, {"t", "f"}, "{0}l{1}r", PrefixInitial(first(x)), PrefixInitial(last(y))):optformat({"t", "f"}, {"t", "f"}, codom IV2C, "{0}l{1}re{2}", PrefixInitial(first(first(x))), PrefixInitial(last(first(y))), IV2C(last(x)))
+InitialV2 ≜ Surj x : {x ∈ {"T", "F"} × ({"T", "F"}²)ⁿ | n ∈ [1 ⤳ 4]}. optformat({"t", "f"}, codom IV2C, "{0}i{1}", PrefixInitial(first(x)), IV2C(last(x)))
+
+물론, f ∈ {InitialV2, FullNameV2}에서 f(V, (L1, R2), (L2, R2), ...)인 경우만.
+
+결론적으로, (f, g) ∈ {(Initial, InitialV2), (FullName, FullNameV2)}에서, g(V, L, R) = f(L, R, V)이고, 그 외에, 여러개의 좌인자 • 우인자인 경우를 다룬다.
+
+#### 명시적 네이밍 결합자
+
+먼저, Initial을 구문론적으로 정의해주는 Notation은 다음과 같은 문법규칙을 가진다.
+
+InitialNotation = {(x, y) | {x, y} = {a, b} ∧ a = FullNameV2(arg) ∧ b = InitialV2(arg) ∧ arg ∈ dom InitialV2}
+
+이제, 각 결합자의 정의를 보자.
+
+먼저, 논리식으로는 다음과 같이 쓰여진다.
+
+DOCC ≜ Surj x : dom FNV2C. (x ∈ {"T", "F"}²)?optformat({"T", "F"}, {"T", "F"}, "((L ↔ {0}) ∧ (R ↔ {1}))", first(x), last(x)):optformat({"T", "F"}, {"T", "F"}, codom DOCC, "((L ↔ {0}) ∧ (R ↔ {1})) ∨ {2}", first(first(x)), last(first(x)), DOCC(last(x)))
+DefineOfConnectives ≜ Surj x : dom FullNameV2. optformat({"T", "F"}, codom DOCC, "({1}) ↔ {0}", first(x), DOCC(last(x)))
+
+그리고, 이는 정의문을 만들때 다음과 같이 쓰인다.
+
+AxiomOfNotation ≜ Surj x : dom FullNameV2. optformat(codom FullNameV2, codom DefineOfConnectives, "(L {0} R) ↔ ({1})", FullNameV2(x), DefineOfConnectives(x))
+
+ExplictNamedConnectiveNotation ≜ {(y, "T") | y = AxiomOfNotation(x) ∧ x ∈ dom AxiomOfNotation}
+
+이를 통하여, 명시적 네이밍 결합자 표기법의 문법규칙을 통해, 각 결합자의 의미를 규정하는 구문을 참으로 평가한다.
+
+#### ExplictNamedConnectiveNotation의 모델과 InitialNotation의 모델
+
+각 언어의 모델은 "값-배정(assignemnt)"의 형태로 나타낼수 있다.
+
+InitialNotation의 경우,
+
+ρ = (
 
 ### ...작성중... (이 문서는 아직 완성되지 않았도, 종이의 내용을 옮겨적는 중)
 
