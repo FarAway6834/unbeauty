@@ -1134,6 +1134,27 @@ ExplictNamedConnectiveNotation ≜ {(y, "T") | y = AxiomOfNotation(x) ∧ x ∈ 
 
 각 언어의 모델은 "값-배정(assignemnt)"의 형태로 나타낼수 있다.
 
+그러나, 내가 미쳤다고 일일이 타이핑하고싶지 않다.
+
+```python
+# ㅅㅂ 솔찍히 사람이 어떻게 일일이 True/False를 타이핑하겠는가, 이거 실행해올테니 잠시만 wait.
+
+core = lambda s, p, q : (lambda k = [["True", "False"], ["t", "f"]][s] : f"{k[p]}{['Left', 'l''][s]}{k[q]}{['Right', 'r'][s]}")()
+conn = lambda s, v, *arg : "{[['True', 'False'], 'tf'][s][v]}{['In', 'i'][s]}{['Et', 'e'][s].join((core(k)) for k in arg)}"
+assignments = lambda v, *arg : f"{conn(1, v, *argv)} = {conn(0, v, *argv)}"
+OutputFormat = lambda iter : f"({','.join((assignments(v, *arg) for v, arg in iter))})"
+ArgGenerCore = lambda arr : [([(0, 0), (0, 1), (1, 0), (1, 1)][k] for k in x)  for x in arr]
+
+corework = lambda f : [f(x) for x in [0, 1, 2, 3]]
+
+ArgGener = ArgGenerCore(lambda x : [x]) + ArgGenerCore(corework(lambda a : corework(lambda b : [a, b]))) + ArgGenerCore(corework(lambda a : corework(lambda b : corework(lambda c : [a, b, c])))) + ArgGenerCore(corework(lambda a : corework(lambda b : corework(lambda c : corework(lambda d : [a, b, c, d]))))))
+argslst = list(zip([0] * len(ArgGener), ArgGener)) + list(zip([1] * len(ArgGener), ArgGener))
+
+print(OutputFormat(argslst))
+```
+
+기계한테 시켜야징
+
 InitialNotation의 경우,
 
 ρ = (
