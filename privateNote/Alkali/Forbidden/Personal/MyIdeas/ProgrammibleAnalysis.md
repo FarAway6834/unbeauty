@@ -1153,6 +1153,10 @@ ArgGener = ArgGenerCore(coreworkc(lambda x : [x])) + ArgGenerCore(corework(lambd
 argslst = list(zip([0] * len(ArgGener), ArgGener)) + list(zip([1] * len(ArgGener), ArgGener))
 
 print(OutputFormat(argslst))
+
+# 그 다음 포멧도
+
+
 ```
 
 기계한테 시켜야징
@@ -1165,7 +1169,9 @@ InitialNotation의 경우,
 
 인 배정이다. 이니셜 논리연산자 op1에 풀네임 논리연산자 op2를 할당하는, op1 := op2식이라는거다.
 
-그리고, 
+그리고, ExplictedNamedConnectiveNotation의 경우엔,
+
+ρ = 
 
 ### ...작성중... (이 문서는 아직 완성되지 않았도, 종이의 내용을 옮겨적는 중)
 
