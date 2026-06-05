@@ -827,7 +827,15 @@ Notation좀 하나 도입한다.
 11. 5. Apply(PromObIdentity, (f, x)) = (f, x)로, 이것고 Identity를 이렇게 했기에 가능하다.
 12. Apply(Apply, ((Apply, (clsr(f), x)), y) = Promise ◦ (Promise(clsr(f)))다. 이러한 Promise지연인척 하는 문장의 정체가 Promise가 그냥 idntity여서 ㅋㅋㅋ 이젠 하다하다 조합논리가 파싱이 된다 이런 형태로
 
-이 글도 젯타이니 다듬어야함.
+la<𝔉(X, 𝔉(X, Y) × X), 𝔉(X, Y)> PromOb2Prom ≜ ϝ promob : 𝔉(X, 𝔉(X, Y) × X). first(promob) : 𝔉(X, Y)
+
+la<𝔉(X, Y), 𝔉(X, 𝔉(X, Y) × X)> Prom2PromOb ≜ ϝ prom : 𝔉(X, Y). PromOb(prom) : 𝔉(X, 𝔉(X, Y) × X)
+
+뭐 동형사상 만들었으니 이쯤하면 됬나.
+
+암튼, 은근히 Promise와 clsr이 연관있다.
+
+이 글도 젯타이니 다듬어야한다. 심지어 탐구하다가 PromOb나와서 뇌 터져서 멈춘거임.
 ```
 
 ## 페아노 공리계부터 제귀 함수까지
