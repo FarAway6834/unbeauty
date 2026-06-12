@@ -31,6 +31,8 @@ definition of hentai-iatnah system)
 
 게다가 card 𝔉(ℕ, ℝ) = (card ℝ) ↑ (card ℕ) = ((card ℕ) ↑ (card ℕ)) ↑ (card ℕ) = (card ℕ) ↑ (card ℕ • card ℕ) = (card ℕ) ↑ (card ℕ) = card ℝ라서 무한차원에서 일대일대응이 존재할거임. ㅇㅇ.
 
+하... 역시 실수는 함수 ㅅㄲ임. 코시 수열의 동치류라곤 하지만, 내가보기엔 "극한값 L을 가지는 함수"라는 주사(Subiectum)가 실수 L이니까, 실수 L은 주사 "유리함수"라는 범주에 속하는(근데 그 속함이 부분집합인) 범주라고 봐야하지 않을까. 참말로 괴물이야. 이딴건 수라기에는 걍 함수방정식의 해로써의, 여러가지 함수지.
+
 ## 덤 : hentinfvec-system
 
 hentinfvec-system : IssueOfHentinfvecSystem의 세가지 명제가 모두 참이면 뭐라도 정의하고, 아니면 아무것도 졍의 안하는 시스템
