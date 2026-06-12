@@ -27,4 +27,26 @@ definition of hentai-iatnah system)
 24. hentenidx(T) ≜ acess(T)
 25. hentenidx(T, k, t) ≜ hentenidx(hentencurryidxerₖ(T), t)
 
-유한랭크 유한차원 실벡터 • 실텐서는 실수와 일대일대응된다.
+유한랭크 유한차원 실벡터 • 실텐서는 실수와 일대일대응을 쉽게 제시할수 있음. ㅇㅇ.
+
+게다가 card 𝔉(ℕ, ℝ) = (card ℝ) ↑ (card ℕ) = ((card ℕ) ↑ (card ℕ)) ↑ (card ℕ) = (card ℕ) ↑ (card ℕ • card ℕ) = (card ℕ) ↑ (card ℕ) = card ℝ라서 무한차원에서 일대일대응이 존재할거임. ㅇㅇ.
+
+## 덤 : hentinfvec-system
+
+hentinfvec-system : IssueOfHentinfvecSystem의 세가지 명제가 모두 참이면 뭐라도 정의하고, 아니면 아무것도 졍의 안하는 시스템
+1. FunctionalEquationOfHentinfvec(hentinfvec) : hentinfvec(a) -hentensor(1, [hentinfvec(oddArr(a)), hentinfvec(evenArr(a))]) = 0
+2. FunctionalEquationOfHentinfvecidx(hentinfvecidx) : hentinfvecidx(v, i) - hentinfvecidx(hentenidx(v, iseven(i)), ⌊i/2⌋) = 0
+3. oddArr(a)ₖ ≜ (ϝ a : 𝔉(ℕ, ℝ). (ϝ k : ℕ. a₍₂ₖ₋₁₎ : ℝ) : 𝔉(ℕ, ℝ))(a)ₖ
+evenArr(a)ₖ ≜ (ϝ a : 𝔉(ℕ, ℝ). (ϝ k : ℕ. a₍₂ₖ₎ : ℝ) : 𝔉(ℕ, ℝ))(a)ₖ
+4. hentinfvec ≜ ϝ a : 𝔉(ℕ, ℝ). hentinfvec(a) : ℝ s.t FunctionalEquationOfHentinfvec(hentinfvec)
+5. iseven ≜ ϝ x : ℕ. ½(1 + ((-1) ↑ x))
+6. hentinfvecidx ≜ ϝ (v, i) : ℝ × ℕ. hentinfvecidx(v, i) : ℝ
+7. hentensorinf는 내일 정의하지 뭐... 내일 이전까지, 이 시스템에 hentensorinf는 존재하지 않는거임 (즉, 이건 indev ver)
+
+### 핵심 문제 (IssueOfHentinfvecSystem)
+
+존재성 추측 1 : FunctionalEquationOfHentinfvec는 FunctionalEquationOfHentinfvecidx가 해를 가지면 해를 가진다. (인덱싱 가능한 결과면 그걸 만드는 작업이 coding가능할것이라는 추측)
+존재성 추측 2 : FunctionalEquationOfHentinfvecidx는 FunctionalEquationOfHentinfvec가 해를 가지면 해를 가진다. (그 함수가 존재하고, 인자에서 인덱싱 되니까 될거란 추측)
+존재성 추측 3 : FunctionalEquationOfHentinfvec가 해를 가지거나 FunctionalEquationOfHentinfvecidx가 해를 가진다.
+
+그렇다. 에초에, FunctionalEquationOfHentinfvecidx랑 FunctionalEquationOfHentinfvec가 해를 안가지면, 저 시스템에선 아무것도 정의 안하는거다.
