@@ -34,7 +34,7 @@ SlowTree(T) ≜ MergeNOTOA(1, StackLikeObjectSLOW(T), StackLikeObjectSLOW(T))
 
 ## insight
 
-아, 이 스택 산술의 인사이트를 다루려고 보다보니 젠장
+아, 이 Slow의 계산에 대해 그의 인사이트를 다루려고 보다보니 젠장
 
 아 ㅅㅂ 잠만, 이거 인자가 ㅈ됬다 개씨발...
 인자 몇번 후에 넘버링하는지, 메니저를 넘겨야지 ㅂㅅ아...
