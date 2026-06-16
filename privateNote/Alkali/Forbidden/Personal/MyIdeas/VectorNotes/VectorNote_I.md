@@ -309,6 +309,9 @@ VVBP2SVV<S>ₙ ≜ (Surj n : [1 ⤳ ∞]. ArrVec2TupArrVec<codom VariableVectorB
 
 ## Algebric Number as Vector
 
+(여기도 그런 이유임)
+
+```
 x|y : ∃z ∈ ℤ, xz = y
 ℙ₁ ≜ {x | {y ∈ ℕ | (y|x)} = {1, x}}
 pₖ ≜ min(ℙₖ)
@@ -319,9 +322,13 @@ SequenceBasisRationalVector2Algebric ≜ ϝ x : codom SequenceBasisRationalVecto
 Algebric ≜ ϝ a : 𝔉(ℕ, ℚ). SequenceBasisRationalVector2Algebric(a) : 𝔸
 
 핵심내용 : 대수적 수(𝔸)는 SimpleVariableVector와 동형이므로, VariableVectorByPoly와 동형이다.
+```
 
 ## 마치며
 
+(여기도)
+
+```
 VVBPQiso<S>ₙ ≜ (ϝ n : [1 ⤳ ∞]. (ϝ f : lim_{n ↦ ∞} 𝔉(Sⁿ, S). Σₖ₌₁ⁿ (d f/d eₖ)(Σₘ₌₁ⁿ 0 eₘ)eₖ : Sⁿ) : 𝔉(𝔉(Sⁿ, S), Sⁿ))(n)
 
 QisoonP ≜ lim_{n ↦ ∞} SequenceBasisRationalVector2Algebric◦VVBP2SVV<ℝ>ₙ◦VVBPQiso<ℝ>ₙ
@@ -329,3 +336,4 @@ QisoonP ≜ lim_{n ↦ ∞} SequenceBasisRationalVector2Algebric◦VVBP2SVV<ℝ>
 <x|ᴾᴿᴵᴹᴱ y> ≜ <QisoonP⁻¹(x)|QisoonP⁻¹(y)> (Tip : 동형사상 f : ℚ^∞ ↦ ln[𝔸]에서, <f(v) | f(w)> = <v|w>로 내적을 정의할수도 있으며, 이러한 내적은 <f(v)|ᴾᴿᴵᴹᴱ g(w)>라고 적는게 바로 이 식이다.)
 
 결론 : 이와 같이, 내적공간 ℚ^∞에 대응되게 하는 동형사상을 쉽게 구축할수 있고, 이를 통해, ln pₖ가 정규직교기저이며, 이는 SimpleVariableVector와 VariableVectorByPoly에서도 마찬가지다.
+```
