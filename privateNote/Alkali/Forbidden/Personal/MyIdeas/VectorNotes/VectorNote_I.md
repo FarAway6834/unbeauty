@@ -272,6 +272,9 @@ FuncInfDecoderₙ ≜ (ϝ n : [1 ⤳ ∞]. (ϝ f : 𝔉(lim_{R ⟶ n} [0 ⤳ ∞
 
 ## `동형사상 VVBP2SVV<S>ₙ`
 
+이상하게 탬플릿 모양 `<>`에서, 마크다운이 ㅈㄹ나서, 그냥 코드블럭화한다.
+
+```
 ArrTenBasisByVec<S>ₙ ≜ (Surj n : [1 ⤳ ∞]. (ϝ l : lim_{R ⟶ n} [1 ⤳ ∞]ᴿ. (ϝ k : ∏ₘ₌₁ⁿ [1 ⤳ <eⁱⁿᶠᴿₘ |ⁱⁿᶠᴿ l>⁺). (ϝ x : ∏ₘ₌₁ⁿ [1 ⤳ <eⁱⁿᶠᴿₘ |ⁱⁿᶠᴿ l>⁺. <eⁱⁿᶠᴿₓ |ⁱⁿᶠᴿ k> : S) : 𝔉(∏ₘ₌₁ⁿ [1 ⤳ <eⁱⁿᶠᴿₘ |ⁱⁿᶠᴿ l>⁺, S)) : {x ∈ 𝔉(∏ₘ₌₁ⁿ [1 ⤳ <eⁱⁿᶠᴿₘ |ⁱⁿᶠᴿ v>⁺, 𝔉(∏ₘ₌₁ⁿ [1 ⤳ <eⁱⁿᶠᴿₘ |ⁱⁿᶠᴿ v>⁺, S)) | v ∈ lim_{R ⟶ n} [1 ⤳ ∞]ᴿ}))(n)
 ArrVecToVec<S>ₙ ≜ (Surj n : [1 ⤳ ∞]. ϝ a : 𝔉([1 ⤳ n⁺), S). Σₖ₌₁ⁿ aₖeₖ : lim_{R ⟶ n} Sᴿ)(n)
 Vec2ArrVec<S>ₙ ≜ (Surj n : ϝ v : lim_{R ⟶ n} Sᴿ. Σₖ₌₁ⁿ tidx(k - 1, n, v) ArrTenBasisByVec₁(n)(k) : 𝔉([1 ⤳ n⁺), S)()
@@ -302,6 +305,7 @@ VariableVectorByPoly<S>ₙ ≜ (Surj n : [1 ⤳ ∞]. (Surj k : [1 ⤳ n⁺). Ar
 VVBP2SVV<S>ₙ ≜ (Surj n : [1 ⤳ ∞]. ArrVec2TupArrVec<codom VariableVectorByPoly<S>ₙ>ₙ)(n)
 
 이렇게, VVBP2SVV<S>를 만들면, VariableVectorByPoly<S>ₙ를 SimpleVariableVector<S>ₙ로 변환하는 동형사상을 얃을수 있다.
+```
 
 ## Algebric Number as Vector
 
