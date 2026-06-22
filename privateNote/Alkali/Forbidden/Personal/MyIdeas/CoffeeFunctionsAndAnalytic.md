@@ -15,17 +15,39 @@ Coffee2Func<S>ₙ(f)(a)(cof) ≜ (ϝ n : ℕ₀. (ϝ f : Cⁿ(S). (ϝ a : S. (ϝ
 
 DotProductCoffee<S>ₙ(a)(f, g)ₖ ≜ (ϝ n : ℕ₀. (ϝ a : S. (ϝ (f, g) : Cⁿ(S)². (ϝ k : ℕ₀. Coffee<S>ₙ(f)(a)ₖ Coffee<S>ₙ(g)(a)ₖ : {xy | x ∈ codom Coffee<S>ₙ(f)(a) ∧ y ∈ codom Coffee<S>ₙ(g)(a)}) : {y ∈ 𝔉([0, n + 1) ∩ ℕ₀, {xy | x ∈ codom Coffee<S>ₙ(f)(a) ∧ y ∈ codom Coffee<S>ₙ(g)(a)}) | Cⁿ(S)²(f, g)}) : {y ∈ 𝔉(Cⁿ(S)²(f, g), {y ∈ 𝔉([0, n + 1) ∩ ℕ₀, {xy | x ∈ codom Coffee<S>ₙ(f)(a) ∧ y ∈ codom Coffee<S>ₙ(g)(a)}) | Cⁿ(S)²(f, g)}) | a ∈ S}) : ∪ₘ₌₀ⁿ 𝔉(S, {y ∈ 𝔉([0, n + 1) ∩ ℕ₀, {xy | x ∈ codom Coffee<S>ₙ(f)(a) ∧ y ∈ codom Coffee<S>ₙ(g)(a)}) | Cⁿ(S)²(f, g)}) : {y ∈ 𝔉(Cⁿ(S)²(f, g), {y ∈ 𝔉([0, n + 1) ∩ ℕ₀, {xy | x ∈ codom Coffee<S>ₙ(f)(a) ∧ y ∈ codom Coffee<S>ₙ(g)(a)}) | Cⁿ(S)²(f, g)}) | a ∈ S}))(n)(a)(f, g)(k)
 
+CoffeeScript<S>ₙ(f)(a) ≜ (ϝ n : ℕ₀. (ϝ f : Cⁿ(S). (ϝ a : S. Coffee2Func<X>ₙ(f)(a)(Coffee<X>ₙ(f)(a)) : Cⁿ(S)) : 𝔉(S, Cⁿ(S))) : ∪ₘ₌₀ⁿ 𝔉(Cⁿ(S), 𝔉(S, Cⁿ(S))))(n)(f)(a)
+
+커피스크립트가 왜나와.... 아무말 대잔치 ㅋㅋㅋ 너무 피곤하거든. 그리고 스크립트라 하니까, 뭔가 글로 적은것같아서 좋기도 하고. 무책임쾌락임.
+
 ScalaOf<X, Y>ₙ ≜ (ϝ n : ℕ₀. {y ∈ codom Coffee<X>ₙ(x) | x ∈ 𝔉(X, Y)} : {y ⊆ codom Y | Y = codom Coffee<X>ₙ ∧ n ∈ ℕ₀})(n)
-SpaceOf<X, Y>ₙ ≜ (ϝ n : ℕ₀. {f ∈ 𝔉(X, Y) | Cⁿ(X) f ∧ Coffee2Func<X>ₙ(f)(a)(Coffee<X>ₙ(f)(a))} : {f ∈ 𝔉(X, Y) | Cⁿ(X) f ∧ n ∈ ℕ₀})(n)
+SpaceOf<X, Y>ₙ(a) ≜ (ϝ n : ℕ₀. (ϝ a : X. {f ∈ 𝔉(X, Y) | Cⁿ(X) f ∧ CoffeeScript<S>(f)(a) = f} : {f ∈ 𝔉(X, Y) | Cⁿ(X) f ∧ a ∈ X}) : ∪ₘ₌₀ⁿ 𝔉(X, {f ∈ 𝔉(X, Y) | Cⁿ(X) f ∧ a ∈ X}))(n)(a)
 
 DotProjecter<S>ₙ(a)(f, g) ≜ h s.t. h = (Coffee2Func<S>ₙ(a)(h) ◦ DotProductCoffee<S>ₙ(a))(f, g)
 
-CoffeeFunctions<X, Y>ₙ(a) ≜ (ϝ n : ℕ₀. (ϝ a : X. <F = ScalaOf<X, Y>ₙ, V = SpaceOf<X, Y>ₙ, +, -, DotProjecter<X>ₙ(a)> : InnerProductSpace) : 𝔉(X, InnerProductSpace))(n)
+CoffeeFunctions<X, Y>ₙ(a) ≜ (ϝ n : ℕ₀. (ϝ a : X. <F = ScalaOf<X, Y>ₙ, V = SpaceOf<X, Y>ₙ(a), +, -, DotProjecter<X>ₙ(a)> : InnerProductSpace) : 𝔉(X, InnerProductSpace))(n)
 
 CoffeeFunctions는 유한차원이다.
 
-analytic<X, Y>(a) ≜ (ϝ a : X. lim_{n ⟶ ∞} CoffeeFunctions<X, Y>ₙ(a) : InnerProductSpace)(a)
+AnalyticCore<X, Y>(a) ≜ (ϝ a : X. lim_{n ⟶ ∞} CoffeeFunctions<X, Y>ₙ(a) : InnerProductSpace)(a)
 
-analytic는 무한차원이다.
+AnalyticCore는 무한차원이다.
+
+## Step. 2. 드디어 나온 궁금증.
+
+isCoffeScriptIsWorks(f, a) : CoffeeScript<S>ₙ(f)(a) = f
+
+preanalytic(f) : (∃a, isCoffeScriptIsWorks(f, a))
+analytic(f) : (∀a, isCoffeScriptIsWorks(f, a))
+
+IntuitiveHunchOfCoffeeScript : ∀f, preanalytic(f) → analytic(f)
+
+## Step. 3. 드디어 나온 질문칸
+
+IntuitiveHunchOfCoffeeScript가 은근히 거짓일것같다. 해석학에서 항상 직관가지고 억측하면 틀리니까 아마 직관적으로 맞아보이는데 불확실한 IntuitiveHunchOfCoffeeScript는 거짓이 아닐까...
+
+하하... 미치것군.
 
 이제 난 C^∞랑 analytic의 차이를 배워야 한다.
+그리고, IntuitiveHunchOfCoffeeScript의 참 거짓 여부도 알아야한다.
+
+해석함수 알아야해...
