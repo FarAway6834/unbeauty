@@ -45,9 +45,10 @@ IntuitiveHunchOfCoffeeScript : ∀f, preanalytic(f) → analytic(f)
 
 IntuitiveHunchOfCoffeeScript가 은근히 거짓일것같다. 해석학에서 항상 직관가지고 억측하면 틀리니까 아마 직관적으로 맞아보이는데 불확실한 IntuitiveHunchOfCoffeeScript는 거짓이 아닐까...
 
-하하... 미치것군.
+ -> 아니란다. Base란 기저간에 변환이 되지않는가? 아이고 역시 난 바보야.
+
+하하... 미치것군. 너무 골때려서 할 말이 없다. IntuitiveHunchOfCoffeeScript가 참이라니 (해당 정리가 참이 되서, preanalytic과 analytic은 같게된다. 역방향 함의는 에초에, 주사가 공집합이 아니면 함축되기때문.)
 
 이제 난 C^∞랑 analytic의 차이를 배워야 한다.
-그리고, IntuitiveHunchOfCoffeeScript의 참 거짓 여부도 알아야한다.
 
 해석함수 알아야해...
