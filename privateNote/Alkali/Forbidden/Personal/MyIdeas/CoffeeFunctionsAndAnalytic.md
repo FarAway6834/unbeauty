@@ -34,21 +34,30 @@ AnalyticCore는 무한차원이다.
 
 ## Step. 2. 드디어 나온 궁금증.
 
-isCoffeScriptIsWorks(f, a) : CoffeeScript<S>ₙ(f)(a) = f
+isCoffeScriptIsWorks<S>ₙ(f, a) : CoffeeScript<S>ₙ(f)(a) = f
 
-preanalytic(f) : (∃a, isCoffeScriptIsWorks(f, a))
-analytic(f) : (∀a, isCoffeScriptIsWorks(f, a))
+preanalytic<S>ₙ(f) : (∃a, isCoffeScriptIsWorks<S>ₙ(f, a))
+analytic<S>ₙ(f) : (∀a, isCoffeScriptIsWorks<S>ₙ(f, a))
 
-IntuitiveHunchOfCoffeeScript : ∀f, preanalytic(f) → analytic(f)
+CrazyCaseOfCoffeeScript<S>ₙ(f) : preanalytic<S>ₙ(f) → analytic<S>ₙ(f)
+IntuitiveHunchOfCoffeeScript<S>ₙ : ∀f, CrazyCaseOfCoffeeScript<S>ₙ(f)
 
 ## Step. 3. 드디어 나온 질문칸
 
 IntuitiveHunchOfCoffeeScript가 은근히 거짓일것같다. 해석학에서 항상 직관가지고 억측하면 틀리니까 아마 직관적으로 맞아보이는데 불확실한 IntuitiveHunchOfCoffeeScript는 거짓이 아닐까...
 
  -> 아니란다. Base란 기저간에 변환이 되지않는가? 아이고 역시 난 바보야.
- -> 아니 또 아니란다, 유명한 반례 f(x) = 1/(1-x)는 a = 0에서 preanalytic(f)이지만, (-1, 1)사이의 a에서만 isCoffeScriptIsWorks가 참이다. 근데 dom f ≠ (-1, 1)이란 말임 ㅠㅠ
 
 하하... 미치것군. 너무 골때려서 할 말이 없다. IntuitiveHunchOfCoffeeScript가 참이라니 (해당 정리가 참이 되서, preanalytic과 analytic은 같게된다. 역방향 함의는 에초에, 주사가 공집합이 아니면 함축되기때문.)
+
+ -> 아니 또 아니란다, 유명한 반례 f(x) = 1/(1-x)는 a = 0에서 preanalytic(f)이지만, (-1, 1)사이의 a에서만 isCoffeScriptIsWorks가 참이다. 근데 dom f ≠ (-1, 1)이란 말임 ㅠㅠ
+
+AnalyticDomains<X, Y>ₙ(f) ≜ (ϝ n : ℕ₀. (ϝ f : C(X)ⁿ. {S | S ⊆ X ∧ g = (S, codom f, graph f ∩ S × codom f) ∧ CrazyCaseOfCoffeeScript<S>ₙ(g)} : 𝒫(𝒫(X))) : ∪ₘ₌₀ⁿ 𝔉(C(X)ⁿ, 𝒫(𝒫(X))))(n)(f)
+getAnalyticVer<X, Y>ₙ(f)(S) ≜ (ϝ n : ℕ₀. (ϝ f : C(X)ⁿ. (ϝ S : AnalyticDomains<X, Y>ₙ(f). (S, codom f, graph f ∩ S × codom f) : {g ∈ 𝔉(S, codom f) | S ⊆ dom f}) : {y ∈ 𝔉(AnalyticDomains<X, Y>ₙ(f), {g ∈ 𝔉(S, codom f) | S ⊆ dom f}) | C(X)ⁿ f}) : ∪ₘ₌₀ⁿ 𝔉(C(X)ⁿ, {y ∈ 𝔉(AnalyticDomains<X, Y>ₙ(f), {g ∈ 𝔉(S, codom f) | S ⊆ dom f}) | C(X)ⁿ f}))(n)(f)(S)
+CrazyPrinciple<X, Y>ₙ(f, S) : S ∈ AnalyticDomains<X, Y>ₙ(f), CrazyCaseOfCoffeeScript<S>ₙ(getAnalyticVer<X, Y>ₙ(f)(S))
+CrazyPrincipleTheorem<X, Y>ₙ : ∀preanalytic<S>ₙ(f), ∃S, CrazyPrinciple<X, Y>ₙ(f, S)
+
+ -> ㅅㅂ 이번엔 CrazyPrincipleTheorem<X, Y>ₙ가 참이라내? 해석적 정의역이라니 씨발 뭔 정신나간 개념이야, 죽음으로 맛있잖아! 최고다 해석학!! 겁나 맛잇고 직관적이고 맛있는 개념이다!!
 
 이제 난 C^∞랑 analytic의 차이를 배워야 한다.
 
